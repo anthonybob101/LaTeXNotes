@@ -1046,9 +1046,23 @@ Recap - How do buffers maintain a nearly constant pH?
     \end{equation*}
     \item Adding strong bases to weak acids leads to them being neutralized by the weak acid, and turning into their conjugate base. 
     \begin{enumerate}
-        \item If the amount of OH- is muchless than that of HA and A-, then the ratio [HA]/[A-] changes by very little.
+        \item If we add \ce{OH-}, then HA is converted to \ce{A-} If the amount of OH- is much less than that of HA and A-, then the ratio [HA]/[A-] changes by very little. AKA the pH changes very little.
+        \item If we add \ce{H+}, then \ce{A-} is converted to HA. If the amount of \ce{H+} is much less than that of HA and \ce{A-}, then the ratio of \ce{[HA]/[A-]} changes very little. AKA the pH changes very little.
     \end{enumerate}
 \end{enumerate}
 
-
+\section*{Henderson-Basselbalch Equation}\footnote{Be careful! Tricky as there are situations in which this section doesn't count for}
+In the final step, we considered the equilibrium position of the weak acid dissocation:
+\begin{equation*}
+    \begin{aligned}
+        \ce{HA + H2O <=> A- + H3O+} \quad K_a = \ce{\frac{[H+][A-]}{HA}} 
+    \end{aligned}
+\end{equation*}
+Once you know the equilibrium concentrations of HA and \ce{A-}, you can calculate concentration of hydronium and then pH:
+\begin{equation*}
+    \begin{aligned}
+        pH = pKa + log_{10}\ce{\frac{[A-]}{[HA]}}
+    \end{aligned}
+\end{equation*}
+THIS ONLY APPLIES IF A- is the conjugate base of HA!
 \end{document}
