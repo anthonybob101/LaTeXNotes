@@ -521,20 +521,55 @@ Although the quadratic formula yields two values for x, only one is physically r
     Calculate the volume of concentrated nitric acid that the chemist must measure out in the second step.
 \end{exmp}
 
-
+The key to solving this problem is two facts:
+\begin{enumerate}
+    \item First, since nitric acid (\ce{HNO3}) is an acid, it chemically reacts with water as soon as it dissolves like this.
+    \begin{equation*}
+        \begin{aligned}
+            \ce{HNO3 + H2O -> H3O+ + NO3-}
+        \end{aligned}
+    \end{equation*}
+    Also, since \ce{HNO3} is a strong acid, all of the \ce{HNO3} reacted with the water. That is, the 7.0M stock solution of nitric acid doesn't contain any nitric acid molecules. It's really a 7.0M solution of \ce{H3O+} cations and \ce{NO3-} anions.
+    \item Second, the pH of an aqueous solution is just another way to express \ce{[H3O+]} the molarity of hydronium. So when you're you're told the final pH of the solution should be 1.10, you're actually being told the final molarity of \ce{H3O+} should be:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{[H3O+]} = 10^{-pH}M = 10^{-1.10}M = 0.07943M
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+What these two facts tell you is that this problem is really a dilution problem. In essence, you're being asked to figure out how much 7.0M \ce{H3O+} solution must be poured out so that when it's diluted to 200mL, the molarity of \ce{H3O+} falls to 0.07943M. 
+\newline
+\newline
+You can solve this dilution problem by using the key fact about all dilution problems: the number of moles of solute always stays the same. That is, the number of moles of \ce{H3O+} in the final solution must equal the number of moles of \ce{H3O+} in the concentrated solution the chemist pours out. 
+\newline
+\newline
+In the final solution, the molarity of \ce{H3O+} is supposed to be 0.07943M. You can find the total moles of \ce{H3O+} in the final solution by multiplying this molarity by the total volume of the final solution:
+\begin{equation*}
+    \begin{aligned}
+        0.079\newline43M * 200mL = 0.07943M * 0.2L = 0.01589mol
+    \end{aligned}
+\end{equation*}
+To get the amount of solution needed to get the 0.01589mol of \ce{H3O+}, divide the number of moles needed by the molarity of \ce{H3O+} in the concentrated solution:
+\begin{equation*}
+    \begin{aligned}
+        \frac{0.01589mol}{7.0M} = 0.002270L \\
+        0.002270L = 2.270*10^{-3}L \\
+        = 2.270mL
+    \end{aligned}
+\end{equation*}
 %-------------------------------------------------------------------------------
 \section*{Scratch Work}
 
 \begin{equation*}
     \begin{aligned}
-        0.521 = \frac{(4+2x)(x)}{(1.2-x)(2.4-x)} \\
-        0.521 * (1.2-x)(2.4-x) = 4x+ 2x^2 \\ 
-        K * (I_a - x)(I_b - x) = (I_c + 2x)(I_d + x)\\
-        K * (I_a* I_b - (I_a + I_b)x + x^2) = I_c* I_d - 2(I_c + I_d)x + 2x^2 \\
-        K(I_a* I_b) - K(I_a + I_b)x + Kx^2 = (I_c* I_d) - 2(I_c + I_d)x + 2x^2 \\
-        K(I_a* I_b) - (I_c* I_d) + K(I_a + I_b)x - 2(I_c + I_d)x + Kx^2 - 2x^2 = 0 \\
-        0.521(1.2*2.4) - (4*0) + 0.521(1.2 + 2.4)x - 2(4+0)x + 0.521x^2 - 2x^2 = 0 \\
-        1.50048 + 1.87560x - 8x - (0.521-8)x^2 = 0
+        &0.521 = \frac{(4+2x)(x)}{(1.2-x)(2.4-x)} \\
+        &0.521 * (1.2-x)(2.4-x) = 4x+ 2x^2 \\ 
+        &K * (I_a - x)(I_b - x) = (I_c + 2x)(I_d + x)\\
+        &K * (I_a* I_b - (I_a + I_b)x + x^2) = I_c* I_d - 2(I_c + I_d)x + 2x^2 \\
+        &K(I_a* I_b) - K(I_a + I_b)x + Kx^2 = (I_c* I_d) - 2(I_c + I_d)x + 2x^2 \\
+        &K(I_a* I_b) - (I_c* I_d) + K(I_a + I_b)x - 2(I_c + I_d)x + Kx^2 - 2x^2 = 0 \\
+        &0.521(1.2*2.4) - (4*0) + 0.521(1.2 + 2.4)x - 2(4+0)x + 0.521x^2 - 2x^2 = 0 \\
+        &1.50048 + 1.87560x - 8x - (0.521-8)x^2 = 0
     \end{aligned}
 \end{equation*}
 
