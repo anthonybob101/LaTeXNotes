@@ -981,7 +981,6 @@ What happens if you add both a weak acid and its conjugate base to water, for ex
         C   &  -x     &&     &&  x      && x   \\
         E   &  0.5-x  &&     &&  0.5+x  && x  \\      
     \end{tabular}
-
     \item Solving for hydronium concentration (x)
 \end{enumerate}
 From this, we have considered solutions containing a weak acid and its conjugate base:
@@ -990,7 +989,51 @@ From this, we have considered solutions containing a weak acid and its conjugate
     \item The present of the (conjugate?) base inhibits the dissociation of the acid
 \end{enumerate}
 
-Now, what if we add a strong base (or strong acid) to a common 
+Now, what if we add a strong base (or strong acid) to this solution?
+\begin{exmp}
+    A solution that is 0.5M acetic acid(\ce{CH3COOH}, $Ka = 1.8*10^-5$) and 0.5M sodium acetate (\ce{NaCH3COO}) has a pH of 4.74. How does the pH change if we add 0.01 mol of sodium hydroxide to 1L of this solution?
+\end{exmp}
+\begin{enumerate}
+    \item Sodium hydroxide dissolves completely:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{NaOh_(s) -> Na+_(aq) + OH-_(aq)}
+        \end{aligned}
+    \end{equation*}
+    
+    \item Hydroxide is a strong base that will "steal" protons. These will come from the strongest acid available - acetic acid.
+    \begin{equation*}
+        \begin{aligned}
+            \ce{CH3COOH_(aq) + H2O_(l) <=> CH3COO-_(aq) + H3O+_(aq)}
+        \end{aligned}
+    \end{equation*}
+    \item Since hydroxide is stuch a strong base, the reaction will go to completion - and we can use basic stoichiometry to calculate the resulting concentrations:
+    \begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+        \hline
+        X   $[CH_3COOH]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[CH_3COO^-]$ & ${}+{}$ & $[H_3O^+]$ \\
+        \hline
+        I   &  0.49     &&     &&  0.51   && 0  \\
+        C   &  -x       &&     &&  x   && x  \\
+        E   &  0.49-x   &&     &&  0.51+x   &&  x \\      
+    \end{tabular}
+    \item Finding $K_a$
+    \begin{equation*}
+        \begin{aligned}
+            K_a &= \frac{(0.51+x)(x)}{(0.49-x)} \quad \text{small-x approximation} \\
+            K_a &\approx \frac{(0.51+x)(x)}{(0.49)} \\
+            x &= \frac{0.49}{0.51}K_a = 1.73*10^{-5} \\
+            pH &= 4.76
+        \end{aligned}
+    \end{equation*}
+    \item 
+\end{enumerate}
+From this, it's very strange that adding a strong base to a common ion solution will change the pH by only 0.02! From this we get that:
+\begin{enumerate}
+    \item It is difficult to change the pH of a solutionm containing signifficant amounts of weak acid and its conjugate base.
+    \item Such solution resists changes in pH - this is called a \textbf{buffered solution} or just "buffer"
+    \item This is very important for applications requiring a constant pH (examples include blood)
+\end{enumerate}
+
 
 
 \end{document}
