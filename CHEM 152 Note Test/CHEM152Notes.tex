@@ -941,9 +941,56 @@ So far, we have studied how the pH changes if you add either acid or base to wat
             pH &= 12
         \end{aligned}
     \end{equation*}
-    \item 
+    \item A 0.5M solution of acetic acid, a weak acidm, has a pH of 2.52.
+    \item a 0.5M solution of sodium acetate, a salt containing the weak base acetate, has a pH of 9.22.
+\end{enumerate}
+What happens if you add both a weak acid and its conjugate base to water, for example by adding a salt?
+\begin{equation*}
+    \begin{aligned}
+        \ce{HA + H2O <=> A- + H3O+} \quad K_a = \ce{\frac{[H+][A-]}{HA}} \\
+        \ce{NaA_(s) -> Na+_(aq) + A-_(aq)} 
+    \end{aligned}
+\end{equation*}
+\begin{enumerate}
+    \item Both the acid and the salt generate \ce{A-} - it is a common ion.
+    \item If we look at this step according to Le Chatelier's principle, you'll be adding acetate ions, disturbing equilibrium. Since we have additional acetate anions and hydronium cations, you'll shift the reaction to the left in order to return to equilibrium.
 \end{enumerate}
 
+\begin{exmp}
+    What is the pH of a solution that is 0.5M acetic acid(\ce{CH3COOH}, $Ka = 1.8*10^-5$) and 0.5M sodium acetate (\ce{NaCH3COO})?
+\end{exmp}
+\begin{enumerate}
+    \item Sodium acetate dissolves completely:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{NaCH3COO_(s) -> Na+ CH3COO-_(aq)}
+        \end{aligned}
+    \end{equation*}
+    \item Solve acetic acid dissocation equilibrium:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{CH3COOH_(aq) + H2O_(l) <=> CH3COO-_(aq) + H3O+_(aq)}
+        \end{aligned}
+    \end{equation*}
+    \item Creating ICE table: %//TODO - Complete ICE Table from 4/17/2023 Slides!
+    \begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+        \hline
+        X   & $[\ce{NaCH3COO_}]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[\ce{CH3COO-}]$ & ${}+{}$ & $[H_3O]$ \\
+        \hline
+        I   &  0.5    &&     &&  0.5    && 0  \\
+        C   &  -x     &&     &&  x      && x   \\
+        E   &  0.5-x  &&     &&  0.5+x  && x  \\      
+    \end{tabular}
+
+    \item Solving for hydronium concentration (x)
+\end{enumerate}
+From this, we have considered solutions containing a weak acid and its conjugate base:
+\begin{enumerate}
+    \item Ex - A solution that is 0.5M in acetic acid and in sodium acetate has a pH of 4.74 (this is between 2.52 and 9.22)
+    \item The present of the (conjugate?) base inhibits the dissociation of the acid
+\end{enumerate}
+
+Now, what if we add a strong base (or strong acid) to a common 
 
 
 \end{document}
