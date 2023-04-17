@@ -1082,9 +1082,33 @@ A pool of funds collected from many investors form the purpose of investing in s
 \begin{exmp}
     4.20 - Yield to Maturity and Current Yield
 \end{exmp}
+Givens:
 \begin{enumerate}
-    \item Coupon rate  = interest rate per payment period * face value
+    \item Face Value = 1000
+    \item Purchase Price = 996.25
+    \item Coupon Rate = 9.625\% or 4.8125\% semi-annually\footnote{Coupon payments  = interest rate per payment period * face value}
 \end{enumerate}
+Find: 
+\begin{enumerate}
+    \item Yield to maturity - AKA interest "i" earned over life of the bond
+    \begin{equation*}
+        \begin{aligned}
+            &996.25 =(4.8125\% *  1000) (P/A,i,20) + 1000(P/F,i,20)\\
+            &996.25 =(48.13)(P/A,i,20) + 1000(P/F,i,20) \text{Solving for i via P/A and P/F equations}\\ 
+            &i = 4.84\% \quad \text{semiannually} \\ %//TODO - How do you manage to solve for i in the P/A and P/F equations? this seems very tedious to work with the equations
+            &i = 4.84\% * 2 = 9.68\% \quad \text{nominal, annually} \\
+            &i_a = (1+4.84\%)^2-1 = 9.914\% \quad \text{effective annual}
+        \end{aligned}
+    \end{equation*}
+    \item Current Yield
+    \begin{equation*}
+        \begin{aligned}
+            \frac{\$48.13}{\$996.25} = 4.83\% \quad \text{semiannually} \\
+            i_a = (1+4.83\%)^2-1 = 9.9\% 
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
 
 \end{document}
 
