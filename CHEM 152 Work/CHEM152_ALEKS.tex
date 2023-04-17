@@ -1,0 +1,697 @@
+\documentclass{article}  % //TODO find why latex gives errors for report and using textsc!
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mhchem}
+\usepackage{amssymb}
+\usepackage[margin=1in]{geometry}
+
+\title{UW CHEM 152 Notes}
+\author{Anthony Le}
+
+\newtheorem{exmp}{Example}
+\newtheorem{exrc}{Excersize}
+\newtheorem{proof}{Statement}
+\newtheorem{defn}{Definition}
+
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[R]{UW CHEM 152}
+\fancyhead[L]{Anthony Le}
+
+\begin{center}
+    \LARGE{\textbf{CHEM 152 ALEKs Scratch Work}}
+\end{center}
+
+Create ICE Table \\
+\begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+    \hline
+    X   & $[CH_4]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[CO]$ & ${}+{}$ & $[3H_2]$ \\
+    \hline
+    I   &  0    && 2.2    &&  0.8   && 3.6  \\
+    C   &      &&  x   &&     &&   \\
+    E   &      &&     &&     &&   \\      
+\end{tabular}
+ 
+
+%Scratch Work
+\section*{Interconverting pH and hydroniun ion concentration}
+Given \ce{[H3O^+]} or pH, you can convert between the two using:
+\begin{equation*}
+    \begin{aligned}
+        pH = - log(\frac{\ce{[H3O^+]}}{1 mol/L}) \quad \ce{[H3O^+]} = \left(10^{-pH}\right) \frac{mol}{L}
+    \end{aligned}
+\end{equation*}
+
+
+\begin{equation*}
+    \begin{aligned}
+        &\ce{A2 + 3 B2 <=> 2 AB_3} \quad K_1^2 = \ce{\frac{[AB3]^2}{[A2][B2]^3}} \\
+        &\ce{2AB3 <=> 2AB + 2B2} \quad K_2 = \ce{\frac{[AB]^2[B2]^2}{[AB3]^2}} \\
+        &\ce{A2 + B2 <=> 2 AB} \quad K = \ce{\frac{[AB]^2}{[A2][B2]}} = K_1K_2 \\
+        &K = \ce{\frac{[AB3]^2}{[A2][B2]^3}} * \ce{\frac{[AB]^2[B2]^2}{[AB3]^2}} \\
+        &K = \ce{\frac{[AB]^2}{[A2][B2]}}
+    \end{aligned}
+\end{equation*}
+
+\section*{Predicting reaction products of strong acid with water}   
+Given a reaction:
+\begin{equation*}
+    \begin{aligned}
+        \ce{HClO3 + H2O}
+    \end{aligned}
+\end{equation*}
+\begin{enumerate}
+    \item Firstly, recognize that \ce{HClO3} is an acid (which the H at the front in . indictative that this is an acid).
+    \item You know that acids donate an hydrogen cations \ce{H+}to water, producing hydronium cations \ce{H3O+} and anions. In this case, chloric acid reacts with water like this:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{HClO3_(aq) + H2O_(l) -> ClO3-_(aq) + H3O+_(aq)} 
+        \end{aligned}
+    \end{equation*}
+    \item The reaction of acids is sometimes called a \textbf{proton transfer reaction}, since the hydrogen cation that gets trasnfered, a hydrogen atom without its electron, is usually just a proton.
+
+\end{enumerate}
+
+\section*{Identifying Bronsted-Lowry Acids and Bases}
+A compound acts as a Bronsted-Lowry acid when it \textbf{donates} hydrogen cation during a chemical reaction, and acts as a Bronsted-Lowry base when it \textbf{accepts} a hydrogen cation.
+\begin{defn}
+    \textbf{Bronsted Lowry Acid/Bases} \\
+    \begin{enumerate}
+        \item Acids - Compounds that \textbf{donates} hydrogen cations (\ce{H+}) during a chemical reaction.
+        \item Bases - Compounds that \textbf{accepts} hydrogen cations (\ce{H+}) during a chemical reaction.
+        \item NOTE - Bronsted Lowry acids and bases always come in pairs.
+        \item ALSO - Compounds are only defined as Bronsted Lowry acids or bases in the context of a specific chemical reaction. A compound can be a Bronsted-Lowry acid in 1 reaction, and act as a Bronsted-Lowry base in another reaction.
+    \end{enumerate}
+    
+\end{defn} 
+
+\section*{Calculating an equilibrium constant from an equilibrium composition}
+In order to find the equilibrium constant $K_P$, you'll need to write the equilibrium constant expression. Remember for $K_P$:
+\begin{equation*}
+    \begin{aligned}
+        K_P = \frac{\left(\frac{P_C}{P_0}\right)^c \left(\frac{P_D}{P_0}\right) ^d}{\left(\frac{P_A}{P_0}\right) ^a \left(\frac{P_B}{P_0}\right) ^b}
+    \end{aligned}
+\end{equation*}
+Plugging in $P_0 = 1$ atm and simplifying: 
+\begin{equation*}
+    \begin{aligned}
+        K_P = \frac{P_C^c P_D^d}{P_A^a P_B^b}
+    \end{aligned}
+\end{equation*}
+Then for a reaction of form:
+\begin{equation*}
+    \begin{aligned}
+        \ce{aA + bB <=> cC + dD}
+    \end{aligned}
+\end{equation*}
+You would get an equilibrium constant of form:
+\begin{equation*}
+    \begin{aligned}
+        K_P = \frac{P_C^c P_D^d}{P_A^a P_B^b}
+    \end{aligned}
+\end{equation*}
+
+Example: Find $K_P$ for a reaction \ce{2SO3 -> 2SO2 + O2}:
+\begin{equation*}
+    \begin{aligned}
+        K_P = \ce{\frac{[NO]^2 [H2]^2}{[N2] [H2O]^2}}
+    \end{aligned}
+\end{equation*}
+
+\section*{Writing a pressure equilibrium constant expression}
+You know how to do this normally from the notes you've taken during class. Doing examples:
+
+\begin{equation*}
+    \begin{aligned}
+        K_P = \frac{[PBr_3]^4}{[P_4] [Br_2]^6}
+    \end{aligned}
+\end{equation*}
+
+\section*{Setting up a reaction table}
+Example - Given a reaction \ce{CH4_(g) + H2O_(g) <=> CO_(g) + 3H2_(g)}, in a 500ml flask filled with: 
+\begin{equation*}
+    \begin{aligned}
+        1.1m \ce{H2O} \quad 0.4m \ce{CO} \quad 1.8m \ce{H2}
+    \end{aligned}
+\end{equation*}
+
+Complete the table below, using x as the unknown change in molarity of \ce{H2O}:
+
+\begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+    \hline
+    X   & $[CH_4]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[CO]$ & ${}+{}$ & $[3H_2]$ \\
+    \hline
+    I   &      &&     &&     &&   \\
+    C   &      &&  x   &&     &&   \\
+    E   &      &&     &&     &&   \\      
+
+\end{tabular}
+
+In order to solve this, you can use the following five-step plan to write a reaction table for any chemical reaction:
+
+\begin{enumerate}
+    \item Be sure the chemical equation is balanced. 
+        \begin{enumerate}
+            \item The chemical reaction must be balanced since you need to know the right stoichiometric coefficients to set up the reaction table. In this case, the reaction is already balanced. 
+        \end{enumerate}
+    \item Find the inital molarity of each reactant. 
+        \begin{enumerate}
+            \item In this case, you're not given the molarity, but the moles of each reactant and the volume of the reaction flask, allowing youm to find the inital molarity of each reactant. Like for finding \ce{H2O}:
+        \end{enumerate}
+    \begin{equation*}
+        \begin{aligned}
+            \ce{[H2O] = \frac{1.1mol}{500.mL} = \frac{1.1mol}{0.5L}=2.2\frac{mol}{L} = 2.2M}
+        \end{aligned}
+    \end{equation*}
+    Applying this to the rest of the compounds: \\
+    \begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+        \hline
+        X   & $[CH_4]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[CO]$ & ${}+{}$ & $[3H_2]$ \\
+        \hline
+        I   &  0    && 2.2    &&  0.8   && 3.6  \\
+        C   &      &&  x   &&     &&   \\
+        E   &      &&     &&     &&   \\      
+    \end{tabular}
+    \item Write a variable expression for the unknown change in molarity of each reactant. 
+        \begin{enumerate}
+            \item Since you don't know the what the change in molarity of each reactant will be, you must write them as algebra expression using a variable (like x). Remember that you must pick one of the changes to be x (ex change in \ce{H2O}), and then write all other changes to be in terms of x.
+            \item From this, you can write the change of molarity for \ce{CH4} in terms of x like:
+            \begin{equation*}
+                \begin{aligned}
+                    \frac{\text{moles/liter CH4 consumed}}{\text{moles/liter H2O consumed}} = \frac{1}{1}
+                \end{aligned}
+            \end{equation*}
+            \item Also to note, if x represents the change in the molarity of a \textbf{product}, then all the changes of \textbf{reactants} should have a minus since. Since if x is positive (the molarity of products is increasing) the forward reaction must be dominating, and that must mean the molarity of the reactants must be decreasing. Applying these previous two points: \\
+            \begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+                \hline
+                X   & $[CH_4]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[CO]$ & ${}+{}$ & $[3H_2]$ \\
+                \hline
+                I   &  0    && 2.2    &&  0.8   && 3.6  \\
+                C   &  x    &&  x   &&  -x   && -3x  \\
+                E   &      &&     &&     &&   \\      
+            \end{tabular}
+        \end{enumerate}  
+    \item Add the first and second row to get the third.
+        \begin{enumerate}
+            \item The final molarity will be the sum of the inital molarity and the changes in molarity. \\
+            \begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+                \hline
+                X   & $[CH_4]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[CO]$ & ${}+{}$ & $[3H_2]$ \\
+                \hline
+                I   &  0    && 2.2    &&  0.8   && 3.6  \\
+                C   &  x    &&  x   &&  -x   && -3x  \\
+                E   &  x    &&  2.2 + x   && 0.8-x    && 3.6 - 3x  \\      
+            \end{tabular}
+        \end{enumerate}
+\end{enumerate}
+
+\section*{Finding the conjugate of an acid or base}
+The conjugate base of a Bronsted-Lowry acid is the product of the chemical reaction of the acid with water. For example, here's the reaction of hydrochloric acid \ce{HCl-} with water: 
+\begin{equation*}
+    \begin{aligned}
+        \ce{HCl_(aq) + H2O_(l) -> Cl-_(aq) + H3O+_(aq)}
+    \end{aligned}
+\end{equation*}
+In this reaction, HCl acts as a Bronsted-Lowry acid by donating an \ce{H+} to \ce{H2O}. As a result, the HCl turns into \ce{Cl-}, meaning \ce{Cl-} is te conjugate base of HCl. 
+\newline
+Similarly, the conjugate acid of a Bronsted-Lowry base is the product of the chemical reaction of the base with water. For example, here is the reaction of ammonia \ce{NH3} with water:
+\begin{equation*}
+    \begin{aligned}
+        \ce{NH3_(aq) + H2O_(l) -> NH4+_(aq) + OH-_(aq)}
+    \end{aligned}
+\end{equation*}
+In this reaction \ce{NH3} acts as a Bronsted-Lowry base by accepting an \ce{H+} from \ce{H2O}. As a result, the \ce{NH3} turns into \ce{NH4+}, meaning \ce{NH4+} is the conjugate acid of NH3.
+\newline
+Another way to look at conjugate acids and bases:
+\begin{enumerate}
+    \item To find the conjugate base of an acid, remove one \ce{H+} from its chemical formula. (AKA remove 1 H and subtract 1 from its charge)
+    \item To find the conjugate acid of a base, add one \ce{H+} to its chemical formula. (AKA add 1 H and add 1 to its charge)
+\end{enumerate}
+
+\section*{Using Le Chatelier's Principle to predict the result of changing concentration}
+There are two ways a mixture in chemical equilibrium can respond to a perturbation ("disturbance"):
+\begin{enumerate}
+    \item The rate of the forward reaction can temporarily become higher than the rate of the reverse reaction. That would turn a small amount of reactants into products. When this happens, chemists say the equilibrium has shifted to the right.
+    \item The rate of the reverse reaction can temporarily become higher than the rate of the forward reaction. That would turn a small amount of reactants into products.  When this happens, chemists say the equilibrium has shifted to the left.
+\end{enumerate}
+Le Chatelier's Principle Rules of Thumb - Generally,
+\begin{enumerate}
+    \item If the reaction becomes BIASED towards the forward reaction, the reaction is \textbf{"shifted to the right"}.
+    \item If the reaction becomes BIASED towards the reverse reaction, the reaction is \textbf{"shifted to the left"}.
+\end{enumerate}
+
+\section*{Predicting Equilibrium Composition From a Sketch}
+Given:\\
+\begin{equation*}
+    \begin{aligned}
+        \ce{R_(aq) <=> P_(aq)} \quad [R] = 9 \quad [P] = 1 \quad K = \frac{3}{2}
+    \end{aligned}
+\end{equation*} 
+Find the number of R and P molecules in the sample when the reaction reaches equilibrium.
+
+\begin{equation*}
+    \begin{aligned}
+        K = \frac{3}{2} = \frac{P}{R}
+    \end{aligned}
+\end{equation*}
+Using an ICE table to find P and R and getting an equation for K:
+\begin{equation*}
+    \begin{aligned}
+        &K = \frac{3}{2} = \frac{P}{R} = \frac{1-x}{9+x} \\
+        &\frac{3}{2} = \frac{1-x}{9+x} \\
+        &\frac{3}{2}*(9+x) = 1-x \\
+        &13.5+1.5x = 1-x \\
+        &13.5-1 = -x-1.5x \\
+        &12.5 = -2.5x \\
+        &x = -5
+    \end{aligned}
+\end{equation*}
+In this case, I set x to be in terms of R, so since x = -5, 5 R molecules must turn into P molecules to be in equilibrium
+
+Given:\\
+\begin{equation*}
+    \begin{aligned}
+        \ce{R_(aq) <=> P_(aq)} \quad [R] = 2 \quad [P] = 2 \quad K = 2
+    \end{aligned}
+\end{equation*} 
+Find the number of R and P molecules in the sample when the reaction reaches equilibrium.
+
+\begin{equation*}
+    \begin{aligned}
+        &K = 2 = \frac{P}{R} = \frac{10-x}{2+x} \\
+        &2 = \frac{10-x}{2+x} \\
+        &2*(2+x) = 10-x \\
+        &4+2x = 10-x \\
+        &4-10 = -3x \\
+        &-6 = -3x \\
+        &x = 2
+    \end{aligned}
+\end{equation*}
+In this case, I set x to be in terms of R, so since x = 2, 2 P molecules must turn into R molecules to be in equilibrium
+
+\section*{Identifying Strong and Weak acids/bases}
+Chemical reactions that happen when an acid or base dissolves in water:
+\begin{enumerate}
+    \item An acid reacts in water to produce hydronium \ce{H3O+} cations and the acids conjugate base \ce{A-}
+    \begin{equation}
+        \ce{HA + H2O -> H3O+ + A-}
+    \end{equation}
+    Strong acids react to completion, \textbf{so there is no HA left after the acid reacts.}
+    For weak acids the reaction kinda looks like this:
+    \begin{equation}
+        \ce{HA + H2O -> H3O+ + A- + HA}
+    \end{equation}
+    \item An base reacts in water to produce hydroxide \ce{OH-} anions and the bases conjugate acid B+. 
+    \begin{enumerate}
+        \item A strong base BOH dissociates completely into its conjugate acid \ce{B+} and hydroxide \ce{OH-} anions:
+        \begin{equation*}
+            \begin{aligned}
+                \ce{BOH -> B+ + OH-}
+            \end{aligned}
+        \end{equation*}
+        \item A weak base B reacts with water to form its conjugate acid \ce{HB+} and hydroxide anions:
+        \begin{equation*}
+            \begin{aligned}
+                \ce{B + H2O -> HB+ + OH-}
+            \end{aligned}
+        \end{equation*}
+    \end{enumerate}
+    \item 
+\end{enumerate}
+
+\section*{Using Le Chatelier's Principle to predict the result of changing temperature}
+Following up on the previous section regarding Le Chatelier's Principle: 
+\newline
+When the perturbation is a change in termperature, you must look at the feat of reaction to correctly decide how the system will respond. Keep in mind:
+\begin{enumerate}
+     \item A \textbf{negative} heat of reaction AKA exothermic means the forward reaction releases heat, 
+     \item A \textbf{positive} heat of reaction AKA endothermic means the forward reaction absorbs heat.
+     \item Continuing with this logic, if the forward reaction releases heat, the reverse reaction must absorb it and vice versa.
+\end{enumerate}
+For example with an exothermic reaction where perturbation lowers the temperature, heat is removed from the reaction vessel. In order to counteract this, the effect of the perturbation can be reduced by changing reactants into products to create heat. In other words, if the forward reaction takes place in an exothermic reaction, some of the removed thermal energy will be replaced by the reaction. 
+\newline
+Where a perturbation causes thermal energy to change, the forward or reverse reaction will occur in order to replace some of the removed/added thermal energy AKA change in thermal energy.
+\newline
+For example, with an exothermic reaction - if a perturbation raises the temperature, you are biasing the reverse reaction. AKA change products into reactants to remove heat.
+\newline
+For example, with an exothermic reaction - if a perturbation lowers the temperature, you are biasing the forward reaction. AKA change reactants into products to add heat.
+
+\section*{Ordering acids by their strength}
+(I didn't have time to write down the ALEKS explaination) You can order them by finding the $K_a$ value for each acid, where:
+\begin{equation*}
+    \begin{aligned}
+        K_a = \ce{\frac{[H3O] [A-]}{[HA]}}
+    \end{aligned}
+\end{equation*}
+
+\section*{Interconverting hydronium and hydroxide concentration at 25$^{\circ}$C}
+The key to this problem is understanding the close connection between hydronium cation (\ce{H3O+}) molarity and hydroxide anion (\ce{OH-}) molarity in an aqueous solution. The connection between the two can be written mathematically, like this:
+\begin{equation*}
+    \begin{aligned}
+        \ce{[H3O+]*[OH-] = K_w}
+    \end{aligned}
+\end{equation*}
+This equation is the ion product of water, and the constant $K_w$ is called the \textit{ion product constant} or \textit{dissociation constant} of water. At temperature of about 25$^{\circ}$C,
+\begin{equation*}
+    \begin{aligned}
+        K_w = 1.0*10^{-14} M^2
+    \end{aligned}
+\end{equation*}
+However, at temperatures higher than 25$^{\circ}$C, $K_w$ is higher, and at temperatures lower then 25 $^{\circ}$C, $K_w$ is lower. Remember that $K_w$ is a measurement - and carries measurement uncertainity (AKA the significant figures present in $K_w$ should be reflected in your final answer)
+
+Finally, in order to find either \ce{[H3O+]} or \ce{[OH-]}, use the ion product of water to solve for your unknowns. For example, to solve for \ce{[H3O+]}:
+
+\begin{equation*}
+    \begin{aligned}
+        \ce{[H3O+]*[OH-] = K_w} \\
+        \ce{[H3O+] = \frac{K_w}{[OH-]}} \\
+        \ce{[H3O+] = \frac{1.0*10^{-14}M^2}{[OH-]}} 
+    \end{aligned}
+\end{equation*}
+
+\section*{Predicting the qualitative acid-base properties of salts}
+...That you're asked about pH should suggest that some of these compounds may act as acids or bases when dissolved in water. In fact, some do.
+\newline
+All of the compounds in this problem are salts, and will therefore seperate into cations and anions as soon as they dissolve.
+\newline
+For example:
+\begin{enumerate}
+    \item A compound \ce{C6H5NH3Br} breaks up like this:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{C6H5NH3Br_(aq) -> C6H5NH3+_(aq) + Br-_(aq)} 
+        \end{aligned}
+    \end{equation*}
+    \item And another compound \ce{KNO2} breaks up like this:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{KNO2_(aq) -> K+_(aq) + NO2-_(aq)}
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+What you must ask yourself in each case is whether the cations or anions might act as a Bronsted-Lowry acid, Bronsted-Lowry base, or neither.
+\newline
+There are 4 important facts to keep in mind:
+\begin{enumerate}
+    \item The conjugate base of a weak acid acts as a weak base. \\
+    For example, the data given in the question tells you that \ce{NO2-} is the conjugate base of a weak acid \ce{HNO2}, and will therefore act as a weak Bronsted-Lowry base: \\
+    \begin{equation*}
+        \begin{aligned}
+            \ce{NO2-_(aq) + H2O_(l) -> HNO2_(aq) + OH-_(aq)}
+        \end{aligned}
+    \end{equation*}
+    In this reaction, \ce{NO2-} accepts protons from water, producing hydroxide (\ce{OH-}) anions and raising the pH of the solution - AKA making the solution basic.
+    \item The weaker a weak acid, the stronger its conjugate base. \\
+    You might say that the more reluctantly an acid donates its proton to water, the more eagerly its conjugate base tries to get the proton back. This means for example, since the acid dissociation constant $K_a$ of \ce{HClO} is lower than the $K_a$ of \ce{HNO2}, \ce{CLO-} is a stronger base than \ce{NO2-}. That is, a solution containing \ce{ClO-} will have a higher pH than a solution containing the same molarity of \ce{NO2-}.\footnote{I'm having a little bit of trouble conceptualizing and connecting how one chemical can have a higher pH than another. Am I supposed to take your word that one chemical is weaker than another, then based off of this "tier list" we can say that this is true?}
+    \item The conjugate acid of a weak base acts as a weak acid. \\
+    For example, the data given in the question that \ce{C6H5NH3+} is the conjugate acid of a weak base (\ce{C6H5NH2}) and will therefore act as a weak Bronsted-Lowry acid: \\
+    \begin{equation*}
+        \begin{aligned}
+            \ce{C6H5NH3+_(aq) + H2O_(l) -> H3O_(aq) + C6H5NH2_(aq)}
+        \end{aligned}
+    \end{equation*}
+    In this reaction \ce{C6H5NH3} donates protons to water, producing hydronium cations and lowering the pH of the solution - AKA making the solution acidic %note - i'm not going to type out hydronium anymore, since you should have an idea for what the chemical formula is for it.
+    \item The weaker a weak base, the stronger its conjugate acid. \\
+    You might say the more reluctantly a base accepts a proton from water, the more eagerly its conjugate acid tries to give the proton back.  %potentially look at conjugate acids/bases as similar to how well something can give and take? 
+    
+\end{enumerate}
+
+\section*{Calculating the pH of a weak acid solution}
+To calculate the pH of a weak acid solution - there are two key points to solving the problem: 
+\begin{enumerate}
+    \item Like all acids, when acids dissolve, they react with water by transferring \ce{H+} \\
+    \ce{HCN + H2O <=> H3O+ + CN-}
+    \item HCN is a weak acid, its reaction with water will \textbf{not} go to completion. Instead, the equilibrium molarities of reactants and products will be determined by the acid dissociation constant equation.
+    \item Combining these previous two points 
+\end{enumerate}
+
+
+\section*{Scratch Work}
+
+\begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+    \hline
+    X   & $[HBrO]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[BrO^-]$ & ${}+{}$ & $[H_3O^+]$ \\
+    \hline
+    I   &  0.88    &&     &&  0   && 0  \\
+    C   &   -x   &&     &&  x   &&  x \\
+    E   &   0.88-x   &&     &&   x  && x  \\      
+\end{tabular}
+
+\begin{equation*}
+    \begin{aligned}
+        K_a = \frac{x^2}{0.88-x} \\
+        2.3*10^-9 * 0.88 = x^2 \\
+        x = 4.49889*10^{-5} \\
+        pH = -log_{10}(x)     
+    \end{aligned}
+\end{equation*}
+
+For any weak acid with Ka and inital concentration M assuming small x approximation:
+\begin{equation}
+    pH = - log_{10}(K_a*M)
+\end{equation}
+
+\begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+    \hline
+    X   & $[HA]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[H_3O^+]$ & ${}+{}$ & $[A^-]$ \\
+    \hline
+    I   &  1.9    &&     &&  0   && 0  \\
+    C   &   -x   &&     &&  x   &&  x \\
+    E   &   1.9-x   &&     &&   x  && x  \\      
+\end{tabular}
+
+\begin{equation*}
+    \begin{aligned}
+        K_a &= \frac{[H_3O^+][A^-]}{[HA]} \\
+        K_a &= \frac{x^2}{1.9-x} \\
+        K_a &= \frac{x^2}{1.9} \\
+        6.0*10^{-6}*(1.9) &= x^2 \\
+        x &= \sqrt{6.0*10^{-6}*(1.9)} \\
+        [H^+] &= 0.00337... \\
+        pH &= -log_{10}\left(\sqrt{6.0*10^{-6}*(1.9)}\right) \\
+        pH &= 2.47154757433
+    \end{aligned}
+\end{equation*}
+
+If K = 5, then the ratio of products to reactants will be 5 - I'm assuming that we can ignore the number of atoms in each molecule so we can make it easier to determine whether the solution is in equilibrium.
+\begin{equation*}
+    \begin{aligned}
+        \text{Product} = 8 \\
+        \text{Reactant} = 2 \\
+        \frac{P}{R} = \frac{8}{2} = 4 \\
+    \end{aligned}
+\end{equation*}
+Thus the solution isn't in equilibrium.
+
+...For K = 11
+\begin{equation*}
+    \begin{aligned}
+        \text{Product} = 11 \\
+        \text{Reactant} = 1 \\
+        \frac{P}{R} = \frac{11}{1} = 11 \\
+    \end{aligned}
+\end{equation*}
+
+Finding pOH - done by subtracting pH from 14:
+\begin{equation*}
+    \begin{aligned}
+        pOH = 14 - pH
+    \end{aligned}
+\end{equation*} 
+
+Finding \% evaporated since isolated:
+\begin{enumerate}
+    \item Parsons Concentration is 69 $\frac{g}{L}$
+    \item Regular Concentration is 2.2 $\frac{g}{L}$
+    \item Setting up equation:
+    \begin{equation*}
+        \begin{aligned}
+            C_0 = C_i = 2.2 \frac{g}{L} \\
+        \end{aligned}
+    \end{equation*}
+    \item Presently, 
+    \begin{equation*}
+        \begin{aligned}
+            xC_0 = 69 \\
+            C_0 = 2.2 \\
+            x(2.2) = 69 \\
+            x = \frac{69}{2.2}  = 31.36 \text{times more salty}\\
+            \frac{100}{31.36} = 2.75\% 
+            \text{Percent Evaporated} = 100 - 2.75 = 97.25
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
+Finding Equilibrium Constant for Reaction: \\
+\ce{H2C2O4 -> 2H^+ + C2O4^2-}
+K = \ce{\frac{[H]^2[C2O4]}{[H2C2O4]}}
+
+\begin{equation*}
+    \begin{aligned}
+        \ce{2NH3_(g) <=> N2_(g) + 3H2_(g)}
+    \end{aligned}
+\end{equation*}
+
+Finding inital concentration for ammonia:
+\begin{equation*}
+    \begin{aligned}
+        &M = \frac{[NH_3]}{V} = \frac{2.2}{0.2} \\
+        &M = 11M
+    \end{aligned}
+\end{equation*}
+
+\begin{tabular}{c|c@{}c@{}c@{}c@{}c}
+    \hline
+    X   &   $[2NH_3]$ & ${}\leftrightharpoons{}$ & $[N_2]$ & ${}+{}$ & $[3H_2]$\\
+    \hline
+    I   & 11          &&   0                           &&  0       \\
+    C   & -2x         &&   x                           &&  3x      \\
+    E   & 11 - 2x     &&   x                           &&  3x      \\
+    \hline
+\end{tabular}
+
+Creating $K_c$:
+\begin{equation*}
+    \begin{aligned}
+        K_c &= \frac{[N_2][H_2]^3}{[NH_3]^2} \\
+            &= \frac{[x][3x]^3}{[11-2x]^2} \\
+    \end{aligned}
+\end{equation*}
+
+Plugging in $[H_2] = 1.7/0.2 = 8.5M$ and applying small-x approximation:
+\begin{equation*}
+    \begin{aligned}
+        K_c &= \frac{[N_2][H_2]^3}{[NH_3]^2} \\
+            &= \frac{[x][8.5]^3}{[11]^2} \\
+    \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+    \begin{aligned}
+        K = \ce{\frac{[H_2] [Cl_2]}{[HCl^2]}}
+    \end{aligned}
+\end{equation*}
+Finding M/L for HCl:
+\begin{equation*}
+    \begin{aligned}
+        M = \frac{0.39mol}{17L} = 2.3*10^{-2}M
+    \end{aligned}
+\end{equation*}
+
+Important for finding K - since HCl is a strong acid, there will be no HCl at equilibrium ideally. And since we have 2M HCl for H2 and Cl2 respectively, the final K will be $\left(2.3*10^-2\right)^2$
+
+\begin{tabular}{c|c@{}c@{}c@{}c@{}c}
+    \hline
+    X   &   $[2HCl]$ & ${}\leftrightharpoons{}$ & $[H_2]$ & ${}+{}$ & $[Cl_2]$\\
+    \hline
+    I   &  0.023     &&   0                            &&  0       \\
+    C   &       -2x      &&   x                           &&  x      \\
+    E   &   0.023 - 2x     &&   x                           &&  x      \\
+    \hline
+\end{tabular}
+
+\begin{equation*}
+    \begin{aligned}
+        K &= \ce{\frac{[H_2] [Cl_2]}{[HCl^2]}} \\
+        K &= \frac{x*x}{0.023 - 2x} \\
+        (0.023 - 2x)K &= x^2 \\
+        0.023K - 
+    \end{aligned}
+\end{equation*}
+
+
+
+Ammonia decomposition:
+\begin{equation*}
+    \begin{aligned}
+        \ce{2NH3 -> 3H2 + N2}
+    \end{aligned}
+\end{equation*}
+if we have 4.5 atm of ammonia gas, and have 1.4 atm of nitrogen gas in a 5L 
+
+Create ICE Table \\
+\begin{tabular}{c|c@{}c@{}c@{}c@{}c}
+    \hline
+    X   &   $[2NH_3]$ & ${}\leftrightharpoons{}$ & $[N_2]$ & ${}+{}$ & $[3H_2]$\\
+    \hline
+    I   &       4.5     &&   0                            &&  0       \\
+    C   &       -2x      &&   x                           &&  3x      \\
+    E   &   4.5 - 2x     &&   x                           &&  3x      \\
+    \hline
+\end{tabular}
+\begin{equation*}
+    \begin{aligned}
+        K_P &= \frac{[N_2] [H_2]^3}{[NH_3]^2} \\
+            &= \frac{x(3x)}{(4.5-2x)^3} \\
+            &= \frac{1.4(3*1.4)}{(4.5-2*1.4)^3} 
+    \end{aligned}
+\end{equation*}
+
+Sulfur dioxide and oxygen gas react too make sulfur trioxide reaction:
+\begin{equation*}
+    \begin{aligned}
+        \ce{2SO2 + O2 -> 2SO3}
+    \end{aligned}
+\end{equation*}
+
+Create ICE Table \\
+\begin{tabular}{c|c@{}c@{}c@{}c@{}c}
+    \hline
+    X   &   $[2SO_2]$ & ${}+{}$ & $[O_2]$ & ${}\leftrightharpoons{}$ & $[2SO_3]$ \\
+    \hline
+    I   &       0.3066       &&   0.4133        &&  0       \\
+    C   &       -2x      &&   -x        &&  2x      \\
+    E   &       0.3066 - 2x     &&   0.4133 - x        &&  2x      \\
+    \hline
+\end{tabular}
+
+\begin{equation*}
+    \begin{aligned}
+        K_b = \ce{\frac{[(CH3)2NH^+][OH-]}{(CH3)2NH}}
+    \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+    \begin{aligned}
+        K_b = \ce{\frac{[(CH3)3NH+][OH-]}{(CH3)3N}}
+    \end{aligned}
+\end{equation*}
+
+Original
+\begin{equation*}
+    \begin{aligned}
+        O = 4 \\
+        d = 6 
+    \end{aligned}
+\end{equation*}
+Box C
+\begin{equation*}
+    \begin{aligned}
+        O = 4 \\
+        d = 6 
+    \end{aligned}
+\end{equation*}
+
+Box E
+\begin{equation*}
+    \begin{aligned}
+        O = 5 \\
+        d = 5 
+    \end{aligned}
+\end{equation*}
+
+\section*{Writing the dissocation reactions of a polyprotic acid}
+\begin{exmp}
+    Carbonic acid \ce{H2CO3} is a polyprotic acid. Write balanced chemical equations that phosphoric acid can undergo when its dissolved in water. 
+\end{exmp}
+A polyprotic acid is an acid that has more than 1 acidic hydrogen. In this case, carbonic acid has two, and they are written in the front of the chemical formula.
+\newline
+If you're told a compound is a polyprotic acid and you see that the formula starts off with several H's, its a reasonable assumption at the general chemistry level that these are the acidic hydrogens.
+\newline
+However 
+
+\end{document}

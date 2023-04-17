@@ -1,0 +1,946 @@
+\documentclass{article}  % //TODO find why latex gives errors for report and using textsc!
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mhchem}
+\usepackage{amssymb}
+\usepackage[margin=1in]{geometry}
+
+\title{UW CHEM 152 Notes}
+\author{Anthony Le}
+
+\newtheorem{exmp}{Example}
+\newtheorem{exrc}{Excersize}
+\newtheorem{proof}{Statement}
+\newtheorem{defn}{Definition}
+
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[R]{UW CHEM 152}
+\fancyhead[L]{Anthony Le}
+\fancyfoot[L]{\thepage}
+
+\begin{center}
+    \LARGE{\textbf{Review - CHEM 142: Kinetics}}
+\end{center}
+title
+\section*{Chemical Reactions}
+Consider a chemical reaction of the form \ce{A -> B}.
+\begin{enumerate}
+    \item The rate of a reaction tells you how many times a reaction happens in a certain amount of time.
+    \item if the reaction \ce{A -> B} is first order, the the rate is proportational to the concentration of A: 
+    \begin{equation*}
+        \begin{aligned}
+            \text{Rate} = k * [A]    
+        \end{aligned}
+    \end{equation*}
+    \begin{enumerate}
+        \item From the differential rate law, we can find how the concentration of A and B as a function of time. 
+        \item Since the rate is dependent of the concentration of A, once all of A is consumed, then we can say the reaction is complete (sometimes)
+    \end{enumerate} 
+\end{enumerate}
+
+However, this isn't the only type of reaction. There are also:
+\subsection*{Reversible Reactions}
+\begin{enumerate}
+    \item If the reaction can happen both ways: \ce{A -> B} and \ce{B -> A}. 
+    \item We write this as \ce{A <=> B}. 
+    \item As you can expect, you'll have 2 different rates corresponding to their reactions - so you can find how the concentrations of A and B change with respect to time
+\end{enumerate}
+These reactions will continue to happen until a time where the forward and reverse rates become equal to each other, and thus the concentrations no longer change AKA chemical equilibrium.
+
+\begin{defn}
+    \textbf{Chemical Equilibrium} \\
+    Where forward and backward reaction rates become equal to each other and concentrations no longer change.
+\end{defn}
+
+\textbf{The goal of this class is to predict the concentrations of all species in equilibrium.}
+
+\subsection*{General Chemical Reactions}
+Consider a general \textbf{elementary} (reaction order is equal to the stoichiometric coefficient) chemical reaction: \\
+Forward Reaction:
+\begin{equation*}
+    \begin{aligned}
+        \ce{aA + bB -> cC + dD}
+    \end{aligned}
+\end{equation*}
+
+Backward Reaction:
+\begin{equation*}
+    \begin{aligned}
+        \ce{aA + bB <- cC + dD}
+    \end{aligned}
+\end{equation*}
+
+Forward Rate:
+\begin{equation*}
+    \begin{aligned}
+        \text{Forward Rate} = k_f[A]^a[B]^b
+    \end{aligned}
+\end{equation*}
+
+Backward Rate:
+\begin{equation*}
+    \begin{aligned}
+        \text{Backward Rate} = k_b[C]^c[D]^d
+    \end{aligned}
+\end{equation*}
+
+Chemical Equilibrium (In Terms of Rates):
+\begin{equation*}
+    \begin{aligned}
+        \text{Forward Rate} = \text{Backward Rate} \\
+        k_f[A]^a[B]^b = k_b[C]^c[D]^d
+    \end{aligned}
+\end{equation*}
+
+This essentially describes that rates at where chemical equilibrium happens.
+Solving for the stoichiometric constants $k_f$ and $k_b$
+\begin{equation*}
+    \begin{aligned}
+        \frac{[C]^c[D]^d}{[A]^a[B]^b} = \frac{k_f}{k_b}     
+    \end{aligned}
+\end{equation*}
+This gives us the stoichiometric coeffiencents for where equilibrium occurs. This gives us the constant that is dependent on temperature, and not concentration.
+
+
+\begin{exmp}
+    A scientist performs experiments at 500 C to study equilibrium concentrations of the ammonia synthesis reaction. 
+    \begin{equation*}
+        \begin{aligned}
+            \ce{N_2 (g) + 3H_2(g) <=> 2NH_3 (g)}        
+        \end{aligned}
+    \end{equation*}
+\end{exmp}
+By finding the equilibrium coefficients for all 3 reactions from the previous equation: 
+\begin{equation*}
+    \begin{aligned}
+        \frac{[C]^c}{[A]^a[B]^b} = \frac{k_f}{k_b} \\
+        \frac{[NH_3]^2}{[N_2][H_2]^3} = \frac{k_f}{k_b}
+    \end{aligned}
+\end{equation*}
+From this example (see class slides), we get the Law of Mass Action:
+
+\begin{defn}
+    \textbf{Law of Mass Action} \\
+    For a reversible gas- or solution-phase chemical reaction 
+    \begin{equation*}
+        \begin{aligned}
+            \ce{aA + bB <=> cC + dD}
+        \end{aligned}
+    \end{equation*}
+    The ratio of concentrations K at equilibrium is constant (regardless of inital concentrations) at a given temperature, where K is defined as \\
+    \begin{equation*}
+        \begin{aligned}
+            K = \frac{[C]^c[D]^d}{[A]^a[B]^b} 
+        \end{aligned}
+    \end{equation*}
+    For gas phase reactions, we also use partial pressures instead of concentrations to describe the chemical equilibrium. \\
+    The pressure-based equilibrium constant is:
+    \begin{equation*}
+        \begin{aligned}
+            K_P = \frac{\left(\frac{P_C}{P_0}\right)^c \left(\frac{P_D}{P_0}\right) ^d}{\left(\frac{P_A}{P_0}\right) ^a \left(\frac{P_B}{P_0}\right) ^b}
+        \end{aligned}
+    \end{equation*}
+    Where $P_0 = 1$ atm as the reference temperature. 
+\end{defn}
+
+\begin{proof}
+    The equilibrium concentrations themselves \textbf{DO} depend on the inital concentrations are. \\
+    However the ratio of equilibrium concentrations \textbf{DO NOT} depend on the inital conditions.
+\end{proof}
+
+However, using concentrations doesn't exactly make the units work out perfectly - so we use the "activities" of the molecular species instead of their concentrations. For ideal gases and molecules in solution, the activity is equal to the concentration divided by a reference concentration $c_0$, which by common convention 1 molar.
+\begin{equation*}
+    \begin{aligned}
+        a_A  = \frac{[A]}{c_0} \\
+        a_B  =\frac{[B]}{c_0} \\
+        a_C  = \frac{[C]}{c_0} \\
+        a_D  =\frac{[D]}{c_0} \\ 
+    \end{aligned}
+\end{equation*}
+One thing to note is that even though we continue to write the equilibrium constant in form:
+\begin{equation*}
+    \begin{aligned}
+        K = \frac{[C]^c[D]^d}{[A]^a[B]^b} 
+    \end{aligned}
+\end{equation*}
+We actually mean to write the equilibrium constant in form:
+\begin{equation*}
+    \begin{aligned}
+        K = \frac{[a_C]^c[a_D]^d}{[a_A]^a[a_B]^b} 
+    \end{aligned}
+\end{equation*}
+
+\begin{exmp}
+    The reaction 
+    \begin{equation*}
+        \begin{aligned}
+            \ce{H_2O (g) + CO (g) <=> H_2 (g) + CO_2 (g)}
+        \end{aligned}
+    \end{equation*}
+    Has the equilibrium constant K = 4 at 800K. What will the equilibrium concentrations be if you put 1 mole of \ce{H_2O} and 1 mole of \ce{CO} into a container of volume 1L at that temperature?
+\end{exmp}
+
+Due to stoichiometry, \ce{[H_2O] = [CO]}, \ce{[H_2] = [CO_2]}, \ce{[H_2O] + [CO] + [H_2] + [CO_2] = 2M}
+\begin{enumerate}
+    \item Due to how these these 2 chemicals have the same stoichiometric coefficients (they both have 1), they will always have the same amount at all times. 
+    \item The total number of molecules you should have should always be the same.
+    \begin{enumerate}
+        \item Since in both forward and backward reactions, you have 2 molecules being transformed into 2 other molecules.
+    \end{enumerate}
+
+\end{enumerate}
+However, you need the law of mass action in order to find the equilibrium concentrations to act as the fourth equation which you can use to solve for them!
+
+\begin{enumerate}
+    \item Since we're given K = 4 and we're trying to find the equilibrium concentrations:
+    \begin{equation*}
+        \begin{aligned}
+            K = \frac{[H_2][CO_2]}{[H_2O][CO]} \\
+            4 = \frac{[H_2][CO_2]}{[H_2O][CO]} \\
+            4 = \frac{[H_2]^2}{[H_2O]^2} \\
+            [H_2] = 2[H_2O]
+        \end{aligned}
+    \end{equation*}
+    \item Note that since we're given that \ce{[H_2O] = [CO]} and \ce{[H_2] = [CO_2]}, we can replace \ce{[CO]} and \ce{[CO_2]} so we can simplify the law of mass action.
+    \item Given that we know \ce{[H_2O] + [CO] + [H_2] + [CO_2] = 2M}, let replace \ce{[CO]} and \ce{[CO_2]}
+    \begin{equation*}
+        \begin{aligned}
+           \ce{[H_2O] + [CO] + [H_2] + [CO_2] = 2M} \\
+           \ce{[H_2O] + [H_2O] + 2[H_2O] + 2[H_2O] = 2M} \\
+           \ce{6[H_2O] = 2M} \\
+           \ce{[H_2O] = \frac{1}{3}M}
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
+Equilibrium is reached when the forward and reverse reactions occur at the same rate, so there is no net change in the concentrations of reactants and products. However, where this balancing point occurs can be different for each reaction:
+\begin{equation*}
+    \begin{aligned}
+        \ce{2H2 + O2 <=> 2H2O} \quad K = 2.4 * 10^47, T = 500 K \\
+        \ce{Cl2 <=> 2Cl} \quad K = 1.8 * 10 ^-9, T = 1000 K \\
+        \ce{H2 + I2 <=> 2HI} \quad K = 0.3, T = ??? K
+    \end{aligned}
+\end{equation*}
+
+For a general chemical reaction in which the number of gas-phase molecules changes by $\Delta n$: 
+\begin{equation*}
+    \begin{aligned}
+        K_C = (\frac{P_0}{c_0RT})^{\Delta N} K_P \quad K_P = (\frac{c_0RT}{P_0})^{\Delta N} K_c
+    \end{aligned}
+\end{equation*}
+
+\section*{Activities and Heterogeneous Equilibrium}
+For ideal gases and molecules in solution, the activity is equal to the concentration divided by a reference concentration $c_0 = 1M$
+\begin{equation*}
+    \begin{aligned}
+        a_A &= \frac{[A]}{c_0} \\
+            &=\frac{[A]}{1} \\
+    \end{aligned}
+\end{equation*}
+For solids and pure liquids, the activity is simply equal to 1.
+\begin{exmp}
+    What is K for the thermal decomp. for calcium carbonate to calcium oxide and carbon dioxide?
+\end{exmp}
+\begin{equation*}
+    \begin{aligned}
+        &\ce{CaCO3 <=> CaO + CO2} \\
+        K &= \frac{a_{CaO}a_{CO_2}}{a_{CaCO_3}} \\
+          &= a_{CO_2} = \frac{\ce{CO2}}{1M}
+    \end{aligned}
+\end{equation*}
+Note - this shows us that the equilibrium constant is depentent on the gas molecules and independent on the others.
+
+\section*{Manipulating Equilibrium Constants}
+\begin{exmp}
+    Ammonia Synthesis Reaction 
+    \begin{equation*}
+        \begin{aligned}
+            \ce{N2 + 3 H2 <=> 2 NH3} \quad K = \ce{\frac{[NH3]^2}{[N2][H2]^3}}
+        \end{aligned}
+    \end{equation*}
+\end{exmp}
+Swapping reactants and products \\
+Note - swapping reactants and products gives the inverse of the equilibrium constant.
+
+\begin{equation*}
+    \begin{aligned}
+        \ce{2 NH3 <=> N2 + 3 H2} \quad K^f = \ce{\frac{[N2][H2]^3}{[NH3]^2}}
+    \end{aligned}
+\end{equation*}
+
+\begin{exmp}
+    Multi-step formulation of nitrogen dioxide: 
+    \begin{equation*}
+        \begin{aligned}
+            &\ce{N2 + O2 <=> 2 NO} \quad K_1 = \ce{\frac{[NO]^2}{[N2][O2]}} \\
+            &\ce{2 NO + O2 <=> 2 NO2} \quad K_2 = \ce{\frac{[NO2]^2}{[NO]^2[O2]}} \\
+            &\ce{N2 + 2 O2 <=> 2 NO2} \quad K = \ce{\frac{[NO2]^2}{[N2][O2]^2}} = K_1K_2
+        \end{aligned}
+    \end{equation*}
+\end{exmp}
+Note - When adding reactions, multiply equilibrium constants.
+
+\begin{exmp}
+    Multiplying first step reaction by 3: 
+    \begin{equation*}
+        \begin{aligned}
+            &\ce{3N2 + 3O2 <=> 6 NO} \quad K = \ce{\frac{[NO]^6}{[N2]^3[O2]^3}} = K_1^3 \\
+        \end{aligned}
+    \end{equation*}
+\end{exmp}
+Note - when multiplying a reaction by a number n, raise the equilibrium constant to the n-th power.
+
+\section*{The Reaction Quotient Q}
+We've seen from the law of mass action: 
+\begin{equation*}
+    \begin{aligned}
+        \ce{aA + bB <=> cC + dD}
+    \end{aligned}
+\end{equation*}
+The concentrations in \textbf{in chemical equilibrium} satisify:
+\begin{equation*}
+    \begin{aligned}
+        K = \frac{[C]^c[D]^d}{[A]^a[B]^b} 
+    \end{aligned}
+\end{equation*}
+However, what if you're not in chemical equilibrium? We can calculate the reaction quotient Q:
+\begin{equation*}
+    \begin{aligned}
+        Q = \frac{[C]^c_0[D]^d_0}{[A]^a_0[B]^b_0} 
+    \end{aligned}
+\end{equation*}
+This represents what has to happen to reach equilibrium.
+
+\begin{defn}
+    \textbf{Reaction Quotient (Q)} 
+    \begin{equation*}
+        \begin{aligned}
+            Q = \frac{[C]^c_0[D]^d_0}{[A]^a_0[B]^b_0} 
+        \end{aligned}
+    \end{equation*}
+    \begin{enumerate}
+        \item If Q $<$ K, there is not enough product or too much reactant compared to equilibrium. The system will shift "toward the right" AKA the system will be biased to have more forward reactions happening relative to backward reactions.
+        \item If Q $>$ K, there is too much product/too little reactant compared to equilibrium. The system will shift "toward the left" ALA the system will be biased to have more backward reactions happening relative to forward reactions.
+        \item If Q = K, the system is in equilibrium.
+    \end{enumerate}
+\end{defn}
+
+for ICE Table - as many columns as there are species in chemical reaction:
+I - Inital: represents inital concentrations in M
+C - Change: represents stoichiometric coefficients multiplied by x moles of molecules
+E - Equilibrium: Represents inital value added with change value 
+
+\subsection*{Quizzes}
+\begin{enumerate}
+    \item First quiz opens 4/5/2023 and is open between 3PM and Midnight and can be found on Canvas.
+    \item Only online resources allowed is Canvas quiz page itself and the online textbook.
+    \item Will need to have something to write on and scientific calculator.
+    \item Also \textbf{will not cover the lecture on the day the quiz is on}. But does cover previous lectures.
+\end{enumerate}
+
+\begin{exmp}
+    Ammonia synthesis reaction: \\
+    \begin{equation*}
+        \begin{aligned}
+            \ce{N2 + 3 H2 <=> 2 NH3} \quad K = 0.6 at 500C \\
+            \ce{N2 = 0.8M \quad H2 = 2.4M \quad NH3 = 0.6M} \\        
+        \end{aligned}
+    \end{equation*}
+\end{exmp}
+
+Finding Q from inital concentrations:
+\begin{equation*}
+    \begin{aligned}
+        Q = \frac{[C]^c_0[D]^d_0}{[A]^a_0[B]^b_0} \\
+        Q = \ce{\frac{[NH3]^2_0}{[N2]_0[H2]^3_0}} \\
+        Q = \ce{\frac{[0.6]^2_0}{[0.8]_0[2.4]^3_0}} \\
+    \end{aligned}
+\end{equation*}
+
+\begin{exmp}
+    Hydrogen Flouride Reaction and ICE Table 
+    \begin{equation*}
+        \begin{aligned}
+            \ce{H2 + F2 <=> 2HF}
+        \end{aligned}
+    \end{equation*}
+    3 moles of each species is added to a 1.5 L flask. K = 115. Find equilibrium concentrations.
+\end{exmp}
+\begin{enumerate}
+    \item Finding Inital Concentrations:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{[H2] = \frac{3M}{1.5L} =  2M \quad [F2] = \frac{3M}{1.5L} = 2M \quad [HF] = \frac{3M}{1.5L} = 2M}
+        \end{aligned}
+    \end{equation*}
+    \item Create ICE Table \\
+    \begin{tabular}{c|c@{}c@{}c@{}c@{}c}
+        \hline
+        X   &   $[H_2]$ & ${}+{}$ & $[F_2]$ & ${}\leftrightharpoons{}$ & $[2HF]$ \\
+        \hline
+        I   &       1       &&   2                            &&  0       \\
+        C   &       -x      &&   -x                           &&  2x      \\
+        E   &       1 - x     &&   2 - x                        &&  2x      \\
+        \hline
+      \end{tabular}
+    \item Write Equilibrium Expression:
+    \begin{equation*}
+        \begin{aligned}
+            K   &= \ce{\frac{[HF]^2}{[H2][F2]}} \\
+                &= \ce{\frac{[2x]^2}{[1-x][2-x]}}
+        \end{aligned}
+    \end{equation*}
+    \item Solve for x:
+    \begin{equation*}
+        \begin{aligned}
+            &K = \ce{\frac{[2x]^2}{[1-x][2-x]}} \\
+            & = K(1-x)(2-x) = (2x)^2 \\
+            & = 2K - Kx - 2Kx + Kx^2 =  \\
+            & = (K-4)x^2 - 3Kx + 2K = 0, \quad a = (K-4) \quad b = -3K \quad c = 2K \\
+        \end{aligned}
+    \end{equation*}
+    \item Plugging in K for a, b, and c and finding X via quadratic equation:
+    \begin{equation*}
+        \begin{aligned}
+            x = \frac{-b\pm\sqrt{b^2-4ac}}{2a} \\
+            x = \frac{345\pm\sqrt{345^2-4(111*230)}}{2(111)} \\
+            x_1 = 2.14 \quad x_2 = 0.968
+        \end{aligned}
+    \end{equation*}
+    \item However, we are x = 2.14 cannot be solution as the equilibrium concentration for \ce{H2} is $1-x$! Thus the solution is x = 0.968.
+    \item Calculating Equilibrium Concentrations:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{[H2] = (1-0.968)M = 0.032M} \\
+            \ce{[F2] = (2-0.968)M = 1.032M} \\
+            \ce{[HF] = (2*0.968)M = 1.936M} \\
+        \end{aligned}
+    \end{equation*}
+    \item Checking Results (Optional)
+    \begin{equation*}
+        \begin{aligned}
+            K   &= \ce{\frac{[HF]^2}{[H2][F2]}} \\
+            &= \ce{\frac{1.936^2}{0.032*1.032}} \\
+            &= 113 \approx K
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
+\begin{exmp}
+    Decomposition of Nitrosyl Chloride \\
+    \begin{equation*}
+        \begin{aligned}
+            \ce{2 NOCl <=> 2 NO + Cl2} \quad K = 1.6 * 10^-5 @ 35C \\
+        \end{aligned}
+    \end{equation*}
+    Walter White adds 1 mol \ce{NOCl} into a 2L flask, what are the equilibrium concentrations?
+\end{exmp}
+
+\begin{enumerate}
+    \item Finding Inital Concentrations:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{[NOCl] = \frac{3M}{1.5L} =  2M \quad [F2] = \frac{3M}{1.5L} = 2M \quad [HF] = \frac{3M}{1.5L} = 2M}
+        \end{aligned}
+    \end{equation*}
+    \item Create ICE Table \\
+    \begin{tabular}{c|c@{}c@{}c@{}c@{}c}
+        \hline
+        X   &   $[2 NOCl]$  & ${}\leftrightharpoons{}$ & $[2NO]$ & ${}+{}$ & $[Cl_2]$ \\ %//TODO - correct format of ICE table to match example slides
+        \hline
+        I   &   0.5         &&   0                            &&  0     \\
+        C   &   -2x         &&   2x                           &&  x      \\
+        E   &   0.5 - 2x    &&   2x                           &&  x      \\
+        \hline
+      \end{tabular}
+    \item Write Equilibrium Expression:
+    \begin{equation*}
+        \begin{aligned}
+            K   &= \ce{\frac{[NO]^2[CL2]}{[NOCl]^2}} \\
+                &= \ce{\frac{(2x)^2x}{(0.5-2x)^2}} \\
+                &= \ce{\frac{4x^3}{(0.5-2x)^2}} \\
+        \end{aligned}
+    \end{equation*}
+    \item Solve for x:
+    \begin{equation*}
+        \begin{aligned}
+            K &= \ce{\frac{4x^3}{(0.5-2x)^2}} \\
+              &= 4x^3 - 4Kx^2 + 2Kx - 0.25K = 0%//TODO - Add in cubic formula from example here!
+        \end{aligned}
+    \end{equation*}
+    \item However, you get a cubic function here which makes things much harder to solve for X! We've seen that the equilibrium constant is very small, so we should expect to the equilibrium position to be far to the left, and x to be small. \\    
+    Lets simplify $0.5-2x \approx 0.5$ (Small X Approximation) and try again.
+    \item Write Equilibrium Expression:
+    \begin{equation*}
+        \begin{aligned}
+            K   &= \ce{\frac{[NO]^2[CL2]}{[NOCl]^2}} \\
+                &= \ce{\frac{(2x)^2x}{(0.5)^2}} \\
+                &= \ce{\frac{4x^3}{0.25}} \\
+            K    &= 16x^3
+        \end{aligned}
+    \end{equation*}
+    \item Solving for X:
+    \begin{equation*}
+        \begin{aligned}
+            &K = 16x^3 \\
+            &\rightarrow x = \left(\frac{K}{16}\right)^{1/3} \\
+            &\rightarrow x = 0.01
+        \end{aligned}
+    \end{equation*}
+    \item Calculating Equilibrium Concentrations:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{[H2] = (2-0.01)M = 0.48M} \\
+            \ce{[F2] = (2*0.01)M = 1.032M} \\
+            \ce{[HF] = (2*0.968)M = 1.936M} \\
+        \end{aligned}
+    \end{equation*}
+    \item Checking Results (Optional)
+    \begin{equation*}
+        \begin{aligned}
+            K   &= \ce{\frac{[HF]^2}{[H2][F2]}} \\
+            &= \ce{\frac{1.936^2}{0.032*1.032}} \\
+            &= 113 \approx K
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
+%//TODO - take notes on friday's lecture!
+
+\section*{Strong and Weak Acids}
+Acid dissociation reaction:
+\begin{equation*}
+    \begin{aligned}
+        \ce{HA_(aq) + H2O_(l) <=> H3O+_(aq) + A-_(aq)} \text{Or,}
+        \ce{HA_(aq) + H2O_(l) <=> H+_(aq) + A-_(aq)}\text{\footnote{remember we use \ce{H3O} and \ce{H+} interchangeably}}
+    \end{aligned}
+\end{equation*}
+
+The equilibrium constant is also called the "acid dissociation constant" and is written as $K_a$:
+\begin{equation*}
+    \begin{aligned}
+        K_a = \ce{\frac{[H3O] [A-]}{[HA]}}
+    \end{aligned}
+\end{equation*}
+For strong acids, they dissociate completely, and thus when we compute $K_a$ gives us $\infty$; indicating equilibrium is "to the right".
+\begin{equation*}
+    \begin{aligned}
+        \ce{HA + H2O -> H3O+ + A-} \\
+        K_a >> 1
+    \end{aligned}
+\end{equation*}
+For weak acids, they do not completely dissociate, and we will still have some $\ce{HA}$ left over. Computing $K_a$ will give us a number that is less than 1 indicating equilibrium is "to the left"
+\begin{equation*}
+    \begin{aligned}
+        \ce{HA + H2O -> H3O+ + A- + HA} \\
+        K_a < 1
+    \end{aligned}
+\end{equation*}
+
+\begin{exmp}
+    What is the hydronium concentration of a 0.2M solution of hydrochloric acid (HCl) in equilibrium.
+\end{exmp}
+\begin{enumerate}
+    \item Since HCl is a strong acid and completely dissociates, we will have a reaction:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{HA + H2O -> H3O+ + A-} \\
+            \ce{[H3O+] = [HCl]_0 = 0.2M}
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
+\begin{exmp}
+    What is the hydronium concentration of a 0.2M solution of nitrious acid ($\ce{HNO2}$) in equilibrium with $K_a = 4*10^-4$
+\end{exmp}
+\begin{enumerate}
+    \item You must make a ICE table to find it! \\
+    \begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+        \hline
+        X   &   $[HNO_2]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[H_3O^+]$ & ${}+{}$ & $[NO_2^-]$\\
+        \hline
+        I   & 0.2 && - &&  0 && 0       \\
+        C   & -x && - &&  x && x      \\
+        E   & 0.2 - x && - && x && x      \\
+        \hline
+      \end{tabular}
+    \item Creating $K_a$ 
+    \begin{equation*}
+        \begin{aligned}
+            K_a &= \ce{\frac{[H3O] [A-]}{[HA]}} \\
+            K_a &= \frac{x^2}{0.2-x} \text{Then applying small x approximation} \\
+                &= \frac{x^2}{0.2} \\
+            x   &= \sqrt{0.2K_a} = \sqrt{0.2*4*10^-4} \\
+            x   &= 0.009 \\
+            \ce{[H3O+]} &= 0.009
+        \end{aligned}
+    \end{equation*}
+    \item Checking approximation 
+    \begin{equation*}
+        \begin{aligned}
+            \text{Error} &= \frac{x}{0.2} \\
+            &= \frac{0.009}{0.2} \\
+            \text{Error} &= 4.5\% \quad \text{Error within 5\%, acceptiable to use small x approximation!}
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
+\section*{Water Autoionizaztion}
+Water undergoes acid dissociation with itself. This is called autoionization:
+\begin{equation*}
+    \begin{aligned}
+        \ce{H2O_(l) + H2O_(l) -> H3O+_(aq) + OH-_(aq)}
+    \end{aligned}
+\end{equation*}
+The equilibrium constant in this case is also called the "water autodissociation constant" and is written as $K_w$. This is a measure for how acidic water is.
+\newline
+For pure water at room temperature (25C):\footnote{There is no such thing as perfectly "pure" water - it constantly fluxuates between slightly basic and slightly acidic}
+\begin{equation*}
+    \begin{aligned}
+        \ce{[H3O+]} = 10^-7 M \\
+        \ce{[OH-]} = 10^-7 M \\
+        K_w = 10^-14
+    \end{aligned}
+\end{equation*}
+
+
+%An aqueous solution is called:
+%\begin{enumerate}
+%    \item Neutral if $\ce{[H3O+] = [OH-]}$
+%    \item Acidic if $\ce{[H3O+] > [OH-]}$
+%    \item Basic if $\ce{[H3O+] < [OH-]}$
+%\end{enumerate}
+
+\section*{Multiple Simultaneous Equilibria}
+Water autoionization:
+\begin{equation*}
+    \begin{aligned}
+        \ce{H2O_(l) + H2O_(l) -> H3O+_(aq) + OH-_(aq)} \quad K_w = [H3O+][OH-]
+    \end{aligned}
+\end{equation*}
+
+Acid dissociation: 
+\begin{equation*}
+    \begin{aligned}
+        \ce{HA + H2O -> H3O+ + A-} \quad K_a = \ce{\frac{[H3O] [A-]}{[HA]}}
+    \end{aligned}
+\end{equation*}
+
+In order to find the equilibrium concentrations, we have to solve for ALL things like $\ce{[H3O+]}$ and $\ce{[OH-]}$ using both equilibrium constants at the same time. 
+\newline
+This can be done, but is complicated to do so - instead, we'll do a simple shortcut:
+
+\begin{exmp}
+    What is the hydronium concentration of a 0.2M solution of nitrious acid ($\ce{HNO2}$) in equilibrium with $K_a = 4*10^-4$
+\end{exmp}
+We found that \ce{[H3O+]} = 0.009M from the dissociation of the nitrious acid. Water autoionization also adds additional hydronium ions, but only $10^-7$M, a miniscule amount relative to the acid dissociation.
+\newline
+\textbf{For these cases, we can igniore the contribution from the water autoionization.}
+
+\section*{The power of Hydrogen}
+The concentration of protons (or hydronium ions) is an important property of aqueous solutions. It's often quite small, and is often convenient to express it in a different from that yields more "convenient" numbers: (AKA pH scale)
+\begin{equation*}
+    \begin{aligned}
+        pH = -log_{10}[H^+] \quad [H^+] = 10^{-pH}
+    \end{aligned}
+\end{equation*}
+Where:
+\begin{enumerate}
+    \item p stands for $-log_10$
+    \item $[H^+]$ represents the concentration of $H^+$ in Molar
+\end{enumerate}
+Note that pH represents the "inverse order of magnitude" of the hydronium concentration. Which means:
+\begin{enumerate}
+    \item The smaller the pH, the more "acidic" a solution is. (Such as HCl and lemon juice)
+    \item The greater the pH, the more "basic" a solution is. (Such as baking soda or household ammonia)
+\end{enumerate}
+
+\begin{exmp}
+    What is the pH of a 0.5M solution of acetic acid \ce{CH3COOH}, a weak acid with $K_a = 1.8*10^-5$?
+\end{exmp}
+
+\begin{equation*}
+    \begin{aligned}
+        \ce{CH3OOH_(aq) + H2O_(l) <=> CH3OO-_(aq) + H3O+_(aq)}
+    \end{aligned}
+\end{equation*}
+
+\section*{Strong and Weak Bases}
+Base hydrolysis reaction:
+\begin{equation*}
+    \begin{aligned}
+        \ce{B_(aq) + H2O_(l) <=> BH+_(aq) + OH-_(aq)} \quad K_b = \frac{[BH+][OH-]}{[[B]]}
+    \end{aligned}
+\end{equation*}
+In this situation, the equilibrium constant is also called the "base ionization constant" and is written as $K_b$.
+\newline
+Adding a base to water increases the concentration of hydroxide ions.
+\newline
+For strong bases, they are good at grabbing protons, and thus when we compute $K_b$ gives us $\infty$; indicating equilibrium is "to the right".
+\begin{equation*}
+    \begin{aligned}
+        \ce{B_(aq) + H2O_(l) <=> BH+_(aq) + OH-_(aq)} \\
+        K_a >> 1
+    \end{aligned}
+\end{equation*}
+For weak bases, they don't act as well at grabbing protons, and we will still have some $\ce{B}$ left over. Computing $K_b$ will give us a number that is less than 1 indicating equilibrium is "to the left"
+\begin{equation*}
+    \begin{aligned}
+        \ce{B_(aq) + H2O_(l) <=> BH+_(aq) + OH-_(aq) + B_(aq)} \\
+        K_a < 1
+    \end{aligned}
+\end{equation*}
+
+%//TODO - add in section where we can ignore water autoionization!
+
+\begin{exmp}
+    What is the hydroxidde concentration of a 0.1M solution of NaOH (sodium hydroxide), a strong base?
+    \begin{equation*}
+        \begin{aligned}
+            \ce{NaOH_(aq) <=> Na+_(aq) + OH-_(aq)}
+        \end{aligned}
+    \end{equation*}    
+\end{exmp}
+However, this doesn't even look like a base hydrolysis reaction! However, when we break it down further, we can show that this is still a hydrolysis reaction:
+\begin{equation*}
+    \begin{aligned}
+        \ce{Na+_(aq) + OH-_(aq) + H2O_(l) <=> Na+_(aq) + OH-_(aq) + H2O_(l)}
+    \end{aligned}
+\end{equation*}
+In this case, Na+ is a spectator ion.
+
+\begin{exmp}
+    What is the hydroxide concentration of a 0.1M solution of ammonia (\ce{NH3}) witha  weak base where $K_b = 1.8*10^-5$?
+\end{exmp}
+\begin{enumerate}
+    \item Writing reaction:
+    \item Creating ICE Table:
+    \begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+        \hline
+        X   & $[NH_3]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[NH_3^+]$ & ${}+{}$ & $[OH^-]$ \\
+        \hline
+        I   &  0.1   &&     &&  0   && 0  \\
+        C   &  -x    &&     &&  x   && x  \\
+        E   &  0.1-x &&     &&  x   && x  \\      
+    \end{tabular}
+    \item Writing $K_b$
+    \begin{equation*}
+        \begin{aligned}
+            K_b = \ce{\frac{[NH4+][]}{}} %//TODO - Complete this example from 4/12 lecture!
+        \end{aligned}
+    \end{equation*}
+    \item Solving for x
+    \item Is our small-x approximation appropiate?
+    \begin{equation*}
+        \begin{aligned}
+            \frac{x}{0.1} = 1.3\% < 5\% \quad \text{Is acceptiable}
+        \end{aligned}
+    \end{equation*}
+    \item Can we ignore autoionization of water?
+    \begin{equation*}
+        \begin{aligned}
+            0.0013 >> 10^-7 \quad \text{Can ignore autoionization}
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
+\section*{Relationship between pH and pOH}
+The water autoionization reaction:
+\begin{equation*}
+    \begin{aligned}
+        \ce{H2O + H2O <=> H3O+_(aq) + OH-_(aq)}
+    \end{aligned}
+\end{equation*}
+Guarantees that whenever the system is in equilibrium,
+\begin{equation*}
+    \begin{aligned}
+        K_w = \ce{[H3O+][OH-]}
+    \end{aligned}
+\end{equation*}
+Let's take $-log_10$ of both sides:
+\begin{equation*}
+    \begin{aligned}
+        log_10(K_w) &= log_10(\ce{[H3O+][OH-]}) \\
+                    &= -log_10(\ce{[H3O+]}) - log_10(\ce{[OH-]}) \\
+                    &= pH + pOH
+    \end{aligned}
+\end{equation*}
+For water at 25C, $K_w = 10^-14$ and therefore
+\begin{equation*}
+    \begin{aligned}
+        pH + pOH = 14 \quad \text{(at room temperature)}
+    \end{aligned}
+\end{equation*}
+
+\section*{Conjugate Acids and Bases}
+Acid Dissociation Reaction:
+\begin{equation*}
+    \begin{aligned}
+        \ce{HA_(aq) + H2O_(l) <=> H3O+_(aq) + A-_(aq)} \quad K_a = \ce{\frac{[H3O] [A-]}{[HA]}}
+    \end{aligned}
+\end{equation*}
+\ce{A-} can accept a proton and turn into HA, so it is a base - the conjugate base of HA.
+\begin{equation*}
+    \begin{aligned}
+        \ce{A-_(aq) + H2O_(l) <=> HA_(aq) + H2O_(l) } \quad K_b = \ce{\frac{[HA][OH-]}{[A-]}}
+    \end{aligned}
+\end{equation*}
+
+Now what if we take the product of the acid dissociation constant $K_a$ and the base ionization $K_b$ for a conjugate acid/base pair?
+\begin{equation*}
+    \begin{aligned}
+        K_a K_b = \ce{\frac{[H3O] [A-]}{[HA]}} \ce{\frac{[HA][OH-]}{[A-]}} = K_w
+    \end{aligned}
+\end{equation*}
+
+Important parts about conjugate acids and bases!!!
+\begin{enumerate}
+    \item Acids that are stronger than \ce{H3O} have conjugate bases that are weaker than \ce{H2O}. This makes sense as that we have to have Ka and Kb ALWAYS equal to 14 (or a constant!), thus the higher Ka, the lower Kb must be in order to compensate.
+    \item Acids that are weaker than water have conjugate bases that are stronger than \ce{OH-}
+    \item Acids that are weaker than \ce{H3O+} and stronger than \ce{OH-} have conjugate bases that have strengths somewhere in between the two cases above.
+\end{enumerate}
+
+\begin{exmp}
+    At 25C, the accid dissociation constant for acetic acid \ce{CH3COOH} is $K_a = 1.8*10^-5$. What is the pH of a 0.35M solution of acetate \ce{CH3COO-}?
+\end{exmp}
+\begin{enumerate}
+    \item Writing out reaction:
+    \item Creating ICE Table:
+    \begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+        \hline
+        X   & $[CH_3COO^-]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[CH_3COOH]$ & ${}+{}$ & $[OH^-]$ \\
+        \hline
+        I   &  0.35   &&     &&  0   && 0  \\
+        C   &  -x    &&     &&  x   && x  \\
+        E   &  0.35-x &&     &&  x   && x  \\      
+    \end{tabular}
+    \item Writing $K_b$
+    \begin{equation*}
+        \begin{aligned}
+            K_b = \ce{\frac{[CH3COOH][OH-]}{CH3COO-}} %//TODO - Complete this example from 4/12 lecture!
+        \end{aligned}
+    \end{equation*}
+    \item Solving for x
+    \item Is our small-x approximation appropiate?\footnote{Double check small x approximation error by dividing the x concentration by inital concentration - this will give you the error}
+    \begin{equation*}
+        \begin{aligned}
+            \frac{x}{0.35} = 0.004\% < 5\% \quad \text{Is acceptiable}
+        \end{aligned}
+    \end{equation*}
+    \item Can we ignore autoionization of water?
+    \begin{equation*}
+        \begin{aligned}
+            1.4*10^-5 >> 10^-7 \quad \text{Can ignore autoionization}
+        \end{aligned}
+    \end{equation*}
+    \item Finding pH and pOH %//TODO - Complete example from 4/12 lecture!
+\end{enumerate}
+
+General form of finding concentration for ANY weak acid with an inital concentration of "c" M and given Ka
+\begin{enumerate}
+    \item Writing out reaction:
+    \item Creating ICE Table:
+    \begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+        \hline
+        X   & $[HA]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[H^+]$ & ${}+{}$ & $[A^-]$ \\
+        \hline
+        I   &  c   &&     &&  0   && 0  \\
+        C   &  -x    &&     &&  x   && x  \\
+        E   &  c-x &&     &&  x   && x  \\      
+    \end{tabular}
+    \item Writing $K_a$
+    \begin{equation*}
+        \begin{aligned}
+            K_a = \ce{\frac{[H+][A-]}{HA}} \\
+            K_a = \frac{x^2}{c-x}
+        \end{aligned}
+    \end{equation*}
+    \item Solving for x (assuming small x approximation)
+    \begin{equation*}
+        \begin{aligned}
+            K_a &= \frac{x^2}{c-x} \\
+            K_a &= \frac{x^2}{c} \\
+            K_a(c) &= x^2 \\
+            x &= \sqrt{K_a*c}
+        \end{aligned}
+    \end{equation*}
+    \item Now that we have x in terms of $K_a$ and c, we can find the minimum concentration to find where small x approximation can apply - Solving for x in our error check:
+    \begin{equation*}
+        \begin{aligned}
+            \frac{x}{c} &= 0.05\% \\
+            \frac{\sqrt{K_a*c}}{c} &= 0.05 \\
+            \left(\frac{\sqrt{K_a*c}}{c}\right) ^2&= 0.05^2 \\
+            \frac{K_a*c}{c^2} &= 0.025 \\
+            \frac{K_a}{c} &= 0.025 \\
+            c &= \frac{K_a}{0.025}
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
+\begin{enumerate}
+    \item As acid concentration increases \ce{H3O+} increases, pH decreases, and percent dissociated decreases
+    We quantify this through the use of the pKa constant, where the acid is 50\% dissociated when pH = pKa %//TODO - include formula to find pKa!
+    \item 
+\end{enumerate}
+
+\section*{Polyprotic Acids}
+Some acids can donate more than 1 proton, for example carbonic acid \ce{H2CO3}.
+There are multiple equilibria to consider simultaneously:
+\begin{equation*}
+    \begin{aligned}
+        \ce{H2CO3 + H2O <=> HCO3- + H3O+} \quad K_{a1} = \ce{\frac{[HCO3-][H3O+]}{H2CO3}} = 4.3*10^-7  \\
+        \ce{HCO3- + H2O <=> CO32- + H3O+} \quad K_{a2} = \ce{\frac{[CO3^2-][H3O+]}{HCO2-}} = 4.8*10^-11 \\
+    \end{aligned}
+\end{equation*}
+With each step, the equilibrium constant decreases. 
+\newline 
+Calculating equiulibrium concentrations is possible, but difficult due to multiple equilibria. But we can make qualitative predictions:
+\begin{enumerate}
+    \item At high pH, the acid will be completely dissociated
+    \item At low pH, the acid will not be dissociated at all.
+\end{enumerate}
+This leads to a graph where we can plot the theoretical concentrations of each compound as a function of the pH
+
+\section*{Acid-Base Properties of Salts}
+What happens when you add ions to water? 
+\newline
+\begin{exmp}
+    When adding chloride ions to water, the following is in principle possible:
+\end{exmp}
+\begin{equation*}
+    \begin{aligned}
+        \ce{Cl- + H2O <=> HCl + OH-}
+    \end{aligned}
+\end{equation*}
+\begin{enumerate}
+    \item However, this doesn't happen since HCl is a strong acid, and Cl- is a very weak base - and doesn't have enough strength to pull the hydrogen ions - so the equilibrium lies far to the left. \textbf{This means that adding anions of strong acids have no effect on pH.} 
+    \item Similarly, this is true when doing it for strong bases - adding cations for strong bases have no effect on pH
+    \item Thus generally, \textbf{Adding the conjugate bases/acids of strong acids/bases have no effect on pH}
+    \item \textbf{However}, this isn't true for when we do the opposite! Adding the conjugate bases/acids of \textbf{weak} acids/bases DO have a effect on pH 
+\end{enumerate} 
+
+\begin{center}
+    \LARGE{\textbf{Chapter 8: Applications of ... Ion Solutions}}
+\end{center}
+\section*{Common Ion Solutions}
+We know that pure water has a pH of 7 at room temperature. 
+So far, we have studied how the pH changes if you add either acid or base to water. For example:
+\begin{enumerate}
+    \item A 0.01M solution of sodium hydroxide, a strong base, has a pH of 12 through:
+    \begin{equation*}
+        \begin{aligned}
+            pOH &= -log_{10}(0.01) = 2 \\
+            pH &= 14-pOH \\
+            pH &= 12
+        \end{aligned}
+    \end{equation*}
+    \item 
+\end{enumerate}
+
+
+\end{document}
