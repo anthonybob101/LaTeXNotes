@@ -558,8 +558,56 @@ To get the amount of solution needed to get the 0.01589mol of \ce{H3O+}, divide 
     \end{aligned}
 \end{equation*}
 
+\section*{Preparing a strong base solution with a given pH}
+\begin{exmp}
+    A chemist must prepare 600.0 mL of sodium hydroxide solution with a pH of 13.70 at 25C. He must do this in three steps:
+    \begin{enumerate}
+        \item Fill 600mL flask halfway with distilled water.
+        \item Weigh out a small amount of solid sodium hydroxide and add it to the flask.
+        \item Fill the flask to the mark with distilled water.
+    \end{enumerate}
+    Calculate the mass of solid sodium hydroxide that the chemist must measure out in the second step.
+\end{exmp}
 
-
+The key to solving this problem is two facts:
+\begin{enumerate}
+    \item First, the pH of an aqueous solution is just another way to express \ce{[H3O+]} the molarity of hydronium. So when you're you're told the final pH of the solution should be 13.70, you're actually being told the final molarity of \ce{H3O+} should be:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{[H3O+]} = 10^{-pH}M = 10^{-13.70}M = 1.995*10^{-14}M
+        \end{aligned}
+    \end{equation*}
+    \item Secondly, sodium hydroxide (NaOH) is an electrolyte. That means that is NaOH dissolves it breaks up into \ce{Na+} cations and \ce{OH-} anions. So by adding the correct amount of NaOH, the chemist can set \ce{[OH-]} to whatever he wants. Why is this helpful? Because in an aqueous solution, the concentration of hydronium and hydroxide are related by the ion product of water like this:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{[H3O+]*[OH-] = K_w}
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+In other words, once \ce{[H3O+]} is found, the chemist can find the exact \ce{[OH-]} needed to make \ce{[H3O+]} equal to $1.995*10^{-14}M$.
+\begin{equation*}
+    \begin{aligned}
+        \ce{[H3O+]*[OH-] = K_w} \\
+        \ce{[OH-] = \frac{K_w}{[H3O+]}} \\
+        \ce{[OH-] = \frac{1.01*10^{-14}}{1.995*10^{-14}}} \\
+        \ce{[OH-]} = 0.5063M
+    \end{aligned}
+\end{equation*}
+\newline
+\newline
+In the final solution, the molarity of \ce{OH-} is supposed to be 0.5063M. You can find the total moles of \ce{OH-} in the final solution by multiplying this molarity by the total volume of the final solution:
+\begin{equation*}
+    \begin{aligned}
+        0.5063M * 600mL = 0.5063M * 0.6L = 0.3038mol
+    \end{aligned}
+\end{equation*}
+Since each formula unit of NaOH releases one \ce{OH-} when it dissolves, the moles of NaOH the chemist needs is equal to the number of moles of \ce{OH-} he needs. \textbf{To find the mass of NaOH he needs, you need to multiply the moles needed by the molar mass of NaOH:}
+\begin{equation*}
+    \begin{aligned}
+        0.308mol * 39.9970\frac{g}{mol} \\
+        = 12.15g
+    \end{aligned}
+\end{equation*}
 
 
 
