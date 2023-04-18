@@ -267,7 +267,7 @@ Firstly, this looks like a linear gradient series. Knowing that all gradient ser
 Converting to monthly interest rate:
 \begin{equation*}
     \begin{aligned}
-        i = \frac{13.90}{12} = 1.15833\%/month
+        i = \frac{13.90}{12} = \framebox{$1.15833\%/month$}
     \end{aligned}
 \end{equation*}
 Converting to annual effective interest rate (using compound interest formula):
@@ -275,7 +275,7 @@ Converting to annual effective interest rate (using compound interest formula):
     \begin{aligned}
         i_a &= (1 + r/CK)^C - 1 \\
         i_a &= (1 + 13.90\%/(1*12))^{12} - 1 \\
-        i_a &= 14.82\%
+        i_a &= \framebox{$14.82\%$}
     \end{aligned}
 \end{equation*}
 \subsubsection*{Part 2 - Finding Future Balance Two Months from Present}
@@ -284,7 +284,7 @@ Finding Future Balance with N = 2 months
     \begin{aligned}
         F &= \$3,000(F/P,1.15833\%,2) \\
         F &= \$3000(1 + 0.0115833)^2 \\
-        F &= \$3069.90 
+        F &= \framebox{$\$3069.90$} 
     \end{aligned}
 \end{equation*}
 
@@ -303,7 +303,7 @@ Solving this via finding the effective annual interest rate - whichever bank acc
 Given:
 \begin{equation*}
     \begin{aligned}
-        r = 9.25\% \quad K = 1 \quad C = 1
+        r = 9.25\% \quad M = 1
     \end{aligned}
 \end{equation*}
 
@@ -311,8 +311,9 @@ Given:
 Finding $i_a$
 \begin{equation*}
     \begin{aligned}
-        i_a &= (1 + r/CK)^C - 1 \\
+        i_a &= (1 + r/M)^M - 1 \\
         i_a &= (1 + 9.25\%/1)^1 - 1 \\
+        i_a &= 9.25\%
     \end{aligned}
 \end{equation*}
 
@@ -320,7 +321,7 @@ Finding $i_a$
 Given:
 \begin{equation*}
     \begin{aligned}
-        r = 9.00\% \quad K = 4 \quad C = 1
+        r = 9.00\% \quad M = 4
     \end{aligned}
 \end{equation*}
 
@@ -328,8 +329,9 @@ Given:
 Finding $i_a$
 \begin{equation*}
     \begin{aligned}
-        i_a &= (1 + r/CK)^C - 1 \\
-        i_a &= (1 + 9.00\%/4)^1 - 1 \\
+        i_a &= (1 + r/M)^M - 1 \\
+        i_a &= (1 + 9.00\%/4)^4 - 1 \\
+        i_a &= 9.30833\%
     \end{aligned}
 \end{equation*}
 \subsubsection*{Finding Effective Annual Interest Rate for Bank C}
@@ -346,10 +348,10 @@ Finding $i_a$
     \begin{aligned}
         i_a &= e^{8.90\%} - 1 \\
         i_a &= 0.09308 \\
-        i_a &= 9.308\%
+        i_a &= 9.30807\%
     \end{aligned}
 \end{equation*}
-
+\fbox{I would choose Bank B as it has the highest annual effective interest rate of 9.30833\%.}
 \section*{Problem 4.43}
 \begin{exrc}
     You burrowed \$12,000 to buy a new car from a bank at an interst rate of 9\% compounded monthly. This loan will be repaid in 48 equal monthly installments over 4 years. Immediately after the 20th payment, you desire to pay the remainder of the loan in a single payment. Compute this lump-sum amount.
@@ -374,7 +376,7 @@ Finding present value from annunity after 20 payments
     \begin{aligned}
         P &= \$298.62(P/A,0.75\%,28) \\
         P &= \$298.62\left(\frac{(1+0.0075)^{28}-1}{0.0075(1+0.0075)^{28}}\right) \\
-        P &= \$7516.48
+        P &= \framebox{$\$7516.48$}
     \end{aligned}
 \end{equation*}
 
@@ -416,6 +418,12 @@ Finding monthly payment for 30-year mortgage:
         A &= \$200000(A/P,5.00\%,360) \\
         A &= \$200000\left(\frac{0.0041667(1+0.0041667)^{360}}{(1+0.0041667)^{360}-1}\right) \\
         A &= \$1073.64
+    \end{aligned}
+\end{equation*}
+Finding difference in monthly payments:
+\begin{equation*}
+    \begin{aligned}
+        \$1504.56 - \$1073.64 = \framebox{$431.12$}
     \end{aligned}
 \end{equation*}
 \section*{Problem 4.91}
