@@ -260,9 +260,33 @@ Firstly, this looks like a linear gradient series. Knowing that all gradient ser
     If your credit card calculates interest based on 13.90\% APR compounded monthly:
     \begin{enumerate}
         \item What are your monthly interest rate and annual effective interest rate?
-        \item If your current outstnading balance is \$3,000 and you skip payments for two months, what would be the total balance two months from now?
+        \item If your current outstanding balance is \$3,000 and you skip payments for two months, what would be the total balance two months from now?
     \end{enumerate}
 \end{exrc}
+\subsubsection*{Part 1 - Finding Monthly and Annual Effective Interest Rates}
+Converting to monthly interest rate:
+\begin{equation*}
+    \begin{aligned}
+        i = \frac{13.90}{12} = 1.15833\%/month
+    \end{aligned}
+\end{equation*}
+Converting to annual effective interest rate (using compound interest formula):
+\begin{equation*}
+    \begin{aligned}
+        i_a &= (1 + r/CK)^C - 1 \\
+        i_a &= (1 + 13.90\%/(1*12))^{12} - 1 \\
+        i_a &= 14.82\%
+    \end{aligned}
+\end{equation*}
+\subsubsection*{Part 2 - Finding Future Balance Two Months from Present}
+Finding Future Balance with N = 2 months
+\begin{equation*}
+    \begin{aligned}
+        F = \$3,000(F/P,1.15833\%,2) \\
+        F = \$3000(1 + 0.0115833)^2 \\
+        F = \$3069.90 
+    \end{aligned}
+\end{equation*}
 
 \section*{Problem 4.9}
 \begin{exrc}
@@ -274,6 +298,51 @@ Firstly, this looks like a linear gradient series. Knowing that all gradient ser
     \end{enumerate}
     What bank would you open an account with?
 \end{exrc}
+Solving this via finding the effective annual interest rate - whichever bank account has the highest effective annual interest rate will be the best option for you:
+\subsubsection*{Finding Effective Annual Interest Rate for Bank A}
+Given:
+\begin{equation*}
+    \begin{aligned}
+        r = 9.25\% \quad K = 1 \quad C = 1
+    \end{aligned}
+\end{equation*}
+Finding $i_a$
+\begin{equation*}
+    \begin{aligned}
+        i_a &= (1 + r/CK)^C - 1 \\
+        i_a &= (1 + 9.25\%/1)^1 - 1 \\
+    \end{aligned}
+\end{equation*}
+
+\subsubsection*{Finding Effective Annual Interest Rate for Bank B}
+Given:
+\begin{equation*}
+    \begin{aligned}
+        r = 9.00\% \quad K = 4 \quad C = 1
+    \end{aligned}
+\end{equation*}
+
+Finding $i_a$
+\begin{equation*}
+    \begin{aligned}
+        i_a &= (1 + r/CK)^C - 1 \\
+        i_a &= (1 + 9.00\%/4)^1 - 1 \\
+    \end{aligned}
+\end{equation*}
+\subsubsection*{Finding Effective Annual Interest Rate for Bank C}
+Given:
+\begin{equation*}
+    \begin{aligned}
+        r = 8.90\% \quad K = C = lim_{C \rightarrow \infty} 
+    \end{aligned}
+\end{equation*}
+
+Finding $i_a$
+\begin{equation*}
+    \begin{aligned}
+        
+    \end{aligned}
+\end{equation*}
 
 \section*{Problem 4.43}
 \begin{exrc}
