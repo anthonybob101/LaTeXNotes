@@ -344,9 +344,9 @@ Given:
 Finding $i_a$
 \begin{equation*}
     \begin{aligned}
-        i_a = e^{8.90\%} - 1 \\
-        i_a = 0.09308 \\
-        i_a = 9.308\%
+        i_a &= e^{8.90\%} - 1 \\
+        i_a &= 0.09308 \\
+        i_a &= 9.308\%
     \end{aligned}
 \end{equation*}
 
@@ -354,6 +354,30 @@ Finding $i_a$
 \begin{exrc}
     You burrowed \$12,000 to buy a new car from a bank at an interst rate of 9\% compounded monthly. This loan will be repaid in 48 equal monthly installments over 4 years. Immediately after the 20th payment, you desire to pay the remainder of the loan in a single payment. Compute this lump-sum amount.
 \end{exrc}
+Finding monthly interest rate
+\begin{equation*}
+    \begin{aligned}
+        i &= 9\%/12 \\
+        i &= 0.75\%
+    \end{aligned}
+\end{equation*}
+Finding monthly payments 
+\begin{equation*}
+    \begin{aligned}
+        A &= \$12000(A/P, 0.75\%, 48) \\
+        A &= \$12000*\left(\frac{0.0075(1+0.0075)^{48}}{(1+0.0075)^{48}-1}\right) \\
+        A &= \$298.62
+    \end{aligned}
+\end{equation*}
+Finding present value from annunity after 20 payments
+\begin{equation*}
+    \begin{aligned}
+        P &= \$298.62(P/A,0.75\%,28) \\
+        P &= \$298.62\left(\frac{(1+0.0075)^{28}-1}{0.0075(1+0.0075)^{28}}\right) \\
+        P &= \$7516.48
+    \end{aligned}
+\end{equation*}
+
 
 \section*{Problem 4.65}
 \begin{exrc}
