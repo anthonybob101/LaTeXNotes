@@ -26,7 +26,7 @@
 \begin{center}
     \LARGE{\textbf{Review - CHEM 142: Kinetics}}
 \end{center}
-title
+
 \section*{Chemical Reactions}
 Consider a chemical reaction of the form \ce{A -> B}.
 \begin{enumerate}
@@ -1051,7 +1051,7 @@ Recap - How do buffers maintain a nearly constant pH?
     \end{enumerate}
 \end{enumerate}
 
-\section*{Henderson-Basselbalch Equation}\footnote{Be careful! Tricky as there are situations in which this section doesn't count for}
+\section*{Henderson-Hasselbalch Equation}\footnote{Be careful! Tricky as there are situations in which this section doesn't count for}
 In the final step, we considered the equilibrium position of the weak acid dissocation:
 \begin{equation*}
     \begin{aligned}
@@ -1065,6 +1065,121 @@ Once you know the equilibrium concentrations of HA and \ce{A-}, you can calculat
     \end{aligned}
 \end{equation*}
 THIS ONLY APPLIES IF A- is the conjugate base of HA!
+
+The equilibrium cocncentrations of [HA] and [A-] are determined by 
+\begin{enumerate}
+    \item How much weak acid and its conjugate base were used in the creation of the buffer.
+    \item How much weak acid and its conjugate base were present after neutralization wiht added OH- and H+
+    \item The new equilibrium of the weak acid dissociation reaction.
+    \begin{enumerate}
+        \item The last step often has a very small effect on the equilibrium concentrations of the weak acid and its conjugate base. The Henderson-Hassellbalch equation is often used with [HA] and [A-] after neutralization (second step) 
+    \end{enumerate}
+\end{enumerate}
+\begin{exmp}
+    0.5M Acetic acid ($K_a = 1.8*10^{-5}$), 0.5M sodium acetate
+\end{exmp}
+\begin{equation*}
+    \begin{aligned}
+        pH = -log_{10}(1.8*10^{-5}) + log_{10}(0.5/0.5) = 4.74
+    \end{aligned}
+\end{equation*}
+\textbf{NOTE - Using the HH (Henderson-Hasselbalch) Equation in this way is equivalent to doing small-x approximation} like we have done in previous examples.
+
+In addition to note, you should ONLY use this when x is small compared to 0. Thus you can use this instead of doing the ICE table and assuming small-x approximation
+
+\section*{Buffer Capacity}
+Buffer Capacity is the amount of strong acid/base a buffer can absorb without a significant change in pH. 
+\newline
+Let's compare two different buffers that have different concentrations of weak acid and conjugate base, but the same ratio:
+\begin{center}
+    Buffer 1 \quad Buffer 2 \\
+    0.05M Acetic acid \quad 0.05M acetic acid \\
+    0.5M Acetate \quad 0.05M acetate
+\end{center}
+What is the pH of the buffered solution?
+\begin{equation*}
+    \begin{aligned}
+        pH  = pKa + log_{10}(0.5/0,5) = 4.74 \quad pH  = pKa + log_{10}(0.05/0.05) = 4.74
+    \end{aligned}
+\end{equation*}
+What if we add 0.03mol of sodium hydroxide (NaOH)?
+\begin{equation*}
+    \begin{aligned}
+        pH  &= pKa + log_{10}(0.53/0.47) \quad pH  &= pKa + log_{10}(0.08/0.02) \\
+        &= 4.80 \quad &= 5.35
+    \end{aligned}
+\end{equation*} %//TODO - fix the alignment of this so pH and calculated pH are in their own columns alligned by the = sign!
+
+\section*{Chapter 8 - Applications of Squeous Equilibria (Titrations and pH Curves)}
+
+\section*{Acid/Base Titration}
+Titration is a method of quantitative chemical analysis that is used to determine the unknown concentration of a species in solution. 
+\newline
+Acid base titration problems are a mix of stoichiometry and equilibrium:
+\begin{enumerate}
+    \item stoichiometry - Add a strong base (acid) to an acid/base
+    \item Eq - Concentrations determined and equilbalnce expression used to find hydronium ions
+\end{enumerate}
+
+\section*{Titrating a strong acid with a strong base}
+\textbf{Basic Idea:}
+\begin{enumerate}
+    \item Strong acid and strong base neutralize each other - pH is determined by leftover hydroxide or hydronium ions.
+    \item If strong acid and base neutralize each other exactly - pH is determined by water.
+    \item Keep in mind the stoichiometry of neutralization is based on the number of moles, whereas pH is based on concentrations!
+    \begin{enumerate}
+        \item Remember that titrations are based on us adding volume, so we have to keep track of the volume added since we're changing the concentration firstly based off of volume change alone!
+    \end{enumerate}
+\end{enumerate}
+
+\begin{exmp}
+    Consider titration of 50mL of 0.2M of HCl with 0.1M of NaOH.
+\end{exmp}
+%//TODO - Add in section before "After adding in 10mL of NaOH!
+After adding 10mL of NaOH:
+\begin{enumerate}
+    \item THe strong base will dissocate completely, and the resulting hydroxide ions will react with the hydronium ions to form water:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{OH- + H3O+ <=> 2H2O}
+        \end{aligned}
+    \end{equation*}
+    \item This equilibrium lies very far towards products since K = $\frac{1}{K_W} = 10^{14}$, so we can consider hydronium and hydroxide completely reacting to form water.
+    \newline
+    \begin{tabular}{c@{}c@{}c@{}}
+        moles H3O from acid && 0.05L x 0.2M = 0.01mol \\
+        moles OH- from base && 0.01L x 0.1M = 0.001mol \\
+    \end{tabular}
+    \newline
+    Remaining H3O+ after neutralization:
+\end{enumerate}
+After adding 20mL of NaOH:
+\begin{tabular}{c@{}c@{}c@{}}
+    moles H3O from acid && 0.05L x 0.2M = 0.01mol \\
+    moles OH- from base && 0.02L x 0.1M = 0.002mol \\
+\end{tabular}
+Remaining H3O+ after neutralization: 0.01 mol - 0.002mol = 0.008mol \\
+New hydronium concentraiton =  0.008/0.07L = 0.11M \\
+New pH = 0.94 \\
+\newline
+\begin{tabular}{c@{}c@{}c@{}}
+    moles H3O from acid && 0.05L x 0.2M = 0.01mol \\
+    moles OH- from base && 0.02L x 0.1M = 0.002mol \\
+\end{tabular}
+\newline
+
+Continuing until we have 100mL of NaOH:
+\newline
+\begin{tabular}{c@{}c@{}c@{}}
+    moles H3O from acid && 0.05L x 0.2M = 0.01mol \\
+    moles OH- from base && 0.10L x 0.1M = 0.01mol \\
+\end{tabular}
+\newline
+Remaining H3O+ after neutralization: 0.01 mol - 0.01mol = 0mol \\
+\begin{enumerate}
+    \item Since we have added the same amount of OH- as we had H3O+ from the acid, we have reached the equilvalence point of the titration.
+    \item 
+\end{enumerate}
 
 
 \end{document}
