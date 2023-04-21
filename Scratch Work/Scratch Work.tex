@@ -1,0 +1,74 @@
+\documentclass{report} % //TODO find why latex gives errors for report and using textsc!
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+
+\title{UW IND E 250 Notes}
+\author{Anthony Le}
+ 
+\newtheorem{exmp}{Example}
+\newtheorem{exrc}{Excersize}
+\newtheorem{proof}{Proof}
+\newtheorem{defn}{Definition}
+
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[R]{UW IND E 250}
+\fancyhead[L]{Anthony Le}
+
+\begin{center}
+    \LARGE{\textbf{Scratch Work}}
+\end{center}
+
+Givens:
+\begin{equation*}
+    \begin{aligned}
+        LL = 100 psf \quad DL = ?? psf\\
+        L = 32 ft \quad TW = 11 ft \\
+    \end{aligned}
+\end{equation*}
+Computing Demand:
+\begin{enumerate}
+    \item Finding equilvalent uniform distributed load:
+    \begin{equation*}
+        \begin{aligned}
+            w = LL * TW = 100psf * 11ft = 1100lb/ft \\
+        \end{aligned}
+    \end{equation*}
+    \item Finding Reaction Forces: \\
+    Assuming uniform distributed load,
+    \begin{equation*}
+        \begin{aligned}
+            A_y = B_y &= \frac{wL}{2} = \frac{1100*32}{2} \\
+                      &= 17.6K 
+        \end{aligned}
+    \end{equation*}
+    \item Finding Moment Demand:
+    \begin{equation*}
+        \begin{aligned}
+            M_u &= \frac{wL^2}{8} = \frac{1100*32^2}{8} \\
+                &= 140.8K-ft
+        \end{aligned}
+    \end{equation*} 
+    \item Finding Section:
+    \begin{equation*}
+        \begin{aligned}
+            \Phi M_n \geq M_u \\
+            \Phi M_n \geq 140.8K-ft \\
+        \end{aligned}
+    \end{equation*}
+    Using AISC 7-16 Table 3-10 for 140.8 K-ft at unbraced length of 32 feet:
+    \item 
+
+\end{enumerate}
+
+
+
+
+
+\end{document}
+

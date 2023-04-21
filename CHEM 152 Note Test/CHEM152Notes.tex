@@ -1154,25 +1154,25 @@ After adding 10mL of NaOH:
     Remaining H3O+ after neutralization:
 \end{enumerate}
 After adding 20mL of NaOH:
-\begin{tabular}{c@{}c@{}c@{}}
-    moles H3O from acid && 0.05L x 0.2M = 0.01mol \\
-    moles OH- from base && 0.02L x 0.1M = 0.002mol \\
+\begin{tabular}{c c}
+    moles H3O from acid & 0.05L x 0.2M = 0.01mol \\
+    moles OH- from base & 0.02L x 0.1M = 0.002mol \\
 \end{tabular}
 Remaining H3O+ after neutralization: 0.01 mol - 0.002mol = 0.008mol \\
 New hydronium concentraiton =  0.008/0.07L = 0.11M \\
 New pH = 0.94 \\
 \newline
-\begin{tabular}{c@{}c@{}c@{}}
-    moles H3O from acid && 0.05L x 0.2M = 0.01mol \\
-    moles OH- from base && 0.02L x 0.1M = 0.002mol \\
+\begin{tabular}{ c c }
+    moles H3O from acid & 0.05L x 0.2M = 0.01mol \\
+    moles OH- from base & 0.02L x 0.1M = 0.002mol \\
 \end{tabular}
 \newline
 
 Continuing until we have 100mL of NaOH:
 \newline
-\begin{tabular}{c@{}c@{}c@{}}
-    moles H3O from acid && 0.05L x 0.2M = 0.01mol \\
-    moles OH- from base && 0.10L x 0.1M = 0.01mol \\
+\begin{tabular}{ c c }
+    moles H3O from acid & 0.05L x 0.2M = 0.01mol \\
+    moles OH- from base & 0.10L x 0.1M = 0.01mol \\
 \end{tabular}
 \newline
 Remaining H3O+ after neutralization: 0.01 mol - 0.01mol = 0mol \\
@@ -1184,6 +1184,50 @@ Remaining H3O+ after neutralization: 0.01 mol - 0.01mol = 0mol \\
 What if we exceed the equilvalence point? 
 \newline
 Since we have gone past the acid balance point, pH is no longer determined by the hydronium ions, but rather the hydroxide ions instead
+
+\section*{Titrating a Weak Acid with a Strong Base}
+Basic Idea:
+\begin{enumerate}
+    \item The hydroxide ions from the added strog base will convert weak acid into its conjugate base.
+    \item Based on the amounts of remainig weak acid and the produced conjugate base, use equilibrium concepts to compute pH.
+\end{enumerate}
+
+\begin{exmp}
+    Consider the titration of 20mL of 0.25M nitrous acid ($\ce{HNO2}$, $K_a = 4.5*10^-4$) with 0.25M sodium hydroxide ($\ce{NaOH}$)
+\end{exmp}
+Acid only, before we add any $\ce{NaOH}$
+\begin{equation*}
+    \begin{aligned}
+        \ce{HNO2 + H2O <=> NO2- + H3O+}
+    \end{aligned}
+\end{equation*}
+\newline
+\begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+    \hline
+    X   & $[HNO_2]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[NO_2^-]$ & ${}+{}$ & $[H_3O^+]$ \\
+    \hline
+    I   &  0   &&     &&  0.8   && 3.6  \\
+    C   &      &&     &&     &&   \\
+    E   &      &&     &&     &&   \\      
+\end{tabular}
+\newline
+
+After adding 5mL of NaOH:
+\newline
+The strong base will dissociate completely, and the resulting hydroxide ions will react with the nitrous acid to form water and nitrite ions:
+\begin{equation*}
+    \begin{aligned}
+        \ce{OH- + HNO2 <=> H2O + NO2-}
+    \end{aligned}
+\end{equation*}
+This equilibrium lies very far towards the product side:
+\begin{center}
+    \begin{tabular}{ c c }
+    Moles of Acid HNO2: & 0.02 L * 0.25M = 0.005 mol \\
+    Moles OH- from NaOH: & 0.005 L * 0.25M = 0.00125 mol \\
+    Conjugate base NO2- produced: & 0.00125 mol
+    \end{tabular}    
+\end{center}
 
 
 \end{document}
