@@ -17,7 +17,7 @@
 
 \pagestyle{fancy}
 \fancyhead{}
-\fancyhead[R]{UW IND E 250}
+\fancyhead[R]{Scratch Work}
 \fancyhead[L]{Anthony Le}
 
 \begin{center}
@@ -66,9 +66,55 @@ Computing Demand:
 
 \end{enumerate}
 
+\newpage
+\section*{Horizontial Distribution of Lateral Forces}
+\subsection*{Finding Center of Mass:}
+For preliminary design, we assumed that the center of mass was in the center of the building. For detailed design, we'll want to find and compute the center of mass via weighted average of seismic weights.
 
+\begin{center}
+    Preliminary Design COM:    
+\end{center}
+\begin{equation*}
+    \begin{aligned}
+        \text{Width} = 231' &\quad \text{Height} = 102' \\
+        \bar{X} = \frac{\text{Width}}{2} &\quad \bar{Y} = \frac{\text{Height}}{2} \\
+        \bar{X} = \frac{231}{2} &\quad \bar{Y} = \frac{102}{2} \\
+        \bar{X} = 115.5' &\quad \bar{Y} = 51'
+    \end{aligned}
+\end{equation*}
+From this, we get that \fbox{$\bar{X} = 115.5'\quad \bar{Y} = 51'$}
 
+\subsection*{Finding Center of Rigidity/Rotation}
+\subsubsection*{Finding Frame Stiffnesses in X and Y direction}
+For preliminary design, we can approximate the stiffness of BRBF's with using $K \approx  1/L$, where L is the length of the bay the BRBF spans.
+\begin{equation*}
+    \begin{aligned}
+        K_{xi} &= 1/L = 1/33 \\
+        K_{xi} &= 0.030 \\
+        K_{yi} &= 1/L = 1/26 \\ 
+        K_{yi} &= 0.038 
+    \end{aligned}
+\end{equation*}
+From this, we get that \fbox{$ K_{xi} = 0.030 \quad K_{yi} = 0.038$} \\
+\subsubsection*{Computing Center of Rigidity for $X_R$}
+The process for finding the center of rigidity will be the same for our preliminary and detailed design:
+\begin{equation*}
+    \begin{aligned}
+        X_R &= \frac{\sum{K_{yi}*X_i}}{\sum{K_{yi}}} \\
+        X_R &= \frac{0.038*(66+165+198)}{3*0.038} \\
+        X_R &= 143'
+    \end{aligned}
+\end{equation*}
 
+\subsubsection*{Computing Center of Rigidity for $Y_R$}
+The process for finding the center of rigidity will be the same for our preliminary and detailed design:
+\begin{equation*}
+    \begin{aligned}
+        Y_R &= \frac{\sum{K_{yi}*X_i}}{\sum{K_{yi}}} \\
+        Y_R &= \frac{0.030*(102+12+12+102)}{4*0.030} \\
+        Y_R &= 57'
+    \end{aligned}
+\end{equation*}
 
 \end{document}
 
