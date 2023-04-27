@@ -115,6 +115,64 @@ The process for finding the center of rigidity will be the same for our prelimin
         Y_R &= 57'
     \end{aligned}
 \end{equation*}
+From this, we get that \fbox{$X_R = 143 \quad Y_R = 57$} \\
+
+\subsubsection*{Computing Eccentricity for Inherent Torsion}
+To find the eccentricity, we'll need to find the distance between the center of mass and the center of rigidity. However, we should note at this point, that we are going to assume that counter-clockwise twisting will be in the positive direction (following the convention we've been working with such as in the right-hand rule).
+\begin{equation*}
+    \begin{aligned}
+        e_{Y,Inherent} &= Y_R - \bar{Y} \\
+        e_{X,Inherent} &= \bar{X} - X_R 
+    \end{aligned}
+\end{equation*}
+Solving for eccentricities:
+\begin{equation*}
+    \begin{aligned}
+        e_{Y,Inherent} &= 57 - 51 \\
+        e_{Y,Inherent} &= 6' \\
+        e_{X,Inherent} &= 115.5 - 143 \\
+        e_{X,Inherent} &= -27.5'
+    \end{aligned}
+\end{equation*}
+From this, we get that \fbox{$e_{X,Inherent} = -27.5' \quad e_{Y,Inherent} = 6'$} \\
+
+\subsection*{Computing Eccentricity for Acciential Torsion}
+To find the eccentricity, we'll need to multiply the length and width by 5\% in order to get the accidential torsion eccentricity. From this, we'll get equations in the form of:
+\begin{equation*}
+    \begin{aligned}
+        e_{Y,Accidential} &= 0.05 * L_Y \\
+        e_{X,Accidential} &= 0.05 * L_X 
+    \end{aligned}
+\end{equation*}
+Solving for eccentricities:
+\begin{equation*}
+    \begin{aligned}
+        e_{Y,Accidential} &= 0.05 * 102' \\
+        e_{Y,Accidential} &= 5.1' \\
+        e_{X,Accidential} &= 0.05 * 231' \\
+        e_{X,Accidential} &= 11.550'
+    \end{aligned}
+\end{equation*}
+From this, we get that \fbox{$e_{X,Accidential} = 11.550' \quad e_{Y,Accidential} = 5.1'$} \\
+
+\subsection*{Computing Total Torsion}
+To find the total torsion caused by accidential and inherent torsion, we'll combine the inherent and accidential eccentricities. From this, we'll get equations in the form of:
+\begin{equation*}
+    \begin{aligned}
+        T_X &= V_x (e_{Y,Inherent} \pm e_{Y,Accidential}) \\
+        T_Y &= V_y (e_{X,Inherent} \pm e_{X,Accidential}) 
+    \end{aligned}
+\end{equation*}
+Plugging in eccentricities:
+\begin{equation*}
+    \begin{aligned}
+        T_X &= V_x (6' \pm 5.1') \\
+        T_X &= V_x (11.10) \text{ For +X} \quad V_x (0.90) \text{ For -X} \\
+        T_Y &= V_y (-27.5' \pm 11.550') \\
+        T_Y &= V_y (-15.95) \text{ For +Y} \quad V_y (-39.05) \text{ For -Y}
+    \end{aligned}
+\end{equation*}
+
 
 \end{document}
 
