@@ -172,7 +172,14 @@ Plugging in eccentricities:
         T_Y &= V_y (-15.95) \text{ For +Y} \quad V_y (-39.05) \text{ For -Y}
     \end{aligned}
 \end{equation*}
-    
+ 
+
+
+
+
+
+
+
 \newpage
 \section*{Preliminary Structural Calculations}
 \subsection*{Gravity System Design}
@@ -199,7 +206,7 @@ Solve:
                             &= 238.16psf 
             \end{aligned}
         \end{equation*}
-    \item Finding $W_u$:
+        \item Finding LRFD Factored Distributed Load, $W_u$:
         \begin{equation*}
             \begin{aligned}
                 W_u &= (238.16psf)(11ft) \\
@@ -214,7 +221,7 @@ Solve:
                 A_y = B_y &= 41.92K
             \end{aligned}
         \end{equation*}
-    \item Finding $M_u$:
+    \item Finding LRFD Factored Moment, $M_u$:
         \begin{equation*}
             \begin{aligned}
                 M_u &= \frac{wL^2}{8} \\
@@ -263,7 +270,7 @@ Solve:
                 \Delta _{required} &= 1.10in    
             \end{aligned}
         \end{equation*}
-    \item Finding $M_{max}$ \textbf{INCORRECT NUMBERS, DELETE OR CORRECT ME AS SOON AS POSSIBLE}
+    \item Finding $M_{max}$
         \begin{equation*}
             \begin{aligned}
                 M_{max} &= P * a \\
@@ -327,7 +334,85 @@ Solve:
                 &=112.22psf\\   
             \end{aligned}
         \end{equation*}
-    \item 
-\end{enumerate}
-\end{document}
+    \item Finding LRFD Factored Distributed Load, $W_u$:
+        \begin{equation*}
+            \begin{aligned}
+                W_u &= (112.22psf)(16ft) \\
+                W_u &= 1745.52 lb/ft
+            \end{aligned}
+        \end{equation*}
+    \item Finding Reaction Forces:
+        \begin{equation*}
+            \begin{aligned}
+                A_y = B_y &= \frac{wL}{2} \\
+                        &= \frac{(1745.52 lb/ft)(33 ft)}{2} \\
+                A_y = B_y &= 29.636K
+            \end{aligned}
+        \end{equation*}
+    \item Finding LRFD Factored Moment, $M_u$:
+        \begin{equation*}
+            \begin{aligned}
+                M_u &= \frac{wL^2}{8} \\
+                    &= \frac{(1745.52 lb/ft)(33 ft)^2}{8} \\
+                M_u &= 244.42 K-ft
+            \end{aligned}
+        \end{equation*}
+    \item Selecting W-Section:\\
+        Assuming an unbraced length using $L_b$ = 33 ft from A360-16 Table 3-10, where:
+            \begin{equation*}
+                \begin{aligned}
+                    \Phi M_n \geq M_u \\
+                    \Phi M_n \geq 244.42 K-ft
+                \end{aligned}
+            \end{equation*}
+            \begin{center}
+                \fbox{Select W12X65}
+            \end{center}
+    \item Deflection Checks: \\
+        Loading the girder with two equal concentrated load symmetrically with uniform distributed load:
+        \begin{enumerate}
+            \item Finding Self Weight Distributed Load
+                \begin{equation*}
+                    \begin{aligned}
+                        P_{self} &= (86lb/ft)(32ft) \\ %//TODO - isn't this length of 32 ft supposed to be 33 ft?
+                        P_{self} &= 2752lbs
+                    \end{aligned}
+                \end{equation*}
+            \item Finding Cladding Distributed Load
+                \begin{equation*}
+                    \begin{aligned}
+                        P_{cladding} &= (16psf)(295.5ft^2) \\ %//TODO - Shouldn't this be supposed to be 295.5*2 ft2 since we're spanning 33, not 16.5ft
+                        P_{cladding} &= 4728lbs 
+                    \end{aligned}
+                \end{equation*}
+            \item Finding $M_{max}$ 
+                \begin{equation*}
+                    \begin{aligned}
+                        M_{max} &= P * a \\
+                                &= 47.28K * (11ft * 12in) \\  %//TODO - How did Leo get a number for P? He doesn't make it clear in the beginning
+                                &= 520.08 K-ft
+                    \end{aligned}
+                \end{equation*} 
+        \item Finding $\Delta _{required}$
+            \begin{equation*}
+                \begin{aligned}
+                    \Delta _{required} &= L/360 \\
+                                &= (33ft * 12in)/360\\
+                    \Delta _{required} &= 1.10in    
+                \end{aligned}
+            \end{equation*} 
+        \item Finding $\Delta _{max}$
+            \begin{equation*}
+                \begin{aligned}
+                    \Delta _{max} &= \frac{Pa}{24EI} * (3L^2-4a^2)\\ %//TODO - How did Leo get a number for I? He doesn't make it clear in the beginning
+                            &= \frac{47.28K * 11ft * 12in}{24 * 29000ksi * 533in^4} * (3(33ft * 12in)^2-4(11ft * 12in)^2) \\
+                    \Delta _{max} &= 1.06in \\
+                    \Delta _{max} &< \Delta _{required}, \text{Passes deflection checks}    
+                \end{aligned}
+            \end{equation*}
+        \end{enumerate}
+    \end{enumerate}
+
+\subsubsection*{title}
+    \end{document}
 
