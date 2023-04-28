@@ -173,6 +173,138 @@ Plugging in eccentricities:
     \end{aligned}
 \end{equation*}
     
+\newpage
+\section*{Preliminary Structural Calculations}
+\subsection*{Gravity System Design}
+\subsubsection*{Sizing Roof Beams (A6-B6)}
+%insert snapshot of beam layout
+Given:
+\begin{equation*}
+    \begin{aligned}
+        &LL = 100psf &\quad SDL = 55.83psf \\
+        &W_{trib} = 11ft &\quad L_b = 32ft 
+    \end{aligned}
+\end{equation*}
+Find: 
+\begin{enumerate}
+    \item $M_u$
+    \item Select W-Section using AISC A360-16 Table 3-10
+\end{enumerate}
+Solve: 
+\begin{enumerate}
+    \item Controlling LRFD Load Combo:
+        \begin{equation*}
+            \begin{aligned}
+                1.4D + 1.6l &= 1.4(55.83psf) + 1.6(100psf) \\
+                            &= 238.16psf 
+            \end{aligned}
+        \end{equation*}
+    \item Finding $W_u$:
+        \begin{equation*}
+            \begin{aligned}
+                W_u &= (238.16psf)(11ft) \\
+                W_u &= 2619.78 lb/ft 
+            \end{aligned}
+        \end{equation*}
+    \item Finding Reaction Forces:
+        \begin{equation*}
+            \begin{aligned}
+                A_y = B_y &= \frac{wL}{2} \\
+                        &= \frac{(2619.78 lb/ft)(32 ft)}{2} \\
+                A_y = B_y &= 41.92K
+            \end{aligned}
+        \end{equation*}
+    \item Finding $M_u$:
+        \begin{equation*}
+            \begin{aligned}
+                M_u &= \frac{wL^2}{8} \\
+                    &= \frac{(2619.78 lb/ft)(32 ft)^2}{8} \\
+                M_u &= 335.33 K-ft
+            \end{aligned}
+        \end{equation*}
+    \item Selecting W-Section:\\
+    Assuming an unbraced length using $L_b$ = 32 ft from A360-16 Table 3-10, where:
+        \begin{equation*}
+            \begin{aligned}
+                \Phi M_n \geq M_u \\
+                \Phi M_n \geq 335.53 K-ft
+            \end{aligned}
+        \end{equation*}
+\end{enumerate}
+\begin{center}
+    \fbox{Select W18X86}
+\end{center}
+
+\newpage
+\subsubsection*{Sizing Roof Girders (B6-B7)}
+%Insert Snapshot of Gider Loading
+Given:\footnote{Note that the applied forces P were calculated using the reaction of roof beams A6-B6 and the self-weight of the W18X86 beam.}
+\begin{equation*}
+    \begin{aligned}
+        &P = 44.67K &\quad L = 33ft \\%41.92 + \frac{86lb/ft * 32ft}{2} //TODO - Clarify with Leo and Caitlin how they got their P values?
+        &a = 11ft 
+    \end{aligned}
+\end{equation*}
+Find: %//TODO - I'm a little unsure about why we're finding the required moment of inertia to select the section based off of the deflection here!
+\begin{enumerate}
+    \item $L/360$
+    \item $M_{max}$
+    \item $\Delta _{max}$
+    \item $I_{required}$
+    \item Select W-Section using AISC A360-16 \textbf{[INSERT TABLE NAME HERE]}
+\end{enumerate}
+Solve:
+\begin{enumerate}
+    \item Finding $L/360$
+        \begin{equation*}
+            \begin{aligned}
+                \Delta _{required} &= L/360 \\
+                            &= (33ft * 12in)/360\\
+                \Delta _{required} &= 1.10in    
+            \end{aligned}
+        \end{equation*}
+    \item Finding $M_{max}$ \textbf{INCORRECT NUMBERS, DELETE OR CORRECT ME AS SOON AS POSSIBLE}
+        \begin{equation*}
+            \begin{aligned}
+                M_{max} &= P * a \\
+                        &= 35.2K * (11/3ft) \\  %//TODO - How did Leo get a number for P? He doesn't make it clear in the beginning
+                        &= 163.79 K-ft
+            \end{aligned}
+        \end{equation*} 
+    \item Finding $\Delta _{max}$
+        \begin{equation*}
+            \begin{aligned}
+                \Delta _{max} &= \frac{Pa}{24EI} * (3L^2-4a^2)\\ %//TODO - How did Leo get a number for I? He doesn't make it clear in the beginning
+                        &= \frac{35.2K * 11ft * 12in}{24 * 29000ksi * 1330in^4} * (3(33ft * 12in)^2-4(11ft * 12in)^2) \\
+                \Delta _{max} &= 2.01in    
+            \end{aligned}
+        \end{equation*}
+    \item Finding $I_{required}$
+        \begin{equation*}
+            \begin{aligned}
+                \Delta _{max} > \Delta _{required} \\
+                2.01 > 1.10 \\
+            \end{aligned}
+        \end{equation*}
+        Since $\Delta _{max} > \Delta _{required}$, we'll set $\Delta _{max} = \Delta _{required}$ and solve for I. Rearranging the equation and solving, we get:
+        \begin{equation*}
+            \begin{aligned}
+                I_{required} = 2450in^4
+            \end{aligned}
+        \end{equation*}
+    \item Selecting W-Section using AISC A360-16 \textbf{[INSERT TABLE NAME HERE]}
+    Assuming ???? from A360-16 Table ????, where:
+        \begin{equation*}
+            \begin{aligned}
+                I_{required} = 2450in^4
+            \end{aligned}
+        \end{equation*}
+\end{enumerate}
+\begin{center}
+    \fbox{W27X84}
+\end{center}
+Loading girder as simple beam with two equal concentrated load symmetrically placed  
+
 
 \end{document}
 
