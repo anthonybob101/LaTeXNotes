@@ -289,8 +289,8 @@ Solve:
     \item Finding $I_{required}$
         \begin{equation*}
             \begin{aligned}
-                \Delta _{max} > \Delta _{required} \\
-                2.01 > 1.10 \\
+                \Delta _{max} &> \Delta _{required} \\
+                2.01 &> 1.10 \\
             \end{aligned}
         \end{equation*}
         Since $\Delta _{max} > \Delta _{required}$, we'll set $\Delta _{max} = \Delta _{required}$ and solve for I. Rearranging the equation and solving, we get:
@@ -311,6 +311,8 @@ Solve:
     \fbox{W27X84}
 \end{center}
 Loading girder as simple beam with two equal concentrated load symmetrically placed  
+
+\newpage
 \subsubsection*{Sizing Roof Girders (Gridlines A5-A6)}
 Given:
 \begin{equation*}
@@ -411,8 +413,79 @@ Solve:
                 \end{aligned}
             \end{equation*}
         \end{enumerate}
-    \end{enumerate}
+\end{enumerate}
 
+\newpage
 \subsubsection*{Sizing Roof Interior Columns (Gridline B7)}
+Given:
+\begin{equation*}
+    \begin{aligned}
+        &P_x = 89.34K \quad &P_y = 46.06K \\
+        &L_{\text{B7 to A7}} = 33ft \quad &L_{\text{B7 to C7}} = 26ft \\
+        &\text{Assume Lc/r = 50} \quad &L_{cx} = 15ft
+    \end{aligned}
+\end{equation*}
+Find:
+\begin{enumerate}
+    \item $A_{required}$
+    \item $P_u$
+    \item $P_n$
+    \item Select W-Section using AISC A360-16 Table 4-1a
+\end{enumerate}
+Solve:
+\begin{enumerate}
+    \item Finding Axial Loading on Column:
+        \begin{equation*}
+            \begin{aligned}
+                P_u &= 2(P_x) + 2(P_y) \\
+                    &= 2(89.34K) + 2(46.06K) \\
+                P_u &= 270.8K  
+            \end{aligned}
+        \end{equation*}
+    \item Selecting W-Section:\\
+        Assuming an unbraced length using $L_c/r$ = 50 and selecting from A360-16 Table 4-1a:
+            \begin{center}
+                \fbox{Select W14X48, $A_{g,provided} = 14.1in^2$}
+            \end{center}    
+\end{enumerate}
+Buckling Failure Checks:
+\begin{enumerate}
+    \item Finding Elastic Buckling Stress, $F_e$:
+        \begin{equation*}
+            \begin{aligned}
+                F_e &= \frac{\pi^2E}{(L_c/r)^2} \\
+                F_e &= \frac{\pi^2*29000}{(50)^2} \\
+                F_e &= 114.5K
+            \end{aligned}
+        \end{equation*}
+    \item Finding slenderness ratio limit, $4.71\sqrt{E/F_y}$:
+        \begin{equation*}
+            \begin{aligned}
+                4.71\sqrt{E/F_y} = 4.71\sqrt{29000Ksi/50ksi} = 113.43 
+            \end{aligned}
+        \end{equation*}
+    \item Finding Critical Buckling Load, $F_{cr}$: \\
+        Since $50 < 113.43$, we will have failure in buckling 
+        \begin{equation*}
+            \begin{aligned}
+                F_{cr} &= F_y(0.658^{Fy/Fe}) \\
+                        &= 50ksi * (0.658^{50ksi/114.5ksi}) \\
+                        &= 41.65
+            \end{aligned}
+        \end{equation*}
+    \item Checking if $A_{g,required}$ exceeds $A_{g,provided}$:
+        \begin{equation*}
+            \begin{aligned}
+                P_u &\leq 0.9F_{cr}A_g \\
+                266.4 &\leq 0.9(41.6ksi)(A_{g,required}) \\
+                A_{g,required} &\geq 7.12 \\
+                A_{g,provided} &\geq A_{g,required} \\
+                14 &\geq 7.12 
+            \end{aligned}
+        \end{equation*}
+        Selected section passes buckling and slenderness checks.
+\end{enumerate}
+
+
     \end{document}
 
