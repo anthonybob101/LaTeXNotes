@@ -4,7 +4,9 @@
 \usepackage{amsmath}
 \usepackage[margin=1in]{geometry}
 
-\title{UW IND E 250 Notes}
+\graphicspath{{./Pictures/}}
+
+\title{CEE 442 Calculations Package - Beams}
 \author{Anthony Le}
  
 \newtheorem{exmp}{Example}
@@ -17,174 +19,19 @@
 
 \pagestyle{fancy}
 \fancyhead{}
-\fancyhead[R]{Scratch Work}
-\fancyhead[L]{Anthony Le}
-
-\begin{center}
-    \LARGE{\textbf{Scratch Work}}
-\end{center}
-
-Givens:
-\begin{equation*}
-    \begin{aligned}
-        LL = 100 psf \quad DL = ?? psf\\
-        L = 32 ft \quad TW = 11 ft \\
-    \end{aligned}
-\end{equation*}
-Computing Demand:
-\begin{enumerate}
-    \item Finding equilvalent uniform distributed load:
-    \begin{equation*}
-        \begin{aligned}
-            w = LL * TW = 100psf * 11ft = 1100lb/ft \\
-        \end{aligned}
-    \end{equation*}
-    \item Finding Reaction Forces: \\
-    Assuming uniform distributed load,
-    \begin{equation*}
-        \begin{aligned}
-            A_y = B_y &= \frac{wL}{2} = \frac{1100*32}{2} \\
-                      &= 17.6K 
-        \end{aligned}
-    \end{equation*}
-    \item Finding Moment Demand:
-    \begin{equation*}
-        \begin{aligned}
-            M_u &= \frac{wL^2}{8} = \frac{1100*32^2}{8} \\
-                &= 140.8K-ft
-        \end{aligned}
-    \end{equation*} 
-    \item Finding Section:
-    \begin{equation*}
-        \begin{aligned}
-            \Phi M_n \geq M_u \\
-            \Phi M_n \geq 140.8K-ft \\
-        \end{aligned}
-    \end{equation*}
-    Using AISC 7-16 Table 3-10 for 140.8 K-ft at unbraced length of 32 feet:
-    \item 
-
-\end{enumerate}
-
-\newpage
-\section*{Horizontial Distribution of Lateral Forces}
-\subsection*{Finding Center of Mass:}
-For preliminary design, we assumed that the center of mass was in the center of the building. For detailed design, we'll want to find and compute the center of mass via weighted average of seismic weights.
-
-\begin{center}
-    Preliminary Design COM:    
-\end{center}
-\begin{equation*}
-    \begin{aligned}
-        \text{Width} = 231' &\quad \text{Height} = 102' \\
-        \bar{X} = \frac{\text{Width}}{2} &\quad \bar{Y} = \frac{\text{Height}}{2} \\
-        \bar{X} = \frac{231}{2} &\quad \bar{Y} = \frac{102}{2} \\
-        \bar{X} = 115.5' &\quad \bar{Y} = 51'
-    \end{aligned}
-\end{equation*}
-From this, we get that \fbox{$\bar{X} = 115.5'\quad \bar{Y} = 51'$}
-
-\subsection*{Finding Center of Rigidity/Rotation}
-\subsubsection*{Finding Frame Stiffnesses in X and Y direction}
-For preliminary design, we can approximate the stiffness of BRBF's with using $K \approx  1/L$, where L is the length of the bay the BRBF spans.
-\begin{equation*}
-    \begin{aligned}
-        K_{xi} &= 1/L = 1/33 \\
-        K_{xi} &= 0.030 \\
-        K_{yi} &= 1/L = 1/26 \\ 
-        K_{yi} &= 0.038 
-    \end{aligned}
-\end{equation*}
-From this, we get that \fbox{$ K_{xi} = 0.030 \quad K_{yi} = 0.038$} \\
-\subsubsection*{Computing Center of Rigidity for $X_R$}
-The process for finding the center of rigidity will be the same for our preliminary and detailed design:
-\begin{equation*}
-    \begin{aligned}
-        X_R &= \frac{\sum{K_{yi}*X_i}}{\sum{K_{yi}}} \\
-        X_R &= \frac{0.038*(66+165+198)}{3*0.038} \\
-        X_R &= 143'
-    \end{aligned}
-\end{equation*}
-
-\subsubsection*{Computing Center of Rigidity for $Y_R$}
-The process for finding the center of rigidity will be the same for our preliminary and detailed design:
-\begin{equation*}
-    \begin{aligned}
-        Y_R &= \frac{\sum{K_{yi}*X_i}}{\sum{K_{yi}}} \\
-        Y_R &= \frac{0.030*(102+12+12+102)}{4*0.030} \\
-        Y_R &= 57'
-    \end{aligned}
-\end{equation*}
-From this, we get that \fbox{$X_R = 143 \quad Y_R = 57$} \\
-
-\subsubsection*{Computing Eccentricity for Inherent Torsion}
-To find the eccentricity, we'll need to find the distance between the center of mass and the center of rigidity. However, we should note at this point, that we are going to assume that counter-clockwise twisting will be in the positive direction (following the convention we've been working with such as in the right-hand rule).
-\begin{equation*}
-    \begin{aligned}
-        e_{Y,Inherent} &= Y_R - \bar{Y} \\
-        e_{X,Inherent} &= \bar{X} - X_R 
-    \end{aligned}
-\end{equation*}
-Solving for eccentricities:
-\begin{equation*}
-    \begin{aligned}
-        e_{Y,Inherent} &= 57 - 51 \\
-        e_{Y,Inherent} &= 6' \\
-        e_{X,Inherent} &= 115.5 - 143 \\
-        e_{X,Inherent} &= -27.5'
-    \end{aligned}
-\end{equation*}
-From this, we get that \fbox{$e_{X,Inherent} = -27.5' \quad e_{Y,Inherent} = 6'$} \\
-
-\subsection*{Computing Eccentricity for Accential Torsion}
-To find the eccentricity, we'll need to multiply the length and width by 5\% in order to get the accidential torsion eccentricity. From this, we'll get equations in the form of:
-\begin{equation*}
-    \begin{aligned}
-        e_{Y,Accidential} &= 0.05 * L_Y \\
-        e_{X,Accidential} &= 0.05 * L_X 
-    \end{aligned}
-\end{equation*}
-Solving for eccentricities:
-\begin{equation*}
-    \begin{aligned}
-        e_{Y,Accidential} &= 0.05 * 102' \\
-        e_{Y,Accidential} &= 5.1' \\
-        e_{X,Accidential} &= 0.05 * 231' \\
-        e_{X,Accidential} &= 11.550'
-    \end{aligned}
-\end{equation*}
-From this, we get that \fbox{$e_{X,Accidential} = 11.550' \quad e_{Y,Accidential} = 5.1'$} \\
-
-\subsection*{Computing Total Torsion}
-To find the total torsion caused by accidential and inherent torsion, we'll combine the inherent and accidential eccentricities. From this, we'll get equations in the form of:
-\begin{equation*}
-    \begin{aligned}
-        T_X &= V_x (e_{Y,Inherent} \pm e_{Y,Accidential}) \\
-        T_Y &= V_y (e_{X,Inherent} \pm e_{X,Accidential}) 
-    \end{aligned}
-\end{equation*}
-Plugging in eccentricities:
-\begin{equation*}
-    \begin{aligned}
-        T_X &= V_x (6' \pm 5.1') \\
-        T_X &= V_x (11.10) \text{ For +X} \quad V_x (0.90) \text{ For -X} \\
-        T_Y &= V_y (-27.5' \pm 11.550') \\
-        T_Y &= V_y (-15.95) \text{ For +Y} \quad V_y (-39.05) \text{ For -Y}
-    \end{aligned}
-\end{equation*}
- 
+\fancyhead[R]{CEE 442 SD Calculations Package}
+\fancyhead[L]{SCHALT Structural}
 
 
 
-
-
-
-
-\newpage
 \section*{Preliminary Structural Calculations}
 \subsection*{Gravity System Design}
 \subsubsection*{Sizing Roof Beams (Covering Gridlines A6-B6)}
-%insert snapshot of beam layout
+
+\begin{center}
+    \includegraphics[scale=0.25]{RoofBeams_A6_B6}
+\end{center}
+
 Given:
 \begin{equation*}
     \begin{aligned}
@@ -197,7 +44,10 @@ Find:
     \item $M_u$
     \item Select W-Section using AISC A360-16 Table 3-10
 \end{enumerate}
-Solve: 
+Solve:
+\begin{center}
+    \includegraphics[scale=0.15]{RoofBeams_A6_B6_Loads}
+\end{center}
 \begin{enumerate}
     \item Controlling LRFD Load Combo:
         \begin{equation*}
@@ -243,8 +93,8 @@ Solve:
 \end{center}
 
 \newpage
-\subsubsection*{Sizing Roof Girders (B6-B7)}
-%Insert Snapshot of Gider Loading
+\subsubsection*{Sizing Roof Girders (Covering Gridlines B6-B7)}
+
 Given:\footnote{Note that the applied forces P were calculated using the reaction of roof beams A6-B6 and the self-weight of the W18X86 beam.}
 \begin{equation*}
     \begin{aligned}
@@ -258,9 +108,14 @@ Find: %//TODO - I'm a little unsure about why we're finding the required moment 
     \item $M_{max}$
     \item $\Delta _{max}$
     \item $I_{required}$
-    \item Select W-Section using AISC A360-16 \textbf{[INSERT TABLE NAME HERE]}
+    \item Select W-Section using AISC A360-16 Table 6-2
 \end{enumerate}
 Solve:
+
+\begin{center}
+    \includegraphics[scale=0.25]{RoofGirder_B6_B7_Loads}
+\end{center}
+
 \begin{enumerate}
     \item Finding $L/360$
         \begin{equation*}
@@ -299,8 +154,8 @@ Solve:
                 I_{required} = 2450in^4
             \end{aligned}
         \end{equation*}
-    \item Selecting W-Section using AISC A360-16 \textbf{[INSERT TABLE NAME HERE]}
-    Assuming ???? from A360-16 Table ????, where:
+    \item Selecting W-Section using AISC A360-16 Table 6-2 \\
+    Assuming $L_b = 32ft$ from A360-16 Table 6-2 where:
         \begin{equation*}
             \begin{aligned}
                 I_{required} = 2450in^4
@@ -313,7 +168,7 @@ Solve:
 Loading girder as simple beam with two equal concentrated load symmetrically placed  
 
 \newpage
-\subsubsection*{Sizing Roof Girders (Gridlines A5-A6)}
+\subsubsection*{Sizing Roof Girders (Covering Gridlines A5-A6)}
 Given:
 \begin{equation*}
     \begin{aligned}
@@ -416,7 +271,10 @@ Solve:
 \end{enumerate}
 
 \newpage
-\subsubsection*{Sizing Roof Interior Columns (Gridline B7)}
+\subsubsection*{Sizing Roof Interior Columns (Covering Gridline B7)}
+\begin{center}
+    \includegraphics[scale=0.25]{RoofColumn_B7}
+\end{center}
 Given:
 \begin{equation*}
     \begin{aligned}
@@ -433,6 +291,9 @@ Find:
     \item Select W-Section using AISC A360-16 Table 4-1a
 \end{enumerate}
 Solve:
+\begin{center}
+    \includegraphics[scale=0.15]{RoofColumn_B7_Loads}
+\end{center}
 \begin{enumerate}
     \item Finding Axial Loading on Column:
         \begin{equation*}
@@ -486,6 +347,170 @@ Buckling Failure Checks:
         Selected section passes buckling and slenderness checks.
 \end{enumerate}
 
+\newpage
+\subsubsection*{Sizing Roof Exterior Columns (Covering Gridline A8)}
+\begin{center}
+    \includegraphics[scale=1.25]{RoofColumn_A8}
+\end{center}
+Given:
+\begin{equation*}
+    \begin{aligned}
+        &P_x = 54.31K \quad &P_y = 23.5K \\
+        &\text{Assume Lc/r = 50} \quad &L_{cx} = 15ft
+    \end{aligned}
+\end{equation*}
+Find:
+\begin{enumerate}
+    \item $A_{required}$
+    \item $P_u$
+    \item $P_n$
+    \item Select W-Section using AISC A360-16 Table 4-1a
+\end{enumerate}
+Solve:
+\begin{center}
+    \includegraphics[scale=0.15]{RoofColumn_B7_Loads}
+\end{center}
+\begin{enumerate}
+    \item Finding Axial Loading on Column:
+        \begin{equation*}
+            \begin{aligned}
+                P_u &= P_x + P_y \\
+                    &= 54.31 + 23.5 \\
+                P_u &= 77.8K  
+            \end{aligned}
+        \end{equation*}
+    \item Selecting W-Section:\\
+        Assuming an unbraced length using $L_c/r$ = 50 and selecting from A360-16 Table 4-1a:
+            \begin{center}
+                \fbox{Select W14X26, $A_{g,provided} = 7.69$}
+            \end{center}    
+\end{enumerate}
+Buckling Failure Checks:
+\begin{enumerate}
+    \item Finding Elastic Buckling Stress, $F_e$:
+        \begin{equation*}
+            \begin{aligned}
+                F_e &= \frac{\pi^2E}{(L_c/r)^2} \\
+                F_e &= \frac{\pi^2*29000}{(50)^2} \\
+                F_e &= 114.5K
+            \end{aligned}
+        \end{equation*}
+    \item Finding slenderness ratio limit, $4.71\sqrt{E/F_y}$:
+        \begin{equation*}
+            \begin{aligned}
+                4.71\sqrt{E/F_y} = 4.71\sqrt{29000Ksi/50ksi} = 113.43 
+            \end{aligned}
+        \end{equation*}
+    \item Finding Critical Buckling Load, $F_{cr}$: \\
+        Since $50 < 113.43$, we will have failure in buckling 
+        \begin{equation*}
+            \begin{aligned}
+                F_{cr} &= F_y(0.658^{Fy/Fe}) \\
+                        &= 50ksi * (0.658^{50ksi/114.5ksi}) \\
+                        &= 41.65
+            \end{aligned}
+        \end{equation*}
+    \item Checking if $A_{g,required}$ exceeds $A_{g,provided}$:
+        \begin{equation*}
+            \begin{aligned}
+                P_u &\leq 0.9F_{cr}A_g \\
+                77.8 &\leq 0.9(41.6ksi)(A_{g,required}) \\
+                A_{g,required} &\geq 2.06 \\
+                A_{g,provided} &\geq A_{g,required} \\
+                7.696 &\geq 2.06 
+            \end{aligned}
+        \end{equation*}
+        Selected section passes buckling and slenderness checks.
+\end{enumerate}
 
-    \end{document}
+\subsection*{Lateral System Design}
+\subsubsection*{Sizing Roof Lateral System Braces (Covering Gridlines B3-C3)}
+\begin{center}
+    \includegraphics[scale=0.15]{RoofLateralSystem_B3_C3}
+\end{center}
+Given:
+\begin{equation*}
+    \begin{aligned}
+        &W = 26ft &\quad H = 15ft \\
+        &\Phi P_n = 103.20K &\quad \Theta = 45
+    \end{aligned}
+\end{equation*}
+Find: 
+\begin{enumerate}
+    \item $A_sc$
+    \item Select BRBF Section from CoreBrace BRB Reference Guide
+\end{enumerate}
+Solve:
+\begin{enumerate}
+    \item Finding $P_{max}$:
+        \begin{equation*}
+            \begin{aligned}
+                P_{max} &= P \cos \Theta \\
+                        &= 103.20\cos(45) \\
+                P_{max} &= 72.97K
+            \end{aligned}
+        \end{equation*}
+    \item Finding $A_{sc}$
+        \begin{equation*}
+            \begin{aligned}
+                A_{sc} &= \frac{P_{max}}{F_{y,min}} \\
+                       &= \frac{72.97K}{36Ksi} \\
+                A_{sc} &= 2.03in^2 
+            \end{aligned}
+        \end{equation*}
+        \begin{center}
+            \fbox{Select t8(203.2)(3in$^2$)}
+        \end{center}
+\end{enumerate}
+
+\subsubsection*{Sizing Roof Lateral System Column (Covering Gridlines B3-C3)}
+\begin{center}
+    \includegraphics[scale=0.15]{RoofLateralSystem_B3_C3_Loads}
+\end{center}
+Given:
+\begin{equation*}
+    \begin{aligned}
+        &B = 1.1 &\quad W = 1.36 \\
+        &\Phi P_n = 103.20K &\quad \Theta = 45 \\
+        &Factored Load = 238.16psf &\quad P_{above} = 270.8K
+    \end{aligned}
+\end{equation*}
+Find: 
+\begin{enumerate}
+    \item $P_c$
+    \item Select W-Section using AISC A360-16 Table 4-1a
+\end{enumerate}
+Solve:
+\begin{center}
+    \includegraphics[scale=0.15]{RoofLateralSYstem_B3_C3_Loads}
+\end{center}
+\begin{enumerate}
+    \item Finding $P_u$:
+        \begin{equation*}
+            \begin{aligned}
+                P_u = wA_{sc}F_{y,max} (T) \\
+                P_u = BwA_{sc}F_{y,max} 
+            \end{aligned}
+        \end{equation*}
+    \item Finding Tributary Area, $A_t$
+        \begin{equation*}
+            \begin{aligned}
+                A_t &= 33ft*(26/2ft+32/2) \\
+                A_t &= 957ft^2
+            \end{aligned}
+        \end{equation*}
+    \item Finding $P_c$
+        \begin{equation*}
+            \begin{aligned}
+                P_c &= P_{above} + \text{Factored Load} * A_t \\ 
+                P_c &= 270.8K + 238.16psf(957ft^2)/1000 \\
+                P_c &= 954.56K
+            \end{aligned}
+        \end{equation*}
+    \item Select W-Section using AISC A360-16 Table 4-1a
+        \begin{center}
+            \fbox{Select W14X99, $\Phi P_n = 1100K$}
+        \end{center}
+\end{enumerate}
+\end{document}
 
