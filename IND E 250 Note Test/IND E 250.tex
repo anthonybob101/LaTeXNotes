@@ -1226,6 +1226,77 @@ Performing deflation and discounting in 1 step:
 \end{equation*}
 
 %//TODO - do notes from Monday 4/24/23 CH11CH5 Notes!
+\section*{Chapter 5 - Present Worth Analysis}
+\subsection*{Alternatives}
+\begin{enumerate}
+    \item Creation of \emph{"Alternatives"}:
+        \begin{enumerate}
+            \item If there are no alternatives to consider then there is really no problem to solve!
+        \end{enumerate}
+    \item Given a set of \emph{"feasible"} alternatives, engineering economy attempts to identify the \emph{"best"} economic approach to a given problem
+        \begin{enumerate}
+            \item Feasible means "viable" or "doable"
+            \item Part of Engineering Econ is the \emph{selection} and execution of the best alternative from among a set of feasible alternatives
+        \end{enumerate}
+\end{enumerate}
+\section*{Section 5.1 - Three Types of Categories}
+Formulating Alternatives:
+\begin{enumerate}
+    \item The Single Project
+    \item Mutually Exclusive Set
+    \item Independent Project Set
+\end{enumerate}
+
+\subsection*{The Single Project}
+\begin{enumerate}
+    \item The unconstrained project selection problem
+    \item No comparision to competing projects
+    \item Acceptance or rejection is based on comparision with the firm's opportunity cost (always present)
+    \item Two Alternatives
+        \begin{enumerate}
+            \item Do nothing (reject the project)
+            \item Accept the project
+        \end{enumerate}
+    \item Do Nothing
+        \begin{enumerate}
+            \item Involve the alternative use of the firm's funds that could be invested in the project!
+            \item Maintaining the status quo may not be an option
+        \end{enumerate}
+\end{enumerate}
+\subsection*{Mutually Exclusive Set}
+\begin{enumerate}
+    \item Mutually Exclusive Set (Only \emph{one} of the feasible projects can be completed)
+    \item It is the set is comprised of "do-able" feasible alternatives
+    \item Alternatives compete with each other! 
+    \item Think buying vs leasing a car
+\end{enumerate}
+\subsection*{Independent Project Set}
+\begin{enumerate}
+    \item Independent Set
+        \begin{enumerate}
+            \item More than 1 can be selected
+            \item Deal with budget limitations
+            \item Project dependencies and relationships
+            \item Example - improve public infrastructure by building roads, public library, schools, etc.
+        \end{enumerate}
+    \item More involved analysis
+        \begin{enumerate}
+            \item Often formulated as a 0-1 linear programming model
+            \item With constraints and an objective function
+        \end{enumerate}
+\end{enumerate}
+\subsection*{Payback Period Analysis}
+\begin{enumerate}
+    \item Screens project based on the payback period
+    \item Technique: estimates the time $n_p$ to recover the \emph{inital investment} in a project, either with or without investment earned
+    \item Two Forms:
+        \begin{enumerate}
+            \item With no interest $\rightarrow i = 0\%$ (no-return/traditional payback ) 
+        \end{enumerate}
+\end{enumerate}
+%//TODO - Continute off of CH11Ch5 Slides Page 32 of 50!
+
+
 
 %//TODO - Do notes from slides 1-14 CH5 Notes!
 \section*{Section 5.5: Comparing Mutually Exclusive Alternatives}
@@ -1375,7 +1446,7 @@ Since these are both service projects select project B as it has the lower prese
         \begin{enumerate}
             \item MARR is generally dictated by management and is the rate at which NPW analysis should be conducted.
         \end{enumerate}
-    \item Two measures of investment, the net future woth and the capitalized equilvalent worth, are varations to the NPW criterion.
+    \item Two measures of investment, the net future woth and the capitalized equilvalent worth, are variations to the NPW criterion.
 \end{enumerate}
 \section*{Chapter 6 - Annual Equilivalent Worth Analysis}
 
@@ -1405,18 +1476,86 @@ Select if AW is greater than 0, reject if it's less than 0, and there are no dif
     \item First Cycle of cash flows repeated for successive cycles
     \item All Cash flows have same estimated values in every life cycle
     \item If alternatives have unequal lives, then one only needs to evaluate AW for any given cycle.
-    \item Annual worth of one cycle is he same as the annual worth of other cycles (by assumption)
+    \item Annual worth of one cycle is the of other cycles (by assumption)
         \begin{enumerate}
             \item Eliminates the LCM problem associated with the present worth period
         \end{enumerate}
 \end{enumerate}
+\begin{exmp}
+    Example 6.2: Annual Equilvalent Worth - Repeating Cash Flow Cycles
+    Solar cell degrades over time, replace every 4 years.
+\end{exmp}
+For more detailed workthrough - see class notes for this example
+\begin{equation*}
+    \begin{aligned}
+        AE &= 1,017.15(A/P, 12\%,4) \\
+            &= 334.88 \quad \text{in thousands}
+    \end{aligned}
+\end{equation*}
+Note that in for annual equilvalent worth, you don't need to find the annual worths of each portion, you just need to find the AE of the present worth!
 
+\section*{Annual Equivalent Cost}
+\begin{enumerate}
+    \item When only costs are involved, the AE method is called the annual equivalent cost.
+    \item Revenues must cover two kinds of costs \emph{operating/annual costs} and \emph{capital costs}.
+\end{enumerate}
+\begin{exmp}
+    Example 6.3 - Comparing Mutually Exclusive Alternatives
+    \begin{enumerate}
+        \item Compare two types of equipment with unequal service lives.
+        \item Apply the annual equivalent cost (AEC) to select the most economical equipment.
+        \item The service life of the selected alternative is required on a continuous basis 
+    \end{enumerate}
+\end{exmp}
+\subsection*{Capital Recovery Cost}
+Considering the potential purchase of any asset, management is concerned about the equivalent annual cost of \emph{owning} a productive asset
+\begin{enumerate}
+    \item Inital Investment - $P_0$ or $I$
+    \item Estimated Future Salvage Value - $S$
+    \item Estimated Life of the Asset - $N$
+    \item Estimated Operating Costs and Timing
+    \item Operative Interest Rate - $i$
+    \item Capital revocer (CR) is the annualized equivalent
+\end{enumerate}
 
-
-
-
-
-
+\subsection*{CR Calculation}
+\begin{enumerate}
+    \item Definition - Owning an equipment is associated with two transactions:
+        \begin{enumerate}
+            \item Its inital cost (I)
+            \item Its salvage value (S)
+        \end{enumerate}
+    \item Capital costs
+        \begin{equation*}
+            \begin{aligned}
+                CR(i) &= I(A/P,i,N)-S(A/F,i,N) \\
+                        &= (I-S)(A/P,i,N) + iS 
+            \end{aligned}
+        \end{equation*}
+\end{enumerate}
+Also to note:
+\begin{equation*}
+    \begin{aligned}
+        (A/F,i,N) = (A/P,i,N)-i
+    \end{aligned}
+\end{equation*}
+\begin{exmp}
+    CR Calculation for Mini Cooper \\
+    Givens:
+    \begin{enumerate}
+        \item I = 19800
+        \item N = 3 years
+        \item S = 12078
+        \item i = 6\%
+    \end{enumerate}
+\end{exmp}
+\begin{equation*}
+    \begin{aligned}
+        CR(6\%) &= (I-S)(A/P,i,N) + iS \\
+                &= (19800-12078)(A/P,6\%,3) + 0.06(12078) \\
+                &= -19800(A/P,6\%,3) + 12078(A/F,6\%,3) 
+    \end{aligned}
+\end{equation*}
 
 
 
