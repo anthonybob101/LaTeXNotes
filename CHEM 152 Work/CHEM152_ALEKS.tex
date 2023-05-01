@@ -749,7 +749,110 @@ Now let's apply these general principles to the specific questions in this probl
     \item Since A is higher than C, the bicyclist's potential energy would be higher and his kinetic energy would be lower. The total energy, however, would be the same at both points.
 \end{enumerate}
 
+\section*{Calculating Solubility}
+\begin{exmp}
+    A geochemist in the field takes a 50mL sample of water from a rock pool lined with crystals of a certain mineral compound X. He notes the temperature of the pool, 17C, and caps the sample carefully. Back in the lab, the geochemist filters the sample and then evaporates all the water under vacuum. Crystals of X are left behind. The researcher washes, dries and weighs the crystals. They weigh 1.7g.
+    \begin{enumerate}
+        \item Using only the information above, can you calculate the solubility of X in water at 17C? If so, calculate it.
+    \end{enumerate} 
+\end{exmp}
+You can solve this problem by using the fact that the solubility of a solute is equal to its concentration in a saturated solution, and a saturated solution is a solution in which \emph{no more of the solute will dissolve}.
+\begin{enumerate}
+    \item You \emph{know} a solution is saturated when it's in contact with extra solute that refuses to dissolve. 
+    \item If there is no undissolved solute, the solution may or may not be saturated.
+\end{enumerate}
+In this case, you know that the solution must be saturated in X, since it's in contact with undissolved X. That means you \emph{can} calculate the solubility of X.
+\newline
+THe solubility of X equals the concentration of X in the saturated solution - the mass of dissolved X divided by the volume of the solution:
+\begin{equation*}
+    \begin{aligned}
+        \frac{1.7g}{50.0mL} = 0.03400... g/mL
+    \end{aligned}
+\end{equation*}
+There are 2 sig figs in 1.7g and 3 in 50.0 mL. So your calculated answer should have 2 sig figs.
 
+\section*{Using the solubility of a compound to calculate $K_{sp}$}
+\begin{exmp}
+    The solubility of \ce{CaCO3} in water at 25C is measured to be 0.0067 g/L. Use this information to calculate $K_{sp}$ for \ce{CaCO3}.
+\end{exmp}
+In a saturated solution, the last bit of undissolved \ce{CaCO3} will be in equilibrium with the dissolved ions:
+\begin{equation*}
+    \begin{aligned}
+        \ce{CaCO3(s) <=> Ca^2+(aq) + CO3^2-(aq)}
+    \end{aligned}
+\end{equation*}
+That means the equilibrium molarities of the ions must be related to $K_{sp}$ through the $K_{sp}$ expression equation:
+\begin{equation*}
+    \begin{aligned}
+        \ce{K_{sp} = [Ca^2+][CO3^2-]} \text{ CaCO3 doesn't appear here because it's present as a pure solid.}
+    \end{aligned}
+\end{equation*}
+To use this equation, you first need to convert the equilibrium solubility of \ce{CaCO3} to the equilibrium molar solubility. Dividing grams per liter by the molar mass of \ce{CaCO3} will convert to moles per liter:
+\begin{equation*}
+    \begin{aligned}
+        \frac{0.0067 g/L}{100.086 g/mol} = 6.694...*10^{-5}M
+    \end{aligned}
+\end{equation*}
+Now use the stoichiometry in the chemical equation to find the molarities of \ce{Ca^2+} and \ce{CO3^2-}
+\begin{equation*}
+    \begin{aligned}
+        \ce{[Ca^2+]} = 6.694*10^{-5}\\
+        \ce{[CO3^2-]} = 6.694*10^{-5}
+    \end{aligned}
+\end{equation*}
+Now you can calculate $K_{sp}$: 
+\begin{equation*}
+    \begin{aligned}
+        K_{sp} &= (6.694*10^{-5})(6.694*10^{-5})\\
+            &= 4.481*10^{-9} \\
+            &= 4.5*10^{-9}
+    \end{aligned}
+\end{equation*}
+
+\section*{Using $K_{sp}$ to calculate the solubility of a compound}
+\begin{exmp}
+    Calculate the solubility of \ce{CaF2} in water at 25C. 
+\end{exmp}
+In a saturated solution, the last bit of undissolved \ce{CaF2} will be in equilibrium with the dissolved ions:
+\begin{equation*}
+    \begin{aligned}
+        \ce{CaF2 <=> CA^2+ + 2F-}
+    \end{aligned}
+\end{equation*}
+That means you can calculate the equilibrium molarities of the ions from the $K_{sp}$ expression equation.
+\begin{equation*}
+    \begin{aligned}
+        K_{sp} = \ce{[Ca^2+][F-]^2} \text{CaF2 doesn't appear here since its a pure solid.}
+    \end{aligned}
+\end{equation*}
+As always when solving equilibrium composition problems, it's helpful to begin by setting up an ICE table. Let x stand for the moles per liter of \ce{CaF2} that dissolves:
+\begin{center}
+    \begin{tabular}{ c c c}
+        X & $\ce{[Ca^2+]}$ & $\ce{[F^-]}$ \\
+        I & 0 & 0  \\
+        C & x & 2x \\
+        E & x & 2x
+    \end{tabular}
+\end{center}
+There's no column for \ce{CaF2}. Since it's present as the pure solid, it can't change concentration, and can't be in the reaction table.
+\newline
+Now substitute the expresion from the "equilibrium" line of the reaction table into the $K_{sp}$ expression:
+\begin{equation*}
+    \begin{aligned}
+        K_{sp} &= x * (2x)^2 \\
+        K_{sp} &= 4x^3 \text{Simplify.}\\
+        x &= (K_{sp}/4)^{1/3} \text{Solve for x.} \\
+         &= (K_{sp}/4)^{1/3} \text{Substitute Ksp from ALEKS data tab.} \\
+         &= ((3.45*10^{-11})/4)^{1/3} \\
+         &= 2.051*10^{-4} moles/Liter
+    \end{aligned}
+\end{equation*}
+Multiply by molar mass to find grams per liter dissolved:
+\begin{equation*}
+    \begin{aligned}
+        (2.051*10^{-4} \frac{mol}{L})*(78.075 \frac{g}{mol}) = 0.01601 \frac{g}{L}
+    \end{aligned}
+\end{equation*}
 %-------------------------------------------------------------------------------
 \section*{Scratch Work}
 
