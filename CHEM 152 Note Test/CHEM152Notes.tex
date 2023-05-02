@@ -1205,11 +1205,21 @@ Acid only, before we add any $\ce{NaOH}$
     \hline
     X   & $[HNO_2]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[NO_2^-]$ & ${}+{}$ & $[H_3O^+]$ \\
     \hline
-    I   &  0   &&     &&  0.8   && 3.6  \\
-    C   &      &&     &&     &&   \\
-    E   &      &&     &&     &&   \\      
+    I   &  0.25   &&     &&  0   && 0  \\
+    C   &  -x  &&     &&  x  && x \\
+    E   & 0.25-x &&     &&  x  && x \\      
 \end{tabular}
 \newline
+\begin{equation*}
+    \begin{aligned}
+        K_a &= \ce{\frac{[NO2-][H3O+]}{[HNO2]}} \\
+            &\text{small x approx.} \approx \frac{x^2}{0.25} \\
+          x &= 0.0106 \\
+        pH &= -log_{10}\ce{[H3O+]} \\
+        pH &= 1.97
+    \end{aligned}
+\end{equation*}
+
 
 After adding 5mL of NaOH:
 \newline
@@ -1369,7 +1379,7 @@ $\left.
     \item The total energy of a system is the sum of ineic and potential energy: $E = E_k + E_p$
     \item The unit of energy is Joules(J) - where $1J = 1kg*m^2/s^2$
     \item Also, calories are also another unit of energy - $1cal = 4.184J$\footnote{These calories that we deal with in food are technically not "calories" per se, its actually kilocalories}
-    \item Also, electronvolts are another unit of energy, suited for the small interactions from chem: %//TODO - place electronvolt value for joules!
+    \item Also, electronvolts are another unit of energy, suited for the small interactions from chem - $1 eV = 1.6*10^{-19}J$
 \end{enumerate}
 
 \subsection*{Conservation of Energy}
@@ -1445,7 +1455,7 @@ In an endothermic process, heat is absorbed by the system from the surroundings 
 \begin{enumerate}
     \item Physical Example - heating water absorbs heat from the surroundings. \\
     Here heat gain is primarily due to the increase in molecular kinetic energy due to the water molecules slowing down.
-    \item Chemical Example - o%//TODO - insert what the chemical reaction for this is!
+    \item Chemical Example - mixure of barium hydroxide ($\ce{Ba(OH)2}$) and ammonium chloride ($NH4Cl$) absorbs heat from the surroundings.
     Here heat gain is primarily due to the increase in molecular potential energy due to the molecules reacting to each other.
 \end{enumerate}
 
