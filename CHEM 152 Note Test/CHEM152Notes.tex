@@ -6,6 +6,8 @@
 \usepackage{amssymb}
 \usepackage[margin=1in]{geometry}
 
+\usepackage{subfiles} % Best loaded last in the preamble
+
 \title{UW CHEM 152 Notes}
 \author{Anthony Le}
 
@@ -22,9 +24,7 @@
 \fancyhead[R]{UW CHEM 152}
 \fancyhead[L]{Anthony Le}
 
-\begin{center}
-    \LARGE{\textbf{Review - CHEM 142: Kinetics}}
-\end{center}
+\section*{Chapter 6 - Chemical Equilibrium: Law of Mass Action}
 
 \subsection*{Chemical Reactions}
 Consider a chemical reaction of the form \ce{A -> B}.
@@ -511,6 +511,95 @@ Finding Q from inital concentrations:
 \end{enumerate}
 
 %//TODO - take notes on friday's lecture!
+
+\subsection*{The Effect of Changing Concentrations}
+\begin{exmp}
+    Formation of hydrogen cyanide from methane and ammonia 
+    \begin{equation*}
+        \begin{aligned}
+            \ce{CH4 + NH3 <=> HCN + 3 H2}
+        \end{aligned}
+    \end{equation*}
+    Let's assume the system is at equilibrium. Therefore, the concentration of each species is equal to the equilibrium concentrations.
+    \begin{equation*}
+        \begin{aligned}
+            Q = \ce{\frac{[HCN][H2]^3}{[CH4][NH3]}} = K
+        \end{aligned}
+    \end{equation*}
+\end{exmp}
+what happens if we add some more ammonia to the system?
+\begin{enumerate}
+    \item The current \ce{NH3} concentration increases, and the reaction quotient Q decreases.
+    \item Now we have Q < K - the system is no longer in equilibrium!
+    \item System evolves towards the new equilibrium by creating more product (it shifts "toward the right", \emph{away from the added component}).
+\end{enumerate}
+What happens if instead we now add some more hydrogen to the system?
+\begin{enumerate}
+    \item The current \ce{H2} concentration increases, and the reaction quotient Q increases.
+    \item Now we have Q > K - the system is no longer in equilibrium!
+    \item System evolves towards the new equilibrium by creating more reactant (it shifts "towards the left", \emph{away from the added component}).
+\end{enumerate}
+
+\subsection*{The Effect of Changing Pressure}
+There are many ways to change the pressure of the gas-phase chemical system:
+\begin{enumerate}
+    \item \textbf{Add or remove a gas that is part of the reaction} - see the previous section.
+    \item \textbf{Add an inert gas that doesn't participate in the reaction.} - This changes the total pressure, but not the partial pressures of reactants, products, nor their concentrations, so it does not change the reaction quotient.
+    \item \textbf{Change the volume of the system.} 
+        \begin{exmp}
+            Ammonia Synthesis Reaction:
+                \begin{equation*}
+                    \begin{aligned}
+                        \ce{N2 + 3H2 <=> 2 NH3}
+                    \end{aligned}
+                \end{equation*}
+            Let's assume the system is at equilibrium: 
+                \begin{equation*}
+                    \begin{aligned}
+                        Q = \ce{\frac{[NH3]^2}{[N2][H2]^3}} = K
+                    \end{aligned}
+                \end{equation*}
+        \end{exmp}
+\end{enumerate}
+\textbf{What happens if we now decreases the volume by a factor of 2?}
+\begin{enumerate}
+    \item Each concentration increases by a factor of 2. 
+    \item The reaction quotient Q changes from K to (4/16)K.
+    \item Now we have Q < K - the system is no longer in equilibrium!
+    \item System evolves towards the new equilibrium by creating more product (it shifts "towards the right", \emph{towards the side of fewer gas molecules})
+\end{enumerate}
+
+\subsection*{The Effect of Changing Temperature}
+Many chemical reactions release of absorb energy in the form of heat:
+\begin{enumerate}
+    \item If energy is released, we call the reaction \emph{exothermic}. 
+        \begin{exmp}
+            Combustion of methane: 
+            \begin{equation*}
+                \begin{aligned}
+                    \ce{CH4 + O2 <=> 2 H2O + CO2 + energy} 
+                \end{aligned}
+            \end{equation*}
+        \end{exmp}
+    \item If energy is absorbed, we call the reaction \emph{endothemic}.
+        \begin{exmp}
+            Decomposition of dinitrogen tetraoxide
+            \begin{equation*}
+                \begin{aligned}
+                    \ce{N2O4 + energy <=> 2 NO2}
+                \end{aligned}
+            \end{equation*}
+        \end{exmp}
+\end{enumerate}
+For now, we can think of heat energy just like a reactant (for endothermic reactions) or a product (for exothermic reactions). 
+\newline
+Increasing the temperature shifts the chemical system... 
+\begin{enumerate}
+    \item Towards the left for exothermic reactions (energy is a product)
+    \item Towards the right for endothemic reactions (energy is a reactant)
+\end{enumerate}
+
+\section*{Chapter 7 - Acids and Bases: Acid Strength and the pH scale}
 
 \subsection*{Strong and Weak Acids}
 Acid dissociation reaction:
@@ -1109,7 +1198,7 @@ What if we add 0.03mol of sodium hydroxide (NaOH)?
     \end{aligned}
 \end{equation*} %//TODO - fix the alignment of this so pH and calculated pH are in their own columns alligned by the = sign!
 
-\section*{Chapter 8 - Applications of Squeous Equilibria (Titrations and pH Curves)}
+\subsection*{Chapter 8 - Applications of Squeous Equilibria (Titrations and pH Curves)}
 
 \subsection*{Acid/Base Titration}
 Titration is a method of quantitative chemical analysis that is used to determine the unknown concentration of a species in solution. 
