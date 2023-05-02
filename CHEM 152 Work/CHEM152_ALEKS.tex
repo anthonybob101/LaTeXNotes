@@ -853,7 +853,46 @@ Multiply by molar mass to find grams per liter dissolved:
         (2.051*10^{-4} \frac{mol}{L})*(78.075 \frac{g}{mol}) = 0.01601 \frac{g}{L}
     \end{aligned}
 \end{equation*}
+
+\section*{(MIDTERM) Question 6 - Order Salt Solution by Increasing pH}
+Want to order everything in $K_a$, since you're given acids AND bases
+\begin{enumerate}
+    \item Start by ranking by the strongest acid out of the two you're given  \\
+        In this case, nitrous acid > hyrocyanic acid (nitrous acid has a greater Ka than hydrocyanic acid)
+    \item After this, you can do the same for your bases, in this case Aniline > Methylamine
+    \item Follow this logic to sort them -
+    \begin{center}
+        good base pH > bad base pH > bad acid pH > good acid pH \\
+        Aliline > Methylamine > Hydrocyanic Acid > Nitrous Acid \\
+        \ce{C6H5NH2} > \ce{CH3NH2} > \ce{HCN} > \ce{HNO2} \\
+        \ce{C6H5NH3Cl} > \ce{CH3NH3Br} > \ce{NaCN} > \ce{KNO2}
+    \end{center}
+\end{enumerate}
+
+\section*{(MIDTERM) Question 7a - Buffers}
+You solve this problem using the HH equation:\footnote{Funnily enough using the HH equation for buffers works perfectly - professors are sussy about using HH since students will use it everywhere in really weird ways.}
+\begin{equation*}
+    \begin{aligned}
+        pH &= \ce{pKa + log_{10}(\frac{[CH3O2COO-]}{[CH3C2COOH]})} \\
+           &= (-log(1.3*10^{-5})) + log_{10}(\frac{0.1}{0.1}) \\
+           &= 4.89
+    \end{aligned}
+\end{equation*}
+
+\section*{(MIDTERM) Question 7b - Buffers}
+\begin{equation*}
+    \begin{aligned}
+        pH &= \ce{pKa + log_{10}(\frac{[CH3O2COO-]}{[CH3C2COOH]})} \\
+           &= (-log(1.3*10^{-5})) + log_{10}(\frac{0.12}{0.08}) \\
+           &= 5.062
+    \end{aligned}
+\end{equation*}
+
 %-------------------------------------------------------------------------------
+
+
+
+
 \section*{Scratch Work}
 
 \begin{equation*}
@@ -894,7 +933,7 @@ For any weak acid with Ka and inital concentration M assuming small x approximat
 
 \begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
     \hline
-    X   & $[HA]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[H_3O^+]$ & ${}+{}$ & $[A^-]$ \\
+    X   & $[HA]$ & ${}+{}$ & $[H_2O]$ & *${}\leftrightharpoons{}$ & $[H_3O^+]$ & ${}+{}$ & $[A^-]$ \\
     \hline
     I   &  1.9    &&     &&  0   && 0  \\
     C   &   -x   &&     &&  x   &&  x \\
