@@ -65,10 +65,37 @@
     The purchase of a car requires a \$25000 loan to be repaid in monthly installments for four years at 9\% interest compounded monthly. If the general inflation rate is 4\% compounded monthly, find the actual and constant dollar value of the 20th payment.
 \end{exrc}
 \begin{enumerate}
-    \item Finding mon
+    \item Converting annual interest rate to monthly interest rate:
+        \begin{equation*}
+            \begin{aligned}
+                i = 9\%/12months = 0.0075\%
+            \end{aligned}
+        \end{equation*}
+    \item Converting annual inflation rate to monthly inflation rate:
+        \begin{equation*}
+            \begin{aligned}
+                f = 4\$/12months = 0.0033\%
+            \end{aligned}
+        \end{equation*}
+    \item Finding actual dollar value of 20th payment %Note - it seems like so far that we have been working with the actual dollar values so far; finding annunity payments for 4 years
+        \begin{equation*}
+            \begin{aligned}
+                A_{20} &= P(A/P,i,N) \\
+                        &= 25000(A/P, 0.0075\%,4*12) \\
+                A_{20} &= 25000(\frac{0.0075(1+0.0075)^{48}}{(1+0.0075)^{48}-1}) \\
+                A_{20} &= \framebox{$\$622.13$}
+            \end{aligned}
+        \end{equation*}
+    \item Finding constant dollar value of 20th payment %Note - the constant dollar value is the actual dollar value but taking into account the affects of inflation
+        \begin{equation*}
+            \begin{aligned}
+                A'_{20} &= A_{20}(P/F,\bar{f},N) \\
+                        &= \$622.13(P/F,0.0033\%,48) \\
+                        &= \$622.13(1 + 0.0033\%)^{-48}\\
+                A'_{20} &= \framebox{$\$531.13$}
+            \end{aligned}
+        \end{equation*}
 \end{enumerate}
-
-
 
 \section*{Problem 5.6}
 \begin{exrc}
