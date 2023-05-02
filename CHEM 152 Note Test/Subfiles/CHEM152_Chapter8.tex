@@ -21,6 +21,416 @@
 \fancyhead[R]{UW CHEM 152}
 \fancyhead[L]{Anthony Le}
 
+\section*{Chapter 8: Applications of ... Ion Solutions}
+
+\subsection*{Common Ion Solutions}
+We know that pure water has a pH of 7 at room temperature. 
+So far, we have studied how the pH changes if you add either acid or base to water. For example:
+\begin{enumerate}
+    \item A 0.01M solution of sodium hydroxide, a strong base, has a pH of 12 through:
+    \begin{equation*}
+        \begin{aligned}
+            pOH &= -log_{10}(0.01) = 2 \\
+            pH &= 14-pOH \\
+            pH &= 12
+        \end{aligned}
+    \end{equation*}
+    \item A 0.5M solution of acetic acid, a weak acidm, has a pH of 2.52.
+    \item a 0.5M solution of sodium acetate, a salt containing the weak base acetate, has a pH of 9.22.
+\end{enumerate}
+What happens if you add both a weak acid and its conjugate base to water, for example by adding a salt?
+\begin{equation*}
+    \begin{aligned}
+        \ce{HA + H2O <=> A- + H3O+} \quad K_a = \ce{\frac{[H+][A-]}{HA}} \\
+        \ce{NaA_(s) -> Na+_(aq) + A-_(aq)} 
+    \end{aligned}
+\end{equation*}
+\begin{enumerate}
+    \item Both the acid and the salt generate \ce{A-} - it is a common ion.
+    \item If we look at this step according to Le Chatelier's principle, you'll be adding acetate ions, disturbing equilibrium. Since we have additional acetate anions and hydronium cations, you'll shift the reaction to the left in order to return to equilibrium.
+\end{enumerate}
+
+\begin{exmp}
+    What is the pH of a solution that is 0.5M acetic acid(\ce{CH3COOH}, $Ka = 1.8*10^-5$) and 0.5M sodium acetate (\ce{NaCH3COO})?
+\end{exmp}
+\begin{enumerate}
+    \item Sodium acetate dissolves completely:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{NaCH3COO_(s) -> Na+ CH3COO-_(aq)}
+        \end{aligned}
+    \end{equation*}
+    \item Solve acetic acid dissocation equilibrium:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{CH3COOH_(aq) + H2O_(l) <=> CH3COO-_(aq) + H3O+_(aq)}
+        \end{aligned}
+    \end{equation*}
+    \item Creating ICE table: %//TODO - Complete ICE Table from 4/17/2023 Slides!
+    \begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+        \hline
+        X   & $[\ce{NaCH3COO_}]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[\ce{CH3COO-}]$ & ${}+{}$ & $[H_3O]$ \\
+        \hline
+        I   &  0.5    &&     &&  0.5    && 0  \\
+        C   &  -x     &&     &&  x      && x   \\
+        E   &  0.5-x  &&     &&  0.5+x  && x  \\      
+    \end{tabular}
+    \item Solving for hydronium concentration (x)
+\end{enumerate}
+From this, we have considered solutions containing a weak acid and its conjugate base:
+\begin{enumerate}
+    \item Ex - A solution that is 0.5M in acetic acid and in sodium acetate has a pH of 4.74 (this is between 2.52 and 9.22)
+    \item The present of the (conjugate?) base inhibits the dissociation of the acid
+\end{enumerate}
+
+Now, what if we add a strong base (or strong acid) to this solution?
+\begin{exmp}
+    A solution that is 0.5M acetic acid(\ce{CH3COOH}, $Ka = 1.8*10^-5$) and 0.5M sodium acetate (\ce{NaCH3COO}) has a pH of 4.74. How does the pH change if we add 0.01 mol of sodium hydroxide to 1L of this solution?
+\end{exmp}
+\begin{enumerate}
+    \item Sodium hydroxide dissolves completely:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{NaOh_(s) -> Na+_(aq) + OH-_(aq)}
+        \end{aligned}
+    \end{equation*}
+    
+    \item Hydroxide is a strong base that will "steal" protons. These will come from the strongest acid available - acetic acid.
+    \begin{equation*}
+        \begin{aligned}
+            \ce{CH3COOH_(aq) + H2O_(l) <=> CH3COO-_(aq) + H3O+_(aq)}
+        \end{aligned}
+    \end{equation*}
+    \item Since hydroxide is stuch a strong base, the reaction will go to completion - and we can use basic stoichiometry to calculate the resulting concentrations:
+    \begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+        \hline
+        X   $[CH_3COOH]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[CH_3COO^-]$ & ${}+{}$ & $[H_3O^+]$ \\
+        \hline
+        I   &  0.49     &&     &&  0.51   && 0  \\
+        C   &  -x       &&     &&  x   && x  \\
+        E   &  0.49-x   &&     &&  0.51+x   &&  x \\      
+    \end{tabular}
+    \item Finding $K_a$
+    \begin{equation*}
+        \begin{aligned}
+            K_a &= \frac{(0.51+x)(x)}{(0.49-x)} \quad \text{small-x approximation} \\
+            K_a &\approx \frac{(0.51+x)(x)}{(0.49)} \\
+            x &= \frac{0.49}{0.51}K_a = 1.73*10^{-5} \\
+            pH &= 4.76
+        \end{aligned}
+    \end{equation*}
+    \item 
+\end{enumerate}
+From this, it's very strange that adding a strong base to a common ion solution will change the pH by only 0.02! From this we get that:
+\begin{enumerate}
+    \item It is difficult to change the pH of a solutionm containing signifficant amounts of weak acid and its conjugate base.
+    \item Such solution resists changes in pH - this is called a \textbf{buffered solution} or just "buffer"
+    \item This is very important for applications requiring a constant pH (examples include blood)
+\end{enumerate}
+
+\subsection*{Buffered Solutions}
+Recap - How do buffers maintain a nearly constant pH?
+\begin{enumerate}
+    \item We start with a solution with similar (read: roughly equal) amounts of weak acid and its conjugate base
+    \item Their equilibrium is governed by:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{HA + H2O <=> A- + H3O+} \quad K_a = \ce{\frac{[H+][A-]}{HA}} \quad \ce{[H3O+] = Ka\frac{[HA]}{[A-]}}
+        \end{aligned}
+    \end{equation*}
+    \item Adding strong bases to weak acids leads to them being neutralized by the weak acid, and turning into their conjugate base. 
+    \begin{enumerate}
+        \item If we add \ce{OH-}, then HA is converted to \ce{A-} If the amount of OH- is much less than that of HA and A-, then the ratio [HA]/[A-] changes by very little. AKA the pH changes very little.
+        \item If we add \ce{H+}, then \ce{A-} is converted to HA. If the amount of \ce{H+} is much less than that of HA and \ce{A-}, then the ratio of \ce{[HA]/[A-]} changes very little. AKA the pH changes very little.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection*{Henderson-Hasselbalch Equation}\footnote{Be careful! Tricky as there are situations in which this section doesn't count for}
+In the final step, we considered the equilibrium position of the weak acid dissocation:
+\begin{equation*}
+    \begin{aligned}
+        \ce{HA + H2O <=> A- + H3O+} \quad K_a = \ce{\frac{[H+][A-]}{HA}} 
+    \end{aligned}
+\end{equation*}
+Once you know the equilibrium concentrations of HA and \ce{A-}, you can calculate concentration of hydronium and then pH:
+\begin{equation*}
+    \begin{aligned}
+        pH = pKa + log_{10}\ce{\frac{[A-]}{[HA]}}
+    \end{aligned}
+\end{equation*}
+THIS ONLY APPLIES IF A- is the conjugate base of HA!
+
+The equilibrium cocncentrations of [HA] and [A-] are determined by 
+\begin{enumerate}
+    \item How much weak acid and its conjugate base were used in the creation of the buffer.
+    \item How much weak acid and its conjugate base were present after neutralization wiht added OH- and H+
+    \item The new equilibrium of the weak acid dissociation reaction.
+    \begin{enumerate}
+        \item The last step often has a very small effect on the equilibrium concentrations of the weak acid and its conjugate base. The Henderson-Hassellbalch equation is often used with [HA] and [A-] after neutralization (second step) 
+    \end{enumerate}
+\end{enumerate}
+\begin{exmp}
+    0.5M Acetic acid ($K_a = 1.8*10^{-5}$), 0.5M sodium acetate
+\end{exmp}
+\begin{equation*}
+    \begin{aligned}
+        pH = -log_{10}(1.8*10^{-5}) + log_{10}(0.5/0.5) = 4.74
+    \end{aligned}
+\end{equation*}
+\textbf{NOTE - Using the HH (Henderson-Hasselbalch) Equation in this way is equivalent to doing small-x approximation} like we have done in previous examples.
+
+In addition to note, you should ONLY use this when x is small compared to 0. Thus you can use this instead of doing the ICE table and assuming small-x approximation
+
+\subsection*{Buffer Capacity}
+Buffer Capacity is the amount of strong acid/base a buffer can absorb without a significant change in pH. 
+\newline
+Let's compare two different buffers that have different concentrations of weak acid and conjugate base, but the same ratio:
+\begin{center}
+    Buffer 1 \quad Buffer 2 \\
+    0.05M Acetic acid \quad 0.05M acetic acid \\
+    0.5M Acetate \quad 0.05M acetate
+\end{center}
+What is the pH of the buffered solution?
+\begin{equation*}
+    \begin{aligned}
+        pH  = pKa + log_{10}(0.5/0,5) = 4.74 \quad pH  = pKa + log_{10}(0.05/0.05) = 4.74
+    \end{aligned}
+\end{equation*}
+What if we add 0.03mol of sodium hydroxide (NaOH)?
+\begin{equation*}
+    \begin{aligned}
+        pH  &= pKa + log_{10}(0.53/0.47) \quad pH  &= pKa + log_{10}(0.08/0.02) \\
+        &= 4.80 \quad &= 5.35
+    \end{aligned}
+\end{equation*} %//TODO - fix the alignment of this so pH and calculated pH are in their own columns alligned by the = sign!
+
+\subsection*{Chapter 8 - Applications of Squeous Equilibria (Titrations and pH Curves)}
+
+\subsection*{Acid/Base Titration}
+Titration is a method of quantitative chemical analysis that is used to determine the unknown concentration of a species in solution. 
+\newline
+Acid base titration problems are a mix of stoichiometry and equilibrium:
+\begin{enumerate}
+    \item stoichiometry - Add a strong base (acid) to an acid/base
+    \item Eq - Concentrations determined and equilbalnce expression used to find hydronium ions
+\end{enumerate}
+
+\subsection*{Titrating a strong acid with a strong base}
+\textbf{Basic Idea:}
+\begin{enumerate}
+    \item Strong acid and strong base neutralize each other - pH is determined by leftover hydroxide or hydronium ions.
+    \item If strong acid and base neutralize each other exactly - pH is determined by water.
+    \item Keep in mind the stoichiometry of neutralization is based on the number of moles, whereas pH is based on concentrations!
+    \begin{enumerate}
+        \item Remember that titrations are based on us adding volume, so we have to keep track of the volume added since we're changing the concentration firstly based off of volume change alone!
+    \end{enumerate}
+\end{enumerate}
+
+\begin{exmp}
+    Consider titration of 50mL of 0.2M of HCl with 0.1M of NaOH.
+\end{exmp}
+%//TODO - Add in section before "After adding in 10mL of NaOH!
+After adding 10mL of NaOH:
+\begin{enumerate}
+    \item THe strong base will dissocate completely, and the resulting hydroxide ions will react with the hydronium ions to form water:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{OH- + H3O+ <=> 2H2O}
+        \end{aligned}
+    \end{equation*}
+    \item This equilibrium lies very far towards products since K = $\frac{1}{K_W} = 10^{14}$, so we can consider hydronium and hydroxide completely reacting to form water.
+    \newline
+    \begin{tabular}{c@{}c@{}c@{}}
+        moles H3O from acid && 0.05L x 0.2M = 0.01mol \\
+        moles OH- from base && 0.01L x 0.1M = 0.001mol \\
+    \end{tabular}
+    \newline
+    Remaining H3O+ after neutralization:
+\end{enumerate}
+After adding 20mL of NaOH:
+\begin{tabular}{c c}
+    moles H3O from acid & 0.05L x 0.2M = 0.01mol \\
+    moles OH- from base & 0.02L x 0.1M = 0.002mol \\
+\end{tabular}
+Remaining H3O+ after neutralization: 0.01 mol - 0.002mol = 0.008mol \\
+New hydronium concentraiton =  0.008/0.07L = 0.11M \\
+New pH = 0.94 \\
+\newline
+\begin{tabular}{ c c }
+    moles H3O from acid & 0.05L x 0.2M = 0.01mol \\
+    moles OH- from base & 0.02L x 0.1M = 0.002mol \\
+\end{tabular}
+\newline
+
+Continuing until we have 100mL of NaOH:
+\newline
+\begin{tabular}{ c c }
+    moles H3O from acid & 0.05L x 0.2M = 0.01mol \\
+    moles OH- from base & 0.10L x 0.1M = 0.01mol \\
+\end{tabular}
+\newline
+Remaining H3O+ after neutralization: 0.01 mol - 0.01mol = 0mol \\
+\begin{enumerate}
+    \item Since we have added the same amount of OH- as we had H3O+ from the acid, we have reached the equilvalence point of the titration.
+    \item 
+\end{enumerate}
+
+What if we exceed the equilvalence point? 
+\newline
+Since we have gone past the acid balance point, pH is no longer determined by the hydronium ions, but rather the hydroxide ions instead
+
+\subsection*{Titrating a Weak Acid with a Strong Base}
+Basic Idea:
+\begin{enumerate}
+    \item The hydroxide ions from the added strog base will convert weak acid into its conjugate base.
+    \item Based on the amounts of remainig weak acid and the produced conjugate base, use equilibrium concepts to compute pH.
+\end{enumerate}
+
+\begin{exmp}
+    Consider the titration of 20mL of 0.25M nitrous acid ($\ce{HNO2}$, $K_a = 4.5*10^-4$) with 0.25M sodium hydroxide ($\ce{NaOH}$)
+\end{exmp}
+Acid only, before we add any $\ce{NaOH}$
+\begin{equation*}
+    \begin{aligned}
+        \ce{HNO2 + H2O <=> NO2- + H3O+}
+    \end{aligned}
+\end{equation*}
+\newline
+\begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+    \hline
+    X   & $[HNO_2]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[NO_2^-]$ & ${}+{}$ & $[H_3O^+]$ \\
+    \hline
+    I   &  0.25   &&     &&  0   && 0  \\
+    C   &  -x  &&     &&  x  && x \\
+    E   & 0.25-x &&     &&  x  && x \\      
+\end{tabular}
+\newline
+\begin{equation*}
+    \begin{aligned}
+        K_a &= \ce{\frac{[NO2-][H3O+]}{[HNO2]}} \\
+            &\text{small x approx.} \approx \frac{x^2}{0.25} \\
+          x &= 0.0106 \\
+        pH &= -log_{10}\ce{[H3O+]} \\
+        pH &= 1.97
+    \end{aligned}
+\end{equation*}
+
+
+After adding 5mL of NaOH:
+\newline
+The strong base will dissociate completely, and the resulting hydroxide ions will react with the nitrous acid to form water and nitrite ions:
+\begin{equation*}
+    \begin{aligned}
+        \ce{OH- + HNO2 <=> H2O + NO2-}
+    \end{aligned}
+\end{equation*}
+This equilibrium lies very far towards the product side:
+\begin{center}
+    \begin{tabular}{ c c }
+    Moles of Acid HNO2: & 0.02 L * 0.25M = 0.005 mol \\
+    Moles OH- from NaOH: & 0.005 L * 0.25M = 0.00125 mol \\
+    Conjugate base NO2- produced: & 0.00125 mol \\
+    Remaining HNO2: & 0.005 - 0.00125 = 0.00375 mol \\
+    New HNO2 Concentration: & 0.00375mol / 0.025L = 0.15 M \\
+    New NO2- Concentration & 0.00125mol / 0.025L  = 0.05 M 
+    \end{tabular}    
+\end{center}
+Creating ICE table: \\
+$\cdots$ %//TODO - copy down steps to find pH this step for 4/21/2023 Notes!
+\begin{equation*}
+    \begin{aligned}
+        K_a = ?? \\
+        pH = -log_{10}[H_3O^+] = ?? = pKa
+    \end{aligned}
+\end{equation*}
+$\cdots$ \\ %//TODO - include writing out HH equation and finding pH and pKa!
+After adding 10mL of NaOH:
+\begin{center}
+    \begin{tabular}{ c c }
+    Moles of Acid HNO2: & 0.02 L * 0.25M = 0.005 mol \\
+    Moles OH- from NaOH: & 0.01 L * 0.25M = 0.0025 mol \\
+    Conjugate base NO2- produced: & 0.0025 mol \\
+    Remaining HNO2: & 0.005 - 0.0025 = 0.0025 mol
+    \end{tabular}    
+\end{center}
+After reacting wth the strong base, we have equal amount of weak acid and its conjugate base ... this is called the midpoint of the titration.
+\begin{center}
+    \begin{tabular}{ c c }
+        New HNO2 Concentration: & 0.0025mol / 0.03L = 0.083 M \\
+        New NO2- Concentration & 0.0025mol / 0.03L  = 0.083 M 
+    \end{tabular}
+\end{center}
+Creating ICE table: \\
+$\cdots$ %//TODO - create ICE Table after adding 10mL of NaOH!
+\begin{equation*}
+    \begin{aligned}
+        K_a = 4.5 *10^-4 \\
+        pH = -log_{10}[H_3O^+] = 3.35 = pKa
+    \end{aligned}
+\end{equation*}
+$\cdots$  \\ %//TODO - include writing out HH equation and finding pH and pKa!
+Note! The mid point is the only point where the pH is equal to pKa - where half of your weak acid dissociates\footnote{Equivalent point and mid point are two different ideas} \\
+After adding 20mL of NaOH:
+\begin{center}
+    \begin{tabular}{ c c }
+    Moles of Acid HNO2: & 0.02 L * 0.25M = 0.005 mol \\
+    Moles OH- from NaOH: & 0.02 L * 0.25M = 0.005 mol \\
+    Conjugate base NO2- produced: & 0.005 mol \\
+    Remaining HNO2: & 0.005 - 0.005 = 0 mol
+    \end{tabular}    
+\end{center}
+We have added the same amount of strong base as we had weak acid - so you have converted ALL of your weak acid. This is the equilvalence point of the titration.
+\begin{center}
+    \begin{tabular}{ c c }
+        New HNO2 Concentration: & 0 mol / 0.04L = 0 M \\
+        New NO2- Concentration & 0.005mol / 0.04L  = 0.125 M 
+    \end{tabular}
+\end{center}
+Note! We have a lower concetration of conjugate base compared to our inital weak acid concentration - but this is because of how we doubled our volume! \\
+Note, now that all of our weak acid has been converted into conjugate base, the pH is now determined by the base hydrolsis of $\ce{NO2-}$: \\
+
+Creating ICE Table: \\
+
+$\cdots$ %//TODO - Create ICE table!
+\begin{equation*}
+    \begin{aligned}
+        x &= \sqrt{0.125 K_b} = \sqrt{0.125 \frac{K_w}{K_a}} \\
+        &= 1.67*10^-4 \\
+        pOH &= -log_{10}[OH^-] \\
+        &= 5.78 \\
+        pH = 14 - pOH \\
+        &= 8.22 
+    \end{aligned}
+\end{equation*}
+
+Things to note about the pH and NaOH added graph:
+\begin{enumerate}
+    \item The pH at equilvalence isn't 0.
+    \item Notice the large variation (steep slope) in pH at the equilvalence point
+    \item At the mid-point, we have equal amounts of weak acid and conjugate base, and the pH changes very SLOWLY ... because we essentially have a buffer!
+    \item When applying the Henderson-Hasselbalch equation, the equation works best to "the left" of the equilvalence point, and mostly around the mid-point
+\end{enumerate}
+
+\subsubsection*{4/25/2023 Quiz Section Notes}
+
+List of strong Acids
+\begin{enumerate}
+    \item \ce{HCl}
+    \item \ce{HNO3}
+    \item \ce{HClO4}, this dissociates into a weak acid, \ce{H+ + HClO3}
+    \item \ce{H2SO4}
+    \item \ce{HBr}
+    \item \ce{HI}
+    \item \ce{HClO3}
+\end{enumerate}
+Every other acid that isn't in this list is considered a weak acid
+\newline
+If you see Ka, think of how strong an acid is - and when you see Kb, think of 
+\newline
+pH is used only when you are talking about a buffer - 
+
+
+\newpage
 
 
 \end{document}

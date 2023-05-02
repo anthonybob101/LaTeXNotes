@@ -22,5 +22,421 @@
 \fancyhead[L]{Anthony Le}
 
 
+\section*{Chapter 7 - Acids and Bases: Acid Strength and the pH scale}
+
+\subsection*{Strong and Weak Acids}
+Acid dissociation reaction:
+\begin{equation*}
+    \begin{aligned}
+        \ce{HA_(aq) + H2O_(l) <=> H3O+_(aq) + A-_(aq)} \text{Or,}
+        \ce{HA_(aq) + H2O_(l) <=> H+_(aq) + A-_(aq)}\text{\footnote{remember we use \ce{H3O} and \ce{H+} interchangeably}}
+    \end{aligned}
+\end{equation*}
+
+The equilibrium constant is also called the "acid dissociation constant" and is written as $K_a$:
+\begin{equation*}
+    \begin{aligned}
+        K_a = \ce{\frac{[H3O] [A-]}{[HA]}}
+    \end{aligned}
+\end{equation*}
+For strong acids, they dissociate completely, and thus when we compute $K_a$ gives us $\infty$; indicating equilibrium is "to the right".
+\begin{equation*}
+    \begin{aligned}
+        \ce{HA + H2O -> H3O+ + A-} \\
+        K_a >> 1
+    \end{aligned}
+\end{equation*}
+For weak acids, they do not completely dissociate, and we will still have some $\ce{HA}$ left over. Computing $K_a$ will give us a number that is less than 1 indicating equilibrium is "to the left"
+\begin{equation*}
+    \begin{aligned}
+        \ce{HA + H2O -> H3O+ + A- + HA} \\
+        K_a < 1
+    \end{aligned}
+\end{equation*}
+
+\begin{exmp}
+    What is the hydronium concentration of a 0.2M solution of hydrochloric acid (HCl) in equilibrium.
+\end{exmp}
+\begin{enumerate}
+    \item Since HCl is a strong acid and completely dissociates, we will have a reaction:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{HA + H2O -> H3O+ + A-} \\
+            \ce{[H3O+] = [HCl]_0 = 0.2M}
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
+\begin{exmp}
+    What is the hydronium concentration of a 0.2M solution of nitrious acid ($\ce{HNO2}$) in equilibrium with $K_a = 4*10^-4$
+\end{exmp}
+\begin{enumerate}
+    \item You must make a ICE table to find it! \\
+    \begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+        \hline
+        X   &   $[HNO_2]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[H_3O^+]$ & ${}+{}$ & $[NO_2^-]$\\
+        \hline
+        I   & 0.2 && - &&  0 && 0       \\
+        C   & -x && - &&  x && x      \\
+        E   & 0.2 - x && - && x && x      \\
+        \hline
+      \end{tabular}
+    \item Creating $K_a$ 
+    \begin{equation*}
+        \begin{aligned}
+            K_a &= \ce{\frac{[H3O] [A-]}{[HA]}} \\
+            K_a &= \frac{x^2}{0.2-x} \text{Then applying small x approximation} \\
+                &= \frac{x^2}{0.2} \\
+            x   &= \sqrt{0.2K_a} = \sqrt{0.2*4*10^-4} \\
+            x   &= 0.009 \\
+            \ce{[H3O+]} &= 0.009
+        \end{aligned}
+    \end{equation*}
+    \item Checking approximation 
+    \begin{equation*}
+        \begin{aligned}
+            \text{Error} &= \frac{x}{0.2} \\
+            &= \frac{0.009}{0.2} \\
+            \text{Error} &= 4.5\% \quad \text{Error within 5\%, acceptiable to use small x approximation!}
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
+\subsection*{Water Autoionizaztion}
+Water undergoes acid dissociation with itself. This is called autoionization:
+\begin{equation*}
+    \begin{aligned}
+        \ce{H2O_(l) + H2O_(l) -> H3O+_(aq) + OH-_(aq)}
+    \end{aligned}
+\end{equation*}
+The equilibrium constant in this case is also called the "water autodissociation constant" and is written as $K_w$. This is a measure for how acidic water is.
+\newline
+For pure water at room temperature (25C):\footnote{There is no such thing as perfectly "pure" water - it constantly fluxuates between slightly basic and slightly acidic}
+\begin{equation*}
+    \begin{aligned}
+        \ce{[H3O+]} = 10^-7 M \\
+        \ce{[OH-]} = 10^-7 M \\
+        K_w = 10^-14
+    \end{aligned}
+\end{equation*}
+
+
+%An aqueous solution is called:
+%\begin{enumerate}
+%    \item Neutral if $\ce{[H3O+] = [OH-]}$
+%    \item Acidic if $\ce{[H3O+] > [OH-]}$
+%    \item Basic if $\ce{[H3O+] < [OH-]}$
+%\end{enumerate}
+
+\subsection*{Multiple Simultaneous Equilibria}
+Water autoionization:
+\begin{equation*}
+    \begin{aligned}
+        \ce{H2O_(l) + H2O_(l) -> H3O+_(aq) + OH-_(aq)} \quad K_w = [H3O+][OH-]
+    \end{aligned}
+\end{equation*}
+
+Acid dissociation: 
+\begin{equation*}
+    \begin{aligned}
+        \ce{HA + H2O -> H3O+ + A-} \quad K_a = \ce{\frac{[H3O] [A-]}{[HA]}}
+    \end{aligned}
+\end{equation*}
+
+In order to find the equilibrium concentrations, we have to solve for ALL things like $\ce{[H3O+]}$ and $\ce{[OH-]}$ using both equilibrium constants at the same time. 
+\newline
+This can be done, but is complicated to do so - instead, we'll do a simple shortcut:
+
+\begin{exmp}
+    What is the hydronium concentration of a 0.2M solution of nitrious acid ($\ce{HNO2}$) in equilibrium with $K_a = 4*10^-4$
+\end{exmp}
+We found that \ce{[H3O+]} = 0.009M from the dissociation of the nitrious acid. Water autoionization also adds additional hydronium ions, but only $10^-7$M, a miniscule amount relative to the acid dissociation.
+\newline
+\textbf{For these cases, we can igniore the contribution from the water autoionization.}
+
+\subsection*{The power of Hydrogen}
+The concentration of protons (or hydronium ions) is an important property of aqueous solutions. It's often quite small, and is often convenient to express it in a different from that yields more "convenient" numbers: (AKA pH scale)
+\begin{equation*}
+    \begin{aligned}
+        pH = -log_{10}[H^+] \quad [H^+] = 10^{-pH}
+    \end{aligned}
+\end{equation*}
+Where:
+\begin{enumerate}
+    \item p stands for $-log_10$
+    \item $[H^+]$ represents the concentration of $H^+$ in Molar
+\end{enumerate}
+Note that pH represents the "inverse order of magnitude" of the hydronium concentration. Which means:
+\begin{enumerate}
+    \item The smaller the pH, the more "acidic" a solution is. (Such as HCl and lemon juice)
+    \item The greater the pH, the more "basic" a solution is. (Such as baking soda or household ammonia)
+\end{enumerate}
+
+\begin{exmp}
+    What is the pH of a 0.5M solution of acetic acid \ce{CH3COOH}, a weak acid with $K_a = 1.8*10^-5$?
+\end{exmp}
+
+\begin{equation*}
+    \begin{aligned}
+        \ce{CH3OOH_(aq) + H2O_(l) <=> CH3OO-_(aq) + H3O+_(aq)}
+    \end{aligned}
+\end{equation*}
+
+\subsection*{Strong and Weak Bases}
+Base hydrolysis reaction:
+\begin{equation*}
+    \begin{aligned}
+        \ce{B_(aq) + H2O_(l) <=> BH+_(aq) + OH-_(aq)} \quad K_b = \frac{[BH+][OH-]}{[[B]]}
+    \end{aligned}
+\end{equation*}
+In this situation, the equilibrium constant is also called the "base ionization constant" and is written as $K_b$.
+\newline
+Adding a base to water increases the concentration of hydroxide ions.
+\newline
+For strong bases, they are good at grabbing protons, and thus when we compute $K_b$ gives us $\infty$; indicating equilibrium is "to the right".
+\begin{equation*}
+    \begin{aligned}
+        \ce{B_(aq) + H2O_(l) <=> BH+_(aq) + OH-_(aq)} \\
+        K_a >> 1
+    \end{aligned}
+\end{equation*}
+For weak bases, they don't act as well at grabbing protons, and we will still have some $\ce{B}$ left over. Computing $K_b$ will give us a number that is less than 1 indicating equilibrium is "to the left"
+\begin{equation*}
+    \begin{aligned}
+        \ce{B_(aq) + H2O_(l) <=> BH+_(aq) + OH-_(aq) + B_(aq)} \\
+        K_a < 1
+    \end{aligned}
+\end{equation*}
+
+%//TODO - add in section where we can ignore water autoionization!
+
+\begin{exmp}
+    What is the hydroxidde concentration of a 0.1M solution of NaOH (sodium hydroxide), a strong base?
+    \begin{equation*}
+        \begin{aligned}
+            \ce{NaOH_(aq) <=> Na+_(aq) + OH-_(aq)}
+        \end{aligned}
+    \end{equation*}    
+\end{exmp}
+However, this doesn't even look like a base hydrolysis reaction! However, when we break it down further, we can show that this is still a hydrolysis reaction:
+\begin{equation*}
+    \begin{aligned}
+        \ce{Na+_(aq) + OH-_(aq) + H2O_(l) <=> Na+_(aq) + OH-_(aq) + H2O_(l)}
+    \end{aligned}
+\end{equation*}
+In this case, Na+ is a spectator ion.
+
+\begin{exmp}
+    What is the hydroxide concentration of a 0.1M solution of ammonia (\ce{NH3}) witha  weak base where $K_b = 1.8*10^-5$?
+\end{exmp}
+\begin{enumerate}
+    \item Writing reaction:
+    \item Creating ICE Table:
+    \begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+        \hline
+        X   & $[NH_3]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[NH_3^+]$ & ${}+{}$ & $[OH^-]$ \\
+        \hline
+        I   &  0.1   &&     &&  0   && 0  \\
+        C   &  -x    &&     &&  x   && x  \\
+        E   &  0.1-x &&     &&  x   && x  \\      
+    \end{tabular}
+    \item Writing $K_b$
+    \begin{equation*}
+        \begin{aligned}
+            K_b = \ce{\frac{[NH4+][]}{}} %//TODO - Complete this example from 4/12 lecture!
+        \end{aligned}
+    \end{equation*}
+    \item Solving for x
+    \item Is our small-x approximation appropiate?
+    \begin{equation*}
+        \begin{aligned}
+            \frac{x}{0.1} = 1.3\% < 5\% \quad \text{Is acceptiable}
+        \end{aligned}
+    \end{equation*}
+    \item Can we ignore autoionization of water?
+    \begin{equation*}
+        \begin{aligned}
+            0.0013 >> 10^-7 \quad \text{Can ignore autoionization}
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
+\subsection*{Relationship between pH and pOH}
+The water autoionization reaction:
+\begin{equation*}
+    \begin{aligned}
+        \ce{H2O + H2O <=> H3O+_(aq) + OH-_(aq)}
+    \end{aligned}
+\end{equation*}
+Guarantees that whenever the system is in equilibrium,
+\begin{equation*}
+    \begin{aligned}
+        K_w = \ce{[H3O+][OH-]}
+    \end{aligned}
+\end{equation*}
+Let's take $-log_10$ of both sides:
+\begin{equation*}
+    \begin{aligned}
+        log_10(K_w) &= log_10(\ce{[H3O+][OH-]}) \\
+                    &= -log_10(\ce{[H3O+]}) - log_10(\ce{[OH-]}) \\
+                    &= pH + pOH
+    \end{aligned}
+\end{equation*}
+For water at 25C, $K_w = 10^-14$ and therefore
+\begin{equation*}
+    \begin{aligned}
+        pH + pOH = 14 \quad \text{(at room temperature)}
+    \end{aligned}
+\end{equation*}
+
+\subsection*{Conjugate Acids and Bases}
+Acid Dissociation Reaction:
+\begin{equation*}
+    \begin{aligned}
+        \ce{HA_(aq) + H2O_(l) <=> H3O+_(aq) + A-_(aq)} \quad K_a = \ce{\frac{[H3O] [A-]}{[HA]}}
+    \end{aligned}
+\end{equation*}
+\ce{A-} can accept a proton and turn into HA, so it is a base - the conjugate base of HA.
+\begin{equation*}
+    \begin{aligned}
+        \ce{A-_(aq) + H2O_(l) <=> HA_(aq) + H2O_(l) } \quad K_b = \ce{\frac{[HA][OH-]}{[A-]}}
+    \end{aligned}
+\end{equation*}
+
+Now what if we take the product of the acid dissociation constant $K_a$ and the base ionization $K_b$ for a conjugate acid/base pair?
+\begin{equation*}
+    \begin{aligned}
+        K_a K_b = \ce{\frac{[H3O] [A-]}{[HA]}} \ce{\frac{[HA][OH-]}{[A-]}} = K_w
+    \end{aligned}
+\end{equation*}
+
+Important parts about conjugate acids and bases!!!
+\begin{enumerate}
+    \item Acids that are stronger than \ce{H3O} have conjugate bases that are weaker than \ce{H2O}. This makes sense as that we have to have Ka and Kb ALWAYS equal to 14 (or a constant!), thus the higher Ka, the lower Kb must be in order to compensate.
+    \item Acids that are weaker than water have conjugate bases that are stronger than \ce{OH-}
+    \item Acids that are weaker than \ce{H3O+} and stronger than \ce{OH-} have conjugate bases that have strengths somewhere in between the two cases above.
+\end{enumerate}
+
+\begin{exmp}
+    At 25C, the accid dissociation constant for acetic acid \ce{CH3COOH} is $K_a = 1.8*10^-5$. What is the pH of a 0.35M solution of acetate \ce{CH3COO-}?
+\end{exmp}
+\begin{enumerate}
+    \item Writing out reaction:
+    \item Creating ICE Table:
+    \newline
+    \begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+        \hline
+        X   & $[CH_3COO^-]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[CH_3COOH]$ & ${}+{}$ & $[OH^-]$ \\
+        \hline
+        I   &  0.35   &&     &&  0   && 0  \\
+        C   &  -x    &&     &&  x   && x  \\
+        E   &  0.35-x &&     &&  x   && x  \\      
+    \end{tabular}
+    \item Writing $K_b$
+    \begin{equation*}
+        \begin{aligned}
+            K_b = \ce{\frac{[CH3COOH][OH-]}{CH3COO-}} %//TODO - Complete this example from 4/12 lecture!
+        \end{aligned}
+    \end{equation*}
+    \item Solving for x
+    \item Is our small-x approximation appropiate?\footnote{Double check small x approximation error by dividing the x concentration by inital concentration - this will give you the error}
+    \begin{equation*}
+        \begin{aligned}
+            \frac{x}{0.35} = 0.004\% < 5\% \quad \text{Is acceptiable}
+        \end{aligned}
+    \end{equation*}
+    \item Can we ignore autoionization of water?
+    \begin{equation*}
+        \begin{aligned}
+            1.4*10^-5 >> 10^-7 \quad \text{Can ignore autoionization}
+        \end{aligned}
+    \end{equation*}
+    \item Finding pH and pOH %//TODO - Complete example from 4/12 lecture!
+\end{enumerate}
+
+General form of finding concentration for ANY weak acid with an inital concentration of "c" M and given Ka
+\begin{enumerate}
+    \item Writing out reaction:
+    \item Creating ICE Table: 
+    \newline
+    \begin{tabular}{c|c@{}c@{}c@{}c@{}c@{}c@{}c}
+        \hline
+        X   & $[HA]$ & ${}+{}$ & $[H_2O]$ & ${}\leftrightharpoons{}$ & $[H^+]$ & ${}+{}$ & $[A^-]$ \\
+        \hline
+        I   &  c   &&     &&  0   && 0  \\
+        C   &  -x    &&     &&  x   && x  \\
+        E   &  c-x &&     &&  x   && x  \\      
+    \end{tabular}
+    \item Writing $K_a$
+    \begin{equation*}
+        \begin{aligned}
+            K_a = \ce{\frac{[H+][A-]}{HA}} \\
+            K_a = \frac{x^2}{c-x}
+        \end{aligned}
+    \end{equation*}
+    \item Solving for x (assuming small x approximation)
+    \begin{equation*}
+        \begin{aligned}
+            K_a &= \frac{x^2}{c-x} \\
+            K_a &= \frac{x^2}{c} \\
+            K_a(c) &= x^2 \\
+            x &= \sqrt{K_a*c}
+        \end{aligned}
+    \end{equation*}
+    \item Now that we have x in terms of $K_a$ and c, we can find the minimum concentration to find where small x approximation can apply - Solving for x in our error check:
+    \begin{equation*}
+        \begin{aligned}
+            \frac{x}{c} &= 0.05\% \\
+            \frac{\sqrt{K_a*c}}{c} &= 0.05 \\
+            \left(\frac{\sqrt{K_a*c}}{c}\right) ^2&= 0.05^2 \\
+            \frac{K_a*c}{c^2} &= 0.025 \\
+            \frac{K_a}{c} &= 0.025 \\
+            c &= \frac{K_a}{0.025}
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
+\begin{enumerate}
+    \item As acid concentration increases \ce{H3O+} increases, pH decreases, and percent dissociated decreases
+    We quantify this through the use of the pKa constant, where the acid is 50\% dissociated when pH = pKa %//TODO - include formula to find pKa!
+    \item 
+\end{enumerate}
+
+\subsection*{Polyprotic Acids}
+Some acids can donate more than 1 proton, for example carbonic acid \ce{H2CO3}.
+There are multiple equilibria to consider simultaneously:
+\begin{equation*}
+    \begin{aligned}
+        \ce{H2CO3 + H2O <=> HCO3- + H3O+} \quad K_{a1} = \ce{\frac{[HCO3-][H3O+]}{H2CO3}} = 4.3*10^-7  \\
+        \ce{HCO3- + H2O <=> CO32- + H3O+} \quad K_{a2} = \ce{\frac{[CO3^2-][H3O+]}{HCO2-}} = 4.8*10^-11 \\
+    \end{aligned}
+\end{equation*}
+With each step, the equilibrium constant decreases. 
+\newline 
+Calculating equiulibrium concentrations is possible, but difficult due to multiple equilibria. But we can make qualitative predictions:
+\begin{enumerate}
+    \item At high pH, the acid will be completely dissociated
+    \item At low pH, the acid will not be dissociated at all.
+\end{enumerate}
+This leads to a graph where we can plot the theoretical concentrations of each compound as a function of the pH
+
+\subsection*{Acid-Base Properties of Salts}
+What happens when you add ions to water? 
+\newline
+\begin{exmp}
+    When adding chloride ions to water, the following is in principle possible:
+\end{exmp}
+\begin{equation*}
+    \begin{aligned}
+        \ce{Cl- + H2O <=> HCl + OH-}
+    \end{aligned}
+\end{equation*}
+\begin{enumerate}
+    \item However, this doesn't happen since HCl is a strong acid, and Cl- is a very weak base - and doesn't have enough strength to pull the hydrogen ions - so the equilibrium lies far to the left. \textbf{This means that adding anions of strong acids have no effect on pH.} 
+    \item Similarly, this is true when doing it for strong bases - adding cations for strong bases have no effect on pH
+    \item Thus generally, \textbf{Adding the conjugate bases/acids of strong acids/bases have no effect on pH}
+    \item \textbf{However}, this isn't true for when we do the opposite! Adding the conjugate bases/acids of \textbf{weak} acids/bases DO have a effect on pH 
+\end{enumerate} 
+
 
 \end{document}
