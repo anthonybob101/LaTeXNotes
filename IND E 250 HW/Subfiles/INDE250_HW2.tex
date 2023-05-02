@@ -1,0 +1,220 @@
+\documentclass[../INDE250HW.tex]{subfiles} 
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage[margin=1in]{geometry}
+
+\title{UW IND E 250 Notes}
+\author{Anthony Le}
+
+\newtheorem{exmp}{Example}
+\newtheorem{exrc}{Excersize}
+\newtheorem{proof}{Proof}
+\newtheorem{defn}{Definition}
+
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[R]{UW IND E 250}
+\fancyhead[L]{Anthony Le}
+
+\begin{center}
+    \LARGE{\textbf{IND E 250 HW 2}}
+\end{center}
+\begin{center}
+    Homework 2 Problems: \\
+    4.2, 4.9, 4.43, 4.46, 4.65, 4.91 (bonus)
+\end{center}
+\section*{Problem 4.2}
+\begin{exrc}
+    If your credit card calculates interest based on 13.90\% APR compounded monthly:
+    \begin{enumerate}
+        \item What are your monthly interest rate and annual effective interest rate?
+        \item If your current outstanding balance is \$3,000 and you skip payments for two months, what would be the total balance two months from now?
+    \end{enumerate}
+\end{exrc}
+\subsubsection*{Part 1 - Finding Monthly and Annual Effective Interest Rates}
+Converting to monthly interest rate:
+\begin{equation*}
+    \begin{aligned}
+        i = \frac{13.90}{12} = \framebox{$1.15833\%/month$}
+    \end{aligned}
+\end{equation*}
+Converting to annual effective interest rate (using compound interest formula):
+\begin{equation*}
+    \begin{aligned}
+        i_a &= (1 + r/CK)^C - 1 \\
+        i_a &= (1 + 13.90\%/(1*12))^{12} - 1 \\
+        i_a &= \framebox{$14.82\%$}
+    \end{aligned}
+\end{equation*}
+\subsubsection*{Part 2 - Finding Future Balance Two Months from Present}
+Finding Future Balance with N = 2 months
+\begin{equation*}
+    \begin{aligned}
+        F &= \$3,000(F/P,1.15833\%,2) \\
+        F &= \$3000(1 + 0.0115833)^2 \\
+        F &= \framebox{$\$3069.90$} 
+    \end{aligned}
+\end{equation*}
+
+
+\newpage
+\section*{Problem 4.9}
+\begin{exrc}
+    You have three choices in placing your money in a bank account:
+    \begin{enumerate}
+        \item Bank A pays 9.25\% compounded annually
+        \item Bank B pays 9.00\% compounded quarterly
+        \item Bank C pays 8.90\% compounded continiously
+    \end{enumerate}
+    What bank would you open an account with?
+\end{exrc}
+Solving this via finding the effective annual interest rate - whichever bank account has the highest effective annual interest rate will be the best option for you:
+\subsubsection*{Finding Effective Annual Interest Rate for Bank A}
+Given:
+\begin{equation*}
+    \begin{aligned}
+        r = 9.25\% \quad M = 1
+    \end{aligned}
+\end{equation*}
+
+\noindent
+Finding $i_a$
+\begin{equation*}
+    \begin{aligned}
+        i_a &= (1 + r/M)^M - 1 \\
+        i_a &= (1 + 9.25\%/1)^1 - 1 \\
+        i_a &= 9.25\%
+    \end{aligned}
+\end{equation*}
+
+\subsubsection*{Finding Effective Annual Interest Rate for Bank B}
+Given:
+\begin{equation*}
+    \begin{aligned}
+        r = 9.00\% \quad M = 4
+    \end{aligned}
+\end{equation*}
+
+\noindent
+Finding $i_a$
+\begin{equation*}
+    \begin{aligned}
+        i_a &= (1 + r/M)^M - 1 \\
+        i_a &= (1 + 9.00\%/4)^4 - 1 \\
+        i_a &= 9.30833\%
+    \end{aligned}
+\end{equation*}
+\subsubsection*{Finding Effective Annual Interest Rate for Bank C}
+Given:
+\begin{equation*}
+    \begin{aligned}
+        r = 8.90\%
+    \end{aligned}
+\end{equation*}
+
+\noindent
+Finding $i_a$
+\begin{equation*}
+    \begin{aligned}
+        i_a &= e^{8.90\%} - 1 \\
+        i_a &= 0.09308 \\
+        i_a &= 9.30807\%
+    \end{aligned}
+\end{equation*}
+\fbox{I would choose Bank B as it has the highest annual effective interest rate of 9.30833\%.}
+
+\newpage
+\section*{Problem 4.43}
+\begin{exrc}
+    You burrowed \$12,000 to buy a new car from a bank at an interst rate of 9\% compounded monthly. This loan will be repaid in 48 equal monthly installments over 4 years. Immediately after the 20th payment, you desire to pay the remainder of the loan in a single payment. Compute this lump-sum amount.
+\end{exrc}
+Finding monthly interest rate
+\begin{equation*}
+    \begin{aligned}
+        i &= 9\%/12 \\
+        i &= 0.75\%
+    \end{aligned}
+\end{equation*}
+Finding monthly payments 
+\begin{equation*}
+    \begin{aligned}
+        A &= \$12000(A/P, 0.75\%, 48) \\
+        A &= \$12000*\left(\frac{0.0075(1+0.0075)^{48}}{(1+0.0075)^{48}-1}\right) \\
+        A &= \$298.62
+    \end{aligned}
+\end{equation*}
+Finding present value from annunity after 20 payments
+\begin{equation*}
+    \begin{aligned}
+        P &= \$298.62(P/A,0.75\%,28) \\
+        P &= \$298.62\left(\frac{(1+0.0075)^{28}-1}{0.0075(1+0.0075)^{28}}\right) \\
+        P &= \framebox{$\$7516.48$}
+    \end{aligned}
+\end{equation*}
+
+\newpage
+\section*{Problem 4.65}
+\begin{exrc}
+    You plan to buy a \$250,000 home with 20\% down payment. The bank you want to finance the loan suggests two options:
+    \begin{enumerate}
+        \item A 15-year mortgage at 4.25\% APR
+        \item A 30-year mortgage at 5.00\% APR
+    \end{enumerate}
+    What is the difference in monthly payments between these two options?
+\end{exrc}
+Finding principal amount
+\begin{equation*}
+    \begin{aligned}
+        P &= \$250000 - 0.2 * \$250000 \\
+        P &= \$200000
+    \end{aligned}
+\end{equation*}
+Finding monthly interest rate:
+\begin{equation*}
+    \begin{aligned}
+        i_1 = 4.25\%/12 = 0.35417\% = 0.0035417 \\
+        i_2 = 5\%/12 = 0.41667\% = 0.0041667
+    \end{aligned}
+\end{equation*}
+Finding monthly payment for 15-year mortgage:
+\begin{equation*}
+    \begin{aligned}
+        A &= \$200000(A/P,0.35417\%,180) \\
+        A &= \$200000\left(\frac{0.0035417(1+0.0035417)^{180}}{(1+0.0035417)^{180}-1}\right) \\
+        A &= \$1504.56
+    \end{aligned}
+\end{equation*} 
+Finding monthly payment for 30-year mortgage:
+\begin{equation*}
+    \begin{aligned}
+        A &= \$200000(A/P,5.00\%,360) \\
+        A &= \$200000\left(\frac{0.0041667(1+0.0041667)^{360}}{(1+0.0041667)^{360}-1}\right) \\
+        A &= \$1073.64
+    \end{aligned}
+\end{equation*}
+Finding difference in monthly payments:
+\begin{equation*}
+    \begin{aligned}
+        \$1504.56 - \$1073.64 = \framebox{$431.12$}
+    \end{aligned}
+\end{equation*}
+
+\newpage
+\section*{Problem 4.91}
+\begin{exrc}
+    The Photo Film Company's bonds have 4 years remaining to maturity. Interest is paid annually, the bonds have a \$1,000 par value, and the coupon interest rate is 8.75\%.
+    \begin{enumerate}
+        \item What is the yield to maturity at a current market price of \$1,108?
+        \item Would you pay \$935 for one of these bonds if you thought the market rate of interest is 9.5\%?
+    \end{enumerate}
+\end{exrc}
+
+
+
+\end{document}

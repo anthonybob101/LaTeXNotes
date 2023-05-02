@@ -1,0 +1,231 @@
+\documentclass[../INDE250HW.tex]{subfiles} 
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage[margin=1in]{geometry}
+
+\title{UW IND E 250 Notes}
+\author{Anthony Le}
+
+\newtheorem{exmp}{Example}
+\newtheorem{exrc}{Excersize}
+\newtheorem{proof}{Proof}
+\newtheorem{defn}{Definition}
+
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[R]{UW IND E 250}
+\fancyhead[L]{Anthony Le}
+
+\begin{center}
+    \LARGE{\textbf{IND E 250 HW 3}}
+\end{center}
+\begin{center}
+    Homework 3 Problems: \\
+    11.4, 11.9, 5.6, 5.10, 5.30, 5.33 (bonus)
+\end{center}
+\section*{Problem 11.4}
+\begin{exrc}
+   For prices that are increasing at an annual rate of 5\% the first year and 8\% the second year determine the average inflation rate ($\bar{f}$) over the two years.
+\end{exrc}
+\begin{enumerate}
+    \item Finding $CPI_1$ for year 1 (Assuming $CPI_0 = \$100$)
+        \begin{equation*}
+            \begin{aligned}
+                CPI_1 &= CPI_0(1 + \bar{f_1})^n \\
+                        &= 100(1 + 0.05)^1 \\
+                CPI_1 &= 105
+            \end{aligned}
+        \end{equation*}
+    \item Finding $CPI_2$ for year 2 (Assuming $CPI_0 = \$100$)
+        \begin{equation*}
+            \begin{aligned}
+                CPI_2 &= CPI_1(1 + \bar{f_2})^n \\
+                        &= 105(1 + 0.08)^1 \\
+                CPI_2 &= 113.4
+            \end{aligned}
+        \end{equation*}
+    \item Finding average inflation rate ($\bar{f}$) over the two years
+        \begin{equation*}
+            \begin{aligned}
+                \bar{f} &= \left[\frac{CPI_2}{CPI_1}\right]^{1/n} - 1 \\
+                        &= \left[\frac{113.4}{105}\right]^{1/2} - 1 \\
+                \bar{f} &= \framebox{$6.49\%$}
+            \end{aligned}
+        \end{equation*}
+\end{enumerate}
+
+\newpage
+\section*{Problem 11.9}
+\begin{exrc}
+    The purchase of a car requires a \$25000 loan to be repaid in monthly installments for four years at 9\% interest compounded monthly. If the general inflation rate is 4\% compounded monthly, find the actual and constant dollar value of the 20th payment.
+\end{exrc}
+\begin{enumerate}
+    \item Converting annual interest rate to monthly interest rate:
+        \begin{equation*}
+            \begin{aligned}
+                i = 9\%/12months = 0.75\%
+            \end{aligned}
+        \end{equation*}
+    \item Converting annual inflation rate to monthly inflation rate:
+        \begin{equation*}
+            \begin{aligned}
+                f = 4\$/12months = 0.33\%
+            \end{aligned}
+        \end{equation*}
+    \item Finding actual dollar value of 20th payment %Note - it seems like so far that we have been working with the actual dollar values so far; finding annunity payments for 4 years
+        \begin{equation*}
+            \begin{aligned}
+                A_{20} &= P(A/P,i,N) \\
+                        &= 25000(A/P, 0.0075\%,4*12) \\
+                A_{20} &= 25000(\frac{0.0075(1+0.0075)^{48}}{(1+0.0075)^{48}-1}) \\
+                A_{20} &= \framebox{$\$622.13$}
+            \end{aligned}
+        \end{equation*}
+    \item Finding constant dollar value of 20th payment %Note - the constant dollar value is the actual dollar value but taking into account the affects of inflation
+        \begin{equation*}
+            \begin{aligned}
+                A'_{20} &= A_{20}(P/F,\bar{f},N) \\
+                        &= \$622.13(P/F,0.33\%,20) \\
+                        &= \$622.13(1 + 0.0033\%)^{-20}\\
+                A'_{20} &= \framebox{$\$582.46$}
+            \end{aligned}
+        \end{equation*}
+\end{enumerate}
+
+\newpage
+\section*{Problem 5.6}
+\begin{exrc}
+    A project costs \$120000 and the expected annual returns are as given in the table below:
+    \begin{center}
+        \begin{tabular}{ c c }
+            Year & Cash Flows \\
+            \hline
+            1   &   \$18,500 \\
+            2   &   \$25,500 \\
+            3   &   \$27,980 \\
+            4   &   \$32,660 \\
+            5   &   \$40,230
+        \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item What is the payback period of the project?
+        \item What is the discounted payback period at an interest rate of 15\%?
+    \end{enumerate}
+\end{exrc}
+\begin{enumerate}
+    \item Finding cash flows:
+        \begin{equation*}
+            \begin{aligned}
+                \text{Year 0:} \quad -\$120000 \\
+                \text{Year 1:} \quad -\$120000 + \$18500 = -\$101500 \\
+                \text{Year 2:} \quad -\$101500 + \$25500 = -\$76000 \\
+                \text{Year 3:} \quad -\$76000 + \$27980 = -\$48020 \\
+                \text{Year 4:} \quad -\$48020 + \$32660 = -\$15360 \\
+                \text{Year 5:} \quad -\$15360 + \$40230 = \$24870
+            \end{aligned}
+        \end{equation*}
+    \item Year 4 is the last year with negative cash flow, finding payback period:
+        \begin{equation*}
+            \begin{aligned}
+                &4 + \frac{\$15360}{\$40230} \\
+                &\framebox{$4.382\text{ years}$} 
+            \end{aligned}
+        \end{equation*}
+    \item Finding discounted payback period: \\
+        \begin{center}
+            \begin{tabular}{ c c c c }
+                Year & Cash Flows & Cost of Funds & Ending Balance\\
+                \hline
+                0   &   -\$120000   &   0   &   -\$120000 \\   
+                1   &   \$18,500    &   -\$120000*0.15 = -\$18000   &   -\$119500 \\
+                2   &   \$25,500    &   -\$119500*0.15 = -\$17925   &   -\$111925 \\
+                3   &   \$27,980    &   -\$111925*0.15 = -\$16788.75    &   -\$100733.75 \\
+                4   &   \$32,660    &   -\$100733.75*0.15 = -\$15110.06 &   -\$83183.81\\
+                5   &   \$40,230    &   -\$83183.81*0.15 = -\$12477.57 & -\$55341.38
+            \end{tabular}
+        \end{center}
+        \fbox{Assuming cash flows end at year 5, discounted payback period goes to infinity}
+\end{enumerate}
+
+\newpage
+\section*{Problem 5.10}
+\begin{exrc}
+    You need to know whether the building of a new warehouse is justified under the following conditions:
+    \begin{enumerate}
+        \item The proposal is for a warehouse costing \$250,000.
+        \item The warehouse has an expected useful life of 35 years and a net salvage value (net proceeds from sale after tax adjustments) of \$50,000.
+        \item Annual receipts of \$67,000 are expected, annual maintenance and administrative costs will be \$12,000/year, and annual income taxes are \$15,000.
+    \end{enumerate}
+    Given the foregoing data, which of the following statements are correct?
+    \begin{enumerate}
+        \item The proposal is justified for a MARR of 15\%.
+        \item The proposal has a net present worth of -\$50,254 when 20\% is used as the interest rate.
+        \item The proposal is acceptable, as long as MARR $\leq$ 15.93\%.
+        \item All of the preceding are correct.
+    \end{enumerate}
+\end{exrc}
+\fbox{Statement 4 - All of the preceding are correct.}
+
+\newpage
+\section*{Problem 5.30}
+\begin{exrc}
+    Consider the project balance profiles shown in the table below for proposed investment projects.
+    \begin{center}
+        \begin{tabular}{ c c c c }
+            n   &   A   &   B   &   C \\
+            \hline
+            0   &   -\$1000   &   -\$1000   &   -\$1000 \\
+            1   &   -1000   &   -650   &   -1200 \\
+            2   &   -900   &   -348   &   -1440 \\
+            3   &   -690   &   -100   &   -1328 \\
+            4   &   -359   &   85   &   -1194 \\
+            5   &   105   &   198   &   -1000 \\
+            Interest Rate    &      &      &     \\
+            used   &   \fbox{10\%}   &   \fbox{?}   &   \fbox{20\%} \\
+            NPW   &   \fbox{?}   &   \fbox{\$79.57}   &   \fbox{?} \\ 
+        \end{tabular}
+    \end{center}
+    Project balance figures are rounded to nearest dollars.
+    \begin{enumerate}
+        \item Compute the net present worth of projects A and C.
+        \item Determine the cash flows for project A.
+        \item Identify the net future worth of project C.
+        \item What interest rate would be used in the project balance calculations for project B?
+    \end{enumerate}
+\end{exrc}
+\begin{enumerate}
+    \item Compute the net present worth of projects A and C. \\
+    \begin{center}
+        \framebox{$NPW_A = 65.19 \quad NPW_C = -401.90$}
+    \end{center}
+    \item Determine the cash flows for project A. 
+    \begin{center}
+        \begin{tabular}{ c c }
+            Year & Cash Flows \\
+            \hline
+            0   &   -\$1000 \\
+            1   &   \$0 \\
+            2   &   \$200 \\
+            3   &   \$300 \\
+            4   &   \$400 \\
+            5   &   \$290
+        \end{tabular}
+    \end{center}
+    \item Identify the net future worth of project C.
+    \begin{center}
+        \framebox{$FW_C = -1000$}
+    \end{center}
+    \item What interest rate would be used in the project balance calculations for project B?
+    \begin{center}
+        \framebox{$i = 20\%$}
+    \end{center}
+\end{enumerate}
+
+
+\end{document}
