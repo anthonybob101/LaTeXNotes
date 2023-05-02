@@ -1,0 +1,36 @@
+\documentclass{report} % //TODO find why latex gives errors for report and using textsc!
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage[margin=1in]{geometry}
+
+
+\usepackage{subfiles} % Best loaded last in the preamble
+
+
+\title{UW IND E 250 Notes}
+\author{Anthony Le}
+
+\newtheorem{exmp}{Example}
+\newtheorem{exrc}{Excersize}
+\newtheorem{proof}{Proof}
+\newtheorem{defn}{Definition}
+
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[R]{UW IND E 250}
+\fancyhead[L]{Anthony Le}
+
+\subfile{Subfiles/INDE250_HW1}
+\newpage
+\subfile{Subfiles/INDE250_HW2}
+\newpage
+\subfile{Subfiles/INDE250_HW3}
+
+\end{document}
+
