@@ -2,6 +2,7 @@
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{tikz}
 \usepackage[margin=1in]{geometry}
 
 \title{UW IND E 250 Notes}
@@ -1556,7 +1557,21 @@ Also to note:
                 &= -19800(A/P,6\%,3) + 12078(A/F,6\%,3) 
     \end{aligned}
 \end{equation*}
-
+Note - we're converting our Capital Recovery Costs to an annunity "A" cost
+\newline
+{
+    \begin{tikzpicture}[thick]
+        \draw (0,0) -- (5,0);
+        \foreach \Y [count=\X starting from 0] in {-2, 0.25, 0.5, 0.75, 1, 1.25}
+        {\draw[-latex] (\X,0) node[below left]{\X} (\X,{-0.1*sign(\Y)}) -- (\X,\Y)
+        node[anchor={sign(\Y)*(-90)}]{$F_{\X}$};}
+    \end{tikzpicture}
+}
+\subsection*{AW of a Perpetual Investment}
+\begin{enumerate}
+    \item If an investment has no finite cycle, it is called a perpetual investment.
+    \item If "P"
+\end{enumerate}
 
 
 
