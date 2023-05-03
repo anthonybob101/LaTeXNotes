@@ -133,10 +133,10 @@ $\left.
         \end{equation*}
     \item Our sign convention:\footnote{NOTE - some books \textbf{and Wikipedia} use the opposite sign convention for the work (w)!!!}
         \begin{enumerate}
-            \item q > 0: heat flows from surroundings to system (system energy increases) 
-            \item q < 0: heat flows from the system to surroundings (system energy decreases)
-            \item w > 0: work is performed \emph{on} system (system energy increases)
-            \item w < 0: work is performed \emph{by} system
+            \item q $>$ 0: heat flows from surroundings to system (system energy increases) 
+            \item q $<$ 0: heat flows from the system to surroundings (system energy decreases)
+            \item w $>$ 0: work is performed \emph{on} system (system energy increases)
+            \item w $<$ 0: work is performed \emph{by} system
         \end{enumerate}
 \end{enumerate}
 
@@ -203,10 +203,145 @@ How much work does the system do to push against a constant external pressure?
 \begin{exmp}
     $1.3*10^8 J$ of heat is applied to the air in a hot-air balloon, causing this volume of gas to inflate from $4*10^6L$ to $4.5*10^6L$. By how much (in J) does the energy of the balloon change?
 \end{exmp}
+\begin{enumerate}
+    \item In this example, assume external pressure is 1 atm:
+        \begin{equation*}
+            \begin{aligned}
+                w &= -P * \Delta V \\
+                  &= -(1atm)*(V_{final}-V_{inital}) \\
+                  &= -0.5*10^6L-atm
+            \end{aligned}
+        \end{equation*}
+        Unit Conversion - 1L-atm = 101.3 J
+        \begin{equation*}
+            \begin{aligned}
+                w &= -0.5 * 10^6L-atm * (101.3 J/L-atm)
+                w &= -5.1*10^7 J 
+            \end{aligned}
+        \end{equation*}
+    \item w is the work the \emph{surroundings have done on the system!!}, in this case, the system is performing work on the surroundings, taking $5.1*10^7$ J from the surroundings.
+    \item Calculating change in energy:
+        \begin{equation*}
+            \begin{aligned}
+                \Delta E &= q + w \\
+                    &= 1.3*10^8J + (-5.1*10^7) \\
+                    &= 8*10^7J
+            \end{aligned}
+        \end{equation*}
+\end{enumerate}
 
-
-
-
+\subsection*{Energy and Enthalpy}
+\begin{enumerate}
+    \item When we add or remove heat (\emph{q}) to a system \emph{while keeping the volume constant ($\Delta V = 0$)}, \textbf{no work is performed}, and the change in energy is:
+        \begin{equation*}
+            \begin{aligned}
+                \Delta E = q_V \leftarrow\text{\small{  the subscript v is a reminder that this is true only at a constant volume!}}
+            \end{aligned}
+        \end{equation*}
+        All the added heat goes into increases the system's energy!
+    \item When we add or remove heat (\emph{q}) \emph{while keeping the pressure constant}, work is performed:
+        \begin{equation*}
+            \begin{aligned}
+                w = -P\Delta V
+            \end{aligned}
+        \end{equation*}
+        In this case, the first law can be written as:
+        \begin{equation*}
+            \begin{aligned}
+                \Delta E + P\Delta V = q_p \leftarrow\text{\small{  the subscript p is a reminder that this is true only at a constant pressure!}}
+            \end{aligned}
+        \end{equation*}
+    \item This makes accounting of energy a little more complicated. We can make our lives easier by defining a new quantity called the \emph{enthalpy} of a system, \emph{H}:
+        \begin{equation*}
+            \begin{aligned}
+                H = E + PV 
+            \end{aligned}
+        \end{equation*}
+        If in a process the pressure is constant ($\Delta P = 0$), then the change in enthalpy is:
+        \begin{equation*}
+            \begin{aligned}
+                \Delta H = \Delta E + P \Delta V
+            \end{aligned}
+        \end{equation*}
+        Now reformatting this - if we add or remove heat at a constant heat, the first law becomes:
+        \begin{equation*}
+            \begin{aligned}
+                \Delta H = q_p
+            \end{aligned}
+        \end{equation*}
+        All the added heat goes into increasing the system's enthalpy!
+\end{enumerate}
+\subsection*{Heat Capacity}
+\begin{enumerate}
+    \item When heat is added to a system ($q > 0$), usually (not always, as we'll see) the temperature increases ($\Delta T > 0$).
+    \item Similarly, when heat is removed from a system ($q < 0$), the temperature usually decreases ($\Delta T < 0$).
+    \item The change in temperature is proportional to the amount of heat added or removed. Suggesting a constant controls this proportionality.
+    \item The (inverse) constant of proportionality is called the \emph{heat capacity C}:
+        \begin{equation*}
+            \begin{aligned}
+                \Delta T = \frac{1}{C}q \quad or \quad C = \frac{q}{\Delta T}
+            \end{aligned}
+        \end{equation*}
+    \item The heat capacity \emph{C} describes by how much the temperature of a system changes when heat is addedd or removed:
+        \begin{enumerate}
+            \item If C is large, then the temperature changes only a little if heat is added/removed.
+            \item If C is small, then the temperatures changes by a lot if heat is added/removed.
+            \item The heat capacity measures a system's ability to resist changing its temperature when heat is added or removed.
+        \end{enumerate}
+    \item How big \emph{C} is depends on the system (ie: based on size, material, temperature, physical state...).
+    \item Temperature is a measure of average kinetic energy. As we have seen, by how much the energy changes ($\Delta E$) when we add or remove heat depends on whether we do so at constant volume of constant pressure. Therefore, the heat capacity C also depends whether we add heat at constant pressure or volume.
+    \item Following up on this, the heat capacity is the ratio of (heat added/removed) to (change in temperature)
+        \begin{equation*}
+            \begin{aligned}
+                C = \frac{q}{\Delta T}
+            \end{aligned}
+        \end{equation*}
+    \item If the heat is added or removed \emph{while keeping the volume constant}, we know that:
+        \begin{equation*}
+            \begin{aligned}
+                q_v = \Delta E \leftarrow\text{Only true at constant volume}
+            \end{aligned}
+        \end{equation*}
+        and therefore, the constant-volume heat capacity $C_v$ is:
+        \begin{equation*}
+            \begin{aligned}
+                C_v = \frac{\Delta E}{\Delta T} \quad or \quad \Delta E = C_v \Delta T \leftarrow\text{Always true!}
+            \end{aligned}
+        \end{equation*}
+    \item If the heat is added or removed \emph{while keeping the pressure constant}, we know that:
+    \begin{equation*}
+        \begin{aligned}
+            q_p = \Delta H \leftarrow\text{Only true at constant pressure}
+        \end{aligned}
+    \end{equation*}
+    and therefore, the constant-volume heat capacity $C_v$ is:
+    \begin{equation*}
+        \begin{aligned}
+            C_v = \frac{\Delta H}{\Delta T} \quad or \quad \Delta E = C_p \Delta T \leftarrow\text{Always true!}
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+\subsection*{Thermodynamics of Gases}
+\begin{enumerate}
+    \item \textbf{Gases} are popular systems to study in thermodynamics because\dots
+        \begin{enumerate}
+            \item They can show large changes in volume, making the effects of P-V more apparent (liquids and solids typically do not show changes in their volume very much).
+            \item Their behavior is often very similar to an ideal gas, which we often know a lot about.
+        \end{enumerate}
+    \item Ideal Gas
+        \begin{enumerate}
+            \item Satisifes the ideal gas law: $PV=nRT$
+            \item Is based on the assumption that there are no interactions between gas particles:
+                \begin{enumerate}
+                    \item The potential energy of a gas is 0 - $E_p = 0$
+                    \item Therefore the total energy of an ideal gas is equal to its kinetic energy $E = E_k$
+                \end{enumerate}
+        \end{enumerate}
+    \item Monatomic Ideal Gases
+        \begin{enumerate}
+            \item From kinetic molecular theory, we know that the average kinetic energy of n moles of a monatomic ideal gas is $E-k (3/2)nRT$ and ... %//TODO - Complete monatomic ideal gas definition from 5/3/23 lecture!
+        \end{enumerate}
+\end{enumerate}
 
 
 
