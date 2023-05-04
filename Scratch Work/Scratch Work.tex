@@ -2,6 +2,7 @@
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage[margin=1in]{geometry}
 
 \title{UW IND E 250 Notes}
@@ -490,20 +491,118 @@ Buckling Failure Checks:
 
 \section*{Composite Beam Design Example}
 Abbreviation Legend:
-\begin{tabular}{ c c }
-    SW = Self Weight & TW = Tributary Width 
-\end{tabular}
+\newline
+\begin{center}
+    \begin{tabular}{ c c }
+        SW = Self Weight & TW = Tributary Width \\
+        CL = Construction Load 
+    \end{tabular}
+\end{center}
 Steps:
+\subsection*{Selecting from construction loads}
 \begin{enumerate}
-    \item Setting Construction Loads:
+    \item Finding Distributed Loads:
         \begin{equation*}
             \begin{aligned}
-                w_D = (\text{SW}) (\text{TW})
+                w^{(1)}_D &= (\text{Conc SW}) (\text{TW}) \quad \text{Concrete Only!}\\
+                          &= (51psf)(9ft) \\
+                w^{(1)}_D &= \framebox{459lb/ft} \\
+                \\
+                w^{(1)}_L &= (\text{CL}) (\text{TW}) \quad \text{Construction Load}\\
+                          &= (20psf)(9ft) \\
+                w^{(1)}_L &= \framebox{180lb/ft} \\
+                \\
+                w^{(1)}_U &= \lambda _D w^{(1)}_D + \lambda _L w^{(1)}_L \\
             \end{aligned}
         \end{equation*}
+    \item Selecting $w^{(1)}_U$ \footnote{Should we list all of the load combinations here or only the two main combinations?} 
+        \begin{equation*}
+            \begin{aligned}
+                w_U &= max
+                    \begin{cases}
+                        1.4(w^{(1)}_D) + 0.0(w^{(1)}_L) = 642.6lb/ft \\
+                        1.2(w^{(1)}_D) + 1.6(w^{(1)}_L) = 838.8lb/ft \\
+                    \end{cases} \\
+                w_U &= \framebox{0.839k/ft}
+            \end{aligned}
+        \end{equation*}
+    \item Finding Moment Demand, $M^{(1)}_u$ (ignoring self weight):
+        \begin{equation*}
+            \begin{aligned}
+                M^{(1)}_u   &= \frac{{w^{(1)}_u}L^2}{8} \\
+                            &= \frac{(0.839k/ft)(30ft)^2}{8} \\
+                M^{(1)}_u   &= \framebox{94.4k-ft}
+            \end{aligned}
+        \end{equation*}
+    \item Finding Shear Demand, $V^{(1)}_u$ (ignoring self weight):
+        \begin{equation*}
+            \begin{aligned}
+                V^{(1)}_u   &= \frac{{w^{(1)}_u}L}{2} \\
+                            &= \frac{(0.839k/ft)(30ft)}{2} \\
+                V^{(1)}_u   &= \framebox{12.6k}
+            \end{aligned}
+        \end{equation*}
+    \item Assuming the deck provides lateral bracing ($L_b = 0$), we can use table 3-2 to find a section with adquate flexural strength ($\Phi _b M_p$) 
+        \newline
+        Selecting W10X22, 
+            \begin{equation*}
+                \begin{aligned}
+                    \Phi _b M_p = &97.5k-ft &\geq M^{(2)}_u = &94.4k-ft &\checkmark\\
+                    \Phi _v V_n = &73.4k &\geq V^{(2)}_u = &12.6k &\checkmark
+                \end{aligned}
+            \end{equation*}
 \end{enumerate}
-
-
+\subsection*{Factoring in self-weight}
+\begin{enumerate}
+    \item Finding Distributed Loads:
+        \begin{equation*}
+            \begin{aligned}
+                w^{(2)}_D   &= (\text{Conc SW}) (\text{TW}) + (\text{Beam SW}) \\
+                            &= 459lb/ft + 22lb/ft \\
+                            &= 481lb/ft \\
+                w^{(2)}_L &= (\text{CL}) (\text{TW}) \quad \text{Construction Load}\\
+                            &= (20psf)(9ft) \\
+                w^{(2)}_L &= \framebox{180lb/ft} \\
+                w^{(2)}_U   &= \lambda _D w^{(2)}_D + \lambda _L w^{(2)}_L \\
+            \end{aligned}
+        \end{equation*}
+    \item Selecting $w^{(2)}_U$ 
+    \begin{equation*}
+        \begin{aligned}
+            w^{(2)}_U &= max
+                \begin{cases}
+                    1.4(w^{(2)}_D) + 0.0(w^{(2)}_L) = 673.4lb/ft \\
+                    1.2(w^{(2)}_D) + 1.6(w^{(2)}_L) = 865.2lb/ft \\
+                \end{cases} \\
+            w^{(2)}_U &= \framebox{0.865k/ft}
+        \end{aligned}
+    \end{equation*}
+    \item Finding Moment Demand, $M^{(2)}_u$ (ignoring self weight):
+        \begin{equation*}
+            \begin{aligned}
+                M^{(2)}_u   &= \frac{{w^{(1)}_u}L^2}{8} \\
+                            &= \frac{(0.865k/ft)(30ft)^2}{8} \\
+                M^{(2)}_u   &= \framebox{97.3k-ft}
+            \end{aligned}
+        \end{equation*}
+    \item Finding Shear Demand, $V^{(2)}_u$ (ignoring self weight):
+        \begin{equation*}
+            \begin{aligned}
+                V^{(1)}_u   &= \frac{{w^{(1)}_u}L}{2} \\
+                            &= \frac{(0.865k/ft)(30ft)}{2} \\
+                V^{(1)}_u   &= \framebox{13.0k}
+            \end{aligned}
+        \end{equation*}
+    \item Checking Beam Capacity Against Demand: \\
+    For Selected W10X22,
+        \begin{equation*}
+            \begin{aligned}
+                \Phi _b M_p = &97.5k-ft &\geq M^{(2)}_u = &97.3k-ft &\checkmark\\
+                \Phi _v V_n = &73.4k &\geq V^{(2)}_u = &13k &\checkmark
+            \end{aligned}
+        \end{equation*}
+    
+    \end{enumerate}
 
 \end{document}
 
