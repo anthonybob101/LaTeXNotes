@@ -508,6 +508,7 @@ Givens:
                    & 3VLI 2.5" Slab & 1.2D + 1.6L & L = 80psf & L = 20psf \\
                    & 3" Deck  &            &               &             \\ 
                    & SW = 51 psf&            &               &             \\
+                   & f'c = 4ksi &            &               &   
     \end{tabular}
 \end{center}
 
@@ -528,7 +529,7 @@ Steps:
                 w^{(1)}_U &= \lambda _D w^{(1)}_D + \lambda _L w^{(1)}_L \\
             \end{aligned}
         \end{equation*}
-    \item Selecting $w^{(1)}_U$ \footnote{Should we list all of the load combinations here or only the two main combinations?} 
+    \item Selecting $w^{(1)}_U$: \footnote{Should we list all of the load combinations here or only the two main combinations?} 
         \begin{equation*}
             \begin{aligned}
                 w_U &= max
@@ -573,13 +574,13 @@ Steps:
                 w^{(2)}_D   &= (\text{Conc SW}) (\text{TW}) + (\text{Beam SW}) \\
                             &= 459lb/ft + 22lb/ft \\
                             &= \framebox{481lb/ft} \\
-                w^{(2)}_L &= (\text{CL}) (\text{TW}) \quad \text{Construction Load}\\
+                w^{(2)}_L &= (\text{CL}) (\text{TW}) \\
                             &= (20psf)(9ft) \\
                 w^{(2)}_L &= \framebox{180lb/ft} \\
                 w^{(2)}_U   &= \lambda _D w^{(2)}_D + \lambda _L w^{(2)}_L \\
             \end{aligned}
         \end{equation*}
-    \item Selecting $w^{(2)}_U$ 
+    \item Selecting $w^{(2)}_U$:
     \begin{equation*}
         \begin{aligned}
             w^{(2)}_U &= max
@@ -632,7 +633,7 @@ Steps:
                 w^{(3)}_U   &= \lambda _D w^{(3)}_D + \lambda _L w^{(3)}_L \\
             \end{aligned}
         \end{equation*}
-    \item Selecting $w^{(3)}_U$ 
+    \item Selecting $w^{(3)}_U$:
     \begin{equation*}
         \begin{aligned}
             w^{(3)}_U &= max
@@ -671,7 +672,7 @@ Steps:
                 &\framebox{\text{Assume a = 0, and round down to use $Y_2 = 5in$}} 
             \end{aligned}
         \end{equation*}
-    \item Using Table 3-19, we need to find $\sum Q_n$ such that
+    \item Using Table 3-19, we need to find $\sum Q_n$ such that:
         \begin{equation*}
             \begin{aligned}
                \Phi _b M_n \geq  M^{(3)}_u \quad &\text{Or}  \quad &\Phi _b M_n \geq 231k-ft \\
@@ -696,7 +697,7 @@ Steps:
                                                 &= \framebox{21.7 \text{k/Rib}}
             \end{aligned}
         \end{equation*}
-    \item Selecting Shear Studs\footnote{See Sec.I8.1 for maximum usable stud size - $d_{sa} = 2.5t_f \leq 3/4in$} \\
+    \item Selecting Shear Studs:\footnote{See Sec.I8.1 for maximum usable stud size - $d_{sa} = 2.5t_f \leq 3/4in$} \\
         Selecting Maximum Usable Stud Size (Sec.I8.1): 
             \begin{equation*}
                 \begin{aligned}
@@ -711,7 +712,9 @@ Steps:
         From Table 3-21, for 3/4in $\Phi$ studs with $f'c = 4ksi$, we have $Q_n = 17.2k$ at 1 stud per rib.
             \begin{equation*}
                 \begin{aligned}
-                    \sum Q_{n,provided} = N_{sa} Q_n = 15(17.2k) = 258k
+                    \sum Q_{n,provided} &= N_{sa} Q_n \\
+                                    &= 15(17.2k) \\
+                                    &= \framebox{258k}
                 \end{aligned}
             \end{equation*}
         Comparing from Table 3-19, this will not work! 
@@ -756,11 +759,39 @@ Continuing from the previous section, lets go up to a heavier beam, a W10X26.
     \item Finding $\sum Q_{n,required}$ for $Y_2 = 5in$ so that  $\Phi _b M_n \geq M^{(3)}_u$ from Table 3-19:
         \begin{equation*}
             \begin{aligned}
-                \Phi _b M_n = 241k-ft & \text{for} & \sum Q_{n,required} = 254k
+                \sum Q_{n,required} = \framebox{254k} & \text{ for } & \Phi _b M_n = 241k-ft
             \end{aligned}
         \end{equation*}
         Note that for the stud configuration we computed eariler (15 - 3/4in $\Phi$), $\sum Q_{n,provided} = 258k$ - so we can use it here.
-    \item 
+    \item Computing $b_e$: 
+        \begin{equation*}
+            \begin{aligned}
+                b_e &= min
+                \begin{cases}
+                    2(L/8) = 2(30ft/8) = 7.5ft\\
+                    9ft
+                \end{cases} \\
+                    &= 7.5 ft \\
+                b_e &= \framebox{90in} 
+            \end{aligned}
+        \end{equation*}
+    \item Computing compression block depth, a for $Y_2$:
+        \begin{equation*}
+            \begin{aligned}
+                a &= \frac{\sum Q_{n,provided}}{0.85f'cb_e} \\
+                    &= \frac{258k}{0.85(4ksi)(90in)} \\
+                    &= 0.843in
+            \end{aligned}
+        \end{equation*}
+    \item Computing $Y_2$:
+        \begin{equation*}
+            \begin{aligned}
+                Y_2 &= Y_{conc} - \frac{a}{2} \\
+                    &= 5.5in - \frac{0.843in}{2} \\
+                    &= \framebox{5.08in}
+            \end{aligned}
+        \end{equation*}
+    \item To be continued! You shouldn't be computing Y2 if you want to avoid double-interpolation. Include calculations for the Y(PNA) to compute Mn and also deflection checks here.
     \end{enumerate}
 \end{document}
 
