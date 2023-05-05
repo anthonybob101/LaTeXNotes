@@ -491,13 +491,26 @@ Buckling Failure Checks:
 
 \section*{Composite Beam Design Example}
 Abbreviation Legend:
-\newline
 \begin{center}
-    \begin{tabular}{ c c }
-        SW = Self Weight & TW = Tributary Width \\
-        CL = Construction Load 
+    \begin{tabular}{ c c c }
+        SW = Self Weight & TW = Tributary Width & SI = Superimposed\\
+        CL = Construction Load & Conc = Concrete \\
     \end{tabular}
 \end{center}
+Givens:
+
+\begin{center}
+    \begin{tabular}{ c|c|c|c|c }
+        Geometry    & Composite Deck & Load Combinations & Service Loads & Construction Loads \\
+        %Geometry & Comp.Deck & Load Combos & Service Loads & Const. Loads
+        \hline
+        TW = 9ft    & Vulcraft & 1.4D       &  D = 30psf + SW  & D = SW  \\
+                   & 3VLI 2.5" Slab & 1.2D + 1.6L & L = 80psf & L = 20psf \\
+                   & 3" Deck  &            &               &             \\ 
+                   & SW = 51 psf&            &               &             \\
+    \end{tabular}
+\end{center}
+
 Steps:
 \subsection*{Selecting from construction loads}
 \begin{enumerate}
@@ -542,7 +555,7 @@ Steps:
                 V^{(1)}_u   &= \framebox{12.6k}
             \end{aligned}
         \end{equation*}
-    \item Assuming the deck provides lateral bracing ($L_b = 0$), we can use table 3-2 to find a section with adquate flexural strength ($\Phi _b M_p$) 
+    \item Since the deck ribs are oriented perpendicular to provides lateral bracing ($L_b = 0$), we can use table 3-2 to find a section with adquate flexural strength ($\Phi _b M_p$) 
         \newline
         Selecting W10X22, 
             \begin{equation*}
@@ -559,7 +572,7 @@ Steps:
             \begin{aligned}
                 w^{(2)}_D   &= (\text{Conc SW}) (\text{TW}) + (\text{Beam SW}) \\
                             &= 459lb/ft + 22lb/ft \\
-                            &= 481lb/ft \\
+                            &= \framebox{481lb/ft} \\
                 w^{(2)}_L &= (\text{CL}) (\text{TW}) \quad \text{Construction Load}\\
                             &= (20psf)(9ft) \\
                 w^{(2)}_L &= \framebox{180lb/ft} \\
@@ -601,8 +614,153 @@ Steps:
                 \Phi _v V_n = &73.4k &\geq V^{(2)}_u = &13k &\checkmark
             \end{aligned}
         \end{equation*}
-    
+    At this point, you could check for deflections using unfactored loads! Think of using D + L to check for L/360, L/600, or L/240 depending on beam location! 
+    \newline
+    Now we have a section that at least works for construction. Under service loads, this won't work unless we consider composite action.
+\end{enumerate}
+\subsection*{Factoring in service and required demand}
+\begin{enumerate}
+    \item Finding Distributed Loads:
+        \begin{equation*}
+            \begin{aligned}
+                w^{(3)}_D   &= (\text{SIDL + Conc SW}) (\text{TW}) + (\text{Beam SW}) \\
+                            &= (30psf + 51 psf)(9ft) + 22lb/ft \\
+                            &= \framebox{751lb/ft} \\
+                w^{(3)}_L &= (\text{LL}) (\text{TW}) \\
+                            &= (80psf)(9ft) \\
+                w^{(3)}_L &= \framebox{720lb/ft} \\
+                w^{(3)}_U   &= \lambda _D w^{(3)}_D + \lambda _L w^{(3)}_L \\
+            \end{aligned}
+        \end{equation*}
+    \item Selecting $w^{(3)}_U$ 
+    \begin{equation*}
+        \begin{aligned}
+            w^{(3)}_U &= max
+                \begin{cases}
+                    1.4(w^{(3)}_D) + 0.0(w^{(3)}_L) = 1051lb/ft \\
+                    1.2(w^{(3)}_D) + 1.6(w^{(3)}_L) = 2053lb/ft \\
+                \end{cases} \\
+            w^{(3)}_U &= \framebox{2.05k/ft}
+        \end{aligned}
+    \end{equation*}
+    \item Finding Moment Demand, $M^{(3)}_u$:
+        \begin{equation*}
+            \begin{aligned}
+                M^{(3)}_u   &= \frac{{w^{(3)}_u}L^2}{8} \\
+                            &= \frac{(2.05k/ft)(30ft)^2}{8} \\
+                M^{(3)}_u   &= \framebox{231k-ft}
+            \end{aligned}
+        \end{equation*}
+    \item Finding Shear Demand, $V^{(3)}_u$:
+        \begin{equation*}
+            \begin{aligned}
+                V^{(3)}_u   &= \frac{{w^{(3)}_u}L}{2} \\
+                            &= \frac{(2.05k/ft)(30ft)}{2} \\
+                V^{(3)}_u   &= \framebox{30.8k}
+            \end{aligned}
+        \end{equation*}
+    \item Using moment demand ($M^{(2)}_u$), we can design the number and type of studs required:
+\end{enumerate}
+\subsection*{Determining Composite Action (Attempt 1)}
+\begin{enumerate}
+    \item To start off, we need to first assume $Y_2$ (distance from top steel to concrete flange force), then we can iterate:
+        \begin{equation*}
+            \begin{aligned}
+                Y_2 &= Y_{conc} - \frac{a}{2} \quad \text{a is a function of $\sum Q_n$} \\
+                Y_{conc} &= 3in\text{(deck)}  + 2.5in\text{(slab)} = 5.5in \\
+                &\framebox{\text{Assume a = 0, and round down to use $Y_2 = 5in$}} 
+            \end{aligned}
+        \end{equation*}
+    \item Using Table 3-19, we need to find $\sum Q_n$ such that
+        \begin{equation*}
+            \begin{aligned}
+               \Phi _b M_n \geq  M^{(3)}_u \quad &\text{Or}  \quad &\Phi _b M_n \geq 231k-ft \\
+               \Phi _b M_n = 246k-ft \quad &\text{For} \quad &\sum Q_{n,required} = 325k
+            \end{aligned}
+        \end{equation*}
+        Note that this implies full composite action ($\sum Q_n = F_yA_g$ and PNA = TFL - top of flange) abd that may be difficult to satisify. 
+        \newline
+        Because of our deck orientation, we have a fixed stud spacing. For 3VLI, this is 12" according to the catalog.
+    \item Finding number of ribs required to develop $\sum Q_n$ over half of beam (Distance from $M_{max}$ to zero moment):\footnote{$N_{sa}$ represents the number of shear anchors/studs required.}
+        \begin{equation*}
+            \begin{aligned}
+                N_{sa} \text{ ribs} &= \frac{L/2}{\text{Stud Spacing}} \\
+                                    &= \frac{30/2ft}{1ft} \\
+                                    &= \framebox{15 \text{ribs}}
+            \end{aligned}
+        \end{equation*}
+    \item Finding demand per rib:\footnote{When looking at Table 3-21 - Deck Condition = Perpendicular $\rightarrow$ Normal Weight Concrete: For 1 stud per rib, we can't satisify this required strength of 21.7k/rib (all values listed in that row are lower than demand/rib)}
+        \begin{equation*}
+            \begin{aligned}
+                \frac{\sum Q_n}{n \text{ ribs}} &= \frac{325k}{15 \text{ ribs}} \\
+                                                &= \framebox{21.7 \text{k/Rib}}
+            \end{aligned}
+        \end{equation*}
+    \item Selecting Shear Studs\footnote{See Sec.I8.1 for maximum usable stud size - $d_{sa} = 2.5t_f \leq 3/4in$} \\
+        Selecting Maximum Usable Stud Size (Sec.I8.1): 
+            \begin{equation*}
+                \begin{aligned}
+                    d_{sa} &= 2.5t_f \leq 3/4in \\
+                            &= 2.5(0.360in) \leq 3/4in \\
+                            &= 0.9in \leq 0.75in \\
+                    d_{sa} &= \framebox{0.75in}
+                \end{aligned}
+            \end{equation*}
+        From this, we can \emph{attempt} to use 3/4in $\Phi$ studs, resulting in a smaller $\sum Q_n$. Alternatively, we could try multiple studs per rib, but this might not work since the flange is narrow, or it may be cost prohibitive.  
+    \item Finding $\sum Q_n$ for selected shear studs: \\
+        From Table 3-21, for 3/4in $\Phi$ studs with $f'c = 4ksi$, we have $Q_n = 17.2k$ at 1 stud per rib.
+            \begin{equation*}
+                \begin{aligned}
+                    \sum Q_{n,provided} = N_{sa} Q_n = 15(17.2k) = 258k
+                \end{aligned}
+            \end{equation*}
+        Comparing from Table 3-19, this will not work! 
+            \begin{equation*}
+                \begin{aligned}
+                    \sum Q_{n,required} &> \sum Q_{n,provided} \\
+                    273k-ft &> 258k-ft
+                \end{aligned}
+            \end{equation*}
+        Since this doesn't work there are a couple of options:
+            \begin{enumerate}
+                \item Choose a larger beam (heavier or deeper, or both)
+                \item Increase the slab depth.
+            \end{enumerate}
+        This next section will chose to select a larger beam.
+\end{enumerate}
+\subsection*{Determining Composite Action (Attempt 2)}
+Continuing from the previous section, lets go up to a heavier beam, a W10X26.
+\begin{enumerate}
+    \item Checking Beam Capacity Against (self-weight) Demand: \\
+    For Selected W10X26,
+        \begin{equation*}
+            \begin{aligned}
+                \Phi _b M_p = &117k-ft &\geq M^{(2)}_u = &97.9k-ft &\checkmark\\
+                \Phi _v V_n = &80.3k &\geq V^{(2)}_u = &13.1k &\checkmark
+            \end{aligned}
+        \end{equation*}
+    \item Finding (service/ultimate) Moment Demand, $M^{(3)}_u$: \\
+        \textbf{Note that the steps here in Wiebe's notes are skipped in finding M3!}
+        \begin{equation*}
+            \begin{aligned}
+                M^{(3)}_u   &= \framebox{232k-ft} \rightarrow \text{ used to design studs}
+            \end{aligned}
+        \end{equation*}
+    \item Finding (service/ultimate) Shear Demand, $V^{(3)}_u$: \\
+        \textbf{Note that the steps here in Wiebe's notes are skipped in finding V3!}
+        \begin{equation*}
+            \begin{aligned}
+                V^{(3)}_u   &= \framebox{30.9k} \leq \Phi _b V_n = 80.3k
+            \end{aligned}
+        \end{equation*}
+    \item Finding $\sum Q_{n,required}$ for $Y_2 = 5in$ so that  $\Phi _b M_n \geq M^{(3)}_u$ from Table 3-19:
+        \begin{equation*}
+            \begin{aligned}
+                \Phi _b M_n = 241k-ft & \text{for} & \sum Q_{n,required} = 254k
+            \end{aligned}
+        \end{equation*}
+        Note that for the stud configuration we computed eariler (15 - 3/4in $\Phi$), $\sum Q_{n,provided} = 258k$ - so we can use it here.
+    \item 
     \end{enumerate}
-
 \end{document}
 
