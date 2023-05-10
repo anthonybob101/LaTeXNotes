@@ -1573,6 +1573,102 @@ Note - we're converting our Capital Recovery Costs to an annunity "A" cost
     \item If "P"
 \end{enumerate}
 
+%IRR can't be solved by hand unless the problem is less than 4 years - you'll need to use excel.
+%5-10-23 try to finish lecture 12 and 13 today, want to do review session on monday 
+\section*{Motivation: Multiple i's}
+Better to use present worth analysis
+Need to determine whether you have simple/non-simple invest
+\begin{enumerate}
+    \item Simple investment - what we have been working with so far, just getting interest (only 1 sign change)
+    \item Non-simple investment - more transactions happening than just getting interest (more than 1 sign change)
+\end{enumerate} 
+
+\section*{Predicting Multiple i's}
+\begin{enumerate}
+    \item Net Cash Flow Rule of Signs
+        \begin{enumerate}
+            \item The number of real i*s that are greater tha -100\% for a project with N periods is never greater than the number of sign changes in the sequence of the cash flows. 
+            \item In actual words, the maximum number of i*s is the number of times sign changes
+        \end{enumerate}
+    \item Accumulated Cash Flow Sign Test
+        \begin{enumerate}
+            \item If the sequence of accumulated cash flow series starts negatively and changes sign only once, then a unique positive i* exists.
+            \item Note - this applies to \emph{net} cash flows
+        \end{enumerate}
+\end{enumerate}
+%This goes back to the NPW analysis - where as you change the interest rate, there is no IRR that will give you a NPW that equals 0.
+You can use excel to do IRR using "=IRR(cash flow range, guess)", where guess is the closest value to reaching 0 NPW. However, it won't tell you if you have more than 1, which is why you'll want to graph the NPW.
+Difference between An and acculmated cash flows
+\begin{enumerate}
+    \item $A_n$ represents the total cash flows \emph{for a single period}.
+    \item Accumulated cash flows represent the total cash flows through the entire time you're looking at.
+\end{enumerate}
+To determine if you have a simple/non-simple investment - use the accumulated cash flow sign test:
+
+\begin{exmp}
+    In the table below, determine the following:
+    \begin{enumerate}
+        \item Is this a simple investment?
+        \item How many RORs (i*s) can you expect from these cash flows?
+        \item Can you tell whether this investment has a unique positive rate of return? 
+    \end{enumerate}
+\end{exmp}
+Cash Flows:
+\begin{center}
+    \begin{tabular}{c c c}
+        n & $A_n$ & Acc. Cash Flow \\
+        \hline
+        0 & -100 & -100\\
+        1 & 50  & -50\\
+        2 & 0  & -50 \\
+        3 & 200 & 150\\ 
+        4 & -50 & 100\\ 
+    \end{tabular}
+\end{center}
+In this case, there is only 1 sign change in the accumulated cash flows, so this means that there is a unique positive i* exists
+
+1 sign change - i* is where the value of NPW = 0 
+Solve this by looking at the accumulated cash flows
+
+\section*{Computational Methods to find i*}
+\begin{enumerate}
+    \item Direct Solution (used to solve on exam)
+    \item Excel's Financial Command (IRR command)
+\end{enumerate}
+
+\section*{Solving for i*}
+There are 2 methods you'll use to solve for i*:
+\begin{enumerate}
+    \item log
+    \item quadratic
+\end{enumerate}
+Solving for Project A (Log Solution)
+\begin{equation*}
+    \begin{aligned}
+        1000 &= 1500(P/F,i,4) \\
+        1000 &+ 1500(1+i)^{-4} \\
+        0.6667 &= (1+i)^{-4} \\
+    \end{aligned}
+\end{equation*}
+%//TODO - Complete Direct Solution Method for project A!
+Solving for Project B (Quadratic Solution)
+\begin{equation*}
+    \begin{aligned}
+        PW(i) &= -2000 + 1300(1+i)^{-1} + 1500(1+i)^{-2} \quad x = \frac{1}{1+i} \\
+                &= -2000 + 1300x + 1500x^2 \quad \text{can solve using quadratic formula} \\
+        x &= \frac{-b\pm\sqrt{b^2-4ac}}{2a} \quad \text{not finished!} \\
+        \frac{-b\pm\sqrt{b^2-4ac}}{2a} &= \frac{1}{1+i} \quad \text{setting to x}\\
+        0.8 = \frac{1}{1+i} = 25\% & \quad -1.1 = \frac{1}{1+i} = -160\% \\
+        & \text{Note that your i can only exist between $-100\% < i < \infty$!
+        } \\
+        &\framebox{i = 25\%}
+    \end{aligned}
+\end{equation*}
+
+\subsection*{Multiple Rates of Return}
+It is possible for you to get multiple i*s in a problem! 
+If this happens it's better for you to do present worth or annual worth to make the decision whether to accept or reject.
+
 
 
 
