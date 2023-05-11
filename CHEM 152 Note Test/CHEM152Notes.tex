@@ -342,8 +342,101 @@ How much work does the system do to push against a constant external pressure?
             \item From kinetic molecular theory, we know that the average kinetic energy of n moles of a monatomic ideal gas is $E-k (3/2)nRT$ and ... %//TODO - Complete monatomic ideal gas definition from 5/3/23 lecture!
         \end{enumerate}
 \end{enumerate}
+%//TODO - DO friday and monday lecture notes!
 
+\subsection*{Calculating Enthalpy Changes}
+\begin{exmp}
+    Use the information below to determine $\Delta_H$ for the reaction:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{3 C + 4 H2 -> C3H8}
+        \end{aligned}
+    \end{equation*}
+\end{exmp}
+\begin{equation*}
+    \begin{aligned}
+        &\ce{C3H8 + 5 O2 -> 3 CO2 + 4 H2O} &\Delta H_1 \\
+        %//TODO - Complete Enthalpy Change formulas here!
+    \end{aligned}
+\end{equation*}
 
+\subsection*{Formation Reactions}
+\begin{enumerate}
+    \item The \emph{standard enthalpy of formation} $\Delta H^0_f$\footnote{These values for various substances can be found in a table in the textbook or online.} if the change in enthalpy that accompanies the formation of \emph{one mole of a compound} from \emph{its elements in their most stable state} with \emph{all substances in their standard state (1 atm pressure, and ually 25C)}. 
+    \item Examples:
+        \begin{enumerate}
+            \item Formation of Liquid Water:
+                \begin{equation*}
+                    \begin{aligned}
+                        \ce{H2_(g) + 0.5 O2_(g) -> H2O_(l)} \quad \Delta H^0_f = -286 kJ/mol
+                    \end{aligned}
+                \end{equation*}
+            \item Formation of Nitrogen Dioxide:
+                \begin{equation*}
+                    \begin{aligned}
+                        \ce{0.5 N2_(g) + O2_(g) -> NO2_(g)} \quad \Delta H^0_f = 34 kJ/mol
+                    \end{aligned}
+                \end{equation*}
+            \item Formation of Carbon Dioxide:
+                \begin{equation*}
+                    \begin{aligned}
+                        \ce{C_(s) + O2_(g) -> CO2_(g)} \quad \Delta H^0_f = -394 kJ/mol
+                    \end{aligned}
+                \end{equation*}
+            \item Formation of Methane:
+                \begin{equation*}
+                    \begin{aligned}
+                        \ce{C_(s) + 2 H2_(g) -> CH4_(g)} \quad \Delta H^0_f = -75 kJ/mol
+                    \end{aligned}
+                \end{equation*}
+        \end{enumerate}
+    \item Note that from these formation examples, we have pure elements in their stable states being converted to 1 mole of a compound! All substances are in standard states!
+\end{enumerate}
+
+\subsection*{Standard States (Or Standard Conditions)}
+\begin{enumerate}
+    \item Many thermodynamic functions depend on the concentrations (or pressures) and temperature of the substances involved.
+    \item Furthermore, while we can measure enthalpy \emph{changes} from heat flow experiments, we have no way to measure \emph{absolute} enthalpies.
+    \item To calculate thermodynamic properties correctly, we need a common reference point:
+        \begin{enumerate}
+            \item Compounds: Pure substance in its normal phase at P = 1 atm
+            \item Solutions: Concentration of 1 M
+            \item Elements: The most stable form of the element at P = 1 atm
+        \end{enumerate}
+    \item Thermodynamic data are \emph{typically} tabulated for 25C... 
+        \begin{enumerate}
+            \item \textbf{but note that there is no temperature \emph{specified} for standard state.}
+        \end{enumerate}
+    \item Since the standard state of a substance depends on its temperature, the phases of all species must be indicated in a thermochemical equation.
+    \item Standard states are typical denoted using $"^\circ"$ , such as $\Delta H^\circ_f$
+\end{enumerate}
+
+\subsection*{How to use Formation Enthalpies}
+\begin{exmp}
+    Calculate the reaction enthalpy for the combustion of methane:
+        \begin{equation*}
+            \begin{aligned}
+                \ce{CH4_(g) + 2 O2_(g) -> CO2_(g) + 2 H2O_(l)}
+            \end{aligned}
+        \end{equation*}
+\end{exmp}
+Standard enthalpies of formation (for our reaction):
+\begin{equation*}
+    \begin{aligned}
+        &\text{Liquid Water:} &\ce{H2_(g) + 0.5 O2_(g) -> H2O_(l)} & \quad & \Delta H^0_f &= -286 kJ/mol \\
+        &\text{Carbon Dioxide:} &\ce{C_(s) + O2_(g) -> CO2_(g)} & \quad & \Delta H^0_f &= -394 kJ/mol \\
+        &\text{Methane:} &\ce{C_(s) + 2 H2_(g) -> CH4_(g)} & \quad & \Delta H^0_f &= -75 kJ/mol \\
+    \end{aligned}
+\end{equation*}
+
+Getting $\Delta H^\circ_{rxn}$:\footnote{n and m represent the stoichiometric coefficients of the products and reactants respectively. In this case, n = 1 and 2 for \ce{CO2} and \ce{H2O}, and m = 1 and 2 for \ce{CH4} and \ce{O2}. Note that since \ce{O2} is in its standard state, its enthalpy is 0???}
+\begin{equation*}
+    \begin{aligned}
+        \Delta H^\circ_{rxn} &= \sum_{products} n * \Delta H^\circ_{f} - \sum_{reactants} m * \Delta H^\circ_{f} \\
+        \Delta H^\circ_{rxn} &= (-394) + 2*(-286) - (-75) - 2*(0) kJ/mol \\
+        \Delta H^\circ_{rxn} &= -891 kJ/mol \\
+    \end{aligned}
+\end{equation*}
 
 
 \end{document}
