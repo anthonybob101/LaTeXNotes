@@ -438,5 +438,111 @@ Getting $\Delta H^\circ_{rxn}$:\footnote{n and m represent the stoichiometric co
     \end{aligned}
 \end{equation*}
 
+\section*{Chapter 10 - Isothermal ???}
+\subsection*{Reminder: Isothermal Processes}
+\begin{enumerate}
+    \item "Isothermal" means "constant temperature". In an isothermal process, temperature does not change.
+        \begin{equation*}
+            \begin{aligned}
+                \Delta T = 0
+            \end{aligned}
+        \end{equation*}
+    \item Changes in energy are related to changes in temperature.
+        \begin{equation*}
+            \begin{aligned}
+                \Delta E = C_v \Delta T
+            \end{aligned}
+        \end{equation*}
+    In an isothermal process, $\Delta T$ is 0, and therefore $\Delta E$ is also 0 (unless heat capacity is infinite).
+    \item The First Law of Thermodynamics is:
+        \begin{equation*}
+            \begin{aligned}
+                ?? %//TODO - Insert equations here!
+            \end{aligned}
+        \end{equation*}
+\end{enumerate}
+
+\subsection*{Reversible and Irreversible Processes}
+\begin{enumerate}
+    \item In a thermodynamic process, we usually change one property in a controlled way, keep other properties constant, and observe how yet another property changes.
+    \item For example, we observe how the volume V changes as we increase the temperature T of a gas while keeping the pressure P constant. 
+    \item So far we classified processes based on which thermodynamic property stays constant: \emph{isothermal} (constant temperature), \emph{isobaric} (constant pressure), or \emph{isochloric} (constant volume).
+    \item We also distinguish processes whether they are \emph{reversible} or \emph{irreversible}:
+        \begin{enumerate}
+            \item In a \emph{reversible} process, the system is in equilibrium (or at least very close to it) the entire time.
+                \begin{enumerate}
+                    \item This means that we can \emph{reverse the process by changing the property that we }
+                    \item In practice, this often means that we perform a process very, \textbf{very} slowly (theoretically, infinitely slowly, adding an infinitely small amount of heat).
+                \end{enumerate}
+            \item In an \emph{irreversible} process, the system is not always in equilibrium. 
+                \begin{enumerate}
+                    \item This usually happens when there are sudden changes in a thermodynamic property.
+                \end{enumerate}
+        \end{enumerate} 
+    \item Process functions like heat (q) and work (w) depend on the way a process is performed; therefore they depend on whether a process is reversible or irreversible. 
+    \item Differences in state functions ($\Delta E$, $\Delta T$,...) do not depend on the path of a process, they will be the same fr reversible and irreversible processes (in an infinite time frame)
+\end{enumerate}
+
+\subsection*{Isothermal process example}
+Let's consider the following process (im too lazy to copy paste from slides)
+\begin{enumerate}
+    \item Constant T, Changing Volume and Pressure 
+    \item Work Performed by Mass $M_1$, ... %//TODO - Complete this example!
+\end{enumerate}
+
+\subsection*{Zero-step expansion}
+\begin{enumerate}
+    \item If we simply remove the weight, the external pressure drops to 0.
+    \item However, the internal pressure of the gas isn't zero - the system's no longer at equilibrium!
+    \item The gas will expand isothermally and irrersibly to fill the entire volume. 
+    \item The gas doesn't have to expand against an external pressure. It does here due to the sudden transition from having an external pressure to having none. 
+    \item Since the gas expands into a vaccum - no work is being done: \emph{w =  0}
+    \item This process is called free expansion
+    \item Since q = -w, no heat flows between the system and it's surroundings.
+\end{enumerate}
+
+\subsection*{One-step expansion}
+Compared to taking away the entire mass, let's take away $M_1/4$.
+\begin{enumerate}
+    \item Taking away $M_1/4$ drops the external pressure to:
+        \begin{equation*}
+            \begin{aligned}
+                P_{ext} = (M_1/4)g/A = P_1/4
+            \end{aligned}
+        \end{equation*}
+    \item At that moment, the pressure of the gas is greater than the external pressure - causing the gas to expand.
+    \item This leads to the mass being lifted until the internal pressure is equal to the external pressure. In this case:
+        \begin{equation*}
+            \begin{aligned}
+                V_{final} = 4V_1
+            \end{aligned}
+        \end{equation*}
+    \item Work:
+        \begin{equation*}
+            \begin{aligned}
+                w &= -P_{ext} \Delta V \\
+                    &= -P_1/4(4V_1-V_1) \\
+                    &= -3/4P_1 V-1
+            \end{aligned}
+        \end{equation*}
+    \item Heat: 
+        \begin{equation*}
+            \begin{aligned}
+                q = -w >0
+            \end{aligned}
+        \end{equation*}
+        So heat flows from the reservoir into the system.
+\end{enumerate}
+
+\subsection*{Two-Step Expansion} %//TODO - Write out two step expansion problem!
+In this expansion, we'll do two steps
+\begin{enumerate}
+    \item Changing mass from $M_1$ to $M_1/2$
+        \begin{enumerate}
+            \item $P_{ext} = P_1/2, V_{final}=2V_1$
+            \item  
+        \end{enumerate}
+\end{enumerate}
+
 
 \end{document}
