@@ -181,10 +181,64 @@ What if we continued this process of adding more steps to infinity?
     \item Mathematically, this is expressed through an integral:
         \begin{equation*}
             \begin{aligned}
-                w = -\int ^{v_2}_{v_1} P dV
+                w &= -\int ^{v_2}_{v_1} P dV \\
+                &= -\int ^{v_2}_{v_1} \frac{nRT}{V} dV \\
+                &= -nRT \int ^{v_2}_{v_1} \frac{1}{V} dV \\
+                &= -nRT [\ln V]^{v_2}_{v_1} \\
+                &= -nRT(\ln V_2 - ln V_1) \\
+                w &= -nRT \ln \frac{V_2}{V_1}
             \end{aligned}
         \end{equation*}
-    \item 
+    \item Applying this formula to the previous example ($V_2 = 4V_1$):
+        \begin{equation*}
+            \begin{aligned}
+                w = -P_1 V_1 \ln(4) \\
+                q = -w &= 1.4P_1 V_1 
+            \end{aligned}
+        \end{equation*}
 \end{enumerate}
+\textbf{Note for step 3:}
+\begin{enumerate}
+    \item We assumed the external pressure is always the same as the pressure of the gas, which we calculate from the ideal gas law. 
+    \item This is only true if the system is at equilibrium the \emph{entire time}.
+    \item This process is "reversible" (or "quasi-static").
+    \item In practice, this means the process happens very slowly. 
+\end{enumerate}
+
+\subsection*{Isothermal expansion summary}
+\begin{enumerate}
+    \item Expand gas from $V_1$ to $V_2=4V_1$ by reducing the weight $M_1$ (and thereby reducing the external pressure).
+    \item $\Delta T = 0$ , therefore $\Delta E = 0$ and $q = -w$.
+    \item Amount of work performed by the system depends on the path (ex 1 step, 2 steps, etc)
+    \item The most efficient process/path is by taking infinitely many steps AKA a "reversible" process described in the equation below:
+        \begin{equation*}
+            \begin{aligned}
+                w = -\int ^{v_2}_{v_1} P dV \\
+            \end{aligned}
+        \end{equation*}
+    \item Throughout the reversible process, the pressure of the gas is always the same as the external pressure: the gas is always at equilibrium.
+\end{enumerate}
+
+\subsection*{(No slide title) Expansion and Compression Cycles}
+\begin{enumerate}
+    \item Consider a cycle - one step expansion, followed by one-step compression:
+        \begin{equation*}
+            \begin{aligned}
+                w_{net} &= -0.75P_1V_1 + 3 P_1V_1 = 2.25 P_1V_1 \\
+                q_{net} &= 0.75P_1V_1 - 3 P_1 V_1 = -2.25 P_1V-1 
+            \end{aligned}
+        \end{equation*}
+    \item The system is back in its inital state, but the surrounding has performed work on the system, and recieved heat in return.
+    \item This is true for all \emph{irreversible} cycles!
+    \item Only if both expansion and compression are done \emph{reversibly}  we get $w_{net}=q_{net}=0$.
+\end{enumerate}
+
+
+
+
+
+
+
+
 
 \end{document}
