@@ -447,7 +447,7 @@ A polyprotic acid is an acid that has more than 1 acidic hydrogen. In this case,
 \newline
 If you're told a compound is a polyprotic acid and you see that the formula starts off with several H's, its a reasonable assumption at the general chemistry level that these are the acidic hydrogens.
 \newline
-However, you should be aware that with organic polyprotic acids in particiular the acidic hydrogens are usually \textbf{not} written at the fron tof the chemical formula. You will need a more advanced chemical inituition to deduce the number of acidic hydrogens in such cases.
+However, you should be aware that with organic polyprotic acids in particular the acidic hydrogens are usually \textbf{not} written at the fron tof the chemical formula. You will need a more advanced chemical inituition to deduce the number of acidic hydrogens in such cases.
 \newline
 Each acidic hydrogen can be donated to a water molecule to form a hydronium cation. Since there are two acidic hydrogewns in oxalic acid, this can happen twice:
 
@@ -887,12 +887,249 @@ You solve this problem using the HH equation:\footnote{Funnily enough using the 
     \end{aligned}
 \end{equation*}
 
+\section*{Using the general properties of reaction enthalpy}
+\begin{exmp}
+    A chemist measures the enthalpy change $\Delta H$ during the following reaction:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{Fe_(s) + 2 HCl_(g) -> FeCl2_(s) + H2_(g)} \quad \Delta H = -157. kJ
+        \end{aligned}
+    \end{equation*}
+    Use this information to complete the table below. Round each of your answers to the nearest kJ/mol.
+    \begin{center}
+        \begin{tabular}{c c}
+            Reaction & $\Delta H$ \\
+            \ce{3 FeCl2 + 3 H2 -> Fe + 6HCl} & ?? kJ \\
+            \ce{4 Fe + 8 HCl -> 4 FeCl2 + 4 H2} & ?? kJ \\
+            \ce{FeCl2 + H2 -> Fe + 2 HCl} & ?? kJ \\
+        \end{tabular}
+    \end{center}
+\end{exmp}
+You can solve this problem by using some general properties of reaction enthalpy.
+In particular, if you know that the reaction enthalpy of a certain reaction is $\Delta H$, then:
+\begin{enumerate}
+    \item The reaction enthalpy of the reverse reaction is $-\Delta H$.
+    \item The reaction enthalpy for the reaction multiplied by \emph{n} is $n\Delta H$.
+    \item The reaction enthalpy for the reaction divided by \emph{n} is $\Delta H/n$. 
+\end{enumerate}
+Now let's apply these ideas to each equation in the table:
+\begin{enumerate}
+    \item The first chemical wequation is the original equation reversed \emph{and} multiplied by 3. That means its reaction enthalpy will be minus the original enthalpy multiplied by 3, which is $471.kJ$.
+    \item The second chemical equation is the original equation multiplied by 4. That means its reaction enthalpy will be the original reaction enthalpy multiplied by 4, which is $-628. kJ$.
+    \item The third chemical equation is the original equation reversed. That means its reaction enthalpy will be minus the original reaction enthalpy, which is $157. kJ$. 
+\end{enumerate}
+
+\section*{Calculating Specific Heat Capacity}
+\begin{exmp}
+    A chemist carefully measures the amount of heat needed to raise the temperature of a 0.72 kg sample of a pure substance from -9.2C to 14.3C. The experiment shows that 7.6kJ of heat are needed. What can the chemist report for the heat capacity of the substance? 
+\end{exmp}
+The \emph{specific heat capacity} of a substance is the amount of heat needed to raise the temperature of 1 gram of a substance by 1 kelvin. You can think of specific heat capacity as something like the "price" of a kelvin of temperature rise. It takes more heat to "buy" a kelvin when a substance demands a high "price" (has a high heat capacity) than when it demands a low "price" (has a low heat capacity).
+\newline
+To calculate the "price of each kelvin of temperature rise for the substance, the chemist should divide the "cost" of temperature rise (heat used per gram of substance) by the "amount" of temperature it "bought" (the kelvins the temperature rose). Here's what it looks like as an equation:
+\begin{equation*}
+    \begin{aligned}
+        c = \frac{Q}{m*\Delta T}
+    \end{aligned}
+\end{equation*}
+The symbol Q stands for the total heat used, m is the mass of the pure sample in the experiment, and $\Delta T$ is the temperature change.
+To use this equation, the chemist will need to find the number of kelvins of temperature change:
+\begin{equation*}
+    \begin{aligned}
+        \Delta T = 14.3C - (-9.2C) = 23.5K
+    \end{aligned}
+\end{equation*}
+Remember that the kelvin is the exact same size as the Celsius degree. Now we can find the specific heat capacity of the pure substance:
+\begin{equation*}
+    \begin{aligned}
+        c &= \frac{Q}{m*\Delta T} \\
+        c &= \frac{7.6kJ}{(0.72kg)(23.5K)} \\
+        c &= 0.45 \frac{kJ}{kg*K} \\
+        c &= 0.45 \frac{J}{g*K} \\
+    \end{aligned}
+\end{equation*}
+
+\section*{Calculating a molar heat of reaction from formation enthalpies}
+\begin{exmp}
+    Using the table of standard formation enthalpies that you'll find under the ALEKS data tab, calculate the reaction enthalpy of this reaction under standard conditions:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{2 NaOH_(s) + CaCl2_(s) -> Ca(OH)2_(s) + 2 NaCl_(s)}
+        \end{aligned}
+    \end{equation*}
+\end{exmp}
+You can solve this problem by rewriting the reaction as a sequence of standard formaation reactions, and then using Hess's Law.
+First, look up the standard formation enthalpies $\Delta H^\circ_f$ of each reactant or product, using ALEKS data tab. Next, write standard formation reactions for each reactant or product:
+\begin{center}
+    \begin{tabular}{ c c c }
+        reactant/product & $\Delta H^\circ_f$ (kJ/mol) & standard formation reaction \\
+        \ce{NaOH_(s)} & -425.8 & \ce{0.5 H2 + 0.5 O2 Na -> NaOH} \\
+        \ce{CaCl2_(s)} & -795.4 & \ce{Cl2 + Ca -> CaCl2} \\
+        \ce{Ca(OH)2_(s)} & -985.2 & \ce{H2 + O2 + Ca -> Ca(OH)2} \\
+        \ce{NaCl_(s)} & -411.2 & \ce{Na + 0.5 Cl2 -> NaCl} \\
+    \end{tabular}
+\end{center}
+Next, imagine the reaction happening as a sequence of the formation reactions:
+\begin{enumerate}
+    \item In the first or "tearing down" part of the sequence, each reactant decomposes into elements in their standard states:
+        \begin{equation*}
+            \begin{aligned}
+                &2(& \ce{NaOH -> 0.5 H2 + 0.5 O2 Na } &) & \Delta H = -2\Delta H^\circ_f [\ce{NaOH_(s)}] \\
+                &+ & \ce{CaCl2 -> Cl2 + Ca }          &  &  \Delta H = -\Delta H^\circ_f [\ce{CaCl2_(s)}] \\  
+                \hline
+                  &&\ce{2 NaOH + CaCl -> H2 + O2 + 2 Na + Cl2 + Ca}&&
+            \end{aligned}
+        \end{equation*}
+    \item In the second or "building up" part of the sequence, each product is formed out of elements in their standard state:
+        \begin{equation*}
+            \begin{aligned}
+                && \ce{H2 + O2 + Ca -> Ca(OH)2} & & \Delta H = \Delta H^\circ_f [\ce{Ca(OH)2_(s)}] \\
+                &+2(& ce{Na + 0.5 Cl2 -> NaCl} &)  &  \Delta H = \Delta H^\circ_f [\ce{NaCl_(s)}] \\  
+                \hline
+                &&\ce{H2 + O2 + 2 Na + Cl2 + Ca -> Ca(OH)2 + 2 NaCl}&&
+            \end{aligned}
+        \end{equation*}
+    \item Combining both parts gives you the net reaction you want:
+    \begin{equation*}
+        \begin{aligned}
+            &2(& \ce{NaOH -> 0.5 H2 + 0.5 O2 Na } &) & \Delta H = -2\Delta H^\circ_f [\ce{NaOH_(s)}] \\
+            &+ & \ce{CaCl2 -> Cl2 + Ca }          &  &  \Delta H = -\Delta H^\circ_f [\ce{CaCl2_(s)}] \\ 
+            &+ & \ce{H2 + O2 + Ca -> Ca(OH)2} & & \Delta H = \Delta H^\circ_f [\ce{Ca(OH)2_(s)}] \\
+            &+2(& ce{Na + 0.5 Cl2 -> NaCl} &)  &  \Delta H = \Delta H^\circ_f [\ce{NaCl_(s)}] \\   
+            \hline
+            &&\ce{2 NaOH + CaCl -> Ca(OH)2 + 2 NaCl}&&
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+Hess's law tells you that the net change in enthalpy for this sequence equals the sum of the change in enthalpies for each step:
+\begin{equation*}
+    \begin{aligned}
+        \Delta H &= -2\Delta H^\circ_f [\ce{NaOH_(s)}]  -\Delta H^\circ_f [\ce{CaCl2_(s)}] +  \Delta H^\circ_f [\ce{Ca(OH)2_(s)}] + \Delta H^\circ_f [\ce{NaCl_(s)}] \\
+        &= -2(-425.8 kJ) - (-795.4 kJ) + (-985.2 kJ) + 2(-411.2 kJ) \\
+        \Delta H &= -160.60 kJ 
+    \end{aligned}
+\end{equation*}
+Note that the units of $\Delta H$ are kJ, even though the units for $\Delta H^\circ_f$ are kJ/mol. That's because we are interested in the change of enthalpy when the stoichiometric coefficients are interrepreeted as the number of \emph{moles} of each reactant. Multiplying by kJ/mol gives kJ for the final units. 
+
+\section*{Using Specific Heat Capacity to Find Heat}
+\begin{exmp}
+    Calculate the energy required to heat 458.0 mg of ethanol from 13.3C to 19.4C. Assume the specific heat capacity of ethanol under these conditions is 2.44 $\frac{J}{g*k}$.
+\end{exmp}
+When heat flows temperature may change. If flows into a substance its temperature will normally go up, and if heat flows out of a substance, its temperature will normally go down. (The temperature might not change if the substance is in the middle of melting, freezing, boiling or condensing.) 
+\newline
+How do you calculate how \emph{much} heat it takes to change the temperature of a substance? Whenever you need a connection between heat flow and temperature change, you should think of specific heat capacity. The specific heat capacity of a substance is the amount of heat needed to raise the temperature of a gram of a substance by kelvin. Here's its definition: 
+\begin{equation*}
+    \begin{aligned}
+        c &= \frac{Q}{m*\Delta T} \\
+    \end{aligned}
+\end{equation*}
+This equation would tell you how to calculate the specific heat capacity of silver if you knew how much heat had been used to raise its temperature. But you can \emph{also} re-arrange the equation, using algebra, so that you can use it to calculate the heat needed to raise the temperature when you already know the specific heat capacity:  
+\begin{equation*}
+    \begin{aligned}
+        Q = m * c * \Delta T
+    \end{aligned}
+\end{equation*}
+To use the re-arranged equation, you'll first need to find the temperature change of the ethanol: 
+\begin{equation*}
+    \begin{aligned}
+        \Delta T = 19.4C - 13.3C = 6.1C = 6.1K
+    \end{aligned}
+\end{equation*}
+Notice that a temperature difference in degrees Celsius conveniently equals the temperature difference in kelvins, since the kelvin is exactly the same size as the Celsius degree.
+Now you can use the re-arranged equation to calculate the heat required to raise the temperature of the ethanol by 6.1K: 
+\begin{equation*}
+    \begin{aligned}
+        Q &= m * c * \Delta T \\
+        &= (458.0 mg)(2.44 \frac{J}{g*K})(6.1K) \\
+        &= (2.44 \frac{J}{g*K})(458.0 *10^{-3}g)(6.1K) \\
+        Q &= 6.8J
+    \end{aligned}
+\end{equation*}
+
+\section*{Using Hess's Law to calculate net reaction enthalpy}
+\begin{exmp}
+    The lead-acid storage battery is the oldest rechargeable battery in existence. It was invented in 1859 by French physician Gaston Plante and still retains application today, more than 150 years later. 
+    There are two reactions that take place during discharge of the lead-acid storage battery. In one step, sulfuric acid decomposes to form sulfur trioxide and water: 
+    \begin{equation*}
+        \begin{aligned}
+            \ce{H2SO4 -> SO3 + H2O} \quad \Delta H = + 113. kJ \\
+        \end{aligned}
+    \end{equation*}
+    In another step, lead, lead(IV) oxide, and sulfur trioxide react to form lead(II) sulfate: 
+    \begin{equation*}
+        \begin{aligned}
+            \ce{Pb + PbO2 + 2 SO3 -> 2 PbSO4} \quad \Delta H = -775. kJ 
+        \end{aligned}
+    \end{equation*}
+    Calculate the net change in enthalpy for the formation of \emph{one mole} of lead(II) sulfate from lead, lead(IV) oxide, and sulfuric acid from these reactions.  
+\end{exmp}
+You can solve this problem using the general properties of reaction enthalpy and Hess's Law. 
+\begin{enumerate}
+    \item Hess's Law says that the net change in enthalpy of a sequence of chemical reactions is equal to the sum of the change in enthalpies during each step of the sequence. 
+\end{enumerate}
+Note: it's important to keep in mind that if a particular step runs several times during the sequence, its reaction enthalpy is added once for each time it runs. 
+First, notice that there's one intermediate in this sequence, sulfur trioxide (
+\ce{SO3}). Also, 1 mole of sulfur trioxide is produced every time the first step runs, and 2 moles of sulfur trioxide are consumed every time the second step runs. For all the sulfur trioxide produced in the first step to be consumed in the second step, the first step must run twice for each time the second step runs. 
+That means the equation of the net reaction can be found by adding up two copies of the equation in the first step and one copy of the equation in the second step, like so: 
+    \begin{equation*}
+        \begin{aligned}
+            &2(& \ce{H2SO4 -> SO3 + H2O} &) & \\
+            &+ & \ce{Pb + PbO2 + 2 SO3 -> 2 PbSO4} &  & \\  
+            \hline
+            &&\ce{Pb + PbO2 + 2 SO3 + 2H2SO4 -> 2 PbSO4 + 2 H2O}&&
+        \end{aligned}
+    \end{equation*}
+Notice that the intermediate \ce{SO3} cancels out of the net reaction. 
+Hess's Law tells you that you can find the net reaction enthalpy by adding up the reaction enthalpies of the steps in exactly the same way. That is, in this case, the net reaction enthalpy equals 2 times the reaction enthalpy for the first step plus the reaction enthalpy for the second step: 
+\begin{equation*}
+    \begin{aligned}
+        & &2*113.kJ& \\
+        &+&  -775.kJ&\\
+        \hline
+        &&-549.kJ&
+    \end{aligned}
+\end{equation*}
+Notice that the stoichiometric coefficient of lead(II) sulfate in the equation of the net reaction is 2. That means -549. kJ is the net change in enthalpy for the formation of 2 moles of lead(II) sulfate. Since you're asked for the change in enthalpy when one mole of lead(II) sulfate is formed, so you need to divide -549. kJ by 2 to get your final answer. 
+
+\section*{Writing a standard formation reaction}
+\begin{exmp}
+    Write a balanced chemical equation for the standard formation reaction of solid chromium(III) nitrate (\ce{Cr(NO3)3}). 
+\end{exmp}
+The standard formation reaction of a chemical compound has 1 mole of the compound as its only product, and for reactants has only elements in their standard state.
+To write the equation of a standard formation reaction, follow these steps:
+\begin{enumerate}
+    \item Identify the elements in the compound. \\
+        In this case, chromium(III) nitrate contains nitrogen, oxygen, and chromium. 
+    \item Identify the standard state of each element. \\
+        In this case, the standard state of nitrogen is \ce{N2_(g)}, the standard state of oxygen is \ce{O2_(g)}, and the standard state of chromium is \ce{Cr_(s)}. 
+    \item Write and balance the formation reaction equation.\\
+        Begin by writing all the elements in their standard state on the left-hand side of the equation, and the compound to be formed on the right-hand side: 
+            \begin{equation*}
+                \begin{aligned}
+                    \ce{N2 + O2 + Cr -> Cr(NO3)3}
+                \end{aligned}
+            \end{equation*}
+        Next, balance the equation: 
+            \begin{equation*}
+                \begin{aligned}
+                    \ce{3 N2 + 9 O2 + 2 Cr -> 2 Cr(NO3)3}
+                \end{aligned}
+            \end{equation*}
+    \item Make sure the equation has only 1 mole of product.\\
+        The standard formation reaction produces one mole of the compound. If necessary, divide the formation reaction through by the stoichiometric coefficient of the product.
+            \begin{equation*}
+                \begin{aligned}
+                    \ce{3/2 N2 + 9/2 O2 + Cr ->  Cr(NO3)3}
+                \end{aligned}
+            \end{equation*}
+\end{enumerate}
+
+
 
 
 %-------------------------------------------------------------------------------
 
 
-
+\newpage
 \section*{Scratch Work}
 
 \begin{equation*}
