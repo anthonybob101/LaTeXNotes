@@ -36,409 +36,9 @@
 
 \newpage
 
-\section*{Chapter 9.1-9.3 - Energy and Enthalpy}
+\subfile{Subfiles/CHEM152_Chapter9.tex}
 
-\subsection*{What is Thermodynamics?}
-\begin{enumerate}
-    \item Imagine you want to describe the air in this room
-    \begin{enumerate}
-        \item A (classical) physicist might try to tell you the positions and velocities of every single atom (the classical "state" of the system)\footnote{\textbf{TECHNICALLY}, you can do this, but this is in practice impossible}
-        \item A (quantum) physicist might try to tell you the waveform of all atoms (the quantum "state" of the system)\footnote{\textbf{TECHNICALLY}, you can do this, but this is in practice EVEN MORE impossible}
-    \end{enumerate}
-    \begin{enumerate}
-        \item A reasonable person will tell you the pressure is 1 atmosphere and the temperature is 25C\footnote{Much easier to do.}
-    \end{enumerate}
-    \item Points 1a and 1b represent microscopic desciptions of nature - describing the universe on a microscopic level!
-    \item Point 1c represents the macroscopic description of nature
-    \item Thermodynamics is a macroscopic description of the universe in terms of a small number of readily observable properties - temperature, pressure, volume, etc etc.
-    \item It (mostly) ignores the fact that matter is made of atoms and molecules. It doesn't need it! It's built around very few \textbf{laws of thermodynamics}. 
-\end{enumerate}
-$\left.
-    \begin{tabular}{ll}
-        (a) Cock \\
-        (b) Cum
-    \end{tabular}
-\right\}$  = text
-    
-\subsection*{Energy of a Molecular System}
-\begin{enumerate}
-    \item Kinetic Energy ($E_g$) - Energy associated with \emph{motion} \\
-    Different types of motion:
-        \begin{enumerate}
-            \item Translation - moving from one point to another.
-            \item Rotation - motion about the center of mass\footnote{Technically, an atom cannot rotate due to how its symmetric, but a molecule can creating chemical energy!}
-            \item Vibration - motion directed through chemical bonds
-        \end{enumerate}
-    \item Potential Energy ($E_p$) - Energy associated with \emph{interactions} \\
-    In molecular systems, the most important interaction is usually the electrostatic interaction. This includes: \footnote{This is important in water due to how it exists BECAUSE of the \textbf{intra}molecular and \textbf{inter}molecular interactions between water molecules!}
-        \begin{enumerate}
-            \item Interactions within a molecule (\textbf{intra}molecular)
-            \item Interactions between molecules (\textbf{inter}molecular)
-        \end{enumerate}
-    \item The total energy of a system is the sum of ineic and potential energy: $E = E_k + E_p$
-    \item The unit of energy is Joules(J) - where $1J = 1kg*m^2/s^2$
-    \item Also, calories are also another unit of energy - $1cal = 4.184J$\footnote{These calories that we deal with in food are technically not "calories" per se, its actually kilocalories}
-    \item Also, electronvolts are another unit of energy, suited for the small interactions from chem - $1 eV = 1.6*10^{-19}J$
-\end{enumerate}
-
-\subsection*{Conservation of Energy}
-\begin{enumerate}
-    \item Different forms of energy can be converted into each oher (for example, kinetic and potential energy). But energy cannot be created or destroyed, thus
-    \begin{proof}
-        The total amount of energy in the universe is constant.
-    \end{proof}
-    \item Thinking about the entire universe is hard, Let's partition the universe into the "system" we're interested in and everything else (the "surroundings"):
-        \begin{enumerate}
-            \item The energy of the system can change if there is an equal but opposie change in energy of the suroundings.
-            \item In other words: energy can flow between the system and its surroundings
-        \end{enumerate}
-\end{enumerate}
-
-\subsection*{State and State Changes}
-\begin{enumerate}
-    \item The energy of the system depends on the current state of the system (we say that "energy is a state function"). Look at energy as a property describing the state of the system as a whole
-        \begin{enumerate}
-            \item Continuing this logic to an example - the state of a gaseous system is determined by pressure, volum , amount of sybstance, and temperature.
-        \end{enumerate}
-    \item The energy of the system \emph{does not} depend on how the system was brough into this state.
-        \begin{enumerate}
-            \item Let us consider a process in which the sate of the system changes from an inital state to a final sstate (for example, we change the temperature of a gas while keeping the volume and substance amount constant)
-            \item The change in the system's energy $\Delta E$ is the difference between the energies of the final and inital state:
-                \begin{equation*}
-                    \begin{aligned}
-                        \Delta E = E_{final} - E_{inital}
-                    \end{aligned}
-                \end{equation*}
-            \item Note the sign convention here!
-                \begin{equation*}
-                    \begin{aligned}
-                        \Delta E > 0 \quad \text{System Energy Increases} \\
-                        \Delta E < 0 \quad \text{System Energy Decreases} \\
-                    \end{aligned}
-                \end{equation*}
-            \item $\Delta E$ depends only on what the inital and final \emph{states} are, but \textbf{not} on what the \textbf{process} was that led to the change in state!
-        \end{enumerate}
-\end{enumerate}
-
-\subsection*{First Law of Thermodynamics}
-\begin{enumerate}
-    \item We already know that if the system energy changes by $\Delta E$, there must be an equal but opposite change $-\Delta E$ in the energy of the surroundings.
-    \item Energy flows from the system to the surroundings ($\Delta E < 0$) or from the surroundings to the system ($\Delta E > 0$)
-    \item As we'll see, the flow of energy between the system and the surroundings can be seperated into two contributions - \emph{heat (q)} and \emph{work (w)}: \\
-    \emph{The First Law of Thermodynamics}
-        \begin{equation*}
-            \begin{aligned}
-                \Delta E = q + w 
-            \end{aligned}
-        \end{equation*}
-    \item Our sign convention:\footnote{NOTE - some books \textbf{and Wikipedia} use the opposite sign convention for the work (w)!!!}
-        \begin{enumerate}
-            \item q $>$ 0: heat flows from surroundings to system (system energy increases) 
-            \item q $<$ 0: heat flows from the system to surroundings (system energy decreases)
-            \item w $>$ 0: work is performed \emph{on} system (system energy increases)
-            \item w $<$ 0: work is performed \emph{by} system
-        \end{enumerate}
-\end{enumerate}
-
-\subsection*{Exothermic Processes}
-In an exothermic process, heat is released \emph{by} the system into the surroundings (q < 0).
-\begin{enumerate}
-    \item Physical Example - cooling water releases heat to the surroundings. \\
-    Here heat loss is primarily due to the decrease in molecular kinetic energy due to the water molecules slowing down.
-    \item Chemical Example - oxidation of glycerol $\ce{C3H8O3}$ by $\ce{KMnO4}$ releases heat to the surroundings.
-    Here heat loss is primarily due to the decrease in molecular potential energy due to the molecules reacting to each other.
-\end{enumerate}
-
-\subsection*{Endothermic Processes}
-In an endothermic process, heat is absorbed by the system from the surroundings (q > 0).
-\begin{enumerate}
-    \item Physical Example - heating water absorbs heat from the surroundings. \\
-    Here heat gain is primarily due to the increase in molecular kinetic energy due to the water molecules slowing down.
-    \item Chemical Example - mixure of barium hydroxide ($\ce{Ba(OH)2}$) and ammonium chloride ($NH4Cl$) absorbs heat from the surroundings.
-    Here heat gain is primarily due to the increase in molecular potential energy due to the molecules reacting to each other.
-\end{enumerate}
-
-\subsection*{Pressure - Volume Work}
-\begin{enumerate}
-    \item How do chemical systems exchange energy as work?
-    \item \emph{Motivating Example} - heat is applied to the air in a hot-air balloon, causing the volume of gas to increase
-    \item As the gas expands, it pushes back the atmosphere ... \emph{it performs work on the atmosphere}
-\end{enumerate}
-The expansion of gas against a constant expternal pressue is a common type of work in chemical processes. This is called "pressure-volume" (PV) work. 
-\newline
-How much work does the system do to push against a constant external pressure? 
-\newline
-\begin{enumerate}
-    \item Knowing work is the product of force and distance:
-        \begin{equation*}
-            \begin{aligned}
-                w = F * \Delta h
-            \end{aligned}
-        \end{equation*}
-    \item The force we are pushing against comes from the external pressure:
-        \begin{equation*}
-            \begin{aligned}
-                F = P * A
-            \end{aligned}
-        \end{equation*}
-    \item The work required to expand the gas by $\Delta V$ is therefore:
-        \begin{equation*}
-            \begin{aligned}
-                w &= P * \Delta V \text{where $\Delta V$ is}\\
-                \Delta V &= A * \Delta h
-            \end{aligned}
-        \end{equation*}
-    \item This work is performed \emph{by} the system is then:
-        \begin{equation*}
-            \begin{aligned}
-                w &= -P * \Delta V
-            \end{aligned}
-        \end{equation*}
-    \item Note! 
-        \begin{enumerate}
-            \item If a gas \emph{expands} against an external pressure P, it performs work \emph{on the surroundings} (w < 0)
-            \item If a gas \emph{compresses} against a external pressure P, the external pressure P is performing work \emph{on the system} (w > 0)
-        \end{enumerate}
-\end{enumerate}
-\begin{exmp}
-    $1.3*10^8 J$ of heat is applied to the air in a hot-air balloon, causing this volume of gas to inflate from $4*10^6L$ to $4.5*10^6L$. By how much (in J) does the energy of the balloon change?
-\end{exmp}
-\begin{enumerate}
-    \item In this example, assume external pressure is 1 atm:
-        \begin{equation*}
-            \begin{aligned}
-                w &= -P * \Delta V \\
-                  &= -(1atm)*(V_{final}-V_{inital}) \\
-                  &= -0.5*10^6L-atm
-            \end{aligned}
-        \end{equation*}
-        Unit Conversion - 1L-atm = 101.3 J
-        \begin{equation*}
-            \begin{aligned}
-                w &= -0.5 * 10^6L-atm * (101.3 J/L-atm)
-                w &= -5.1*10^7 J 
-            \end{aligned}
-        \end{equation*}
-    \item w is the work the \emph{surroundings have done on the system!!}, in this case, the system is performing work on the surroundings, taking $5.1*10^7$ J from the surroundings.
-    \item Calculating change in energy:
-        \begin{equation*}
-            \begin{aligned}
-                \Delta E &= q + w \\
-                    &= 1.3*10^8J + (-5.1*10^7) \\
-                    &= 8*10^7J
-            \end{aligned}
-        \end{equation*}
-\end{enumerate}
-
-\subsection*{Energy and Enthalpy}
-\begin{enumerate}
-    \item When we add or remove heat (\emph{q}) to a system \emph{while keeping the volume constant ($\Delta V = 0$)}, \textbf{no work is performed}, and the change in energy is:
-        \begin{equation*}
-            \begin{aligned}
-                \Delta E = q_V \leftarrow\text{\small{  the subscript v is a reminder that this is true only at a constant volume!}}
-            \end{aligned}
-        \end{equation*}
-        All the added heat goes into increases the system's energy!
-    \item When we add or remove heat (\emph{q}) \emph{while keeping the pressure constant}, work is performed:
-        \begin{equation*}
-            \begin{aligned}
-                w = -P\Delta V
-            \end{aligned}
-        \end{equation*}
-        In this case, the first law can be written as:
-        \begin{equation*}
-            \begin{aligned}
-                \Delta E + P\Delta V = q_p \leftarrow\text{\small{  the subscript p is a reminder that this is true only at a constant pressure!}}
-            \end{aligned}
-        \end{equation*}
-    \item This makes accounting of energy a little more complicated. We can make our lives easier by defining a new quantity called the \emph{enthalpy} of a system, \emph{H}:
-        \begin{equation*}
-            \begin{aligned}
-                H = E + PV 
-            \end{aligned}
-        \end{equation*}
-        If in a process the pressure is constant ($\Delta P = 0$), then the change in enthalpy is:
-        \begin{equation*}
-            \begin{aligned}
-                \Delta H = \Delta E + P \Delta V
-            \end{aligned}
-        \end{equation*}
-        Now reformatting this - if we add or remove heat at a constant heat, the first law becomes:
-        \begin{equation*}
-            \begin{aligned}
-                \Delta H = q_p
-            \end{aligned}
-        \end{equation*}
-        All the added heat goes into increasing the system's enthalpy!
-\end{enumerate}
-
-\subsection*{Heat Capacity}
-\begin{enumerate}
-    \item When heat is added to a system ($q > 0$), usually (not always, as we'll see) the temperature increases ($\Delta T > 0$).
-    \item Similarly, when heat is removed from a system ($q < 0$), the temperature usually decreases ($\Delta T < 0$).
-    \item The change in temperature is proportional to the amount of heat added or removed. Suggesting a constant controls this proportionality.
-    \item The (inverse) constant of proportionality is called the \emph{heat capacity C}:
-        \begin{equation*}
-            \begin{aligned}
-                \Delta T = \frac{1}{C}q \quad or \quad C = \frac{q}{\Delta T}
-            \end{aligned}
-        \end{equation*}
-    \item The heat capacity \emph{C} describes by how much the temperature of a system changes when heat is addedd or removed:
-        \begin{enumerate}
-            \item If C is large, then the temperature changes only a little if heat is added/removed.
-            \item If C is small, then the temperatures changes by a lot if heat is added/removed.
-            \item The heat capacity measures a system's ability to resist changing its temperature when heat is added or removed.
-        \end{enumerate}
-    \item How big \emph{C} is depends on the system (ie: based on size, material, temperature, physical state...).
-    \item Temperature is a measure of average kinetic energy. As we have seen, by how much the energy changes ($\Delta E$) when we add or remove heat depends on whether we do so at constant volume of constant pressure. Therefore, the heat capacity C also depends whether we add heat at constant pressure or volume.
-    \item Following up on this, the heat capacity is the ratio of (heat added/removed) to (change in temperature)
-        \begin{equation*}
-            \begin{aligned}
-                C = \frac{q}{\Delta T}
-            \end{aligned}
-        \end{equation*}
-    \item If the heat is added or removed \emph{while keeping the volume constant}, we know that:
-        \begin{equation*}
-            \begin{aligned}
-                q_v = \Delta E \leftarrow\text{Only true at constant volume}
-            \end{aligned}
-        \end{equation*}
-        and therefore, the constant-volume heat capacity $C_v$ is:
-        \begin{equation*}
-            \begin{aligned}
-                C_v = \frac{\Delta E}{\Delta T} \quad or \quad \Delta E = C_v \Delta T \leftarrow\text{Always true!}
-            \end{aligned}
-        \end{equation*}
-    \item If the heat is added or removed \emph{while keeping the pressure constant}, we know that:
-    \begin{equation*}
-        \begin{aligned}
-            q_p = \Delta H \leftarrow\text{Only true at constant pressure}
-        \end{aligned}
-    \end{equation*}
-    and therefore, the constant-volume heat capacity $C_v$ is:
-    \begin{equation*}
-        \begin{aligned}
-            C_v = \frac{\Delta H}{\Delta T} \quad or \quad \Delta E = C_p \Delta T \leftarrow\text{Always true!}
-        \end{aligned}
-    \end{equation*}
-\end{enumerate}
-
-\subsection*{Thermodynamics of Gases}
-\begin{enumerate}
-    \item \textbf{Gases} are popular systems to study in thermodynamics because\dots
-        \begin{enumerate}
-            \item They can show large changes in volume, making the effects of P-V more apparent (liquids and solids typically do not show changes in their volume very much).
-            \item Their behavior is often very similar to an ideal gas, which we often know a lot about.
-        \end{enumerate}
-    \item Ideal Gas
-        \begin{enumerate}
-            \item Satisifes the ideal gas law: $PV=nRT$
-            \item Is based on the assumption that there are no interactions between gas particles:
-                \begin{enumerate}
-                    \item The potential energy of a gas is 0 - $E_p = 0$
-                    \item Therefore the total energy of an ideal gas is equal to its kinetic energy $E = E_k$
-                \end{enumerate}
-        \end{enumerate}
-    \item Monatomic Ideal Gases
-        \begin{enumerate}
-            \item From kinetic molecular theory, we know that the average kinetic energy of n moles of a monatomic ideal gas is $E-k (3/2)nRT$ and ... %//TODO - Complete monatomic ideal gas definition from 5/3/23 lecture!
-        \end{enumerate}
-\end{enumerate}
-%//TODO - DO friday and monday lecture notes!
-
-\subsection*{Calculating Enthalpy Changes}
-\begin{exmp}
-    Use the information below to determine $\Delta_H$ for the reaction:
-    \begin{equation*}
-        \begin{aligned}
-            \ce{3 C + 4 H2 -> C3H8}
-        \end{aligned}
-    \end{equation*}
-\end{exmp}
-\begin{equation*}
-    \begin{aligned}
-        &\ce{C3H8 + 5 O2 -> 3 CO2 + 4 H2O} &\Delta H_1 \\
-        %//TODO - Complete Enthalpy Change formulas here!
-    \end{aligned}
-\end{equation*}
-
-\subsection*{Formation Reactions}
-\begin{enumerate}
-    \item The \emph{standard enthalpy of formation} $\Delta H^0_f$\footnote{These values for various substances can be found in a table in the textbook or online.} if the change in enthalpy that accompanies the formation of \emph{one mole of a compound} from \emph{its elements in their most stable state} with \emph{all substances in their standard state (1 atm pressure, and ually 25C)}. 
-    \item Examples:
-        \begin{enumerate}
-            \item Formation of Liquid Water:
-                \begin{equation*}
-                    \begin{aligned}
-                        \ce{H2_(g) + 0.5 O2_(g) -> H2O_(l)} \quad \Delta H^0_f = -286 kJ/mol
-                    \end{aligned}
-                \end{equation*}
-            \item Formation of Nitrogen Dioxide:
-                \begin{equation*}
-                    \begin{aligned}
-                        \ce{0.5 N2_(g) + O2_(g) -> NO2_(g)} \quad \Delta H^0_f = 34 kJ/mol
-                    \end{aligned}
-                \end{equation*}
-            \item Formation of Carbon Dioxide:
-                \begin{equation*}
-                    \begin{aligned}
-                        \ce{C_(s) + O2_(g) -> CO2_(g)} \quad \Delta H^0_f = -394 kJ/mol
-                    \end{aligned}
-                \end{equation*}
-            \item Formation of Methane:
-                \begin{equation*}
-                    \begin{aligned}
-                        \ce{C_(s) + 2 H2_(g) -> CH4_(g)} \quad \Delta H^0_f = -75 kJ/mol
-                    \end{aligned}
-                \end{equation*}
-        \end{enumerate}
-    \item Note that from these formation examples, we have pure elements in their stable states being converted to 1 mole of a compound! All substances are in standard states!
-\end{enumerate}
-
-\subsection*{Standard States (Or Standard Conditions)}
-\begin{enumerate}
-    \item Many thermodynamic functions depend on the concentrations (or pressures) and temperature of the substances involved.
-    \item Furthermore, while we can measure enthalpy \emph{changes} from heat flow experiments, we have no way to measure \emph{absolute} enthalpies.
-    \item To calculate thermodynamic properties correctly, we need a common reference point:
-        \begin{enumerate}
-            \item Compounds: Pure substance in its normal phase at P = 1 atm
-            \item Solutions: Concentration of 1 M
-            \item Elements: The most stable form of the element at P = 1 atm
-        \end{enumerate}
-    \item Thermodynamic data are \emph{typically} tabulated for 25C... 
-        \begin{enumerate}
-            \item \textbf{but note that there is no temperature \emph{specified} for standard state.}
-        \end{enumerate}
-    \item Since the standard state of a substance depends on its temperature, the phases of all species must be indicated in a thermochemical equation.
-    \item Standard states are typical denoted using $"^\circ"$ , such as $\Delta H^\circ_f$
-\end{enumerate}
-
-\subsection*{How to use Formation Enthalpies}
-\begin{exmp}
-    Calculate the reaction enthalpy for the combustion of methane:
-        \begin{equation*}
-            \begin{aligned}
-                \ce{CH4_(g) + 2 O2_(g) -> CO2_(g) + 2 H2O_(l)}
-            \end{aligned}
-        \end{equation*}
-\end{exmp}
-Standard enthalpies of formation (for our reaction):
-\begin{equation*}
-    \begin{aligned}
-        &\text{Liquid Water:} &\ce{H2_(g) + 0.5 O2_(g) -> H2O_(l)} & \quad & \Delta H^0_f &= -286 kJ/mol \\
-        &\text{Carbon Dioxide:} &\ce{C_(s) + O2_(g) -> CO2_(g)} & \quad & \Delta H^0_f &= -394 kJ/mol \\
-        &\text{Methane:} &\ce{C_(s) + 2 H2_(g) -> CH4_(g)} & \quad & \Delta H^0_f &= -75 kJ/mol \\
-    \end{aligned}
-\end{equation*}
-
-Getting $\Delta H^\circ_{rxn}$:\footnote{n and m represent the stoichiometric coefficients of the products and reactants respectively. In this case, n = 1 and 2 for \ce{CO2} and \ce{H2O}, and m = 1 and 2 for \ce{CH4} and \ce{O2}. Note that since \ce{O2} is in its standard state, its enthalpy is 0???}
-\begin{equation*}
-    \begin{aligned}
-        \Delta H^\circ_{rxn} &= \sum_{products} n * \Delta H^\circ_{f} - \sum_{reactants} m * \Delta H^\circ_{f} \\
-        \Delta H^\circ_{rxn} &= (-394) + 2*(-286) - (-75) - 2*(0) kJ/mol \\
-        \Delta H^\circ_{rxn} &= -891 kJ/mol \\
-    \end{aligned}
-\end{equation*}
+\newpage 
 
 \section*{Chapter 10 - Isothermal ???}
 \subsection*{Reminder: Isothermal Processes}
@@ -546,5 +146,45 @@ In this expansion, we'll do two steps
         \end{enumerate}
 \end{enumerate}
 
+\subsection*{(No slide title name) Work between 1, 2, and many step processes}
+For a 1 step process:
+\begin{equation*}
+    \begin{aligned}
+        w &= -P^{ex}\Delta V \\
+        &= -\frac{P}{4} 3V_1 \\
+        q = -w &= \frac{3}{4}P_1 V_1
+    \end{aligned}
+\end{equation*}
+Process is irreversible.
+For a two step process:
+\begin{equation*}
+    \begin{aligned}
+        w &= -\frac{P_1}{2}V_1 - \frac{P_1}{4}2 V_1 \\
+        &= -P_1V_1 \quad \text{More work!} \\
+        q = -w &= P_1V_1
+    \end{aligned}
+\end{equation*}
+Process is irreversible.
+For a many step process: (skipping a couple steps):
+\begin{equation*}
+    \begin{aligned}
+        w &= -1.21 P_1V-1 \quad \text{Enen more work!} \\
+        q = -w &= 1.21 P_1V_1
+    \end{aligned}
+\end{equation*}
+What if we continued this process of adding more steps to infinity?
+
+\subsection*{Infinite-Step Expansion}
+\begin{enumerate}
+    \item Imagine we perform this process by repeatedly reducing the weight by an infinitely small amount.
+    \item We have to add up the pressure volume-work performed these infinitely many, infinitely small steps. (Think integrals - in this class we won't have to do them) 
+    \item Mathematically, this is expressed through an integral:
+        \begin{equation*}
+            \begin{aligned}
+                w = -\int ^{v_2}_{v_1} P dV
+            \end{aligned}
+        \end{equation*}
+    \item 
+\end{enumerate}
 
 \end{document}
