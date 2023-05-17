@@ -233,12 +233,110 @@ What if we continued this process of adding more steps to infinity?
     \item Only if both expansion and compression are done \emph{reversibly}  we get $w_{net}=q_{net}=0$.
 \end{enumerate}
 
+\footnote{In this next section, we'll start to transition into entropy}
+\subsection*{The Concept of Entropy (S)}
+\begin{enumerate}
+    \item Entropy is a \emph{state function} that measures the disorder of a system.
+    \begin{enumerate}
+        \item \textbf{Systems work to increase their entropy, and become more disordered.}
+        \item Restating this - systems that have more order/less disorder (have lower entropy) compared to systems that have less order/more disorder (have higher entropy)
+        \item Processes will happen spontaneously if the system's entropy will increase.
+    \end{enumerate}
+    \item Macrostate: A particular combination of \emph{macroscopic} variables (T, P, n, ...) - AKA a certain combination of variables that describe the system as a whole.
+    \item Microstate: A particular combination of \emph{microscopic} variables (atom positions, velocities) - AKA a certain combination of variables describing components of individiual molecules/particles.
+    \item For every macrostate, there are MANY possible microstates. Let's call the number of microstates $\Omega$.
+    \item The number of microstates corresponds to how ordered your system is!
+        \begin{enumerate}
+            \item For example, if $\Omega$ is large, there are many microstates, corresponding to high "disorder" - high entropy
+            \item In contrast, if $\Omega$ is low, this would correspond to few microstates and thus a low entropy.
+        \end{enumerate}
+    \item In 1877, Ludwig Boltzmann proposed the following equation for entropy:
+        \begin{equation*}
+            \begin{aligned}
+                S = k_B \ln \Omega \quad \textbf{Statistical Definition of Entropy}
+            \end{aligned}
+        \end{equation*}
+        Where:
+        \begin{equation*}
+            \begin{aligned}
+                k_B = R/N_A = 1.38X10^-23 J/K \quad \text{Where $k_B$ is called Boltzmann's Constant.}
+            \end{aligned}
+        \end{equation*}
+\end{enumerate}
+\subsection*{Entropy Changes}
+Sometimes, we're not interested in the value of entropy itself ($S$), but we want to find what the change in entropy is instead ($\Delta S$).
+\begin{enumerate}
+    \item Imagine a process from state 1 (with $\Omega_1$ microstates) to state 2 (with $\Omega_2$ microstates):
+        \begin{enumerate}
+            \item Inital Entropy: $S_1 = k_B \ln \Omega_1$
+            \item Final Entropy: $S_2 = k_B \ln \Omega_2$
+            \item Change in Entropy: 
+                \begin{equation*}
+                    \begin{aligned}
+                        \Delta S = S_2 - S_1 
+                    \end{aligned}
+                \end{equation*}
+        \end{enumerate}
+    \item If $\Omega_2 > \Omega_1$, then $\Delta S > 0$ - Entropy increases if more microstates become available.
+    \item If $\Omega_2 < \Omega_1$, then $\Delta S < 0$ - Entropy descreases if ... %//TODO - Add in definitions for entropy lecture on 5-17-2023
+\end{enumerate}
+\subsection*{Example: Isothermal expansion}
+\begin{exmp}
+    What is the change in entropy for the isothermal expansion of n moles of a monoatomic ideal gas from an inital volume $V_1$ to a final volume $V_2 = 2*V_1$? 
+\end{exmp}
+\begin{enumerate}
+    \item First, focus on a single gas particle: \\
+        How many possible positions are there inside the inital volume? \\
+        You could start with splitting your inital volume into sections - but it's hard to tell at first since it depends on how you count states. \\
+        \textbf{Regardless of how you count your \emph{microstates}}, there are twice as many positions/microstates in the final box. \\
+        \begin{equation*}
+            \begin{aligned}
+                \frac{\Omega_2}{\Omega_1} = \frac{V_2}{V_1} = 2 \quad \text{for a single gas particle}
+            \end{aligned}
+        \end{equation*}
+    \item But what if we have $N = n * N_A$ gas particles? We have to account for the n moles of gas particles! \\
+        Every particle has twice as many possible positions in the box that is twice the size. From this, the total number of possible microstates increases as:
+        \begin{equation*}
+            \begin{aligned}
+                \frac{\Omega_2}{\Omega_1} = \left(\frac{V_2}{V_1}\right)_1 + \left(\frac{V_2}{V_1}\right)_2 + ... \left(\frac{V_2}{V_1}\right)_N  = \left(\frac{V_2}{V_1}\right)^N \quad \text{for N gas particles}
+            \end{aligned}
+        \end{equation*}
+    \item The change in entropy for this isothermal expansion is:
+        \begin{equation*}
+            \begin{aligned}
+                \Delta S &= k_B \ln \frac{\Omega_2}{\Omega_1} \\
+                    &= k_B \ln \left(\frac{V_2}{V_1}\right)^N \\
+                    &= k_B N \ln \frac{V_2}{V_1} \\
+                    %//TODO - complete this equation for entropy!
+                 \Delta S &= nR\ln\frac{V_2}{V_1}   
+            \end{aligned}
+        \end{equation*}
+\end{enumerate}
 
-
-
-
-
-
-
-
+\subsection*{Entropy and Heat}
+We just calculated that for an isothermal expansion of an ideal gas, the change in entropy is:
+\begin{equation*}
+    \begin{aligned}
+        \Delta S = nR\ln \frac{V_2}{V_1}   
+    \end{aligned}
+\end{equation*}
+Previously, we had shown that the amount of heat involved in an \emph{reversible}\footnote{Read - not true when the process is irreversible} isothermal expansion is:
+\begin{equation*}
+    \begin{aligned}
+        q_{rev} = nRT \ln\frac{V_2}{V_1}
+    \end{aligned}
+\end{equation*}
+Therefore, we can conclude that for a \emph{reversible} isothermal process:
+\begin{equation*}
+    \begin{aligned}
+        \Delta S = \frac{q_{rev}}{T} \quad \textbf{Thermodynamic Definition of entropy\footnote{technically entropy \emph{changes}}}
+    \end{aligned}
+\end{equation*}
+From this, we can relate entropy to the quanities we used in chapter 9! 
+If a process is \emph{irreversible} (but still isothermal), then $\Delta S$ is still the same (since entropy is a state function), but q is less (as we have seen in the isothermal expansion example):
+\begin{equation*}
+    \begin{aligned}
+        \Delta S > \frac{q}{T} \quad \text{for \emph{irreversible, isothermal processes}}
+    \end{aligned}
+\end{equation*}
 \end{document}
