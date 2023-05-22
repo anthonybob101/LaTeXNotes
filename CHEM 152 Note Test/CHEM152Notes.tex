@@ -341,6 +341,144 @@ If a process is \emph{irreversible} (but still isothermal), then $\Delta S$ is s
 \end{equation*}
 %//TODO - Take notes on friday's lecture!
 
+\subsection*{Building an absolute entropy scale}
+\begin{enumerate}
+    \item The thermodynamic definitioon of entropy,
+        \begin{equation*}
+            \begin{aligned}
+                \Delta S = \int \frac{dq}{t}
+            \end{aligned}
+        \end{equation*}
+        allows us to calculate \emph{differences} in entropy between two states.
+    \item ...
+\end{enumerate}
+\subsection*{Standard Molar Entropy}
+\begin{enumerate}
+    \item The standard molar entropy $S^0$ of a substance is the entropy change per mole of that substance when heating it from  K to 298 K at a constant pressure of 1 atm:
+        \begin{equation*}
+            \begin{aligned}
+                S^0 = \int_0^{298K} \frac{c_p}{T}dT
+            \end{aligned}
+        \end{equation*}
+    \item It has units of J/(mol K).
+    \item Remember that we could write the reaction enthalpy in terms of the formation enthalpies of products and reactants,
+        \begin{equation*}
+            \begin{aligned}
+                \Delta H_{rxn}^0 = \sum_{products} n*\Delta H_f^0 - \sum_{reactants} m* \Delta H_f^0
+            \end{aligned}
+        \end{equation*}
+        and the reference state (pure elements at standard state) had zero formation enthalpy.
+    \item Similarly, we can calculate the reaction entropy in terms of molar entropies of products and reactants:
+        \begin{equation*}
+            \begin{aligned}
+                \Delta S_{rxn}^0 = \sum_{products} n*\Delta S^0 - \sum_{reactants} m* \Delta S^0
+            \end{aligned}
+        \end{equation*}
+        Here, the reference state is the perfect crystal, which has zero entropy.
+\end{enumerate}
+
+\subsection*{Standard Molar Entropy}
+\begin{exmp}
+    Consider the reaction:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{CO_(g) + 2H2_(g) -> CH3OH_(l)}
+        \end{aligned}
+    \end{equation*}
+\end{exmp}
+\begin{enumerate}
+    \item What do you think the sign of $\Delta S$ will be? \\
+    \\
+    The sign of $\Delta S$ will potentially be negative as looking at the states of the system, we are going from gases to liquid - more disordered to ordered - being negative entropy.
+    \item What is the change in entropy for this reaction? 
+        \begin{equation*}
+            \begin{aligned}
+                \Delta S &= (127 - (198+2*131)) J/(mol K)\\
+                &= -333 J/(mol K)
+            \end{aligned}
+        \end{equation*}
+\end{enumerate}
+
+\subsection*{Predicting Signs of Entropy Changes}
+\begin{exmp}
+    Consider the exothermic reaction:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{14KMnO4_(s) + 4C3H5(OH)3_(l) -> 7 K2CO3_(s) + 7 Mn2O3_(s) + 5 CO2_(g) + 16 H2O_(g)}
+        \end{aligned}
+    \end{equation*}
+\end{exmp}
+Givens:
+\begin{enumerate}
+    \item $\Delta H$ is negative - so the entropy change of the surroundings is negative (heat is being pumped into the system)
+    \item A reaction is spontaneous \emph{if it increases the entropy of the universe}
+    \item The 
+\end{enumerate}
+\begin{enumerate}
+    \item Do you think it will be spontaneous? \\
+        \begin{enumerate}
+            \item Reactants are solid and liquid - Products include gases... the entropy of the system likely increases
+            \item Reaction is exothermic, so heat flows into the surroundings. Therefore, the entropy of the surroundings increases.
+            \item This means that the entropy of the universe increases, and the reaction is spontaneous for all temperatures
+        \end{enumerate}
+\end{enumerate}
+
+\subsection*{Spontaneity and Temperature}
+\begin{exmp}
+    Determine the spontaneity of the reaction below at 298K and 3000K.
+    \begin{equation*}
+        \begin{aligned}
+            \ce{Sn_(s) + O2_(g) -> SnO2_(s)} \quad \Delta H = -578 kJ/mol \quad \Delta S = -207 J/(mol*K)
+        \end{aligned}
+    \end{equation*}
+\end{exmp}
+\begin{enumerate}
+    \item At 298 K:
+        \begin{equation*}
+            \begin{aligned}
+                \Delta S _{surr} = \frac{-\Delta H}{T} = \frac{-(-578*10^3 J/mol)}{298K} = 1.94*10^3 J/(mol*K) \\
+                \Delta S_{univ} = (-207 + 1.94*10^3) J/(mol*K) = 1.73*10^3 J/(mol*K) \quad \text{Spontaneous at 298 K}
+            \end{aligned}
+        \end{equation*}
+    \item At 3000 K: 
+        \begin{equation*}
+            \begin{aligned}
+                \Delta S _{surr} = \frac{-\Delta H}{T} = \frac{-(-578*10^3 J/mol)}{3000K} = 192 J/(mol*K) \\
+                \Delta S_{univ} = (-207 + 192) J/(mol*K) = -14.3 J/(mol*K) \quad \text{Not spontaneous at 3000 K}
+            \end{aligned}
+        \end{equation*}
+\end{enumerate}
+This indicates that there is a breakpoint where the change in entropy is 0. 
+
+\subsection*{Spontaneity and Temperature}
+\begin{exmp}
+    Determine the temperature at which the reaction below changes from spontaneous to nonspontaneous.
+    \begin{equation*}
+        \begin{aligned}
+            \ce{Sn_(s) + O2_(g) -> SnO2_(s)} \quad \Delta H = -578 kJ/mol \quad \Delta S = -207 J/(mol*K)
+        \end{aligned}
+    \end{equation*}
+\end{exmp}
+We want to know the temperature at which $\Delta S_{univ} = 0$.
+\begin{equation}
+    \begin{aligned}
+        \Delta S_{univ} &= \Delta S_{sys} + \Delta S_{surr} = 0  \\
+        \Delta S_{surr} &= \frac{q_{surr}}{T} =\frac{- \Delta H_{sys}}{T} \\
+        T &= \frac{\Delta H_{sys}}{\Delta S_{sys}} \quad \text{solving for T, see next equation}\\
+        T &= \frac{-578*10^3 J/mol}{-207 mol/K} \\
+        T &= 2792 K
+    \end{aligned}
+\end{equation}
+From previous equationss
+\begin{equation}
+    \begin{aligned}
+        \Delta S_{univ} = \Delta S_{surr} + \Delta S_{sys} &= 0\\
+        -\frac{\Delta H_{sys}}{T} + \Delta S_{sys} &= 0 \\
+        \Delta S_{sys} &= \frac{\Delta H_{sys}}{T} \\
+        \text{Solving for T,} \\
+        T &= \frac{\Delta H_{sys}}{\Delta S_{sys}}
+    \end{aligned}
+\end{equation}
 
 
 \end{document}
