@@ -1123,6 +1123,129 @@ To write the equation of a standard formation reaction, follow these steps:
             \end{equation*}
 \end{enumerate}
 
+\section*{Calculating Absolute Entropy using the Boltzmann Hypothesis}
+\begin{exmp}
+    An oxygen (\ce{O2}) molecule is adsorbed onto a small patch of the surface of a catalyst. It's known that the molecule is adsorbed on 1 of 25 possible sites for adsorbtion.
+    \newline
+    Calculate the entropy of this system.
+\end{exmp}
+You can answer this question using the Boltzmann definition of entropy:
+\begin{equation*}
+    \begin{aligned}
+        S = k_B \ln W
+    \end{aligned}
+\end{equation*}
+In the Boltzmann equation \emph{S} stands for the entropy of a system in a given thermodynamic state, and \emph{W} stands for the number of microstates of the system in that thermodynamic state. The constant out front, $k_B$, is called the Boltzmann constant.
+\begin{enumerate}
+    \item In this problem, the thermodynamic state of the system is described by the fact that the \ce{O2} molecule is known to be adsorbed somewhere on the patch of the surface.
+    \item One \emph{microstate} of this system would be the \ce{O2} molecule adsorbed on the first site, counting from the lower left corner of the patch. Another microstate would be the molecule adsorbed on the second site, and still another microstate would be the molecule adsorbed on the third site.
+\end{enumerate}
+The key fact abou the microstates of a system is that it must be equally likely for the system to be in any of them, given the knowledge of the system expressed by its thermodynamic state. That's certainly true in this problem: given that we know only that the molecule is \emph{somewhere} on the surface, its equally likely for the molecule to be adsorbed on any one of the 25 sites. Therefore, there are 25 microstates consistent with the thermodynamic state.
+\newline
+Once you've counted \emph{W}, the nuumber of microstates, you can use the Boltzmann equation to calculate the entropy of the thermodynamic state.
+\begin{equation*}
+    \begin{aligned}
+        S &= k_B \ln W \\
+        S &= (1.38065*10^{-23} \frac{J}{K})\ln (25) \\
+        S &= 4.4441 * 10{-23} \frac{J}{K}
+    \end{aligned}
+\end{equation*} 
+
+\section*{Predicting qualitatively how entropy changes with temperature and volume}
+\begin{exmp}
+    For each system listed in the first column of the table below, decide (if possible) whether the change described in the second column will increase the entropy \emph{S} of the system, decrease \emph{S}, or leave \emph{S} unchanged.
+    \newline
+    \begin{tabular}{c c}
+        System & Change \\
+        \hline
+        A few moles of helium (\ce{He}) gas. & The helium is heated from -11.0C \\
+                                            & to 78.0C and is also compressed \\
+                                            & from a volume of 7.0L to a volume \\
+                                            &of 3.0L. \\
+        A few moles of helium (\ce{He}) gas. & The helium is heated from -3.0C to \\
+                                            & 54.0C while the volume is held \\
+                                            & constant at 8.0L \\
+        A few grams of liquid water (\ce{H2O}) & The water is cooled from 37.0C to \\
+                                            &8.0C    
+    \end{tabular}
+\end{exmp}
+You can answer this question by using the fact that entropy increases when either temperature or volume increases, as long as the other is held constant. 
+\begin{enumerate}
+    \item For example, if 0.10 mol of water is heated from 20C to 100C, while the volume is held constant at 1.8mL, the entropy increases. If the water is cooled back down to 20C, the entropy decreases.
+    \item Similarly, if 0.10 mol of carbon dioxide (\ce{CO2}) gas expands from a volume of 1.5L to 2.0L, while the temperature is held constant at -10C, the entropy increases. If the \ce{CO2} is compressed back to 1.5L, the entropy decreases.
+\end{enumerate}
+Sometimes you'll be asked to predict the change in entropy of a system in which \emph{both} temperature and volume change. It's important to understand that you can only do so if both changes act in the same direction.
+\begin{enumerate}
+    \item For example, if the temperature of some \ce{CO2} gas is raised from 20C to 100C \emph{and} the volume increases from 1.5L to 2.0L, you can safely predict the entropy will increase. That's because both the increase in temperature and volume act to increase entropy. 
+    \item However, if the temperature of some \ce{CO2} gas is \emph{lowered} from 100C to 20C while the volume is increased from 1.5L to 2.0L, you can't predict whether entropy increases, decreases, or stays the same. That's because the change in temperature and volume act in opposite directions. Figuring out whether which wins or will cancel out is difficult without detailed calculations or experimental measurement. 
+\end{enumerate}
+Here's a table that summarizes the possibilities:
+\newline
+\begin{tabular}{c | c | c | c |}
+    & $\Delta T < 0$ & $\Delta T = 0$ & $\Delta T > 0$\\
+    \hline
+    $\Delta V < 0$ & $\Delta S < 0$ & $\Delta S < 0$ & ? \\
+    \hline
+    $\Delta V = 0$ & $\Delta S < 0$ & $\Delta S = 0$ & $\Delta S > 0$ \\
+    \hline
+    $\Delta V > 0$ & ? & $\Delta S > 0$ & $\Delta S > 0$ \\
+    \hline
+\end{tabular}
+\newline
+\textbf{Note:} You'll find one more fact useful, which is that the volume of liquids and solids hardly change with temperature. 
+\newline
+Now let's apply these general ideas to each change listed in the table.
+\begin{enumerate}
+    \item In the first change listed in the table., the temperature of the system (the \ce{He} gas) increases but the volume \emph{decreases}. Since the change in temperature will act to increase entropy but the change in volume will act to decrease entropy, you can't safely predict how the entropy will change.
+    \item In the second change listed in the table, the temperature of the system (the \ce{He} gas) increases while volume is held constant, meaning the entropy will increase. 
+    \item In the third change listed in the table, the temperature of the system (the liquid \ce{H2O}) is decreased. Since the volume of liquids hardly change with temperature, you can assume the volume stays constant. Cooling a system with volume held constant decreases the entropy.
+\end{enumerate}
+
+\section*{Predicting qualitatively how entropy changes with mixing and seperation}
+\begin{exmp}
+    For each system listed in the first column of the table below, decide (if possible) whether the change described in the second column will increase the entropy \emph{S} of the system, decrease \emph{S}, or leave \emph{S} unchanged. (\emph{Note for advanced students:} you may assume ideal gas and ideal solution behavior.)
+    \newline
+    \begin{tabular}{c c}
+        System & Change \\
+        \hline
+        A 0.35M solution of sucrose in      & The solution is put into a  \\
+        water, and a beaker of pure water,  & semipermable bag immersed in the \\
+        both at 37C.                        & water, and 50.mL of pure water \\
+                                            & flows through the bag into the surose solution. \\
+        \hline
+        A solution made of sodium iodide & 50. mL of pure water is added to \\
+        (\ce{NaI}) in water, at 73C. & the solution. \\
+        \hline
+        A mixture of xenon (\ce{Xe}) gas and & An additional 2L of pure \ce{N2} gas \\
+        nitrogen (\ce{N2}) gas at 4atm and & is added to the mixture, with the \\
+        32C. & pressure kept constant at 4 atm.   
+    \end{tabular}
+\end{exmp}
+You can answer this question by using the fact that entropy increases when pure substances are mixed, as long as temperature and total volume stay constant.
+\begin{enumerate}
+    \item For example, if 10.L of nitrogen (\ce{N2}) gas at 1.0 atm and 20.0C is mixed with 10.L of oxygen (\ce{O2}) gas, also at 1.0 atm and 20.0C, the entropy increases. If the two gases are seperated by fractional condensation, the entropy decreases again.
+    \item Similarly, if 100.mL of ethanol (\ce{CH3CH2OH}) is mixed with 100. mL of propanol (\ce{CH3(CH2)2OH}) at 20.C, the entropy increases. If the ethanol and propanol are seperated again by distillation, the entropy decreases again.
+\end{enumerate}
+Keep in mind pure substances don't have to be in the same physical state to mix. Solids and liquids can mix, for example, to form a solution. If the mixing takes place without significant release or absorbtion of heat, and without a significant change in volume, then you can be confident the entropy increases. 
+\begin{enumerate}
+    \item For example, if 2.0g of solid sodium chloride (\ce{NaCl}) is dissolved in 150.mL of water at 50.C, the entropy increases. If the sodium chloride is seperated from the water by distillation, the entropy decreases again.
+\end{enumerate}
+Also note that if mixtures are mixed with still more pure substances, the entropy will continue to increase.
+\begin{enumerate}
+    \item If 50.mL of pure water is added to a solution of sodium chloride in water, the entropy will increase. If 50.mL of pure water is removed from the solution by pressing some of the solution through a semipermable membrane, the entropy decreases again.
+\end{enumerate}
+Mixtures and solutions that form without the release or absorption of heat (so the temperature stays constant) and without any change in the total volume are called \emph{ideal solutions}. It's important to remember that it's only possible to predict that entropy changes on mixing for ideal solutions, or solutions reasonable close to ideal. \emph{It's not possible to predict the entropy change on mixing for strongly nonideal solutions without detailed calculations or experimental measurement.}
+\newline
+Fortunately, you're told you can assume ideal solution behavior for all systems in this question. 
+\newline
+Now let's apply these general ideas to each change described in the table.
+\begin{enumerate}
+    \item In the first change listed in the table, a mixture (sucrose and water) are mixed with a pure substance, so the entropy will increase.
+    \item In the second change listed in the table, a mixture (the \ce{NaI}-water solution) is mixed with another pure substance (the pure water) so the entropy will increase.
+    \item In the third change listed in the table, a pure substance (the additional \ce{N2}) is mixed with an existing mixture of pure substances, so the entropy will increase.
+\end{enumerate}
+
+\section*{Calculating entropy change from reversible heat flow}
 
 
 
