@@ -1569,10 +1569,51 @@ Now let's apply these general ideas to the changes you need to evaluate:
     \item And in the third change described, the moles of gas increase, which means $\Delta S > 0$, and heat is transferred to the surroundings, which means $\Delta S_{surr} > 0$. The entropy of the universe increases, so this process is spontaneous.
 \end{enumerate}
 
-
-
-
-
+\section*{Calculating reaction free energy under nonstandard conditions}
+\begin{exmp}
+    A chemist fills a reaction vessel with 0.951g silver chromate (\ce{Ag2CrO4}) solid, 0.578M silver (\ce{Ag^+}) aqueous solution, and 0.707M chromate (\ce{CrO4^2-}) aqueous solution at a temperature of 25.0C \\
+    Under these conditions, calculate the reaction free energy $\Delta G$ for the following chemical reaction:
+        \begin{equation*}
+            \begin{aligned}
+                \ce{Ag2CrO4 <=> 2 Ag^+ CrO4^2-}
+            \end{aligned}
+        \end{equation*}
+\end{exmp}
+You can calculate the standard reaction free energy $\Delta G^0$ by using the chemical equation and the standard free energy of formation $\Delta G^0_f$ of each reactant and product:
+\begin{equation*}
+    \begin{aligned}
+        \Delta G^0 &= \sum_{products} n_p * \Delta G^0_f - \sum_{reactants} n_r * \Delta G^0_f \\
+        &= (2mol) * \Delta G^0_f[\ce{Ag^+}] + (1mol) * \Delta G^0_f[\ce{CrO4^2-}] - (1mol) * \Delta G^0_f[\ce{Ag2CrO4}] \\
+        &= (2mol) * (77.1 kJ/mol) + (1mol) * (-727.8 kJ/mol) - (1mol) * (-641.8 kJ/mol) \\
+        \Delta G^0 &= 68.2 kJ
+    \end{aligned}
+\end{equation*}
+Is this the reaction free energy you need? No it is not. The standard reaction free energy is measured with all reactants and products in their standard states. The pressures of all gases must be 1 atm and the molarity of all solutes must be 1M. These conditions are not true for the chemist's reaction vessel, so $\Delta G \neq \Delta G^0$. \\
+However, you can always calculate $\Delta G$ from $\Delta G^0$ and the \emph{actual} pressures or molarities of reactants and products, using this equation:
+    \begin{equation*}
+        \begin{aligned}
+            \Delta G = \Delta G^0 + RT \ln Q
+        \end{aligned}
+    \end{equation*}
+In this equation, R stands for the gas constant in units of J/K, T stands for the absolute temperature measured in kelvins, and Q stands for the reaction quotient.\\
+To use this equation, you'll need to calculate the reaction quotient for the conditions inside the chemist's reaction vessel:
+    \begin{equation*}
+        \begin{aligned}
+            Q &= [\ce{Ag^+}]^2 [\ce{CrO4^2-}] \\
+            &= (0.578)^2 (0.707) \\
+            Q &= 0.23620...
+        \end{aligned}
+    \end{equation*}
+Now you're ready to use the equation for reaction free energy. Don't forget to convert the temperature to kelvins before plugging it in.
+    \begin{equation*}
+        \begin{aligned}
+            \Delta G &= \Delta G^0 + RT \ln Q \\
+            &= (68.2 kJ) + (8.31446 J/K)(273.15 + 25)\ln(0.23620) \\
+            &= (68.2 kJ) + (-3577.323 J) \\
+            &= (68.2 kJ) + (-3.577323 J) \\
+            \Delta G &= 64.6 kJ 
+        \end{aligned}
+    \end{equation*}
 
 %-------------------------------------------------------------------------------
 
