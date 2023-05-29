@@ -1362,11 +1362,11 @@ You can solve this problem using two important ideas about Gibbs free energy:
             \end{tabular}
         \end{center}
     \item Next, you'll need to use the relationship between $\Delta G$ and reaction enthalpy $\Delta H$ and reaction entropy $\Delta S$:
-            \begin{equation*}
-                \begin{aligned}
-                    \Delta G = \Delta H - T\Delta S 
-                \end{aligned}
-            \end{equation*}
+        \begin{equation*}
+            \begin{aligned}
+                \Delta G = \Delta H - T\Delta S 
+            \end{aligned}
+        \end{equation*}
     \item  This equation tells you that the balance between the importance of reaction enthalpy and reaction entropy depends on the temperature T:
         \begin{enumerate}
             \item At low temperatures (T very small), $T \Delta S$ is small, which means:
@@ -1399,10 +1399,178 @@ You can solve this problem using two important ideas about Gibbs free energy:
 \end{enumerate}
 Now let's apply these general ideas to each description in the table.
 \begin{enumerate}
-    \item Reaction A: The rate of reaction has nothing to do with whether it is spontaneous or not. We're told this reaction is exothermic, so $\Delta H > 0$. However, we're given no information about when this reaction is spontaneous, so there's no way to decide the sign of $\Delta S$. 
+    \item Reaction A: The rate of reaction has nothing to do with whether it is spontaneous or not. We're told this reaction is exothermic, so $\Delta H < 0$. However, we're given no information about when this reaction is spontaneous, so there's no way to decide the sign of $\Delta S$. 
     \item Reaction B: We're told this reaction is always spontaneous, so it's described by the third line of the table above. So $\Delta H < 0$ and $\Delta S > 0$. (Note that the information about the rate of the reaction is unimportant, because the rate of a reaction has nothing to do with whether it is spontaneous or not.) 
     \item Reaction C: We're told this reaction is spontaneous only at higher temperatures (higher than 49C). That means it's described by the first line of the table above. So $\Delta H > 0$ and $\Delta S > 0$. 
 \end{enumerate}
+
+\section*{Interconverting standard Gibbs free energy and K}
+\begin{exmp}
+    For a certain chemical reaction, the standard Gibbs free energy of reaction is 75.1 kJ. Calculate the temperature at which the equilibrium constant $K=1.9*10^{-15}$
+\end{exmp}
+The key to this problem is the connection between standard Gibbs free energy of reaction $\Delta G^0$ and the equilibrium constant K:
+\begin{equation*}
+    \begin{aligned}
+        \Delta G^0 = -RT\ln K \quad \text{T is temperature (K) and R is the gas constant (J/K)}
+    \end{aligned}
+\end{equation*}
+You can rearrange this equation to solve for T, given $\Delta G^0$ and K:
+    \begin{equation*}
+        \begin{aligned}
+            T &= \frac{\Delta G^0}{-R \ln K} \\
+            &= \frac{75.1 kJ}{-(8.3145 J/K)\ln(7.9*10^{-15})} \\
+            T &= 278.16 K \\
+            T &= 5C 
+        \end{aligned}
+    \end{equation*}
+
+\section*{Using the general properties of Gibbs free energy}
+\begin{exmp}
+    The standard reaction free energy $\Delta G^0 = -835. kJ$ for this reaction:
+    \begin{equation*}
+        \begin{aligned}
+            \ce{2 Al_(s) + Fe2O3_(s) -> Al2O3_(s) + 2 Fe_(s)} \quad \Delta G = -835. kJ
+        \end{aligned}
+    \end{equation*}
+    Use this information to complete the table below. Round each of your answers to the nearest kJ/mol.
+    \begin{center}
+        \begin{tabular}{c c}
+            Reaction & $\Delta H$ \\
+            \ce{Al2O3_(s) + 2 Fe_(s) -> 2 Al_(s) + Fe2O3_(s)} & ?? kJ \\
+            \ce{Al_(s) + 0.5 Fe2O3_(s) -> 0.5 Al2O3_(s) + Fe_(s)} & ?? kJ \\
+            \ce{2 Al2O3_(s) + 4 Fe_(s) -> 4 Al_(s) + 2 Fe2O3_(s)} & ?? kJ \\
+        \end{tabular}
+    \end{center}
+\end{exmp}
+You can solve this problem by using some general properties of reaction free energy.
+In particular, if you know that the reaction free energy of a certain reaction is $\Delta G$, then:
+\begin{enumerate}
+    \item The reaction free energy of the reverse reaction is $-\Delta G$.
+    \item The reaction free energy for the reaction multiplied by \emph{n} is $n\Delta G$.
+    \item The reaction free energy for the reaction divided by \emph{n} is $\Delta G/n$. 
+\end{enumerate}
+Now let's apply these ideas to each equation in the table:
+\begin{enumerate}
+    \item The first chemical equation is the original equation reversed. That means its reaction free energy will be minus the original free energy, which is $835.kJ$.
+    \item The second chemical equation is the original equation divided by 2. That means its reaction free energy will be the original reaction free energy by 2, which is $-418. kJ$.
+    \item The third chemical equation is the original equation reversed \emph{and} multiplied by 2. That means its reaction free energy will be minus the original reaction free energy multiplied by 2, which is $1670. kJ$. 
+\end{enumerate}
+
+\section*{Estimating a phase transition temperature from standard thermodynamic data}
+\begin{exmp}
+    Using the thermodynamic information in the ALEKs data tab, calculate the boiling point of methanol (\ce{CH3OH}).
+\end{exmp}
+You can solve this problem using two important ideas about Gibbs free energy: \\
+First, let's write a chemical equation for the equilibrium between liquid and gaseous methanol: 
+\begin{equation*}
+    \begin{aligned}
+        \ce{CH3OH_(l) <=> CH3OH_(g)}
+    \end{aligned}
+\end{equation*}
+And let's recall what the Second Law of thermodynamics tells you about reaction free energy $\Delta G$ of chemical equilibria: 
+\begin{center}
+    \begin{tabular}{c c}
+        sign of reaction free energy & what second law tells you \\
+        $\Delta G < 0$ & This reaction is spontaneous \\
+        $\Delta G > 0$ & The reverse of this reaction is spontaneous. \\
+        $\Delta G = 0$ & Neither this reaction nor its reverse reaction is spontaneous; this system is at equilibrium.
+    \end{tabular}
+\end{center}
+What does this tell you about the equilibrium between liquid methanol and gaseous methanol? 
+\begin{enumerate}
+    \item Below the boiling point you know gaseous methanol spontaneously condenses—turns into liquid methanol. That is, the reverse reaction is spontaneous and $\Delta G > 0$.
+    \item Above the boiling point you know liquid methanol spontaneously evaporates—turns into gaseous methanol. That is, the forward reaction is spontaneous and $\Delta G < 0$.
+    \item Therefore, at exactly the boiling point, liquid and gaseous methanol are in equilibrium and $\Delta G = 0$.
+\end{enumerate}
+To calculate the boiling point you just need to calculate the temperature at which $\Delta G = 0$. \\
+The next idea you'll need is the connection between $\Delta G$, the change in enthalpy $\Delta H$ and the change in entropy $\Delta S$:
+    \begin{equation*}
+        \begin{aligned}
+            \Delta G = \Delta H - T\Delta S 
+        \end{aligned}
+    \end{equation*}
+You can rearrange this equation to solve for the temperature:
+    \begin{equation*}
+        \begin{aligned}
+            T = \frac{\Delta H - \Delta G}{\Delta S}
+        \end{aligned}
+    \end{equation*}
+You know $\Delta G = 0$ at the boiling point. You can make a good estimate of $\Delta H$ by setting it equal to the difference between the standard formation enthalpy $\Delta H^0_f$ of liquid and gaseous methanol:
+\begin{equation*}
+    \begin{aligned}
+        \Delta H &= \Delta H^0_f [\ce{CH3OH_(g)}] - \Delta H^0_f[\ce{CH3OH_(l)}] \\
+        \Delta H &= (-201.0 kJ/mol) - (-239.2 kJ/mol) \\
+        \Delta H &= 38.2 kJ/mol
+    \end{aligned}
+\end{equation*}
+Similarly, you can get a good estimate of $\Delta S$ by setting it equal to the difference between the standard entropies $S^0$ of liquid and gaseous methanol:
+\begin{equation*}
+    \begin{aligned}
+        \Delta S &= S^0 [\ce{CH3OH_(g)}]-S^0[\ce{CH3OH_(l)}] \\
+        \Delta S &= (239.9 J/(K*mol)) - (126.8 J/(K*mol)) \\
+        \Delta S &= 113.1 J/(K*mol)
+    \end{aligned}
+\end{equation*}
+Now you can return to the equation for temperature and calculate the boiling point: 
+    \begin{equation*}
+        \begin{aligned}
+            T &= \frac{\Delta H - \Delta G}{\Delta S} \\
+            T &= \frac{38.2 \frac{kJ}{mol} - 0}{113.1 \frac{J}{K*mol}} \\
+            T &= \frac{3.82*10^{-4} J/mol}{113.1 \frac{J}{K*mol}} \\
+            T &= 337.75K \\
+            T &= 64.60C
+        \end{aligned}
+    \end{equation*}
+
+\section*{Using the Second Law to predict spontaneous change}
+\begin{exmp}
+    Read the descriptions of physical or chemical changes in the table below. Then decide whether the change will be spontaneous, if you can.
+    \begin{enumerate}
+        \item A solid precipitates from a solution, absorbing heat as it does so.
+        \item A gas expands, absorbing heat from its surroundings.
+        \item During an exothermic chemical reaction, two moles of gaseous reactants are turned into four moles of gaseous products.
+    \end{enumerate}
+\end{exmp}
+The key to answering these questions is the second law of thermodynamics, which tells you that changes are spontaneous only when the entropy of the universe (system + surroundings) increases.
+\begin{equation*}
+    \begin{aligned}
+        \Delta S_{UNIV} = \Delta S + \Delta S_{surr} > 0
+    \end{aligned}
+\end{equation*}
+The question is: can you discover enough about $\Delta S$ and $\Delta S_{surr}$ to determine whether $\Delta S_{UNIV}$ is positive or negative? You need to look for clues in the description of the changes.  \\
+The first fact to bear in mind is the Clasusis definition of entropy, which gives you a relationship between heat going into the surroundings and $\Delta S_{surr}$:
+\begin{equation*}
+    \begin{aligned}
+        \Delta S_{surr} = \frac{Q}{T}
+    \end{aligned}
+\end{equation*}
+So if heat is released to the surroundings $\Delta S_{surr} > 0$, but if heat is \emph{absorbed} from the surroundings $\Delta S_{surr} < 0$. \\
+What about the system? These general ideas will help.
+\begin{enumerate}
+    \item When liquid or solid substances turn into gases, $\Delta S > 0$.
+    \item When pure substances form mixture , $\Delta S > 0$. 
+    \item When the number of moles of gas in a system increases, $\Delta S > 0$. 
+\end{enumerate}
+Finally, you'll have to consider what happens when you add $\Delta S$ and $\Delta S_{surr}$:
+\begin{center}
+    \begin{tabular}{| c | c | c | c |}
+        $\Delta S$ & $\Delta S_{surr}$ & $\Delta S_{UNIV}$ & Spontaneous?  \\
+        \hline
+        + & + & + & yes  \\
+        - & - & - & no \\
+        + & - & ? & ? \\
+        - & + & ? & ? 
+    \end{tabular}
+\end{center}
+Now let's apply these general ideas to the changes you need to evaluate: 
+\begin{enumerate}
+    \item In the first change described, a mixture of two substance separates, which means $\Delta S < 0$, and heat is absorbed from the surroundings, which means $\Delta S_{surr} < 0$. The entropy of the universe decreases, which means this process is not spontaneous.
+    \item In the second change described, a gas expands, which means $\Delta S > 0$, but the gas absorbs heat from its surroundings, which means $\Delta S_{surr} < 0$. Without more information, it's not possible to know how the entropy of the universe changes and therefore whether this change in spontaneous.
+    \item And in the third change described, the moles of gas increase, which means $\Delta S > 0$, and heat is transferred to the surroundings, which means $\Delta S_{surr} > 0$. The entropy of the universe increases, so this process is spontaneous.
+\end{enumerate}
+
+
+
 
 
 
