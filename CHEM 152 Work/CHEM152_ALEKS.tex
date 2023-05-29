@@ -1180,18 +1180,18 @@ Sometimes you'll be asked to predict the change in entropy of a system in which 
     \item However, if the temperature of some \ce{CO2} gas is \emph{lowered} from 100C to 20C while the volume is increased from 1.5L to 2.0L, you can't predict whether entropy increases, decreases, or stays the same. That's because the change in temperature and volume act in opposite directions. Figuring out whether which wins or will cancel out is difficult without detailed calculations or experimental measurement. 
 \end{enumerate}
 Here's a table that summarizes the possibilities:
-\newline
-\begin{tabular}{c | c | c | c |}
-    & $\Delta T < 0$ & $\Delta T = 0$ & $\Delta T > 0$\\
-    \hline
-    $\Delta V < 0$ & $\Delta S < 0$ & $\Delta S < 0$ & ? \\
-    \hline
-    $\Delta V = 0$ & $\Delta S < 0$ & $\Delta S = 0$ & $\Delta S > 0$ \\
-    \hline
-    $\Delta V > 0$ & ? & $\Delta S > 0$ & $\Delta S > 0$ \\
-    \hline
-\end{tabular}
-\newline
+\begin{center}
+    \begin{tabular}{c | c | c | c |}
+        & $\Delta T < 0$ & $\Delta T = 0$ & $\Delta T > 0$\\
+        \hline
+        $\Delta V < 0$ & $\Delta S < 0$ & $\Delta S < 0$ & ? \\
+        \hline
+        $\Delta V = 0$ & $\Delta S < 0$ & $\Delta S = 0$ & $\Delta S > 0$ \\
+        \hline
+        $\Delta V > 0$ & ? & $\Delta S > 0$ & $\Delta S > 0$ \\
+        \hline
+    \end{tabular}
+\end{center}
 \textbf{Note:} You'll find one more fact useful, which is that the volume of liquids and solids hardly change with temperature. 
 \newline
 Now let's apply these general ideas to each change listed in the table.
@@ -1246,6 +1246,89 @@ Now let's apply these general ideas to each change described in the table.
 \end{enumerate}
 
 \section*{Calculating entropy change from reversible heat flow}
+\begin{exmp}
+    The heat of vaporization $\Delta H_v$ of tetrahydrofuran (\ce{C4H8O}) is 32.0 kJ/mol. Calculate the change in entropy $\Delta S$ when 44.g of tetrahydrofuran boils at 66.0C.
+\end{exmp}
+You can answer this question using the Clausius definition of entropy:
+\begin{equation*}
+    \begin{aligned}
+        \Delta S = \frac{Q}{T}
+    \end{aligned}
+\end{equation*}
+In the Clausius equation $\Delta S$ stands for the change in entropy of a system, \emph{Q} stands for heat, and \emph{T} stands for absolute temperature (Kelvin).
+\newline    
+Heat will flow into the system as the tetrahydrofuran boils. Your first step in using the Clausis equation is to calculate how \emph{much} heat flows.
+\newline
+You're told the heat of vaporization, $\Delta H_v$, which is the amount of heat that must flow into the system \emph{for each mole} of tetrahydrofuran that boils. If you multiply $\Delta H_v$ by the total moles of tetrahydrofuran involved, you'll get the total amount of heat:
+\begin{equation*}
+    \begin{aligned}
+        (32.0 \frac{kJ}{mol})*(\frac{44.g}{72.1005 g/mol}) \\
+        = 19.53...kJ
+    \end{aligned}
+\end{equation*}
+Now you must stop and think carefully about the sign of \emph{Q}. Use the fact that heat is defined to be positive if the energy of the system increases, and negative if the energy of the system decreases. 
+\newline
+In this case, energy must flow \emph{into} the system for the \ce{C4H8O} to boil, so \emph{Q} must be \emph{positive}:
+\begin{equation*}
+    \begin{aligned}
+        Q = +19.53 kJ
+    \end{aligned}
+\end{equation*}
+Your next step is to divide \emph{Q} by the temperature. Be careful! You need to use the absolute temperature, in kelvins:
+\begin{equation*}
+    \begin{aligned}
+        T &= (66.9+273.15)K 
+        &= 339.15K
+    \end{aligned}
+\end{equation*}
+Now you're ready to use the Clausius equation:
+\begin{equation*}
+    \begin{aligned}
+        \Delta S &= \frac{19.53kJ}{339.15K} \\ 
+        \Delta S &= 0.05759 \frac{kJ}{K}
+    \end{aligned}
+\end{equation*}
+
+\section*{Calculating entropy change using the Boltzmann hypothesis}
+\begin{exmp}
+    Two nitro (\ce{NO2}) groups are chemically bonded to a patch of surface. They can't move to another location on the surface, but they can rotate. \\
+    It turns out that the amount of rotational kinetic energy each \ce{NO2} group could have is required to be a multiple of $\epsilon$ where $\epsilon = 1.0 * 10^{-24}J$. In other words, each \ce{NO2} group could have $\epsilon$ of rotational energy, or 2$\epsilon$, 3$\epsilon$, and so forth - but it \emph{cannot} have just any old amount of rotational kinetic energy. \\
+    Suppose the \emph{total} rotational kinetic eneryg in this system is initally known to be $98\epsilon$. Then, some heat is removed from the system, and the total rotational kinetic energy falls to $45\epsilon$. Calculate the change in entropy.
+\end{exmp}
+You can answer this question by using the Boltzmann definition of entropy:
+\begin{equation*}
+    \begin{aligned}
+        \Delta S = k_B \ln \frac{W}{W_0}
+    \end{aligned}
+\end{equation*}
+In this equation $\Delta S$ stands for the change in entropy, $W_0$ stands fro the \emph{inital} number of microstates, and \emph{W} stands for the \emph{final} number of microstates. You'll find the value of $k_B$, the Boltzmann constant, in the ALEKS calculator (tabulated to be $k_B = 1.38065*10^{-23}$).
+\begin{enumerate}
+    \item Initally, there are 99 ways in which the total rotational kinetic energy could be shared between the two \ce{NO2} groups:
+        \begin{center}
+            \begin{tabular}{c | c | c}
+                possibility & kinetic energy of group 1 & kinetic energy of group 2 \\
+                1 & 98$\epsilon$ & 0 \\
+                2 & 97$\epsilon$ & 1$\epsilon$ \\
+                3 & 96$\epsilon$ & 2$\epsilon$ \\
+                \vdots & \vdots & \vdots \\
+                99 & 0 & 98$\epsilon$ \\
+            \end{tabular}
+        \end{center}
+        That means there are 99 microstates accessible to the system initally.
+    \item In the same way, there are 46 ways in which the total rotational kinetic energy could be shared between the two \ce{NO2} groups after the heat is removed. \\
+        That means the final number of microstates accessible to the system is 46.
+\end{enumerate}
+Now you can use the Boltzmann equation to calculate the change in entropy:
+\begin{equation*}
+    \begin{aligned}
+        \Delta S &= k_B \ln \frac{46}{99} \\
+        \Delta S &= -1.06 * 10^{-23} J/K
+    \end{aligned}
+\end{equation*}
+Notice that the change in entropy is negative. That's because the number of microstates accessible to the system decreases when the total rotational kinetic energy decreases. \\
+In fact, when the total kinetic energy of a system increases, the number of accessible microstates - and therefore the entropy - will \emph{always} increase. Similarly, when the total kinetic energy of a system decreases, the number of acessible microstates - and therefore the entropy - will always decrease. You can use this general fact to double-check your math whenever you're working with entropy.
+
+
 
 
 
