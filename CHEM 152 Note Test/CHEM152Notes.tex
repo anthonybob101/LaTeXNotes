@@ -500,5 +500,207 @@ From previous equationss
 \end{enumerate}
 %//TODO - Complete Friday's lecture notes for 5/26/2023!
  
+\subsection*{Wednesday - 5/31/23}
+\begin{enumerate}
+    \item Submit midterm regrade request by Thursday evening!
+    \item Quiz 7 will be open!
+    \item Friday is last lecture!
+    \item Course Evals are open until Friday
+    \item ALEKS Objective 10 Due Sunday
+    \item ALEKS Open Pie Mode Open until Sunday
+    \item Final Exam
+        \begin{enumerate}
+            \item Section A - Wednesday 6/7 at 2:30 PM
+            \item Covers material from Chapters 6-10. Chapter 11 (Today/Friday's lecture) will not be covered
+            \item Materials from chapter 6-10 will be evenly split
+        \end{enumerate}
+\end{enumerate}
+
+\subsection*{The Effect of Temperature on Equilibrium}
+We have seen that 
+\begin{equation*}
+    \begin{aligned}
+        \Delta G^0 = -RT\ln K \quad K = e^{-\frac{\Delta G^0}{RT}}
+    \end{aligned}
+\end{equation*}
+The Gibbs Free Energy can be written as
+\begin{equation*}
+    \begin{aligned}
+        \Delta G^0 = \Delta H^0 - T\Delta S^0
+    \end{aligned}
+\end{equation*}
+Therefore, the equulibrium constant is
+\begin{equation*}
+    \begin{aligned}
+        K = e^{-\frac{\Delta H^0}{RT} + \frac{\Delta S^0}{R}}
+    \end{aligned}
+\end{equation*}
+When we look at a graph relating the equilibrium constant to temperature, we can see that:
+\begin{enumerate}
+    \item $\Delta H^0 > 0:$ Endothermic reaction. Equlibrium constant increases with increasing temperature.
+    \item $\Delta H^0 < 0$ Exothermic  reaction. Equlibrium constant decreases with increasing temperature.
+\end{enumerate}
+However, this applies only in standard conditions.
+
+\subsection*{Non-Standard Conditions}
+Reaction free energies depend on the states of reactants and products.
+\begin{enumerate}
+    \item Example - Gas-phase reaction:
+        \begin{enumerate}
+            \item In a standard state - we have all of our reactants and products at constant volume/pressure
+            \begin{equation*}
+                \begin{aligned}
+                    \ce{A + B -> C} \quad P_0 = 1atm 
+                \end{aligned}
+            \end{equation*}
+            \item  In a nonconstant state - our products and reactants aren't held at a constant volume/pressure, but have their own volume/pressures
+                \begin{equation*}
+                    \begin{aligned}
+                        \ce{A + B -> C} \quad P_A = 0.8atm \quad P_B = 2atm \quad P_C = 1.2atm
+                    \end{aligned}
+                \end{equation*}
+        \end{enumerate}
+\end{enumerate}
+To convert from non-standard conditions to be standard,
+\begin{enumerate}
+    \item Bring reactants to reference pressure. For nonconstant pressure, change the volume so that the pressure is constant
+        \begin{equation*}
+            \begin{aligned}
+                \Delta G_1 = RT \ln \frac{P_0}{P_A} + RT \ln \frac{P_0}{P_B}
+            \end{aligned}
+        \end{equation*}
+    \item Reaction happens at standard conditions
+        \begin{equation*}
+            \begin{aligned}
+                \Delta G_2 = \Delta G^0
+            \end{aligned}
+        \end{equation*}
+    \item Bring products to final pressure
+        \begin{equation*}
+            \begin{aligned}
+                \Delta G_3 = RT \ln \frac{P_C}{P_0}
+            \end{aligned}
+        \end{equation*}
+    \item Overall:
+        \begin{equation*}
+            \begin{aligned}
+                \Delta G &= \Delta G_1 + \Delta G_2 + \Delta G_3 \\
+                &= \Delta G^0 + RT \ln \frac{\left(\frac{P_C}{P_0}\right)}{\left(\frac{P_A}{P_0}\right)\left(\frac{P_B}{P_0}\right)} \\
+                \Delta G &= \Delta G^0 + RT \ln Q
+            \end{aligned}
+        \end{equation*}
+        Note that
+        \begin{equation*}
+            \begin{aligned}
+                Q = \frac{\left(\frac{P_C}{P_0}\right)}{\left(\frac{P_A}{P_0}\right)\left(\frac{P_B}{P_0}\right)}
+            \end{aligned}
+        \end{equation*}
+        Where Q is the reaction quotient.
+\end{enumerate}
+
+\subsubsection*{Free Energy and Work}
+Remember the First Law of Thermodynamics:
+    \begin{equation*}
+        \begin{aligned}
+            \Delta E = q + w
+        \end{aligned}
+    \end{equation*}
+So far, we have only considered pressure-volume work, which is (at constant pressure)
+    \begin{equation*}
+        \begin{aligned}
+            w = -P\Delta V
+        \end{aligned}
+    \end{equation*}
+But there are other "useful" types of work (for example, electrical work - in our phones and laptops) that could change the system's energy:
+    \begin{equation*}
+        \begin{aligned}
+            w = -P\Delta V + w_{useful}
+        \end{aligned}
+    \end{equation*}
+In this case, the First Law becomes:
+    \begin{equation*}
+        \begin{aligned}
+            \Delta E = q- P\Delta V + w_{useful}
+        \end{aligned}
+    \end{equation*}
+Changes in enthalpy are then (at constant P)
+    \begin{equation*}
+        \begin{aligned}
+            \Delta H &= \Delta E + P\Delta V \\
+            &= q + w_{useful}
+        \end{aligned}
+    \end{equation*}
+Changes in Gibbs Free Energy are (at constant T)
+    \begin{equation*}
+        \begin{aligned}
+            \Delta G &= \Delta G -T\Delta S \\
+            &= q + w_{useful} - T\Delta S
+        \end{aligned}
+    \end{equation*}
+We have already seen that the maximum amount of work is obtained when a process is reversible:
+    \begin{equation*}
+        \begin{aligned}
+            w_{useful} = w^{max}_{useful}
+        \end{aligned}
+    \end{equation*}
+For such reversible processes, we also know that (at constant T)
+    \begin{equation*}
+        \begin{aligned}
+            T \Delta S = q
+        \end{aligned}
+    \end{equation*}
+We therefore find that 
+    \begin{equation*}
+        \begin{aligned}
+            \Delta G = w^{max}_{useful}
+        \end{aligned}
+    \end{equation*}
+$\Delta G$ is the largest amount of work (amount of energy that is free to do work) a process can perform. This is why it is called \textbf{free} energy.
+
+\section*{Chapter 11 - Electrochemistry: Galvanic Cells}
+\subsection*{Flashback from CHEM 142 - Redox Reactions}
+\begin{enumerate}
+    \item A redox reaction is a reaction in which the oxidation state of atoms Changes
+    \item This happens when electrons are transferred from one atom to another
+        \begin{enumerate}
+            \item Example - immersing solid copper in a silver nitrate solution
+            \item Observations:
+                \begin{enumerate}
+                    \item The solution turns blue, indicating the presence of \ce{Cu^2+} atoms
+                    \item Solid silver forms at the surface of the copper
+                \end{enumerate}
+            \item Chemical Reaction:
+                \begin{equation*}
+                    \begin{aligned}
+                        \ce{Cu_(s) + 2 Ag^+_(aq) -> Cu^2+_(aq) + 2 Ag_(s)}
+                    \end{aligned}
+                \end{equation*}
+                Copper loses electrons, and is oxidized. \\
+                Silver gains electrons, and is reduced.
+            \item We can think of this reaction as a combination of two \emph{half-reactions}:
+                \begin{equation*}
+                    \begin{aligned}
+                        &\text{Oxidation:} &\ce{Cu_(s) -> Cu^2+ + 2e^-} \\
+                        &\text{Reduction:} &\ce{Ag^+_(aq) + e^- -> Ag_(s)}
+                    \end{aligned}
+                \end{equation*}
+        \end{enumerate}
+\end{enumerate}
+
+\subsection*{Making Redox Reactions work for us}
+\begin{enumerate}
+    \item In redox reactions, elections are transferred from the oxidized species to the reduced species.
+    \item If the reaction is spontaneous, then there is a thermodynamic driving force to make it happen: the Gibbs Free Energy change of the reaction ($\Delta G$) is negative.
+    \item Can we harness this driving force to perform some useful work for us?
+    \item Imagine seperating the \emph{oxidation} half-reaction and the \emph{reduction} half-reaction, and providing a conduit through which electrons can travel from one half-reaction to the other.
+\end{enumerate}
+
+\subsection*{Galvanic Cells}
+\begin{enumerate}
+    \item In a galvanic (or voltaic) cell, electrons flow from the \emph{oxidation} half-cell to the \emph{reduction} half-cell
+\end{enumerate}
+
+
+
 
 \end{document}
