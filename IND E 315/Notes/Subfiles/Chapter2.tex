@@ -25,6 +25,8 @@
 \fancyhead[R]{UW IND E 315}
 \fancyhead[L]{Anthony Le}
 
+\fancyhead[C]{Chapter 2 - Probability}
+
 \section*{Chapter 2 - Probability}
 \subsection*{Simple Example}
 \begin{exmp}
@@ -471,6 +473,39 @@ Notes regarding the previous example - we multiplied $C^3_2 C^{47}_4$ together a
             \end{aligned}
         \end{equation*}
     \emph{Therefore}, $P(B|A)$ can be viewed as the relative frequency of event B among the trials that produce an outcome in event A. 
+\end{defn}
+
+\subsection*{Multiplication Rule for Probabilities (2.6)}
+The conditional probability can be rewritten to provide the multiplication rule.
+    \begin{equation*}
+        \begin{aligned}
+            P(A \cap B) &= P(B|A) * P(A) \\
+                    &= P(A|B) * P(B) \\
+        \end{aligned}
+    \end{equation*} 
+This gives you the probability of the intersection of two events.
+
+\subsection*{Total Probability Rule (2.6)}
+For any two events $A$ and $B$:
+    \begin{equation*}
+        \begin{aligned}
+            P(B) &= P(B \cap A) + P(B \cap A') \\
+                &= P(B|A) * P(A) + P(B|A') * P(A')
+        \end{aligned}
+    \end{equation*} 
+
+\subsection*{Independence (2.7)}
+\begin{defn}
+    \textbf{Independence} \\
+    Where the occurrence of one event has no impact on the occurrence of the other event.
+    \begin{enumerate}
+        \item Two evewnts are independent if the following equivalent statements are true:
+            \begin{enumerate}
+                \item $P(A|B) = P(A)$
+                \item $P(B|A) = P(B)$
+                \item $P(A \cap B) = P(A)P(B)$
+            \end{enumerate}
+    \end{enumerate}
 \end{defn}
 
 
