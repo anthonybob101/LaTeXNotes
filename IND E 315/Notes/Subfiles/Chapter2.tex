@@ -46,10 +46,10 @@
     \end{enumerate}
 \end{defn}
 
-\subsection*{Sample Space and Event (2.1)}
-\begin{center}
-    \includegraphics{Example2.1}
-\end{center}
+\subsection*{Sample Space and Events (2.1)}
+    \begin{center}
+        \includegraphics[width = 5cm]{Example2.1}
+    \end{center}
 Given a sample space $S$ where the probability of S is 1, you can find the probability of event $A$ by subtracting the probability of $A'$ from the probability of the sample space. Describing this in math terms:
 \begin{equation*}
     \begin{aligned}
@@ -88,9 +88,9 @@ From this, find these following:
 \end{enumerate}
 
 Here's a graphic showing the sample space for the above situation:
-\begin{center}
-    \includegraphics{Ch2Example2}
-\end{center}
+    \begin{center}
+        \includegraphics[width = 5cm]{Ch2Example2}
+    \end{center}
 To find $P(A|B)$:
 \begin{equation*}
     \begin{aligned}
@@ -98,7 +98,7 @@ To find $P(A|B)$:
     \end{aligned}
 \end{equation*}
 
-\subsection*{Interpretations and Axioms of Probability (2.3)}
+\subsubsection*{Interpretations and Axioms of Probability (2.3)}
 \begin{enumerate}
     \item Let S be the sample space of some random experiment.
     \item Let E be some event within that sample space.
@@ -120,19 +120,205 @@ To find $P(A|B)$:
     \item If $E_1$, $E_2$,... are mutually exclusive events (ex $E_1 \cap E_2 = 0$), then $P(E_1 \cup E_2) = P(E_1) + P(E_2)$.
 \end{enumerate}
 
-\subsection*{Event: subset of the sample space - combination of events}
+\subsubsection*{Event: subset of the sample space - combination of events}
 %tags - tag vs cup, union, intersection
 \begin{enumerate}
     \item Union of two events
         \begin{enumerate}
-            \item All events are contained in \emph{either} of the two events
+            \item All events that are contained in \emph{either} of the two events
+            \item Own words - Look at events are in event 1 \emph{or} event 2
             \item Denoted at $E_1 \cup E_2$
         \end{enumerate}
         \begin{center}
             \includegraphics[width = 5cm]{Ch2Event_Union}
         \end{center}
+    \item Intersection of two events
+        \begin{enumerate}
+            \item All events that are contained in \emph{both} of the two events
+            \item Own words - Look at events that are in event 1 \emph{and} event 2
+            \item Denoted as $E_1 \cap E_2$
+        \end{enumerate}
+        \begin{center}
+            \includegraphics[width = 5cm]{Ch2Event_Intersection}
+        \end{center}
+    \item Complement of an event
+        \begin{enumerate}
+            \item All events that are not in the event.
+            \item Own words - Look at all events that are \emph{not} in events 1 and 2, but still in the sample space
+            \item Denoted as $(E_1 \cup E_2)'$ \footnote{Also note that $((E_1 \cup E_2)')' = E_1 \cup E_2$}
+        \end{enumerate}
+        \begin{center}
+            \includegraphics[width = 5cm]{Ch2Event_Complement}
+        \end{center}
+    \item Mutually Exclusive Events
+        \begin{enumerate}
+            \item Events share no common outcomes, AKA the occurrence of one event precludes the occurrence of the other.
+            \item Denoted as $A \cap B = 0$ 
+            \item Example - not being able to roll a head and a tail on a coin at the same time.
+        \end{enumerate}
+        \begin{center}
+            \includegraphics[width = 5cm]{Ch2Event_MutuallyExclusive}
+        \end{center}
 \end{enumerate}
 
+\subsection*{Counting Techniques (2.2)}
+\begin{enumerate}
+    \item Now we have built the conceptual framework of probability.
+    \item To apply this framework to solve real-world problems, we still need methods. 
+    \item We'll first learn three counting techniques:
+        \begin{enumerate}
+            \item Multiplication rule
+            \item Permutation rule
+            \item Combination rule
+        \end{enumerate}
+\end{enumerate}
+
+\subsubsection*{Multiplication Rule}
+\begin{defn}
+    \textbf{Multiplication Rule}
+    \begin{enumerate}
+        \item Let an operation consist of $k$ steps and \dots 
+            \begin{enumerate}
+                \item $n_1$ ways of completing step 1, 
+                \item $n_2$ ways of completing step 2, (repeat until you reach step k)
+                \item $n_k$ ways of completing step $k$.
+            \end{enumerate}
+        \item From this, the total number of ways or outcomes are:
+            \begin{enumerate}
+                \item $n_1 * n_2 * \dots * n_k$
+            \end{enumerate}
+    \end{enumerate}
+\end{defn}
+
+
+\begin{exmp}
+    A message is recieved either on time or late. If we were to receive three messages, what are all the possible results for the three messages?
+    \begin{center}
+        \includegraphics[width = 5 cm]{Ch2Example3}
+    \end{center}
+\end{exmp}
+\begin{equation*}
+    \begin{aligned}
+        2 * 2 * 2 = 8 \quad \text{possible results}
+    \end{aligned}
+\end{equation*}
+Another example:
+\begin{exmp}
+    With 4 colors, 3 fonts, and 3 image positions available for a website, how many different designs are possible? 
+\end{exmp}
+\begin{equation*}
+    \begin{aligned}
+        4 * 3 * 3 = 36 \quad \text{possible designs}
+    \end{aligned}
+\end{equation*}
+
+\subsubsection*{Permutation Rule}
+\begin{enumerate}
+    \item If the sample space contains 3 items, $S = {a, b, c}$ 
+    \begin{enumerate}
+        \item Then there are 6 permutations (or 3!)
+        \item abc, acb, bac, bca, cab, cba \emph{(order matters)}
+        \item This represents the number of ways 3 people can be rearranged
+    \end{enumerate} 
+\end{enumerate}
+\begin{defn}
+    \textbf{Permutation Rule}
+    \begin{enumerate}
+        \item A permutation is a unique sequence of distinct items. 
+        \item The number of permutations for a set of $n$ items is $n!$
+            \begin{enumerate}
+                \item Not sequencing any items, we get that:
+                    \begin{equation*}
+                        \begin{aligned}
+                            P^n = n!
+                        \end{aligned}
+                    \end{equation*}
+                \item To sequence only $r$ items from a set of $n$ \emph{different} items:
+                    \begin{equation*}
+                        \begin{aligned}
+                            P^n_r = \frac{n!}{(n-r)!}
+                        \end{aligned}
+                    \end{equation*}
+                \item To sequence only $r$ items from a set of $n$ \emph{identical} items:\footnote{Where $n = n_1 + n_2 + \dots n_r$  identical items}
+                    \begin{equation*}
+                        \begin{aligned}
+                            P^n_r = \frac{n!}{n_1! n_2! \dots n_r!}
+                        \end{aligned}
+                    \end{equation*}
+
+            \end{enumerate}
+    \end{enumerate}    
+\end{defn}
+
+For example:
+\begin{exmp}
+    Sequence only 3 items from a set of 7 items.
+\end{exmp}
+\begin{equation*}
+    \begin{aligned}
+        P^7_3 &= \frac{7!}{(7-3)!} \\
+                &= \frac{7!}{4!} \\
+                &= \frac{7X6X5X4!}{4!} \\
+                &= 210
+    \end{aligned}
+\end{equation*}
+Another example:
+\begin{exmp}
+    Say we have 4 locations, and we want to place 2 different components on those locations. How many different sequences will we have?
+\end{exmp}
+In other words, sequence 2 locations from a set of 4 locations.
+\begin{equation*}
+    \begin{aligned}
+        P^4_2 = &= \frac{4!}{(4-2)!} \\
+                &= \frac{4*3*2*1}{2*1} \\
+                &= 12
+    \end{aligned}
+\end{equation*}
+
+%To sequence permutations of similar objects
+%\begin{enumerate}
+%    \item Used for counting the sequences when not all the items are different.
+%    \item Where the number of permutations of n where:
+%        \begin{enumerate}
+%            \item $n_1$ are identical,
+%            \item $n_2$ are identical, ..., and
+%            \item $n_r$ are identical
+%        \end{enumerate}
+%    \item Is calculated as:
+%        \begin{equation*}
+%            \begin{aligned}
+%                \frac{n!}{n_1! n_2! \dots n_r!}
+%            \end{aligned}
+%        \end{equation*}
+%\end{enumerate}
+
+\begin{exmp}
+    A hospital operating room needs to schedule three knee surgeries and
+    two hip surgeries in a day. The number of possible sequences of three knee and two hip surgeries is:
+\end{exmp}
+\begin{equation*}
+    \begin{aligned}
+        n &= 2 + 3 = 5 \\
+        P^5 &= \frac{n!}{n_1! n_2! \dots n_r!} \\
+            &= \frac{5!}{2!3!} \\
+            &= 10
+    \end{aligned}
+\end{equation*}
+
+\subsubsection*{Combination Rule}
+\begin{enumerate}
+    \item A combination is a selection of $r$ items from a set of $n$ where \emph{their order doesn't matter.}\footnote{Since order doesn't matter you could also look at combinations as whether a solution HAS the items you're looking for. Think for S = {a,b,c}, we found multiple permutations for r = 3. However, as we'll see, we only get 1 \emph{combination} for r = 3}
+    \item If $S = {a,b,c}$,
+        \begin{enumerate}
+            \item If $r = 3$, there is only 1 combination - $abc$\footnote{Think about this as there only being one solution where the solution contains 3 items!}
+            \item If $r = 2$, there are 3 combinations - $ab$, $ac$, $bc$
+        \end{enumerate}
+        \begin{equation*}
+            \begin{aligned}
+                C^n_r = \left(n \atop r\right) = \frac{n!}{r!(n-r)!} 
+            \end{aligned}
+        \end{equation*}
+\end{enumerate}
 
 
 
