@@ -439,7 +439,7 @@ Notes regarding the previous example - we multiplied $C^3_2 C^{47}_4$ together a
                 \begin{equation*}
                     \begin{aligned}
                         & P(A \cap B) &= 0, \\
-                        \therefore & P(A \cup B) = P(A) + P(B)
+                        \therefore & P(A \cup B) &= P(A) + P(B)
                     \end{aligned}
                 \end{equation*}
         \end{enumerate}
@@ -459,7 +459,7 @@ Notes regarding the previous example - we multiplied $C^3_2 C^{47}_4$ together a
 
 \begin{defn}
     \textbf{Conditional Probability Rule} \\
-    The conditional probability of event $B$ given event $A$, denoted as P(B|A), is: 
+    The conditional probability of event $B$ given event $A$, denoted as $P(B|A)$, is: 
         \begin{equation*}
             \begin{aligned}
                 P(B|A) = P(A \cap B) / P(A) \quad \text{for} \quad P(A) > 0 
@@ -492,7 +492,7 @@ For any two events $A$ and $B$:
     \textbf{Independence} \\
     Where the occurrence of one event has no impact on the occurrence of the other event.
     \begin{enumerate}
-        \item Two evewnts are independent if the following equivalent statements are true:
+        \item Two events are independent if the following equivalent statements are true:
             \begin{enumerate}
                 \item $P(A|B) = P(A)$
                 \item $P(B|A) = P(B)$
@@ -501,8 +501,88 @@ For any two events $A$ and $B$:
     \end{enumerate}
 \end{defn}
 
+\subsubsection*{Example - Independence}
+\begin{enumerate}
+    \item Consider a fair coin and a fair six-sided dice.
+    \item Event A is obtaining heads and Event B is rolling a 6.
+    \item We can reasonable assume that events A and B are independent and therefore don't effect the outcome of each other.
+        \begin{enumerate}
+            \item With this assumption, the probability that both A and B occur is
+                \begin{equation*}
+                    \begin{aligned}
+                        P(A \cap B) &= P(A) P(B) \\
+                                &= (1/2) (1/6) \\
+                                &= 1/12
+                    \end{aligned}
+                \end{equation*} 
+        \end{enumerate}
+\end{enumerate}
 
+\subsubsection*{Example - Mutually Exclusive Independence}
+\begin{enumerate}
+    \item Consider a fair six-sided dice as before, only in addition to the numbers 1 through 6 on each face, we have the property that:
+        \begin{enumerate}
+            \item Even-numbered faces are colored red
+            \item Odd-numbered faces are colored green
+        \end{enumerate}
+    \item Event A is rolling a green face
+    \item Event B is rolling a 6
+    \item The probability of events A and B occurring at the same time (or $P(A \cap B)$) is 0, since the events are mutually exclusive.
+\end{enumerate}
 
+\subsection*{DeMorgan's Law}
+\begin{enumerate}
+    \item Finding the compliements of the union or the intersection of two events:
+        \begin{equation*}
+            \begin{aligned}
+                (A \cap B)' &= A' \cup B' \\
+                (A \cup B)' &= A' \cap B' \\
+            \end{aligned}
+        \end{equation*}
+\end{enumerate}
+
+\subsubsection*{Example - 2-23}
+\begin{exmp}
+    Series Circuit - the following circuit operates only if there is a path of functional devices from left to right. The probability that each device functions is shown on the graph. Assume the devices fail independently. What is the probability that the circuit operates?
+    \begin{center}
+        \includegraphics[width = 5cm]{Ch2Example4}
+    \end{center}
+\end{exmp}
+\begin{enumerate}
+    \item Since the circuit requires both devices to function due to being a series circuit, to determine the probability that the circuit operates, find the chance of the left AND right devices functioning:
+        \begin{equation*}
+            \begin{aligned}
+                P(\text{L AND R}) &= P(L \cap R) \\
+                        &= P(L) P(R) \\
+                        &= (0.8)(0.9) \\
+                        &= 0.72
+            \end{aligned}
+        \end{equation*}
+\end{enumerate}
+
+\subsubsection*{Example 2-24}
+\begin{exmp}
+    Parallel Circuit - The following circuit operates only if there is a path of functional devices from left to right. The propability that each device functions is shown on the graph. Assume the devices fail independently. What is the probability that the circuit operates?
+    \begin{center}
+        \includegraphics[width = 5cm]{Ch2Example5}
+    \end{center}
+\end{exmp}
+\begin{enumerate}
+    \item This problem uses similar logic to the previous example. However, since this is a parallel circuit, the circuit can still function if the top or bottom devices stop working, as long as there is a functional device. In other words, find the probability of the top device OR bottom device working.
+        \begin{equation*}
+            \begin{aligned}
+                P(\text{T or B}) &= 1 - [P(\text{T or B})'] \\
+                                &= 1 - P(\text{T' and B'}) \\
+                P(\text{T' and B'}) &= P(T') P(B')  \\
+                                    &= (1-0.95)^2 \\
+                                    &= 0.05^2 \\
+                P(\text{T or B}) &= 1 - P(T') P(B') \\
+                                &= 1- 0.05^2 \\
+                                &= 0.9975 
+            \end{aligned}
+        \end{equation*} 
+    \item Keep in mind that using the apostrophe (') when finding probability is similar to using a NOT statement (take the inverse)- for example, if P(T) represents the probability of the top device working, P(T') represents the probability of the device FAILING.
+\end{enumerate}
 
 
 \end{document}
