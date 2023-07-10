@@ -411,8 +411,83 @@ Givens:
     \end{aligned}
 \end{equation*}
 
+\begin{exmp}
+    What is the probability of AT LEAST 2 heads in 5 coin flips?
+\end{exmp}
+\begin{equation*}
+    \begin{aligned}
+        P(X \geq 2) &= 1 - P(X < 2) \\
+        P(X \geq 2) &= \sum ^5_{x = 2} \left( \begin{tabular}{c}
+            5 \\
+            x
+            \end{tabular}  \right) 0.5^x (1 - 0.5)^{5-x} \\
+        1 - P(X < 2) &= 1 - \sum_{1}^{x=0}\left( \begin{tabular}{c}
+            5 \\
+            x
+            \end{tabular}  \right) 0.5^x (1 - 0.5)^{5-x} \\
+    \end{aligned}
+\end{equation*}
 
-\subsection*{Geometric and Negative Binomial Distributions (3.6)}
+\subsubsection*{Binomial Mean and Variance}
+If $X$ is a binomial random variable with parameters p (probability) and n (number trials), 
+\begin{enumerate}
+    \item Mean:
+        \begin{equation*}
+            \begin{aligned}
+                \mu = E(X) = np
+            \end{aligned}
+        \end{equation*}
+    \item Variance:
+        \begin{equation*}
+            \begin{aligned}
+                \sigma ^2 = V(X) = np(1-p)
+            \end{aligned}
+        \end{equation*}
+\end{enumerate}
+
+\subsection*{Geometric Distributions (3.6)}
+\begin{defn}
+    \textbf{Geometric distribution} \\
+    A series of Bernoulli trials with fixed parameter $p$. \\
+    Binomial distribution has:
+    \begin{enumerate}
+        \item \textbf{Fixed} number of trials, $n$
+        \item \textbf{Random} number of successes, $x$
+    \end{enumerate}
+    Geometric distribution has:
+    \begin{enumerate}
+        \item \textbf{Random} number of trials, $x$
+        \item \textbf{Fixed} number of successes, \emph{in this case 1}.
+        \item i.e. this finds the number of trials until the first success.
+    \end{enumerate}
+\end{defn}
+\subsubsection*{Geometric vs. Binomial Distribution}
+Formulas:
+\begin{enumerate}
+    \item Where $0 \leq p < 1$ and x is the number of trials
+    \item Binomial: \footnote{note that for binomial, you need to account for the number of trials}
+        \begin{equation*}
+            \begin{aligned}
+                \text{Probability: } &  f(x) = \left( \begin{tabular}{c}
+                    n \\
+                    x
+                    \end{tabular}  \right) p^x (1 - p)^{n-x} \\
+                \text{Mean: } & \mu = E(X) = np \\
+                \text{Variance: } & \sigma ^2 = V(X) = np(1-p)
+            \end{aligned}
+        \end{equation*}
+    \item Geometric:
+        \begin{equation*}
+            \begin{aligned}
+                \text{Probability: } &  f(x) = p^1 (1-p)^{x-1} \\
+                \text{Mean: } &  \mu = E(X) = \frac{1}{p} \\
+                \text{Variance: } & \sigma ^2 = V(X) = \frac{1-p}{p^2}  
+            \end{aligned}
+        \end{equation*}
+\end{enumerate}
+
+
+
 
 
 
