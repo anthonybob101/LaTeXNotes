@@ -1,0 +1,244 @@
+\documentclass[../INDE315.tex]{subfiles} 
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mhchem}
+\usepackage{amssymb}
+\usepackage[margin=1in]{geometry}
+
+\graphicspath{{./images/}}
+
+\title{UW IND E 315 Notes}
+\author{Anthony Le}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[R]{UW IND E 315}
+\fancyhead[L]{Anthony Le}
+
+\fancyhead[C]{Chapter 3 - Discrete Random Variables}
+
+\section*{Chapter 3 - Discrete Random Variables}
+Continuing from chapter 2, should we always count possible outcomes to calculate probabilities?
+\begin{enumerate}
+    \item Thankfully no, but it is important to know the counting techniques to understand the fundamentals of probability.
+    \item In this chapter, we'll introduce the concept of the \emph{random variable} and a handful of widely used probability distributions which empower engineers to do much more faster.
+\end{enumerate}
+\subsection*{Random Variables (2.9)}
+
+\begin{defn}
+    \textbf{Random Variables} \\
+    A random variable is a \emph{function} that assigns \emph{a real number} to each outcome in the sample space of a random experiment. 
+    \begin{enumerate}
+        \item Denoted by an uppercase letter (ex: $X$)
+        \item Its realization is denoted by a lowercase letter (ex: $x$)
+    \end{enumerate}
+\end{defn}
+\begin{exmp}
+    $X = 0$ if tails and $X = 1$ if heads.
+    \begin{enumerate}
+        \item $P(X = x)$ for $x = 0$?
+    \end{enumerate}
+\end{exmp}
+
+\subsubsection*{Continuous and Discrete Random Variables (rv)}
+\begin{defn}
+    \textbf{\emph{Discrete} Random Variable} \\
+    A random variable (rv) with a \emph{countable} range. 
+    \begin{enumerate}
+        \item Such as counts, integers, or natural numbers
+    \end{enumerate}
+\end{defn}
+
+\begin{defn}
+    \textbf{\emph{Continuous} Random Variable} \\
+    A random variable with an \emph{uncountable range} (usually an interval)
+    \begin{enumerate}
+        \item Such as length, weight, volume
+    \end{enumerate}
+\end{defn}
+
+\subsection*{Probability Distributions and Probability Mass Functions (3.1)}
+
+\subsubsection*{Probability Distribution (3.1)}
+\begin{defn}
+    \textbf{Probability Distribution} \\
+    The probability distribution of a random variable $X$ is a description of the probabilities associated with the possible values of $X$. \\
+    There are two types of probability distribution:
+    \begin{enumerate}
+        \item Discrete Probability Distributions (Covered in this chapter)
+        \item Continuous Probability Distributions (Covered in chapter 4)
+        \item 
+    \end{enumerate}
+\end{defn}
+
+\subsubsection*{Probability Mass Function (3.1)}
+\begin{defn}
+    \textbf{Probability Mass Function} \\
+    For a \emph{discrete} random variable $X$ with possible values $x_1, x_2, ...x_n$, a \textbf{probability mass function (PMF)} is a function such that:\footnote{Note - the PMF of X fully characterizes the probability distribution of X.}
+    \begin{enumerate}
+        \item $f(x_i) \geq 0$
+        \item $\sum_{i=1}^{n} f(x_i) = 1$
+        \item $f(x_i) = P(X = x_i)$
+    \end{enumerate}
+\end{defn}
+\subsubsection*{Probability Mass Function - Example}
+\begin{exmp}
+    Let $X$ be the number of days in a year Seattle's highest temperature exceeds 90F.
+\end{exmp}
+
+\begin{equation*}
+    \begin{aligned}
+        f(x) = P(X = x)
+    \end{aligned}
+\end{equation*}
+\begin{center}
+    \begin{tabular}{c c c c c c}
+        x & 1 & 2 & 3 & 4 & 5 \\
+        f(x) & 0.55 & 0.25 & 0.12 & 0.04 & 0.03  
+    \end{tabular}        
+\end{center}
+
+\begin{equation*}
+    \begin{aligned}
+        \sum f(x) &= P(X = 1) + P(X = 2) + P(X = 3) + P(X = 4) + P(X = 5) \\
+                & = 0.55 + 0.26 + 0.12 + 0.04 + 0.03 \\
+                & = 1
+    \end{aligned}
+\end{equation*} 
+
+\subsubsection*{Cumulative Distribution Function (CDF) (3.2)}
+\begin{defn}
+    \textbf{Cumulative Distribution Function} \\
+    I'm not sure what this is, since the prof doesn't provide the exact definition, but hopefully continuing on the example might help provide a better idea of what it is.
+\end{defn}
+
+\begin{center}
+    \begin{tabular}{c c c c c c}
+        x & 1 & 2 & 3 & 4 & 5 \\
+        f(x) & 0.55 & 0.25 & 0.12 & 0.04 & 0.03 \\
+        F(x) & 0.55 & 0.81 & 0.93 & 0.97 & 1.00 \\
+    \end{tabular}        
+\end{center}
+Where $F(x)$ is defined as:
+\begin{equation*}
+    \begin{aligned}
+        F(x) &= P(X \leq x) \\
+        F(x) &= 
+            \begin{cases}
+                0 & x < 1 \\
+                0.55 & 1 \leq x < 2 \\
+                0.81 & 2 \leq x < 3 \\
+                0.93 & 3 \leq x < 4 \\
+                0.97 & 4 \leq x < 5 \\
+                1.00 & x \geq 5
+            \end{cases}
+    \end{aligned}
+\end{equation*}
+
+\subsection*{Mean and Variance of a Discrete Random Variable (3.3)}
+
+\begin{defn}
+    \textbf{Mean or expected value} \\
+    The measure of the center of a probability distribution.
+\end{defn}
+
+\begin{equation*}
+    \begin{aligned}
+        \overbrace{\mu}^{\text{mean}} = \underbrace{E(X)}_{\parbox{5cm}{Expected value of the discrete random variable, \emph{X}}} = \sum_{x} x * f(x)       
+    \end{aligned}
+\end{equation*}
+
+\subsubsection*{Example 3-7}
+\begin{exmp}
+    X = number of bits in error in the next 4 bits transmitted. \\
+    Possible values of X are {0, 1, 2, 3, 4}
+    \begin{center}
+        \includegraphics[width = 8cm]{Ch3Example2}
+    \end{center}
+    Suppose the probabilies will be:
+    \begin{equation*}
+        \begin{aligned}
+            P(X = 0) &= 0.6561 \\
+            P(X = 1) &= 0.2916 \\
+            P(X = 2) &= 0.0486 \\
+            P(X = 3) &= 0.0036 \\
+            P(X = 4) &= 0.0001 
+        \end{aligned}
+    \end{equation*} 
+    Find the mean.   
+\end{exmp}
+
+\begin{equation*}
+    \begin{aligned}
+        \mu = E(X) &= \sum_{x} x * f(x) \\
+                &= 0 * f(0) + 1 * f(1) + 2 * f(2) + 3 * f(3) + 4 * f(4) \\
+                &= 0 * (0.6561) + 1 * (0.2916) + 2* (0.0486) + 3 * (0.0036) + 4 * (0.0001) \\
+            \mu &= 0.4 
+    \end{aligned}
+\end{equation*} 
+
+\subsubsection*{Some other properties to note}
+\begin{enumerate}
+    \item $E(aX) = aE(X)$
+    \item $E(aX + b) = aE(X) + b$
+    \item $E[f(X)] = \sum f(x) p(x)$
+\end{enumerate}
+
+\begin{defn}
+    \textbf{Variance} \\
+    Measure of the dispersion or varability in a probability distribution.
+    \begin{equation*}
+        \begin{aligned}
+            \overbrace{\sigma ^2}^{\text{Variance}} &= V(X) = E(X - \mu)^2 \\
+                                                &= \sum_x (x- \mu)^2 * f(x) \\
+                                                &= \sum_x x^2 * f(x) - \mu ^2 
+        \end{aligned}
+    \end{equation*}
+    Alternatively, the better method for calculations would be:
+    \begin{equation*}
+        \begin{aligned}
+            \sigma ^2 =  Var(X) = E[X^2] - (E[X])^2 \\
+            \\
+            E[f(x)] = \sum f(x) p(x) 
+        \end{aligned}
+    \end{equation*}
+\end{defn}
+
+\subsubsection*{Example 3-7 Continued}
+% In this section, we're finding the variance after we found the mean.
+\begin{exmp}
+    X = number of bits in error in the next 4 bits transmitted. \\
+    Possible values of X are {0, 1, 2, 3, 4}. \\
+    Find the variance.
+\end{exmp}
+We know from our prior calculation that $\mu = 0.4$, so:
+\begin{equation*}
+    \begin{aligned}
+        \sigma ^2 = V(X) &= E(X - \mu)^2 = \sum_x (x - \mu)^2 * f(x) \\
+        \sigma ^2        &= \sum_x (x - 0.4)^2 * f(x)
+    \end{aligned}
+\end{equation*} 
+
+
+
+
+\begin{defn}
+    \textbf{Standard deviation} \\
+    Another measure of the dispersion. It is the square root of the variance.
+\end{defn}
+
+
+\subsection*{Discrete Uniform Distribution (3.4)}
+\subsection*{Binomial Distribution (3.5)}
+\subsection*{Geometric and Negative Binomial Distributions (3.6)}
+
+
+
+
+
+
+
+\end{document}
