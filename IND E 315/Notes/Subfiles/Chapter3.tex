@@ -140,6 +140,7 @@ Where $F(x)$ is defined as:
 
 \subsection*{Mean and Variance of a Discrete Random Variable (3.3)}
 
+\subsubsection*{Mean}
 \begin{defn}
     \textbf{Mean or expected value} \\
     The measure of the center of a probability distribution.
@@ -180,13 +181,7 @@ Where $F(x)$ is defined as:
     \end{aligned}
 \end{equation*} 
 
-\subsubsection*{Some other properties to note}
-\begin{enumerate}
-    \item $E(aX) = aE(X)$
-    \item $E(aX + b) = aE(X) + b$
-    \item $E[f(X)] = \sum f(x) p(x)$
-\end{enumerate}
-
+\subsubsection*{Variance}
 \begin{defn}
     \textbf{Variance} \\
     Measure of the dispersion or varability in a probability distribution.
@@ -221,18 +216,202 @@ We know from our prior calculation that $\mu = 0.4$, so:
         \sigma ^2        &= \sum_x (x - 0.4)^2 * f(x)
     \end{aligned}
 \end{equation*} 
+We now have a general formula for the variance - along with the probabilities we're given, we can make a table to find the individual variance for each x and sum them up to find the total variance:
+\begin{enumerate}
+    \item Given numbers:
+        \begin{center}
+            \begin{tabular}{c c}
+                $x$ & $f(x)$ \\
+                \hline \\
+                0 & 0.6561 \\
+                1 & 0.2916 \\
+                2 & 0.0486 \\
+                3 & 0.0036 \\
+                4 & 0.0001 
+            \end{tabular}
+        \end{center}
+    \item Adding in helper columns
+        \begin{center}
+            \begin{tabular}{c c c c c}
+                $x$ & $x-0.4$ & $(x-0.4)^2$ & $f(x)$ & $f(x) (x-0.4)^2$\\
+                \hline \\
+                0 & & & 0.6561 & \\
+                1 & & & 0.2916 & \\
+                2 & & & 0.0486 & \\
+                3 & & & 0.0036 & \\
+                4 & & & 0.0001 &
+            \end{tabular}
+        \end{center}
+    \item Solving for values
+        \begin{center}
+            \begin{tabular}{c c c c c}
+                $x$ & $x-0.4$ & $(x-0.4)^2$ & $f(x)$ & $f(x) (x-0.4)^2$\\
+                \hline \\
+                0 & -0.4 & 0.16 & 0.6561 & 0.104976     \\
+                1 & 0.6 & 0.36 & 0.2916 &  0.104976     \\
+                2 & 1.6 & 2.56 & 0.0486 &  0.124416     \\
+                3 & 2.6 & 6.76 & 0.0036 &  0.024336     \\
+                4 & 3.6 & 12.96 & 0.0001 & 0.001296     \\
+                \hline
+                    & & & & 0.360000
+            \end{tabular}
+        \end{center}
+    \item Summing altogether
+        \begin{equation*}
+            \begin{aligned}
+                \sigma ^2 = V(X) &= E(X - \mu)^2 = \sum_x (x - \mu)^2 * f(x) \\
+                            &= 0.360000
+            \end{aligned}
+        \end{equation*}
+\end{enumerate}
 
-
-
-
+\subsubsection*{Standard deviation}
 \begin{defn}
     \textbf{Standard deviation} \\
     Another measure of the dispersion. It is the square root of the variance.
+    \begin{equation*}
+        \begin{aligned}
+            \sigma = \sqrt{\sigma ^2}
+        \end{aligned}
+    \end{equation*}
 \end{defn}
+\begin{exmp}
+    Using example 3-7, find the standard deviation.
+\end{exmp}
+\begin{equation*}
+    \begin{aligned}
+        \sigma ^2 &= 0.360000 \\
+        \sigma &= \sqrt{0.360000} \\
+        \sigma &= 0.6
+    \end{aligned}
+\end{equation*}
 
+\subsubsection*{Some other properties to note}
+\begin{enumerate}
+    \item $E(aX) = aE(X)$
+    \item $E(aX + b) = aE(X) + b$
+    \item $E[f(X)] = \sum f(x) p(x)$
+    \item $V(aX) = a^2 V(X)$
+    \item $V(aX + B) = a^2 V(X)$
+\end{enumerate}
 
 \subsection*{Discrete Uniform Distribution (3.4)}
+\begin{defn}
+    \textbf{Discrete Unifrom Distribution} \\
+    Definitions:
+    \begin{enumerate}
+        \item A random variable $X$ has a discrete uniform distribution if each of the $n$ values in its range, say $x_1, x_2, ... x_n$ has an \emph{equal} probability of occurring.
+            \begin{equation*}
+                \begin{aligned}
+                    f(x_i) = \frac{1}{n}
+                \end{aligned}
+            \end{equation*} 
+        \item Alternatively, let $X$ be a discrete uniform random variable with the range of consecutive integers $a, a+1,...,b$ for $a \leq b$. Then for any $x$ in the range,
+            \begin{equation*}
+                \begin{aligned}
+                    f(x) = \frac{1}{b - a + 1}
+                \end{aligned}
+            \end{equation*}
+    \end{enumerate}
+\end{defn}
+
+\subsubsection*{Discrete Uniform Distribution Example - Dice}
+For rolling a fair dice, using a cumulative distribution function (CDF): \\
+Givens:
+\begin{enumerate}
+    \item S = {1, 2, 3, 4, 5, 6}
+    \item Probabilities:
+        \begin{equation*}
+            \begin{aligned}
+                F(x_i) = P(X \leq 1) &= 1/6 \\
+                P(X \leq 2) &= 2/6  \\
+                P(X \leq 3) &= 3/6 \\
+                P(X \leq 4) &= 4/6 \\
+                P(X \leq 5) &= 5/6 \\
+                P(X \leq 6) &= 6/6 \\
+            \end{aligned}
+        \end{equation*}
+        \begin{center}
+            \includegraphics[width = 8cm]{Ch3_UniformDistribution_Discrete}
+        \end{center}
+\end{enumerate}
+
+\subsubsection*{Mean and Variance for Discrete Uniform Distribution\footnote{using the second definition, where a and b represent the upper and lower bounds for the range of consecutive integers respectively.}}
+\begin{enumerate}
+    \item Mean:
+        \begin{equation*}
+            \begin{aligned}
+                \mu = E(x) = \frac{b + a}{2}
+            \end{aligned}
+        \end{equation*}
+        Using the die example:
+        \begin{equation*}
+            \begin{aligned}
+                \mu = E(x) &= \frac{6 + 1}{2} \\
+                        &= 3.5
+            \end{aligned}
+        \end{equation*}
+    \item Variance:
+        \begin{equation*}
+            \begin{aligned}
+                \sigma ^2 = V(x) = \frac{(b - a + 1)^2 - 1}{12}
+            \end{aligned}
+        \end{equation*}
+        Using the die example:
+        \begin{equation*}
+            \begin{aligned}
+                a ^2 = V(x) &= \frac{(6 - 1 + 1)^2 - 1}{12} \\
+                        &= 2.917
+            \end{aligned}
+        \end{equation*}
+\end{enumerate}
+
 \subsection*{Binomial Distribution (3.5)}
+\begin{defn}
+    \textbf{Bernoulli Trial} \\
+    Describes a trial with ONLY two possible outcomes (such as pass/fail, yes/no, 0/1, etc.).
+\end{defn}
+
+\begin{defn}
+    \textbf{Binomial Distribution} \\
+    A distribution based on $n$ Bernoulli Trials such that:
+    \begin{enumerate}
+        \item The trials are independent;
+        \item Each trial results in two possible outcomes, labeled as "success" and "failure"; and
+        \item Probability of a success in each trial, $p$, remains constant.
+    \end{enumerate}
+    To model the number of \textbf{successes} out of $n$ independent trials:\footnote{The excel function for Binomial PMF is BINOM.DIST(x, n, p, FALSE)}
+    \begin{equation*}
+        \begin{aligned}
+            f(x) = \left( \begin{tabular}{c}
+                n \\
+                x
+                \end{tabular}  \right) p^x (1 - p)^{n-x} \quad x = 0, 1, 2, ...,n
+        \end{aligned}
+    \end{equation*}
+    Where:
+    \begin{enumerate}
+        \item p = probability of success
+        \item n = fixed number of independent trials
+        \item x = number of \textbf{successes}
+        \item n-x = number of \textbf{failures}
+    \end{enumerate}
+\end{defn}
+
+\subsubsection*{Binomial Distribution Example - coin flips}
+\begin{exmp}
+    What is the probability of 2 heads in 5 coin flips?
+\end{exmp}
+\begin{equation*}
+    \begin{aligned}
+        P(X = 2) = \underbrace{\left( \begin{tabular}{c}
+            5 \\
+            2
+            \end{tabular}  \right)}_{C^5_2} 0.5^2 (1 - 0.5)^{5-2}
+    \end{aligned}
+\end{equation*}
+
+
 \subsection*{Geometric and Negative Binomial Distributions (3.6)}
 
 
