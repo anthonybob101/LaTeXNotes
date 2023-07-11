@@ -516,11 +516,99 @@ Formulas:
         \end{equation*}
 \end{enumerate}
 
+\subsubsection*{Example 3-20: Memoryless Property}
+\begin{exmp}
+    For the same problem with $p = 0.1$, suppose 50 bits have already been transmitted, what is the mean number of bits transmitted until the next error?
+\end{exmp}
+\begin{enumerate}
+    \item Finding mean:
+        \begin{equation*}
+            \begin{aligned}
+                \mu &= E(X) = \frac{1}{p} = \frac{1}{0.1} \\
+                \mu &= 10
+            \end{aligned}
+        \end{equation*}
+\end{enumerate}
 
+\subsection*{Negative Binomial Distribution (3.6)}
+\footnote{I guess this is similar to geometric distributions, but now you have the flexibility to do more than just one success.}
 
+\begin{defn}
+    \textbf{Negative Binomial Distribution} \\
+    $X$ = number of Bernoulli trials required to obtain $r$ successes:
+    \begin{equation*}
+        \begin{aligned}
+            \text{Probability: } & f(x) = C^{x-1}_{r-1} p^r (1-p)^{x-r} \quad x = r,r + 1, r + 2,... \\
+            \text{Probability (alt): } & f(x) = \left( \begin{tabular}{c}
+                x-1 \\
+                r-1
+                \end{tabular}  \right) p^r (1-p)^{x-r} \quad x = r,r + 1, r + 2,... \\
+            & \text{Where $0 < p < 1$, for $r$ successes}
+        \end{aligned}
+    \end{equation*}
+\end{defn}
 
+\subsubsection*{Negative Binomial vs. Binomial Distributions}
 
+\begin{enumerate}
+    \item Negative Binomial:
+        \begin{equation*}
+            \begin{aligned}
+                \text{Probability: } & f(x) = \left( \begin{tabular}{c}
+                    x-1 \\
+                    r-1
+                    \end{tabular}  \right) p^r (1-p)^{x-r} \quad x = r,r + 1, r + 2,... 
+            \end{aligned}
+        \end{equation*}
+        \begin{enumerate}
+            \item Fixed number of successes and observe the sample size
+            \item Ex: "What is the probability that the second head will occur right on the 5th flip?"
+            \item \textbf{Generally: what is the probability that the (1st/2nd/3rd/nth) success/failure will occur on the (1st/2nd/3rd/nth) sample/trial?}
+        \end{enumerate}
+    \item Binomial: 
+        \begin{equation*}
+            \begin{aligned}
+                \text{Probability: } &  f(x) = \left( \begin{tabular}{c}
+                    n \\
+                    x
+                    \end{tabular}  \right) p^x (1 - p)^{n-x} 
+            \end{aligned}
+        \end{equation*}
+        \begin{enumerate}
+            \item Fixed sample size and observe number of successes
+            \item Ex question: "What is the probability of only 2 heads occurring in 5 coin flips?"
+            \item \textbf{Generally: what is the probability that (number) successes/failures will occur over (number) samples/trials?}
+        \end{enumerate}
+\end{enumerate}
 
+\subsubsection*{Negative Binomial vs. Geometric Distributions}
+\begin{enumerate}
+    \item Negative Binomial:
+        \begin{equation*}
+            \begin{aligned}
+                \text{Probability: } & f(x) = \left( \begin{tabular}{c}
+                    x-1 \\
+                    r-1
+                    \end{tabular}  \right) p^r (1-p)^{x-r} \quad x = r,r + 1, r + 2,... 
+            \end{aligned}
+        \end{equation*}
+        \begin{enumerate}
+            \item $r > 1$: The number of Bernoulli trials, x, until the $r^{th}$ success
+        \end{enumerate}
+    \item Geometric:
+        \begin{equation*}
+            \begin{aligned}
+                \text{Probability: } & f(x) = \left( \begin{tabular}{c}
+                    x-1 \\
+                    1-1
+                    \end{tabular}  \right) p^1 (1-p)^{x-1} \\
+                    & f(x) = p^1 (1-p)^{x-1} 
+            \end{aligned}
+        \end{equation*}
+        \begin{enumerate}
+            \item $r = 1$: The number of Bernoulli trials, x, until the $first$ success
+        \end{enumerate}
+\end{enumerate}
 
 
 
