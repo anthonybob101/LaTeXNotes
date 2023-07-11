@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[../INDE315.tex]{subfiles} 
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{amsmath}
@@ -6,18 +6,10 @@
 \usepackage{amssymb}
 \usepackage[margin=1in]{geometry}
 
-\usepackage{subfiles} % Best loaded last in the preamble
 \graphicspath{{./images/}}
-
 
 \title{UW IND E 315 Notes}
 \author{Anthony Le}
-
-\newtheorem{exmp}{Example}
-\newtheorem{exrc}{Excersize}
-\newtheorem{proof}{Statement}
-\newtheorem{defn}{Definition}
-
 
 \begin{document}
 
@@ -26,15 +18,9 @@
 \fancyhead[R]{UW IND E 315}
 \fancyhead[L]{Anthony Le}
 
-\subfile{Subfiles/Chapter0.tex}
+\fancyhead[C]{Chapter 4 - Continuous Distribution}
 
-\newpage
-
-\subfile{Subfiles/Chapter2.tex}
-
-\netpage
-
-\subfile{Subfiles/Chapter3.tex}
+\section*{Chapter 4 - Continuous Distribution}
 
 
 \end{document}
