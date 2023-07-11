@@ -609,6 +609,33 @@ Formulas:
         \end{enumerate}
 \end{enumerate}
 
+\subsection*{Poisson Distribution}
+\begin{enumerate}
+    \item Best distribution to measure the number of events in a \emph{given} amount of time (such as the number of customers arriving at a shop every hour)
+    \item Lot of modeling for processes can have poisson arrivals or entries into the "system"
+    \item One parameter - $\lambda$ = rate of event
+    \item Mean = Variance = Parameter is a great property that can be used in modeling scenarios (used a lot in COVID outbreak modeling)
+    \item When using poisson distributions, \textbf{ensure that your time window is consistent with the probability being solved}
+\end{enumerate}
+\begin{defn}
+    \textbf{Probability for Poisson Distribution} \\  
+    \begin{equation*}
+        \begin{aligned}
+            P(X = k) = \frac{e^{-\lambda}(\lambda ^k)}{k!}
+        \end{aligned}
+    \end{equation*}
+\end{defn}
+
+\begin{defn}
+    \textbf{Expected value for discrete random variable X in poisson distribution} \\
+    \begin{equation*}
+        \begin{aligned}
+            E[X] = Var(x) = \lambda 
+        \end{aligned}
+    \end{equation*}
+    
+\end{defn}
+
 
 
 \end{document}
