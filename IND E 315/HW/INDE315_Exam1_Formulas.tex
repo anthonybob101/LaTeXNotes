@@ -87,12 +87,14 @@
                     \hline
                     \textit{Permutation Rule} & $_nP_r = \frac{n!}{n_1! n_2! \dots n_r!}$ \\
                                             & Give number of permutations from ordered selection of $r$ objects from $n$ objects   \\
+                                            & Sampling w/ replacement / Order matters   \\
                     \hline
                     \textit{Combination Rule} & $_nC_r = \left( \begin{tabular}{c}
                         n \\
                         r
                         \end{tabular}  \right) = \frac{n!}{r!(n-r)!}$ \\ 
                                             & Give number of combinations from selection of (size) $r$ items from $n$ objects \\
+                                            & Sampling w/o replacement / Order d/n matter \\
                 \end{tabular}
             }
         \end{minipage}
@@ -139,11 +141,12 @@
                                             & The conditional probability of event $B$ given event $A$ \\ 
                     \hline
                     \textit{Multpl. Rule} & $P(A \cap B) = P(B|A) * P(A)$ \\
-                                            & $P(A \cap B) = P(A|B) * P(B)$ \\
+                                            & $P(B \cap A) = P(A|B) * P(B)$ \\
                                             & Probability of intersection \\
                     \hline
                     \textit{Total Probability} & $P(B) = P(B \cap A) + P(B \cap A')$ \\ 
                                         & $P(B) = P(B|A) * P(A) + P(B|A') * P(A')$ \\
+                                        & Sum of all events equals 1 \\
                     \hline
                     \textit{Complement} & $P(A^C) = 1- P(A)$ \\ 
                                         & DeMorgan's Law: \\
@@ -266,13 +269,13 @@
     \node [mybox] (box){%
         \begin{minipage}{0.3\textwidth}
             \small{
-                \begin{enumerate}
-                    \item $E(aX) = aE(X)$
-                    \item $E(aX + b) = aE(X) + b$
-                    \item $E[f(X)] = \sum f(x) p(x)$
-                    \item $V(aX) = a^2 V(X)$
-                    \item $V(aX + B) = a^2 V(X)$
-                \end{enumerate}
+                \begin{tabular}{c c}
+                    $E(aX) = aE(X)$          & (Continious) $P(X=x) = 0$   \\
+                    $E(aX + b) = aE(X) + b$     \\
+                    $E[f(X)] = \sum f(x) p(x)$     \\
+                    $V(aX) = a^2 V(X)$          \\
+                    $V(aX + B) = a^2 V(X)$      \\
+                \end{tabular}
             }
         \end{minipage}
     };
