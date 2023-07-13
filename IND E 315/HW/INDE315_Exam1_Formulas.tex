@@ -212,7 +212,7 @@
                     \begin{tabular}{ | m{2.5cm} | m{4.5cm}| m{3.5cm} | m{5cm}} 
                         $\bm{X}$ & $\bm{f(x)}$ & $\bm{\mu = E(X)}$ & $\bm{\sigma ^2 = V(X)}$ \\ 
                         \hline
-                        General          & $f(x_i) = P(X = x_i)$             & $\mu = \sum_x x * f(x)$              & $\sigma ^2 = V(X) = E(X - \mu)^2$\\
+                        %General          & $f(x_i) = P(X = x_i)$             & $\mu = \sum_x x * f(x)$              & $\sigma ^2 = V(X) = E(X - \mu)^2$\\
                         Uniform          & $f(x) = 1/(b - a)$                  & $\mu = E(X) = (b + a)/2 $     & $\sigma ^2 = V(x) = ((b - a)^2)/12 $\\     
                         Exponential      & $f(x) = (\lambda e^{-\lambda x})$        & $\mu = E(X) = 1/\lambda$             & $\sigma ^2 = V(X) = 1/(\lambda^2)$\\
                         Normal        & $f(x) =$ \large{ $\frac{1}{\sigma \sqrt{2 \pi}}e^{-0.5((x-\mu)/\sigma)^2}$} & $\mu = E(X) = \mu $ & $\sigma ^2 = V(X) = \sigma $\\
@@ -244,7 +244,7 @@
 
                     \textit{Cumulative Dist.} & Describes the probability that $X$ will be less than or equal to $x$ \\
                     \textit{(CDF)}              & $F(x) = P(X \leq x)$ \\    
-                    %\textbf{(General)}          & $P(a < X \leq b) = F(b) - F(a)$\\
+                    \textbf{(General)}          & $F(x) = \int^x_{lower} f(u) du$\\
                     \hline
 
                     \textit{Mean}               & Center of a probability distribution. \\
@@ -269,9 +269,9 @@
     \node [mybox] (box){%
         \begin{minipage}{0.3\textwidth}
             \small{
-                \begin{tabular}{c c}
+                \begin{tabular}{l l}
                     $E(aX) = aE(X)$          & (Continious) $P(X=x) = 0$   \\
-                    $E(aX + b) = aE(X) + b$     \\
+                    $E(aX + b) = aE(X) + b$  & (Normal Dist.) $z = (x - \mu)/\sigma$   \\
                     $E[f(X)] = \sum f(x) p(x)$     \\
                     $V(aX) = a^2 V(X)$          \\
                     $V(aX + B) = a^2 V(X)$      \\

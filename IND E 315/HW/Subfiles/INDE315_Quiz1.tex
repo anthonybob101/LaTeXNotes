@@ -135,6 +135,52 @@ The probability is 1\% that an electrical connector that is kept dry fails durin
         \end{aligned}
     \end{equation*}
 \end{enumerate}
+2 Events - 
+\begin{enumerate}
+    \item Pass or Fail
+    \item Dry or Wet
+\end{enumerate}
+Lets call both of these two events P and D respectively. Where:
+\begin{equation*}
+    \begin{aligned}
+        P = \text{pass} \quad P' = \text{fail} \\
+        D = \text{dry} \quad D' = \text{wet} 
+    \end{aligned}
+\end{equation*}
+From the problem, we're given that the probability of a wet connector failing is 5\%. And on1 top of that, if 90\% of connectors are dry and 10\% wet, how many connectors fail? \\
+The problem is asking us to find the total amount of connectors that failed, regardless of if they are wet or dry. Meaning we have to find:
+\begin{equation*}
+    \begin{aligned}
+        P(F)
+    \end{aligned}
+\end{equation*}
+Additionally, we're given the \emph{failure} rate of \emph{dry} connectors:
+\begin{equation*}
+    \begin{aligned}
+        P(F|D) = 0.01
+    \end{aligned}
+\end{equation*}
+We also given the \emph{failure} rate of \emph{wet} connectors as well:
+\begin{equation*}
+    \begin{aligned}
+        P(F|D') = 0.05
+    \end{aligned}
+\end{equation*}
+Finally, we're given the amount of connectors that are \emph{dry} and amount that are \emph{wet}:
+\begin{equation*}
+    \begin{aligned}
+        P(D) = 0.9 \\
+        P(D') = 0.1
+    \end{aligned}
+\end{equation*}
+Now that we have all the components of the problem identified, we can now solve for the amount of failures. In order to do this, we'll use the total probability equation to plug in our components:
+\begin{equation*}
+    \begin{aligned}
+        P(F) &= P(F|D) * P(D) + P(F|D') * P(D') \\
+        &= 0.01 * 0.9 + 0.05 * 0.1 \\
+        P(F) &= 0.14
+    \end{aligned}
+\end{equation*}
 
 \section*{Question 4}
 Consider the well failure data given below. Let A denote the event that the geological formation of a well has more than 1000 wells, and let B denote the event that a well failed.
