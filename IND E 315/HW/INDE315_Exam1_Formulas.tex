@@ -17,6 +17,7 @@
 \usepackage{mathtools}
 \usepackage{amsmath,amssymb}
 \usepackage{enumitem}
+\usepackage{graphicx}
 \makeatletter
 
 \newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
@@ -26,6 +27,8 @@
 \title{IND E 315 Cheat Sheet}
 \usepackage[brazilian]{babel}
 \usepackage[utf8]{inputenc}
+
+\graphicspath{{./images/}}
 
 \advance\topmargin-.8in
 \advance\textheight3in
@@ -161,16 +164,17 @@
 
 %\newpage
 
-%------------ Heating ---------------
+%------------ General Notes ---------------
 \begin{tikzpicture}
     \node [mybox] (box){%
         \begin{minipage}{0.3\textwidth}
             Binomial - Given $n$ trials, count \# successes $x$ \\
             Geometric - Given 1 success, count \# trials $x$ \\
-            Neg. Binomial - Given $r$ successes, count \# trials $x$ 
+            Neg. Binomial - Given $r$ successes, count \# trials $x$ \\
+            $P(A|B) \rightarrow $ (is) the probability of A occuring given B 
         \end{minipage}
     };
-%------------ Heating Header ---------------------
+%------------ General Notes Header ---------------------
     \node[fancytitle, right=10pt] at (box.north west) {General Notes};
 \end{tikzpicture}
     
@@ -284,6 +288,28 @@
 \newpage
 
 \textbf{IND E 315 Cheat Sheet - Anthony Le}
+
+%------------ Bayes Theorem Notes ---------------
+\begin{tikzpicture}
+    \node [mybox] (box){%
+        \begin{minipage}{0.3\textwidth}
+            $P(\text{Hypothesis Given Evidence}) \rightarrow P(H|E)$\\
+            $P(H)$ ("Prior") represents probability of hypothesis being true before considering any new evidence \\
+            $P(E|H)$ ("Likihood") represents probability of seeing evidence given hypothesis is true\\
+            IE librarians fitting description \\
+            $P(E|\neg H)$ represents probability of seeing evidence given hypothesis is false \\
+            Bayes Theorem:\\
+            $P(H|E) = \frac{(P(H))(P(E|H))}{(P(H))(P(E|H))+(P(\neg H))(P(E|\neg H))}$ \\
+            Or alternatively:\\
+             $P(H|E) = \frac{(P(H))(P(E|H))}{P(E)}$\\
+            \includegraphics[width=7cm]{3B1B_BayesThrm}
+        \end{minipage}
+    };
+%------------ General Notes Header ---------------------
+    \node[fancytitle, right=10pt] at (box.north west) {General Notes};
+\end{tikzpicture}
+
+
 
 \end{multicols*}
 
