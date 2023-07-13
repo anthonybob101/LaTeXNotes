@@ -23,7 +23,7 @@
 \newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
 \makeatother
 
-\title{130 Cheat Sheet}
+\title{IND E 315 Cheat Sheet}
 \usepackage[brazilian]{babel}
 \usepackage[utf8]{inputenc}
 
@@ -38,7 +38,7 @@
 %\colorbox[HTML]{e4e4e4}{\makebox[\textwidth-2\fboxsep][l]{texto}
 \begin{document}
 
-\begin{center}{\huge{\textbf{IND E 315 Cheat Sheet}}}\\
+\begin{center}{\Large{\textbf{IND E 315 Cheat Sheet - Anthony Le}}}\\
 \end{center}
 \begin{multicols*}{3}
 
@@ -158,13 +158,26 @@
 \node[fancytitle, right=10pt] at (box.north west) {Probability};
 \end{tikzpicture}
 
-\newpage
+%\newpage
 
+%------------ Heating ---------------
+\begin{tikzpicture}
+    \node [mybox] (box){%
+        \begin{minipage}{0.3\textwidth}
+            Binomial - Given $n$ trials, count \# successes $x$ \\
+            Geometric - Given 1 success, count \# trials $x$ \\
+            Neg. Binomial - Given $r$ successes, count \# trials $x$ 
+        \end{minipage}
+    };
+%------------ Heating Header ---------------------
+    \node[fancytitle, right=10pt] at (box.north west) {General Notes};
+\end{tikzpicture}
+    
 
 %------------ Discrete Prob. Distribution Content ---------------
 \begin{tikzpicture}
     \node [mybox] (box){%
-        \begin{minipage}{0.65\textwidth}
+        \begin{minipage}{0.64\textwidth}
             \small{
                 %\fbox{
                     \begin{tabular}{ | m{2.5cm} | m{4.5cm}| m{3.5cm} | m{5cm}} 
@@ -173,8 +186,10 @@
                         General          & $f(x_i) = P(X = x_i)$             & $\mu = \sum_x x * f(x)$              & $\sigma ^2 = V(X) = E(X - \mu)^2$\\
                         Uniform          & $f(x) = 1/(b - a + 1)$                  & $\mu = E(X) = (b + a)/2 $     & $\sigma ^2 = V(x) = ((b - a + 1)^2 - 1)/12 $\\     
                         Binomial         & $f(x) = _nC_x p^x (1 - p)^{n-x}$        & $\mu = E(X) = np$             & $\sigma ^2 = V(X) = np(1-p)$\\
+                        Poisson          & $f(x) = (e^{-\lambda} \lambda ^x)/x!$        & $\mu = E(X) = \lambda$             & $\sigma ^2 = V(X) = \lambda$\\
                         Geometric        & $f(x) = p^1 (1-p)^{x-1}$                & $\mu = E(X) = 1/p$            & $\sigma ^2 = V(X) = (1-p)/(p^2)$\\
                         Neg. Binomial    & $f(x) = _{x-1}C_{r-1} p^r (1-p)^{x-r}$   & $\mu = E(X) = r/p$            & $\sigma ^2 = V(X) = (r(1-p))/(p^2)$\\
+                        Hypr. Geometr    & $f(x) =$ \large{ $\frac{_{M}C_{x} * _{(N-M)}C_{(N-x)}}{_{N}C_{n}}$}     & $\mu = E(X) = M/N $           & $\sigma ^2 = V(X) = $\large{ $\frac{nM(N-M)(N-n)}{N^2(N-1)}$}\\
                     \end{tabular}
                 %}
      
@@ -185,91 +200,111 @@
 \node[fancytitle, right=10pt] at (box.north west) {Discrete Prob. Distribution (General)};
 \end{tikzpicture}
 
+%------------ Continuous Prob. Distribution Content ---------------
+\begin{tikzpicture}
+    \node [mybox] (box){%
+        \begin{minipage}{0.64\textwidth}
+            \small{
+                %\fbox{
+                    \begin{tabular}{ | m{2.5cm} | m{4.5cm}| m{3.5cm} | m{5cm}} 
+                        $\bm{X}$ & $\bm{f(x)}$ & $\bm{\mu = E(X)}$ & $\bm{\sigma ^2 = V(X)}$ \\ 
+                        \hline
+                        General          & $f(x_i) = P(X = x_i)$             & $\mu = \sum_x x * f(x)$              & $\sigma ^2 = V(X) = E(X - \mu)^2$\\
+                        Uniform          & $f(x) = 1/(b - a)$                  & $\mu = E(X) = (b + a)/2 $     & $\sigma ^2 = V(x) = ((b - a)^2)/12 $\\     
+                        Exponential      & $f(x) = (\lambda e^{-\lambda x})$        & $\mu = E(X) = 1/\lambda$             & $\sigma ^2 = V(X) = 1/(\lambda^2)$\\
+                        Normal        & $f(x) =$ \large{ $\frac{1}{\sigma \sqrt{2 \pi}}e^{-0.5((x-\mu)/\sigma)^2}$} & $\mu = E(X) = \mu $ & $\sigma ^2 = V(X) = \sigma $\\
+                        Standard Normal (Z)    & $f(x) =$ \large{ $\frac{1}{\sqrt{2 \pi}}e^{-0.5x^2}$}   & $\mu = E(X) = 0$ & $\sigma ^2 = V(X) = 1$\\
+                        %Hypr. Geometr    & $f(x) =$ \large{ $\frac{_{M}C_{x} * _{(N-M)}C_{(N-x)}}{_{N}C_{n}}$}     & $\mu = E(X) = M/N $           & $\sigma ^2 = V(X) = $\large{ $\frac{nM(N-M)(N-n)}{N^2(N-1)}$}\\
+                    \end{tabular}
+                %}
+     
+            }
+        \end{minipage}
+    };
+%------------ Continuous Prob. Distribution Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Continuous Prob. Distribution (General)};
+\end{tikzpicture}
+
 %------------ Probability Content ---------------
 \begin{tikzpicture}
     \node [mybox] (box){%
         \begin{minipage}{0.3\textwidth}
             \small{
                 \begin{tabular}{lp{4.8cm} l}
-                    \textit{Probability Mass} & Describes the probability distribution of $X$ \\
-                    %\fbox{\parbox{3.4cm}{text}} & \fbox{\parbox{3.4cm}{text}} \\
-                    \textbf{(PMF)}              & Plug $x_i$ to $f(x_i)$ to find $P(X = x_i)$ \\
-                    \textit{(General)}          & $P(X = x_i) = f(x_i)$\\
-                    \textit{(Uniform)}          & $f(x) = 1/(b - a + 1)$\\
-                    \textit{(Binomial)}\footnote{p or p(x) represents the individual probability of x outcome}        & $f(x) = _nC_x p^x (1 - p)^{n-x}$\\
-                    \textit{(Geometric)}       & $f(x) = p^1 (1-p)^{x-1}$\\
-                    \textit{(Neg. Binomial)}   & $f(x) = _{x-1}C_{r-1} p^r (1-p)^{x-r}$\\
+                    \textit{Probability Mass} & Describes the probability distribution of $X$. \\
+                    \textit{(PMF, Discrete)}              \\
+                    \hline
+
+                    \textit{Probability Dens.} & Describes the probability distribution of $X$. \\
+                    \textit{(PDF, Continuous)} & Integrating w.r.t x gives you an area function for prob./dx * dx \\
                     \hline
 
                     \textit{Cumulative Dist.} & Describes the probability that $X$ will be less than or equal to $x$ \\
                     \textit{(CDF)}              & $F(x) = P(X \leq x)$ \\    
-                    \textbf{(General)}          & $P(a < X \leq b) = F(b) - F(a)$\\
-                    %\textit{(Uniform)}         & $ $\\
-                    %\textit{(Binomial)}        & $ $\\
-                    %\textit{(Geometric)}       & $ $\\
-                    %\textit{(Neg. Binomial)}   & $ $\\
+                    %\textbf{(General)}          & $P(a < X \leq b) = F(b) - F(a)$\\
                     \hline
 
                     \textit{Mean}               & Center of a probability distribution. \\
-                    \textbf{(General)}          & $\mu = E(X) = \sum_x x * f(x)$ \\
-                    \textit{(Uniform)}          & $\mu = E(X) = (b + a)/2 $\\
-                    \textit{(Binomial)}         & $\mu = E(X) = np$\\
-                    \textit{(Geometric)}        & $\mu = E(X) = 1/p$\\
-                    \textit{(Neg. Binomial)}    & $\mu = E(X) = r/p$\\ %not in notes, using stats formula sheet
                     \hline
 
                     \textit{Variance}           & Varability in a probability distribution.\\ 
                     \textbf{(General)}          & $\sigma ^2 = \sum_x x^2 * f(x) - \mu ^2$, or \\
                                                 & $\sigma ^2 = E[X^2] - (E[X])^2$, or \\
                                                 & $\sigma ^2 = V(X) = E(X - \mu)^2$ \\ 
-                    \textit{(Uniform)}          & $\sigma ^2 = V(x) = ((b - a + 1)^2 - 1)/12 $\\
-                    \textit{(Binomial)}         & $\sigma ^2 = V(X) = np(1-p)$\\
-                    \textit{(Geometric)}        & $\sigma ^2 = V(X) = (1-p)/(p^2)$\\
-                    \textit{(Neg. Binomial)}    & $\sigma ^2 = V(X) = (r(1-p))/(p^2)$\\
+
 
                 \end{tabular}
             }
         \end{minipage}
     };
 %------------ Probability Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Probability};
+\node[fancytitle, right=10pt] at (box.north west) {Probability Dist. Functions};
 \end{tikzpicture}
 
-
-\newpage
-
-%------------ Probability Distribution Content ---------------
+%------------ Misc Properties Content ---------------
 \begin{tikzpicture}
     \node [mybox] (box){%
         \begin{minipage}{0.3\textwidth}
             \small{
-                \begin{tabular}{lp{4.8cm} l}
-                    \textit{Probability Density} & $P(a \leq X \leq b) = \int _a ^b f(x) dx$\\
-                    %\fbox{\parbox{3.4cm}{text}} & \fbox{\parbox{3.4cm}{text}} \\
-                    \textit{(PDF)}          & Describes the probability distribution of $X$ \\                        
-                    \textbf{(Continuous)}   & Integrate $f(x)$ between $a$ and $b$ to find $P(a \leq X \leq b)$ \\
-                                            & \textbf{Or derivative of CDF}  \\
-                    \hline
-                    \textit{Cumulative Dist.} & $F(x) = P(X \leq x)$ \\
-                    \textit{(CDF)}          & $F(x) = \int ^x _{-\infty} f(u) du$ \\
-                    \textbf{(Continuous)}   & \textbf{Or integral of PDF} \\
-                    \hline
-                    \textit{Multpl. Rule} & $P(A \cap B) = P(B|A) * P(A)$ \\
-                                            & $P(A \cap B) = P(A|B) * P(B)$ \\
-                                            & Probability of intersection \\
-                    \hline
-                    \textit{Total Probability} & $P(B) = P(B \cap A) + P(B \cap A')$ \\ 
-                                        & $P(B) = P(B|A) * P(A) + P(B|A') * P(A')$ \\
-                \end{tabular}
+                \begin{enumerate}
+                    \item $E(aX) = aE(X)$
+                    \item $E(aX + b) = aE(X) + b$
+                    \item $E[f(X)] = \sum f(x) p(x)$
+                    \item $V(aX) = a^2 V(X)$
+                    \item $V(aX + B) = a^2 V(X)$
+                \end{enumerate}
             }
         \end{minipage}
     };
-%------------ Probability Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Continuous Probability Distribution Functions};
+%------------ Misc Properties Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Probability - Misc Properties};
 \end{tikzpicture}
 
+\newpage
+
+a
 
 \newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 %------------ Heating ---------------
