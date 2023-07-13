@@ -38,9 +38,6 @@
 %\colorbox[HTML]{e4e4e4}{\makebox[\textwidth-2\fboxsep][l]{texto}
 \begin{document}
 
-\begin{center}
-    {\Large{\textbf{IND E 315 Cheat Sheet - Anthony Le}}}\\
-\end{center}
 \begin{multicols*}{3}
 
 \tikzstyle{mybox} = [draw=black, fill=white, very thick,
@@ -53,19 +50,19 @@
         \begin{minipage}{0.3\textwidth}
             \small{
                 \begin{tabular}{lp{4.5cm} l}
-                    \textit{Union} & $E_1 \cup E_2$ \\ 
+                    \textbf{Union} & $E_1 \cup E_2$ \\ 
                                             & Events in \emph{either} event \\ 
                     \hline
-                    \textit{Intersection} & $E_1 \cap E_2$ \\
+                    \textbf{Intersection} & $E_1 \cap E_2$ \\
                                             & Events in \emph{both} events \\
                     \hline
-                    \textit{Complement} & $(E_1 \cup E_2)'$ \\
+                    \textbf{Complement} & $(E_1 \cup E_2)'$ \\
                                             & All events NOT in \emph{either} event \\
                     \hline
-                    \textit{Mutually exclusive} & $A \cap B = 0$ \\ 
+                    \textbf{Mutually exclusive} & $A \cap B = 0$ \\ 
                                             & Events share no common outcomes \\
                     \hline
-                    \textit{Independent} & $P(A|B) = P(A)$ \\ 
+                    \textbf{Independent} & $P(A|B) = P(A)$ \\ 
                                             & $P(B|A) = P(B)$ \\
                                             & $P(A \cap B) = P(A)P(B)$ \\
                                             & The occurrence of one event has no impact on the other
@@ -83,14 +80,14 @@
         \begin{minipage}{0.3\textwidth}
             \small{
                 \begin{tabular}{lp{4.5cm} l}
-                    \textit{Multiplication Rule} & $n_1 * n_2 * \dots * n_k$ \\ 
+                    \textbf{Multiplication Rule} & $n_1 * n_2 * \dots * n_k$ \\ 
                                             & Product gives total number of ways of completing steps 1 through k \\ 
                     \hline
-                    \textit{Permutation Rule} & $_nP_r = \frac{n!}{n_1! n_2! \dots n_r!}$ \\
+                    \textbf{Permutation Rule} & $_nP_r = \frac{n!}{n_1! n_2! \dots n_r!}$ \\
                                             & Give number of permutations from ordered selection of $r$ objects from $n$ objects   \\
                                             & Sampling w/ replacement / Order matters   \\
                     \hline
-                    \textit{Combination Rule} & $_nC_r = \left( \begin{tabular}{c}
+                    \textbf{Combination Rule} & $_nC_r = \left( \begin{tabular}{c}
                         n \\
                         r
                         \end{tabular}  \right) = \frac{n!}{r!(n-r)!}$ \\ 
@@ -110,12 +107,12 @@
         \begin{minipage}{0.3\textwidth}
             \small{
                 \begin{tabular}{lp{3.5cm} l}
-                    \textit{Random Variables (rv)} & Function ($X$) that can take on values ($x$) for each outcome in a sample space \\
+                    \textbf{Random Variables (rv)} & Function ($X$) that can take on values ($x$) for each outcome in a sample space \\
                     \hline
-                    \textit{Discrete rv's} & A random variable with a \emph{countable} range. \\
+                    \textbf{Discrete rv's} & A random variable with a \emph{countable} range. \\
                                             & (counts, integers, or natural numbers) \\ 
                     \hline
-                    \textit{Continuous rv's} & A random variable with a \emph{uncountable} range. \\
+                    \textbf{Continuous rv's} & A random variable with a \emph{uncountable} range. \\
                                             & (Such as length, weight, volume)
                 \end{tabular}
             }
@@ -131,25 +128,25 @@
     \node [mybox] (box){%
         \begin{minipage}{0.3\textwidth}
             \small{
-                \begin{tabular}{lp{5cm} l}
-                    \textit{Addition Rule} & \footnotesize{$P(A \cup B) = P(A) + P(B) - P(A \cap B)$} \\ 
+                \begin{tabular}{lp{4.8cm} l}
+                    \textbf{Addition Rule} & \footnotesize{$P(A \cup B) = P(A) + P(B) - P(A \cap B)$} \\ 
                                             & \footnotesize{$P(A \cap B) = P(A) + P(B) - P(A \cup B)$} \\
                                             & If $P(A \cap B) =  0$, then \\
                                             & $P(A \cup B) = P(A) + P(B)$ \\
                     \hline
-                    \textit{Conditional Prob} & $P(B|A) = P(A \cap B) / P(A)$ \\
+                    \textbf{Conditional Prob} & $P(B|A) = P(A \cap B) / P(A)$ \\
                                             & For $P(A) > 0$ \\ 
                                             & The conditional probability of event $B$ given event $A$ \\ 
                     \hline
-                    \textit{Multpl. Rule} & $P(A \cap B) = P(B|A) * P(A)$ \\
+                    \textbf{Multpl. Rule} & $P(A \cap B) = P(B|A) * P(A)$ \\
                                             & $P(B \cap A) = P(A|B) * P(B)$ \\
                                             & Probability of intersection \\
                     \hline
-                    \textit{Total Probability} & $P(B) = P(B \cap A) + P(B \cap A')$ \\ 
+                    \textbf{Total Probability} & $P(B) = P(B \cap A) + P(B \cap A')$ \\ 
                                         & $P(B) = P(B|A) * P(A) + P(B|A') * P(A')$ \\
                                         & Sum of all events equals 1 \\
                     \hline
-                    \textit{Complement} & $P(A^C) = 1- P(A)$ \\ 
+                    \textbf{Complement} & $P(A^C) = 1- P(A)$ \\ 
                                         & DeMorgan's Law: \\
                                         & $(A \cap B)' = A' \cup B' $ \\
                                         & $(A \cup B)' = A' \cap B' $ \\ 
@@ -184,7 +181,7 @@
         \begin{minipage}{0.64\textwidth}
             \small{
                 %\fbox{
-                    \begin{tabular}{ | m{2.5cm} | m{4.5cm}| m{3.5cm} | m{5cm}} 
+                    \begin{tabular}{  m{2.5cm} | m{4.5cm}| m{3.5cm} | m{5cm}} 
                         $\bm{X}$ & $\bm{f(x)}$ & $\bm{\mu = E(X)}$ & $\bm{\sigma ^2 = V(X)}$ \\ 
                         \hline
                         General          & $f(x_i) = P(X = x_i)$             & $\mu = \sum_x x * f(x)$              & $\sigma ^2 = V(X) = E(X - \mu)^2$\\
@@ -210,7 +207,7 @@
         \begin{minipage}{0.64\textwidth}
             \small{
                 %\fbox{
-                    \begin{tabular}{ | m{2.5cm} | m{4.5cm}| m{3.5cm} | m{5cm}} 
+                    \begin{tabular}{  m{2.5cm} | m{4.5cm}| m{3.5cm} | m{5cm}} 
                         $\bm{X}$ & $\bm{f(x)}$ & $\bm{\mu = E(X)}$ & $\bm{\sigma ^2 = V(X)}$ \\ 
                         \hline
                         %General          & $f(x_i) = P(X = x_i)$             & $\mu = \sum_x x * f(x)$              & $\sigma ^2 = V(X) = E(X - \mu)^2$\\
@@ -235,11 +232,11 @@
         \begin{minipage}{0.3\textwidth}
             \small{
                 \begin{tabular}{lp{4.8cm} l}
-                    \textit{Probability Mass} & Describes the probability distribution of $X$. \\
+                    \textbf{Probability Mass} & Describes the probability distribution of $X$. \\
                     \textit{(PMF, Discrete)}              \\
                     \hline
 
-                    \textit{Probability Dens.} & Describes the probability distribution of $X$. \\
+                    \textbf{Probability Dens.} & Describes the probability distribution of $X$. \\
                     \textit{(PDF, Continuous)} & Integrating w.r.t x gives you an area function for prob./dx * dx \\
                     \hline
 
@@ -286,7 +283,7 @@
 
 \newpage
 
-a
+\textbf{IND E 315 Cheat Sheet - Anthony Le}
 
 \end{multicols*}
 
